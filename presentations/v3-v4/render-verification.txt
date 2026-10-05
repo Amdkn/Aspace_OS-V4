@@ -1,0 +1,21 @@
+backends found:
+  ffmpeg      ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  playwright  playwright@1.62.1 (/workspace/scratch/4a00a0a5fc2b/aspace-presentation/package.json)
+  browser     cached chromium_headless_shell-1161 (playwright's own revision is not installed)
+  remotion    remotion is not a dependency of this project
+  hyperframes not probed (Phase 5, by decision)
+using: playwright
+
+page: /workspace/scratch/4a00a0a5fc2b/aspace-presentation/dist/aspace.html (25 KB)
+film: "A’Space — Analyse du transfert intelligent V3 → V4" 1600x1000 @ 24 fps, 2160 frames, 60 bpm, scale 1, 2 page(s)
+
+frame cost (ms), draw = art core only, png = canvas PNG encode in page:
+  transfert    draw median 2  p95 4  max 35   | png median 15   (2160 frames)
+  slowest: #818 transfert 35ms, #463 transfert 33ms, #447 transfert 33ms
+  budget: 150 ms draw per frame -> PASS
+  wall clock: 28.4 s for 2160 frames = 76.1 fps end to end (build + launch + render + encode)
+
+determinism: 6/6 probe frames hash-identical (forward on page 0 vs reversed on page 1)
+
+output: /workspace/scratch/4a00a0a5fc2b/aspace-presentation/out/ASpace-V3-V4.mp4
+  h264,video,1600,1000,90.000000,2160

@@ -1,0 +1,20 @@
+{
+  "repository": "Amdkn/Aspace_OS_V3",
+  "revision": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+  "schema": "aspace.heritage-transfer.v1",
+  "source_entries": 9339,
+  "imported_text_sources": 1341,
+  "corpus_sha256": "9883d2ef58e6fecbd3b94a90f7cdb31650253231845ee5935ddd417eec3edc55",
+  "dispositions": {
+    "ARCHIVE_REFERENCE_PRESERVED": 3249,
+    "BINARY_REFERENCE_PRESERVED": 7,
+    "EXTERNAL_GITLINK_REQUIRES_ORIGIN": 6,
+    "IMPORTED_HISTORICAL_SOURCE": 1341,
+    "REFERENCE_PENDING_QUALIFICATION": 4736
+  },
+  "meaning": "Historical evidence; no automatic V4 canon or runtime activation",
+  "return_to": {
+    "repository": "Amdkn/Aspace_OS-V4",
+    "pull_request": 8
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "engine": "local",
+  "detail": "efficient",
+  "returncode": 0,
+  "frame_count": 8,
+  "frames_sha256": [
+    "9a6ffd34b9b3e9f5760a719f8b14df9e0d03bae5d519da4a862bf9b61560259d",
+    "854b4e8c4f0f6cbd770248a6cf959fba79a4faf1a9be72c01777790602bf8c1e",
+    "37016a4df63ee69c687a18515fd469171d0189843d52add35b4458f257ecca40",
+    "ca4f82f4985cd52e2d8cfaad73cf990bf4885194001b62c455e9a300363d8ab4",
+    "2528c69806f45cf2a27ad71bb7cda7ad77bd09a7b9054a705c9a13c5a04de8a0",
+    "13652003c027be64818484a4b4a3babd0e922b9a5efedcf9082b140a01b2b92d",
+    "445862cc07a428cfd16ada4a519d428baf837670e243b1dc2ccd0ed4d95c9507",
+    "2fedb52c0e2a8663c3dc18b59e60af78dc47ff752889f7abd8c4d28bcb0f7035"
+  ],
+  "report": "\n# watch: video report\n\n- **Source:** <CANARY_WORKDIR>/fixture.mp4\n- **Local media:** `<CANARY_WORKDIR>/fixture.mp4`\n- **Title:** fixture.mp4\n- **Duration:** 00:04 (4.0s)\n- **Resolution:** 320x240 (mpeg4)\n- **Detail:** efficient\n- **Frames:** 8 selected from 8 candidates (uniform fallback, full range, budget 8, cap 8)\n- **Frame size:** max 512px wide, max 1998px tall\n- **Transcript:** fallback disabled; no captions available\n\n## Frames\n\nFrames live at: `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames`\n\n**Read each frame path below with the Read tool to view the image.** Frames are in chronological order; `t=MM:SS` is the absolute timestamp in the source video.\n\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0001.jpg` (t=00:00, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0002.jpg` (t=00:00, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0003.jpg` (t=00:01, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0004.jpg` (t=00:02, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0005.jpg` (t=00:02, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0006.jpg` (t=00:02, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0007.jpg` (t=00:03, reason=uniform)\n- `<CANARY_WORKDIR>/runs/watch-ez11g4pp/frames/frame_0008.jpg` (t=00:04, reason=uniform)\n\n## Transcript\n\n_Fallback disabled; no captions available._\n\n---\n_Work dir: `<CANARY_WORKDIR>/runs/watch-ez11g4pp` \u2014 delete when done._\n",
+  "not_tested": [
+    "Gemini API",
+    "YouTube download",
+    "speech transcription",
+    "LLM visual interpretation",
+    "Codespaces runtime"
+  ]
+}

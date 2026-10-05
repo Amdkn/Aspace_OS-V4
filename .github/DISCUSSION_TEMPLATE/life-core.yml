@@ -1,0 +1,40 @@
+title: "[Life Core] "
+body:
+  - type: markdown
+    attributes:
+      value: "Contribution humaine ou agentique. RACI décrit la responsabilité ; il ne crée pas une attente d'approbation systématique."
+  - type: input
+    id: identity
+    attributes:
+      label: Auteur institutionnel et mission
+      description: "Holon/Doctor, mission ou exploration. Le compte GitHub reste la preuve d'auteur technique."
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Contribution et domaines concernés
+      description: "Question, découverte, proposition ou preuve ; LD01–LD08 concernés ; résultat attendu."
+    validations:
+      required: true
+  - type: textarea
+    id: raci
+    attributes:
+      label: RACI
+      description: "R réalise ; A répond de la décision (unique si applicable) ; C consulté ; I informé. Sans objet permis pour une exploration."
+      value: "R :
+A :
+C :
+I :"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources et état de preuve
+      description: "Liens, timestamps, commit, observation ou hypothèse. Ne pas publier de contenu privé hors de son périmètre."
+  - type: textarea
+    id: return_to
+    attributes:
+      label: Retour et liens
+      description: "Discussion liée, connaissance Wiki, Project, Milestone, Issue, PR ou destination de retour. Pas d'Issue obligatoire."

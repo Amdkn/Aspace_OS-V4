@@ -1,0 +1,44 @@
+[
+  {
+    "path": "wiki/gemini.md",
+    "sha256": "cf00d0c58d14f10e79a15018c67939b5b24f99b22d2804557c4921ad9f4b6e75",
+    "sources": [
+      "e9358f738b89c21ed81d79ebe2f5df71de769e945057f0cbc9dd41043c6748e4"
+    ]
+  },
+  {
+    "path": "wiki/llm-wiki.md",
+    "sha256": "17c6d98b54c98d53c55757e82cffe9938eeff31660820fccb90ad3a8144566f5",
+    "sources": [
+      "f8a85f40e8ade69ee7bf34d261ed86213d19669c39c563df52a4520d48fe5e13"
+    ]
+  },
+  {
+    "path": "wiki/moltbook.md",
+    "sha256": "ac27d21dfec14a572a3dc7e7d8391d1bc72f0790b94955e7623e8e992de4d98e",
+    "sources": [
+      "9453e91d8a347f5fc9d70a2854815837315c20289d1979d10e2a7b177f728087"
+    ]
+  },
+  {
+    "path": "wiki/organisation.md",
+    "sha256": "2a08079637394f51b3dd56c7a3fc29de3894d186c026950d309e4cde4f422369",
+    "sources": [
+      "89ea612b884d5130174ebb195e5598d4aca39113f47a807776da2bfb4241602f"
+    ]
+  },
+  {
+    "path": "wiki/refondation.md",
+    "sha256": "d04a399a1af98d1faa1ef0ecee88e6b00aa83eb031609e6d37fd178848a1e8c6",
+    "sources": [
+      "dd752b2011dd5c5ae48a60e53eaedf1b00cc90ffe15593d4e326c35024b2c05a"
+    ]
+  },
+  {
+    "path": "wiki/watch.md",
+    "sha256": "3beaa19381f38504a04d97a5277b9a7b915d17c2b5d1eb9b0a25c1f317299123",
+    "sources": [
+      "ab881592ad6a8506bd287f120d5d91412cacc84d2804cc12cf78ba6355adfb59"
+    ]
+  }
+]

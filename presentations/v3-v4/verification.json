@@ -1,0 +1,9 @@
+{
+  "errors": [],
+  "externalRequests": [],
+  "controls": "PASS",
+  "determinism": "PASS",
+  "frames": 180,
+  "maxDrawMs": 21.700000001117587,
+  "meanDrawMs": 2.722777777755012
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.venv/
+.capture.lock
+.pending-*
+node_modules/
+runtime-state/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

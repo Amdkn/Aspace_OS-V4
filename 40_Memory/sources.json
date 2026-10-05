@@ -1,0 +1,56 @@
+{
+  "ab881592ad6a8506bd287f120d5d91412cacc84d2804cc12cf78ba6355adfb59": {
+    "path": "raw/ab881592ad6a8506bd287f120d5d91412cacc84d2804cc12cf78ba6355adfb59",
+    "origins": [
+      {
+        "name": "Texte collé (4)(1).txt",
+        "origin": "user-upload:2026-10-05/Texte collé (4)(1).txt"
+      }
+    ]
+  },
+  "89ea612b884d5130174ebb195e5598d4aca39113f47a807776da2bfb4241602f": {
+    "path": "raw/89ea612b884d5130174ebb195e5598d4aca39113f47a807776da2bfb4241602f",
+    "origins": [
+      {
+        "name": "Texte collé (2)(1).txt",
+        "origin": "user-upload:2026-10-05/Texte collé (2)(1).txt"
+      }
+    ]
+  },
+  "9453e91d8a347f5fc9d70a2854815837315c20289d1979d10e2a7b177f728087": {
+    "path": "raw/9453e91d8a347f5fc9d70a2854815837315c20289d1979d10e2a7b177f728087",
+    "origins": [
+      {
+        "name": "Texte collé (3)(1).txt",
+        "origin": "user-upload:2026-10-05/Texte collé (3)(1).txt"
+      }
+    ]
+  },
+  "e9358f738b89c21ed81d79ebe2f5df71de769e945057f0cbc9dd41043c6748e4": {
+    "path": "raw/e9358f738b89c21ed81d79ebe2f5df71de769e945057f0cbc9dd41043c6748e4",
+    "origins": [
+      {
+        "name": "Texte collé(3).txt",
+        "origin": "user-upload:2026-10-05/Texte collé(3).txt"
+      }
+    ]
+  },
+  "f8a85f40e8ade69ee7bf34d261ed86213d19669c39c563df52a4520d48fe5e13": {
+    "path": "raw/f8a85f40e8ade69ee7bf34d261ed86213d19669c39c563df52a4520d48fe5e13",
+    "origins": [
+      {
+        "name": "Texte collé (5)(1).txt",
+        "origin": "user-upload:2026-10-05/Texte collé (5)(1).txt"
+      }
+    ]
+  },
+  "dd752b2011dd5c5ae48a60e53eaedf1b00cc90ffe15593d4e326c35024b2c05a": {
+    "path": "raw/dd752b2011dd5c5ae48a60e53eaedf1b00cc90ffe15593d4e326c35024b2c05a",
+    "origins": [
+      {
+        "name": "USER_DECISION.txt",
+        "origin": "user-instruction:2026-10-05:refondation"
+      }
+    ]
+  }
+}

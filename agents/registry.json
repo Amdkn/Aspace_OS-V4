@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "default_agent": "rick",
+  "providers": [
+    "codex",
+    "jules",
+    "hermes"
+  ],
+  "routing_order": [
+    "codex",
+    "jules",
+    "hermes"
+  ],
+  "max_new_missions_per_run": 1,
+  "automatic_task": "review",
+  "profiles": {
+    "rick": {
+      "name": "Rick",
+      "primary_responsibility": "Gatekeeper : revue indépendante, intégration et reprise des blocages",
+      "authority_class": "S1",
+      "doctor": null,
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "doctor-11": {
+      "name": "Doctor 11",
+      "primary_responsibility": "Life Core : huit domaines, six frameworks, interfaces et résultats de vie",
+      "authority_class": "S2",
+      "doctor": null,
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "doctor-12": {
+      "name": "Doctor 12",
+      "primary_responsibility": "Expansion : recherche, conception, forge et interconnexion des capacités",
+      "authority_class": "S2",
+      "doctor": null,
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "doctor-13": {
+      "name": "Doctor 13",
+      "primary_responsibility": "Récursivité : fabrication, observabilité, mémoire et amélioration",
+      "authority_class": "S2",
+      "doctor": null,
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "amy": {
+      "name": "Amy",
+      "primary_responsibility": "Interfaces Agent/Life/Business/Mobile et usages des huit LD",
+      "authority_class": "S3",
+      "doctor": "doctor-11",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "rory": {
+      "name": "Rory",
+      "primary_responsibility": "Persistance, données Life, continuité des projets et reprise",
+      "authority_class": "S3",
+      "doctor": "doctor-11",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "river": {
+      "name": "River",
+      "primary_responsibility": "Flux, GWS, intégration API et réflexes transversaux",
+      "authority_class": "S3",
+      "doctor": "doctor-11",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "bill": {
+      "name": "Bill",
+      "primary_responsibility": "Perception WATCH, recherche sourcée et qualification des découvertes",
+      "authority_class": "S3",
+      "doctor": "doctor-12",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "clara": {
+      "name": "Clara",
+      "primary_responsibility": "Architecture, forge, tests et intégration des capacités",
+      "authority_class": "S3",
+      "doctor": "doctor-12",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "nardole": {
+      "name": "Nardole",
+      "primary_responsibility": "Dispatch réentrant, dépendances, leases, return_to et recovery",
+      "authority_class": "S3",
+      "doctor": "doctor-12",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "ryan": {
+      "name": "Ryan",
+      "primary_responsibility": "Fabrication, missions Jules, livraisons et Factory",
+      "authority_class": "S3",
+      "doctor": "doctor-13",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "yaz": {
+      "name": "Yaz",
+      "primary_responsibility": "Observation, critique, qualité, coûts et réparation vérifiable",
+      "authority_class": "S3",
+      "doctor": "doctor-13",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    },
+    "graham": {
+      "name": "Graham",
+      "primary_responsibility": "Mémoire, provenance, contradictions et contexte compilé",
+      "authority_class": "S3",
+      "doctor": "doctor-13",
+      "providers": [
+        "codex",
+        "jules",
+        "hermes"
+      ]
+    }
+  }
+}

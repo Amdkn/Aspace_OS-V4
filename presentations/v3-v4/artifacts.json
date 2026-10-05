@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-05",
+  "source_commit": "69bca772e61185e67d446775288a6e288147f65e",
+  "return_to": "https://github.com/Amdkn/Aspace_OS-V4/pull/8",
+  "artifacts": [
+    {
+      "path": "ASpace-V3-V4.html",
+      "sha256": "e25fe5bfe033d288cee21357b88ad01135f8ee13f1127545ac9aa668df3977d0",
+      "bytes": 25905
+    },
+    {
+      "path": "ASpace-V3-V4.mp4",
+      "sha256": "c7aab3818819a1b7021a7e39317ce5241a0f17c969a74d25a07c76973c2e0fbe",
+      "bytes": 4082473
+    }
+  ],
+  "upstreams": [
+    {
+      "repository": "alexgreensh/anidoodle",
+      "revision": "f649db6eb823562ae41608119beb53f04d9d7c05",
+      "license": "Apache-2.0"
+    },
+    {
+      "repository": "moguzbulbul/blueprint-animation",
+      "revision": "29aa30b83db4632daf586420c52a251e7dac2d92",
+      "license": "CC-BY-NC-4.0",
+      "adaptation": "Canvas choreography; no Claude Design runtime"
+    }
+  ]
+}

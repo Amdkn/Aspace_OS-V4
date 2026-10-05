@@ -1,0 +1,8 @@
+{
+  "name": "aspace-v4-knowledge",
+  "private": true,
+  "version": "0.1.0",
+  "engines": { "node": ">=22.22.0" },
+  "scripts": { "openwiki": "openwiki" },
+  "dependencies": { "openwiki": "0.7.0" }
+}
