@@ -11,10 +11,10 @@
     },
     {
       "name": "Life OS",
-      "status": "to_qualify_from_sources",
-      "source_revision": null,
-      "runtime_evidence": null,
-      "destination_contract": null
+      "status": "sources_transferred_review_and_journal_tested",
+      "source_revision": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+      "runtime_evidence": "evidence/continuity-canary.json (isolated fixture, no live domain assertion)",
+      "destination_contract": "life/registry.json"
     },
     {
       "name": "Business OS",
@@ -134,6 +134,19 @@
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null
+    },
+    {
+      "name": "Graham memory continuity",
+      "status": "historical_corpus_and_durable_temporal_core_tested",
+      "source_revision": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+      "destination_contract": "migration/README.md",
+      "runtime_evidence": "evidence/continuity-canary.json (isolated fixture)",
+      "remaining": [
+        "Gateway authentication",
+        "WorkGraph/Supabase synchronization",
+        "live observations",
+        "cross-host deployment"
+      ]
     }
   ]
 }

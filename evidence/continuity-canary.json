@@ -1,0 +1,19 @@
+{
+  "kind": "isolated-synthetic-canary",
+  "same_context_after_relocation": true,
+  "capsule_sha256": "c476d417ba6fdc99fcffb13e79581cb446f8dbcb154459a3bd88703d9661886f",
+  "claims_after_duplicate_delivery": 1,
+  "return_to": {
+    "doctor": "Doctor11"
+  },
+  "heritage_errors": [],
+  "life_aggregate": "UNKNOWN",
+  "not_verified": [
+    "two VPS hosts",
+    "GWS effects",
+    "live Doctors",
+    "Gateway auth",
+    "Supabase/WorkGraph synchronization",
+    "real Life state"
+  ]
+}

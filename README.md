@@ -59,3 +59,18 @@ Le lanceur rend le binaire OpenWiki épinglé accessible au MCP ; Codex lui-mêm
 du dépôt. La mémoire de vie reste dans `40_Memory/` ; le mode personal et sa
 persistance demandent une configuration séparée. Aucun modèle n'a été appelé par
 le test MCP. Ne pas confondre handshake réussi et wiki généré.
+
+## Transfert intelligent V3
+
+Voir [migration/README.md](migration/README.md) : 1 341 sources historiques
+vérifiables, inventaire de 9 339 entrées, huit LD et six frameworks reliés,
+journal temporel durable et compilation de contexte. Les connexions Gateway,
+GWS et WorkGraph distant ainsi que l’activation des Doctors restent à effectuer.
+
+```bash
+python -m pip install -r requirements.txt
+python tools/memory.py check --root 40_Memory
+python tools/memory.py query --root 40_Memory --text "Life Core"
+python -m aspace.life review --domain LD03 --at 2026-10-05T18:00:00Z
+python -m unittest discover -s tests -v
+```

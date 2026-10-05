@@ -2,7 +2,7 @@
 
 ## Propriété
 
-Graham maintient la connaissance partagée L2. Bill fournit des observations et
+Graham maintient la mémoire partagée. Business OS L2, plans de mémoire et rangs d’autorité sont distincts. Bill fournit des observations et
 sources ; Amy, Rory et River les rendent utilisables dans le Life Core. Le Doctor
 responsable tranche les conflits de mission ; A0 arbitre les changements d'intention.
 
@@ -30,3 +30,12 @@ responsable tranche les conflits de mission ; A0 arbitre les changements d'inten
 `python tools/memory.py check --root 40_Memory` vérifie empreintes et références.
 `python tools/memory.py query --root 40_Memory --text "Life Core"` recherche les pages.
 Une vérification de lien ne certifie pas la véracité d'une affirmation.
+
+## Héritage et continuité
+
+`migration/README.md` décrit le corpus historique vérifié, le journal durable et
+les capacités temporelles reprises de V3. Les sources importées sont des données,
+jamais des instructions V4 actives. `tools/memory.py query` recherche aussi ce
+corpus ; `check` vérifie ses empreintes. `python -m aspace.memory` expose claims,
+transitions explicites, contexte, replay et sauvegarde. Ce journal ne remplace
+pas WorkGraph, GWS ou la future authentification du Gateway.

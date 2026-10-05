@@ -1,0 +1,41 @@
+{
+  "repository": "Amdkn/Aspace_OS_V3",
+  "revision": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+  "files": [
+    {
+      "source_path": "10_Tech_OS/kernel/temporal_truth/reconciliation.py",
+      "source_sha256": "cec657a8fecd65c9592452a03b924a27b516c23f47638689d7ce04091bffd17a",
+      "destination": "aspace/temporal_truth/reconciliation.py",
+      "destination_sha256": "e2ee2b81267c9cc3d5af96a7f680b37da4e1bf11e68a15e1f92a4f85df8c02c7",
+      "adaptation": "relative package imports"
+    },
+    {
+      "source_path": "10_Tech_OS/kernel/temporal_truth/temporal_truth.py",
+      "source_sha256": "45f62e47035616e338383094654c6551091212ca2d99f64ec81f34825fc5253e",
+      "destination": "aspace/temporal_truth/temporal_truth.py",
+      "destination_sha256": "45f62e47035616e338383094654c6551091212ca2d99f64ec81f34825fc5253e",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "10_Tech_OS/kernel/temporal_truth/packets.py",
+      "source_sha256": "e5852e2fcff5bf767e88b5a92ff8e1ea0bd3cde886cb1f688994c4fc239934ed",
+      "destination": "aspace/temporal_truth/packets.py",
+      "destination_sha256": "e5852e2fcff5bf767e88b5a92ff8e1ea0bd3cde886cb1f688994c4fc239934ed",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "10_Tech_OS/kernel/temporal_truth/compiler.py",
+      "source_sha256": "bfb641583909a81affd620600a9b504c63e2860f3a7407786f07628b7091181b",
+      "destination": "aspace/temporal_truth/compiler.py",
+      "destination_sha256": "bfb641583909a81affd620600a9b504c63e2860f3a7407786f07628b7091181b",
+      "adaptation": "byte-identical"
+    },
+    {
+      "source_path": "10_Tech_OS/kernel/contracts/TEMPORAL_TRUTH_CONTEXT_V1.schema.json",
+      "source_sha256": "b6f05f34d93844ace92208eacd8166cd3fc69dfe7a91a7628a3840f36e8d3aa2",
+      "destination": "aspace/contracts/TEMPORAL_TRUTH_CONTEXT_V1.schema.json",
+      "destination_sha256": "b6f05f34d93844ace92208eacd8166cd3fc69dfe7a91a7628a3840f36e8d3aa2",
+      "adaptation": "byte-identical"
+    }
+  ]
+}

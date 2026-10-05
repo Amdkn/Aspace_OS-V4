@@ -91,6 +91,12 @@ def check(root):
         for key in row['sources']:
             if key not in sources:
                 errors.append(f'unknown citation: {row["path"]}: {key}')
+    if (root.parent / 'migration/v3-transfer.json').exists():
+        try:
+            from tools.heritage import verify
+        except ModuleNotFoundError:
+            from heritage import verify
+        errors.extend(verify(root.parent))
     return errors
 
 
@@ -125,6 +131,12 @@ def main():
             text = (a.root / row['path']).read_text(encoding='utf-8')
             if a.text.casefold() in text.casefold():
                 matches.append(row)
+        if (a.root.parent / 'migration/v3-transfer.json').exists():
+            try:
+                from tools.heritage import search
+            except ModuleNotFoundError:
+                from heritage import search
+            matches.extend(search(a.root.parent, a.text))
         print(json.dumps(matches, ensure_ascii=False, indent=2))
     return 0
 

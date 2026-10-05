@@ -8,7 +8,7 @@ fournit des actifs et des expériences ; V4 possède ses propres contrats.
 
 Le même fondamental BedRock L0 soutient Life OS L1 et ses huit domaines. Cette
 continuité conceptuelle ne signifie pas importer le runtime ou les restrictions
-de V3. Graham maintient la connaissance partagée L2 ; un classement de mémoire
+de V3. Graham maintient la mémoire partagée ; un classement de mémoire
 ne doit pas être confondu avec un rang d'agent S1/S2/S3 ou B1/B2/B3.
 
 | LD | Domaine | Reprise de référence V3 | Résultat attendu dans V4 |
@@ -160,3 +160,9 @@ de performances ne sont pas des résultats obtenus par V4.
 - https://www.moltbook.com/
 - https://www.anthropic.com/glasswing
 - https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+
+## Transfert sourcé
+
+Voir `migration/README.md` et `life/registry.json` : corpus V3 conservé, huit LD,
+six frameworks, journal temporel et revue Life exécutables. Les preuves de reprise
+sont techniques ; elles ne déclarent pas des Doctors ou des connexions GWS actifs.
