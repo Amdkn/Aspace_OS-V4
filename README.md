@@ -28,7 +28,8 @@ Gemini nécessite la clé injectée dans le compute. Lire WATCH avant le premier
 
 ## État restant à réaliser
 
-Discussions et Wiki à activer ; catégories à créer ; génération OpenWiki à
+Discussions activé et sept catégories créées. Formulaires RACI à fusionner sur
+main. Wiki natif privé bloqué par le forfait GitHub ; génération OpenWiki à
 effectuer dans le harness ; providers à certifier ; compute durable à provisionner ;
 surfaces et services existants à qualifier et intégrer. Aucun Doctor autonome,
 reset journalier ou service 24/7 n'est lancé par ces fichiers.
