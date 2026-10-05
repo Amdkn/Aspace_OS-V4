@@ -74,3 +74,10 @@ python tools/memory.py query --root 40_Memory --text "Life Core"
 python -m aspace.life review --domain LD03 --at 2026-10-05T18:00:00Z
 python -m unittest discover -s tests -v
 ```
+
+## Présentation du transfert V3 → V4
+
+[Présentation animée et sources](presentations/v3-v4/README.md) : six transformations,
+lecteur interactif autonome et vidéo de 90 secondes. État daté du 5 octobre 2026 ;
+les capacités livrées restent distinguées de la cible. Adaptation Blueprint sous
+CC BY-NC 4.0, licences et provenance conservées dans ce dossier.
