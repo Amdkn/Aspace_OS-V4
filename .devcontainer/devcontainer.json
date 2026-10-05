@@ -1,0 +1,20 @@
+{
+  "name": "A'Space portable instance",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "remoteEnv": {
+    "ASPACE_INSTANCE_ROOT": "/workspaces/aspace"
+  },
+  "postCreateCommand": "python3 portable/instance.py plan",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
