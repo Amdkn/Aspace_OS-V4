@@ -36,3 +36,11 @@ dépendance de démarrage ni une constitution héritée automatiquement.
 Ce dépôt ne démarre pas encore un Gateway ou une flotte de Doctors. Les programmes
 de fond, les coûts d'inférence et les mutations de production demandent leurs
 propres preuves d'exécution, et ne sont pas impliqués par une PR documentaire.
+
+## Primitive navigateur — instruction utilisateur du 5 octobre 2026
+
+Le navigateur est une primitive d'exécution autorisée durablement, au même titre
+que le terminal. Dans le périmètre d'un objectif autorisé, l'utiliser quand il
+permet d'avancer, sans redemander l'autorisation du moyen à chaque relais depuis
+un connecteur. Cette autorisation ne change ni le périmètre du mandat ni les
+exigences applicables à une action particulière.
