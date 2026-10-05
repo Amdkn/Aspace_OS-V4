@@ -81,3 +81,10 @@ python -m unittest discover -s tests -v
 lecteur interactif autonome et vidéo de 90 secondes. État daté du 5 octobre 2026 ;
 les capacités livrées restent distinguées de la cible. Adaptation Blueprint sous
 CC BY-NC 4.0, licences et provenance conservées dans ce dossier.
+
+## Agents GitHub agnostiques
+
+[Agents, connexions et reprise](agents/README.md) : Rick, trois Doctors, neuf
+Compagnons ; adaptateurs Codex, Jules et Hermes derrière un mandat commun.
+Le workflow Agent Mesh prend en charge les PR et conserve ses receipts par SHA.
+Les connexions absentes sont signalées BLOCKED, jamais promues en flotte active.

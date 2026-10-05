@@ -1,0 +1,212 @@
+name: Aspace Agent Mesh
+on:
+  push:
+    branches: [main, feat/v4-life-memory-watch-2026-10-05]
+    paths: ['agents/**', 'tools/agent_mesh.py', '.github/agents/**', '.github/workflows/agent-mesh.yml']
+  workflow_run:
+    workflows: [V4 checks]
+    types: [completed]
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'PR number; empty scans the open queue'
+        required: false
+        type: string
+      recover_jules_session:
+        description: 'Existing sessions/id to reconcile after UNKNOWN; requires explicit PR'
+        required: false
+        type: string
+      agent:
+        description: 'Institutional profile (rick, ryan, yaz, graham, doctor-11, ...)'
+        default: rick
+        type: string
+      provider:
+        description: 'Runtime; auto selects a connected adapter'
+        default: auto
+        type: choice
+        options: [auto, codex, jules, hermes]
+permissions:
+  contents: read
+concurrency:
+  group: aspace-agent-mesh
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    outputs:
+      provider: ${{ steps.route.outputs.provider }}
+      operation: ${{ steps.route.outputs.operation }}
+      head: ${{ steps.route.outputs.head }}
+      control: ${{ steps.control.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'push' && github.sha || github.event.repository.default_branch }}
+          persist-credentials: false
+      - id: control
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - id: route
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CODEX_AVAILABLE: ${{ secrets.OPENAI_API_KEY != '' }}
+          JULES_AVAILABLE: ${{ secrets.JULES_API_KEY != '' }}
+          HERMES_AVAILABLE: ${{ vars.ASPACE_HERMES_EPHEMERAL_READY == 'true' }}
+          REQUEST_PR: ${{ inputs.pr }}
+          RECOVER_JULES_SESSION: ${{ inputs.recover_jules_session }}
+          REQUEST_AGENT: ${{ inputs.agent }}
+          REQUEST_PROVIDER: ${{ inputs.provider }}
+        run: python tools/agent_mesh.py prepare
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesh-mission
+          path: mesh-out/
+          retention-days: 90
+      - if: always()
+        run: |
+          echo '## Agent Mesh — availability and routing' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Presence of a credential is not certification. See mesh-mission for exact blockers and return_to.' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f mesh-out/health.json ]; then cat mesh-out/health.json >> "$GITHUB_STEP_SUMMARY"; fi
+  codex:
+    needs: prepare
+    if: needs.prepare.outputs.provider == 'codex'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.control }}
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.head }}
+          path: task
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-mission
+          path: mesh-out
+      - uses: openai/codex-action@86365089eb2b84e0a8fb0717b304f8bdcb13b20e
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          codex-version: '0.160.1'
+          prompt-file: ${{ github.workspace }}/mesh-out/prompt.txt
+          output-file: ${{ github.workspace }}/mesh-out/result.json
+          output-schema-file: ${{ github.workspace }}/control/agents/result.schema.json
+          working-directory: ${{ github.workspace }}/task
+          sandbox: workspace-write
+          safety-strategy: drop-sudo
+          allow-bots: true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesh-result
+          path: mesh-out/
+          retention-days: 90
+  hermes:
+    needs: prepare
+    if: needs.prepare.outputs.provider == 'hermes'
+    runs-on: [self-hosted, linux, aspace-hermes-ephemeral]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.control }}
+          path: control
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.head }}
+          path: task
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-mission
+          path: mesh-out
+      - name: Invoke configured Hermes cloud harness
+        env:
+          TASK_DIRECTORY: ${{ github.workspace }}/task
+        run: python control/tools/agent_mesh.py hermes
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesh-result
+          path: mesh-out/
+          retention-days: 90
+  jules:
+    needs: prepare
+    if: needs.prepare.outputs.provider == 'jules'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.control }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-mission
+          path: mesh-out
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: python tools/agent_mesh.py jules
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesh-jules
+          path: mesh-out/
+          retention-days: 90
+  finish:
+    needs: [prepare, codex, hermes]
+    if: always() && (needs.prepare.outputs.provider == 'codex' || needs.prepare.outputs.provider == 'hermes')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.control }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-mission
+          path: mesh-out
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: mesh-result
+          path: result-out
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          CODEX_RESULT: ${{ needs.codex.result }}
+          HERMES_RESULT: ${{ needs.hermes.result }}
+        run: |
+          if [ -f result-out/result.json ] && { [ "$CODEX_RESULT" = success ] || [ "$HERMES_RESULT" = success ]; }; then
+            cp result-out/result.json mesh-out/result.json
+            python tools/agent_mesh.py finish
+          else
+            python tools/agent_mesh.py fail
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mesh-receipt
+          path: mesh-out/
+          retention-days: 90

@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mission_id",
+    "head_sha",
+    "verdict",
+    "summary",
+    "findings",
+    "evidence"
+  ],
+  "properties": {
+    "mission_id": {
+      "type": "string"
+    },
+    "head_sha": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "changes_required",
+        "blocked"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
