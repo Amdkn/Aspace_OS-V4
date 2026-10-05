@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-05",
+  "source_registry": {
+    "repository": "Amdkn/Aspace_OS_V3",
+    "commit": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+    "path": "ASPACE_WORKSPACE_REGISTRY.json"
+  },
+  "repositories": [
+    {
+      "repository": "Amdkn/Aspace_OS_V3",
+      "path": "core/Aspace_OS_V3",
+      "commit": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/Agent-OS-Desktop",
+      "path": "satellites/Agent-OS-Desktop",
+      "commit": "9d5782868babb16e4477214dee0a40a8b6825e80",
+      "source_ref": "snapshot/tera-5555-2026-09-27"
+    },
+    {
+      "repository": "Amdkn/Life-OS-2026",
+      "path": "satellites/Life-OS-2026",
+      "commit": "3f11cffe0e85d4d1ce46fed013d8c47bf751666b",
+      "source_ref": "main"
+    },
+    {
+      "repository": "outsourc-e/hermes-workspace",
+      "path": "satellites/Hermes-Workspace",
+      "commit": "c631425d8baa933f8c61d8447040f4ec8b5f571c",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/BusinessOS",
+      "path": "business/BusinessOS",
+      "commit": "e9f1366d357ca992c74734b8c769999c0f7d7cb2",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/Business-Office-3-OS",
+      "path": "business/Business-Office-3-OS",
+      "commit": "e9948025c93dbdc98ae6ab72a665c965cc5d07ef",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/01-OMK-Business-OS",
+      "path": "business/01-OMK-Business-OS",
+      "commit": "b55be6931d54b9e63efb33efc6091f4102ff8188",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/The-OMK-Mobile-Back-Office",
+      "path": "business/The-OMK-Mobile-Back-Office",
+      "commit": "8a3fa88a2c02642ab1554cce2f8faf04e9c5f1f4",
+      "source_ref": "main"
+    },
+    {
+      "repository": "omk-services/OMK-DESKTOP-WEB-OS",
+      "path": "business/OMK-DESKTOP-WEB-OS",
+      "commit": "10929c238e32611e882ac0226db03023e88ccc73",
+      "source_ref": "main"
+    },
+    {
+      "repository": "Amdkn/00-omk-saas-os",
+      "path": "business/00-omk-saas-os",
+      "commit": "80ef067fc5057f36346a43e7f9f4deac85fe3a2a",
+      "source_ref": "main"
+    }
+  ],
+  "unresolved": [
+    {
+      "component": "Agent-OS parent",
+      "reason": "Source registry marks local_only; historical secret-scanning rejection. Requires sanitized remote export, never bypass."
+    },
+    {
+      "component": "Observatoire",
+      "reason": "Source registry marks local_only without origin; requires remote export."
+    },
+    {
+      "component": "Runtime state",
+      "reason": "WorkGraph/SQLite, sessions, leases, uncommitted work and credentials are not migrated by Git checkout."
+    }
+  ],
+  "runtime": {
+    "status": "NOT_ACTIVATED",
+    "return_to": "https://github.com/Amdkn/Aspace_OS_V3/issues/545",
+    "harnesses": [
+      "Hermes",
+      "Codex",
+      "Claude Code",
+      "Antigravity",
+      "Jules",
+      "Prime Agent",
+      "DeepSeek Harness"
+    ],
+    "gateway": "A'Space contracts #542; OpenClaw integration not certified",
+    "cutover_requires": [
+      "restore durable state and session lineage",
+      "inject scoped credentials on target",
+      "fence conflicting effects on source",
+      "verify target effects and reconnect",
+      "retain rollback receipt"
+    ]
+  }
+}

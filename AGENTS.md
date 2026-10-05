@@ -27,6 +27,8 @@ dépendance de démarrage ni une constitution héritée automatiquement.
 - `.agents/skills/openwiki/SKILL.md` : cycle de génération/recherche OpenWiki ;
   code du dépôt et mémoire de vie gardent des périmètres distincts.
 - `architecture/capabilities.json` : acquis à qualifier, sans fausses promotions.
+- `portable/README.md` et `portable/instance.lock.json` : reconstruction optionnelle
+  des dépôts de référence sur compute distant, pas un démarrage de la flotte V4.
 
 ## Vérification disponible
 
@@ -44,3 +46,19 @@ que le terminal. Dans le périmètre d'un objectif autorisé, l'utiliser quand i
 permet d'avancer, sans redemander l'autorisation du moyen à chaque relais depuis
 un connecteur. Cette autorisation ne change ni le périmètre du mandat ni les
 exigences applicables à une action particulière.
+
+## Portabilité et continuité des acquis
+
+Conserver le module portable et le devcontainer intégrés par la PR #7. Leur lock
+épingle des sources V3 pour inspection et réemploi sélectif ; il n'impose pas les
+contrats V3 à V4. Les références V3 #542/#545/#546 et #569 servent de provenance
+aux travaux correspondants, sans détourner toute mission V4 vers ces tickets.
+Les permissions approuvées des Apps doivent être préservées lors d'une réconciliation.
+
+Préserver l'état existant sur le PC jusqu'à une reprise vérifiée et un retrait
+explicitement autorisé. Ne pas y installer ni exécuter de nouveaux harnesses.
+Identité du holon, cognition, runtime, provider, surface et autorité restent
+orthogonaux. Utiliser des branches de mission isolées sous responsabilité Doctors.
+Ne pas placer credentials, états privés ou données de domaine dans un historique
+public. Une hydratation réussie ne prouve ni démarrage d'agent ni migration d'état.
+Consigner preuves, capacités restantes et destination de retour (`return_to`).

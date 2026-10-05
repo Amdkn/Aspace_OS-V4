@@ -9,6 +9,8 @@ OS au service de LD01 et mémoire cumulative. V3 fournit des acquis à qualifier
 - [WATCH pour Bill](architecture/WATCH.md)
 - [Contrat mémoire de Graham](40_Memory/AGENTS.md)
 - [Périmètre des capacités à reprendre](architecture/capabilities.json)
+- [Instance portable Codespaces / VPS](portable/README.md) : reconstruction
+  optionnelle des dépôts de référence, PC comme terminal d'accès.
 
 ## Disponible dans cette proposition
 
@@ -34,8 +36,13 @@ effectuer dans le harness ; providers à certifier ; compute durable à provisio
 surfaces et services existants à qualifier et intégrer. Aucun Doctor autonome,
 reset journalier ou service 24/7 n'est lancé par ces fichiers.
 
-La PR de portabilité #7 est indépendante. Ses hypothèses de migration V3 doivent
-être réconciliées avec cette refondation avant combinaison ou déploiement.
+La PR de portabilité #7 est intégrée. Son hydrateur et son devcontainer sont
+conservés : le lock V3 fournit des références à qualifier, sans imposer une
+migration intégrale ni les contrats V3 à V4. La reconstruction des dépôts est
+testée ; la migration des états, des harnesses et du Gateway reste à certifier.
+Lire [AGENTS.md](AGENTS.md) avant reprise.
+
+Vérifier aussi le module portable : `(cd portable && python -m unittest -v)`.
 
 ## OpenWiki
 
