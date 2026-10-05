@@ -95,11 +95,14 @@ exécutable peut produire une PR, une Action et une Release. Le Wiki conserve le
 connaissances réutilisables ; les surfaces Desktop/Mobile/3D présentent les mêmes
 identités et états avec des interactions adaptées.
 
-État constaté : Discussions et Wiki désactivés sur V4 lors de la lecture API du
-5 octobre. Les formulaires fournis deviennent utilisables après activation,
-création des catégories correspondantes et fusion sur la branche par défaut.
-Ils ne créent pas les catégories. Le connecteur de cette session ne propose pas
-les mutations de settings/catégories ; aucune activation n'est revendiquée.
+État vérifié dans l'interface GitHub le 5 octobre 2026 : Discussions activé ;
+les sept catégories ci-dessus créées, en format conversation ouverte. Les slugs
+correspondent aux sept formulaires de cette PR. Les catégories natives GitHub
+sont conservées. Les formulaires RACI nécessitent encore leur fusion sur main.
+
+Le Wiki natif est désactivé et son contrôle est indisponible : GitHub demande
+une mise à niveau ou un dépôt public. Aucun abonnement ni changement de visibilité
+n'a été effectué. La mémoire versionnée 40_Memory reste indépendante de ce blocage.
 
 ## Mémoire cumulative et perception
 
