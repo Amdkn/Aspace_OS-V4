@@ -1,0 +1,17 @@
+{
+  "initialize_ok": true,
+  "tools": [
+    "openwiki_list_workspaces",
+    "openwiki_list_wikis",
+    "openwiki_search",
+    "openwiki_read",
+    "openwiki_begin",
+    "openwiki_submit_plan",
+    "openwiki_next_page",
+    "openwiki_inspect_page_claims",
+    "openwiki_submit_page",
+    "openwiki_finish"
+  ],
+  "inference_called": false,
+  "wiki_generation_completed": false
+}
