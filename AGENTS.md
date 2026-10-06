@@ -80,3 +80,13 @@ prise en charge des PR. Les profils `.github/agents` gardent des identités
 indépendantes de Codex/Jules/Hermes. Les statuts du commit et artifacts du workflow
 Agent Mesh conservent mission_id, SHA, résultat et return_to. Ne pas confondre
 profil installé, connexion présente, session exécutée et capacité certifiée.
+
+## Architecture vivante
+Avant tout brainstorming V4 de memoire, Life OS, Business OS ou persistance, lire architecture/SUPABASE_RUNTIME.md avec REFONDATION et le Directory. Respecter les huit LD et les ecarts semantiques observes. Distinguer installation, authentification et mission executee du harness.
+
+## Documents de conception et de transfert
+
+- `architecture/ASpace-V4-PRD-Fork-CubeFarm.md` : proposition de fondation du fork ; exigences Life Core, Factory, harness et portabilité. Les propositions restent distinctes des capacités exécutées.
+- `presentations/v3-v4/Analyse-transfert-V3-V4.md` : analyse sourcée du patrimoine V3 datée du 5 octobre 2026 ; ses états de PR et de runtime sont historiques.
+
+Lire ces deux documents avant une conception du fork ou un transfert d’actifs. Conserver leurs chemins de référence dans V4.

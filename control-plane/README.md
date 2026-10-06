@@ -65,3 +65,7 @@ façon privée après arrêt des sessions, puis réauthentification. Le bootstra
 fournit pas encore la sauvegarde externe automatique ou le fencing inter-machines.
 Un Codespace arrêté ne fait pas tourner les agents. Un seul Codespace de contrôle
 n'impose pas un seul processus ni un seul provider.
+
+## Codex et Supabase
+Codex est installe par setup.sh. Verifier : bash control-plane/codex.sh status. Connecter : bash control-plane/codex.sh login. Completer la connexion dans le navigateur sans copier de secret dans Git ou le chat. Apres connexion, choisir Codex pour les developpeurs/QA dans les reglages CubeFarm et verifier une mission bornee. Le CEO reste Claude dans cette version.
+Lire [Supabase dans V4](../architecture/SUPABASE_RUNTIME.md). La commande bash control-plane/codex.sh supabase-login configure le MCP Life OS de decouverte puis lance OAuth. Connexion distincte du connecteur ChatGPT ; credentials hors depot, reconnexion sur un nouveau compute.
