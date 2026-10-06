@@ -14,7 +14,7 @@
   "forwardPorts": [4417],
   "portsAttributes": {"4417": {"label": "CubeFarm · A'Space V4", "onAutoForward": "openBrowser"}},
   "postCreateCommand": "bash control-plane/setup.sh",
-  "postStartCommand": "bash control-plane/office.sh start",
+  "postStartCommand": "bash control-plane/ensure-claude.sh && bash control-plane/office.sh start",
   "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {"settings": {"terminal.integrated.defaultProfile.linux": "bash"}},
