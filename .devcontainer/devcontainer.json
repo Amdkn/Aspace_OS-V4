@@ -3,7 +3,8 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {"version": "3.12"},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {"version": "latest"}
   },
   "remoteUser": "node",
   "containerEnv": {
@@ -14,7 +15,7 @@
   "forwardPorts": [4417],
   "portsAttributes": {"4417": {"label": "CubeFarm · A'Space V4", "onAutoForward": "openBrowser"}},
   "postCreateCommand": "bash control-plane/setup.sh",
-  "postStartCommand": "bash control-plane/office.sh start",
+  "postStartCommand": "bash control-plane/ensure-claude.sh && bash control-plane/office.sh start",
   "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {"settings": {"terminal.integrated.defaultProfile.linux": "bash"}},
