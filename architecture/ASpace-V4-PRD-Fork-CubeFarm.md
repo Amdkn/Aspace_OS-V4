@@ -157,3 +157,9 @@ Premier parcours proposé : préparer un cycle Curie en protégeant récupérati
 - Diagnostics et inspections techniques antérieurs de cette conversation, distingués des nouveaux faits observés.
 
 Non vérifiés dans ce travail : configuration FreeLLMApi réelle, signification contractuelle de 1B tokens, contenu complet des variantes Codex Web de V3, références narratives Gemini et capacités courantes des frameworks cités. Ils constituent des besoins de qualification ciblée, pas des faits inventés ni des exclusions du périmètre.
+
+## 13. Découverte intégrée : Factory GitHub et workers isolés
+
+Voir `architecture/GITHUB_FACTORY_COMPOSITION.md` : source Leon van Zyl épinglée, analyse du template et raccordement aux Issues #2–#6. La Factory logicielle sert les huit LD depuis le contrôle V4 unique ; CubeFarm reste sa surface, Nardole son dispatch et Ryan sa fabrication. Les snapshots sont reconstruisibles, le contexte de mission est actualisé et les providers restent interchangeables.
+
+Le delta prioritaire est le passage Issue → build isolé → Agent Mesh → réparation → intégration → résultat Life accessible, avec continuité après interruption. Le template examiné ne remplace pas les contrats d’autorité et de mémoire. Upstash reste un backend candidat ; aucune Box ni connexion n’est déclarée active par cette intégration documentaire.

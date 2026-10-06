@@ -96,3 +96,5 @@ Lire ces deux documents avant une conception du fork ou un transfert d’actifs.
 ## Carte fractale commune
 
 Lire `architecture/LIFE_L2_FRACTAL_UNIVERSES.md` : trois Cores L0 au service de huit LD L1 et de leurs huit univers L2, chacun développé en huit domaines. Discussion de conception : https://github.com/Amdkn/Aspace_OS-V4/discussions/14 . Tech OS M0–M2 et 12WY M0–M3 sont des échelles locales à leur framework et leur instance ; leur décalage d’imbrication n’est pas une incohérence. Les intitulés détaillés proposés ne valent pas ratification.
+
+- `architecture/GITHUB_FACTORY_COMPOSITION.md` : source Factory GitHub épinglée, contrat de workers portables, écarts du template et raccordement fabrication/réparation aux Issues #2–#6 ; aucune activation de backend impliquée.
