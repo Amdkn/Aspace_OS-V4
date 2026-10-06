@@ -90,3 +90,5 @@ Avant tout brainstorming V4 de memoire, Life OS, Business OS ou persistance, lir
 - `presentations/v3-v4/Analyse-transfert-V3-V4.md` : analyse sourcée du patrimoine V3 datée du 5 octobre 2026 ; ses états de PR et de runtime sont historiques.
 
 Lire ces deux documents avant une conception du fork ou un transfert d’actifs. Conserver leurs chemins de référence dans V4.
+
+- `architecture/GITHUB_LIFE_SOCIAL_TOPOLOGY.md` : analyse Tech OS V3, requalification CubeFarm #1–#6, définition Projects/milestones et réseau Discussions transversal. Les définitions ne prouvent pas la création des Projects ou des milestones.
