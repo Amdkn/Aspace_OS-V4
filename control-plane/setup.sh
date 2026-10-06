@@ -15,6 +15,7 @@ python3 portable/instance.py hydrate --manifest control-plane/runtime.lock.json 
   npx playwright install --with-deps chrome
 )
 npm install --global @openai/codex@0.160.1
+bash control-plane/ensure-claude.sh
 python3 control-plane/directory.py workspace
 if ! python3 control-plane/directory.py refresh; then
   echo 'Directory refresh failed; retained previous inventory. Retry after gh authentication.' >&2
