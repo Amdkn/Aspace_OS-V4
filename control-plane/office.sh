@@ -25,7 +25,7 @@ case "${1:-start}" in
     if curl -fsS "http://127.0.0.1:$SWARM_PORT/api/state" >/dev/null 2>&1; then
       echo "Port $SWARM_PORT already serves an office not owned by this launcher."; exit 1
     fi
-    nohup node dist-server/index.js </dev/null >>"$SWARM_HOME/office.log" 2>&1 9>&- &
+    nohup setsid node dist-server/index.js </dev/null >>"$SWARM_HOME/office.log" 2>&1 9>&- &
     office_pid=$!
     printf '%s\n' "$office_pid" > "$pid_file"
     for attempt in {1..60}; do
