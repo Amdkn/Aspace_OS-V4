@@ -88,3 +88,10 @@ CC BY-NC 4.0, licences et provenance conservées dans ce dossier.
 Compagnons ; adaptateurs Codex, Jules et Hermes derrière un mandat commun.
 Le workflow Agent Mesh prend en charge les PR et conserve ses receipts par SHA.
 Les connexions absentes sont signalées BLOCKED, jamais promues en flotte active.
+
+## Codespace V4 unique — 6 octobre 2026
+
+[Control Plane V4](control-plane/README.md) : un seul Codespace rattaché à V4, CubeFarm intégré,
+inventaire GitHub paginé et workspace multi-dépôts. Le lock portable historique
+reste optionnel ; ses tickets V3 sont de la provenance. Les nouveaux travaux
+se font dans V4. Authentifications et première mission à vérifier sur la cible.

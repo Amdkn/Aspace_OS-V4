@@ -1,20 +1,23 @@
 {
-  "name": "A'Space portable instance",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "name": "A'Space V4 — Directory Control Plane",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.12"
-    }
+    "ghcr.io/devcontainers/features/python:1": {"version": "3.12"},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "remoteEnv": {
-    "ASPACE_INSTANCE_ROOT": "/workspaces/aspace"
+  "remoteUser": "node",
+  "containerEnv": {
+    "ASPACE_INSTANCE_ROOT": "/workspaces/aspace",
+    "SWARM_HOME": "/workspaces/aspace/state/cubefarm",
+    "SWARM_PORT": "4417"
   },
-  "postCreateCommand": "python3 portable/instance.py plan",
+  "forwardPorts": [4417],
+  "portsAttributes": {"4417": {"label": "CubeFarm · A'Space V4", "onAutoForward": "openBrowser"}},
+  "postCreateCommand": "bash control-plane/setup.sh",
+  "postStartCommand": "bash control-plane/office.sh start",
+  "waitFor": "postCreateCommand",
   "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      }
-    }
+    "vscode": {"settings": {"terminal.integrated.defaultProfile.linux": "bash"}},
+    "codespaces": {"openFiles": ["control-plane/README.md"]}
   }
 }

@@ -62,3 +62,10 @@ Codespaces est soumis à arrêt/inactivité : aucune promesse 24/7. Le même paq
 - Aucun Codespace créé/démarré, aucun compute facturé, aucune session native GitHub déclenchée par cette PR. Le transport réseau GitHub des dix clones reste à tester sur la cible authentifiée.
 
 Références : V3 ASPACE_WORKSPACE_REGISTRY.json ; ASPACE_GATEWAY_NATIVE_GITHUB_V0.md ; ASPACE_GITHUB_APP_CAPACITY_AND_PROMOTION_V1.md ; PR #569 ; https://docs.github.com/en/codespaces/about-codespaces/understanding-the-codespace-lifecycle
+
+## Codespace V4 unique — 6 octobre 2026
+
+[Control Plane V4](../control-plane/README.md) : un seul Codespace rattaché à V4, CubeFarm intégré,
+inventaire GitHub paginé et workspace multi-dépôts. Le lock portable historique
+reste optionnel ; ses tickets V3 sont de la provenance. Les nouveaux travaux
+se font dans V4. Authentifications et première mission à vérifier sur la cible.

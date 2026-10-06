@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "repositories": [{
+    "repository": "Amdkn/cubefarm",
+    "path": "apps/cubefarm",
+    "commit": "31e7ce01a1dcc1da2b576d1da36718c16b05b8ca"
+  }]
+}
