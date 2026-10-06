@@ -98,15 +98,15 @@ La preuve de portabilité sera la reprise d’une mission sur un compute neuf sa
 
 Les variantes Codex/ChatGPT Web mentionnées dans V3 doivent être inventoriées avec leurs sources avant toute décision de fork. Comparer d’abord extension d’interface, adapter de protocole et fork du moteur. Préserver les comportements utiles plutôt que dupliquer tous les composants par défaut.
 
-## 8. Composition M0 / M1 / M2
+## 8. Composition des capacités et coordonnées fractales
 
-Convention proposée pour ce PRD uniquement, à rapprocher des définitions exactes d’Automaton et du Constructeur Universel avant adoption. Ces modes sont par capacité et peuvent coexister ; ils ne réduisent pas l’ambition fonctionnelle à trois petits lots.
+Correction du 6 octobre 2026 : les transformations ci-dessous sont des opérations de composition, pas une définition des niveaux M. Tech OS M0–M2 et Curie/12WY M0–M3 se lisent dans leurs instances et imbrications L0/L1/L2 ; leur décalage n’est pas une incohérence. Voir `architecture/LIFE_L2_FRACTAL_UNIVERSES.md` et la Discussion #14. Chaque LD L1 porte son univers L2 ; Business OS n’est pas le seul L2.
 
 | Mode proposé | Transformation | Preuve attendue |
 |---|---|---|
-| M0 — fédérer | Rendre un acquis accessible avec son contexte et son identité | Un usage réel, des entrées/sorties connues et une provenance |
-| M1 — composer | Connecter plusieurs capacités sous une mission et une continuité communes | Relais sans ressaisie, interruption/reprise, résultat exploitable |
-| M2 — faire évoluer | Modifier une composition à partir de l’observation et d’expériences | Comparaison avec référence, amélioration mesurée, rollback possible |
+| Fédérer | Rendre un acquis accessible avec son contexte et son identité | Un usage réel, des entrées/sorties connues et une provenance |
+| Composer | Connecter plusieurs capacités sous une mission et une continuité communes | Relais sans ressaisie, interruption/reprise, résultat exploitable |
+| Faire évoluer | Modifier une composition à partir de l’observation et d’expériences | Comparaison avec référence, amélioration mesurée, rollback possible |
 
 BMAD, gstack, CEO Bench, Automaton, OpenClaw, Hermes, Prime Agent et DeepSeek Harness restent des candidats présents dans le périmètre historique. Leurs fonctions exactes et versions doivent être qualifiées avant attribution. Aucun nom de framework n’est assimilé à une capacité prouvée. Bill apporte les sources ; Clara compare contrats et redondances ; Ryan démontre ; Yaz mesure ; Graham conserve les alternatives écartées et leurs raisons.
 
