@@ -1,0 +1,56 @@
+body:
+  - type: markdown
+    attributes:
+      value: "Contribuer à A’Space : exploration libre, sources et relations explicites. Une discussion ne déclenche pas automatiquement une mission."
+  - type: dropdown
+    id: cores
+    attributes:
+      label: Cores concernés
+      multiple: true
+      options:
+        - Kernel / Doctor 13
+        - Life / Doctor 11
+        - Buzz / Doctor 12
+  - type: dropdown
+    id: domaines
+    attributes:
+      label: Domaines bénéficiaires
+      multiple: true
+      options:
+        - LD01 Carrière et Business
+        - LD02 Finance
+        - LD03 Santé
+        - LD04 Cognition
+        - LD05 Social
+        - LD06 Famille
+        - LD07 Créativité
+        - LD08 Impact
+  - type: dropdown
+    id: frameworks
+    attributes:
+      label: Frameworks mobilisés
+      multiple: true
+      options:
+        - Ikigai
+        - Wheel
+        - Curie / 12WY
+        - PARA
+        - GTD
+        - DEAL
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Contribution et sources
+      description: "Intention, observation, hypothèse, alternative ou résultat ; distinguer ces statuts."
+    validations:
+      required: true
+  - type: textarea
+    id: raci
+    attributes:
+      label: RACI et collaborations
+      description: "R réalise, A répond de la décision, C contribue, I suit. Sans objet permis pour une exploration sans décision ; aucun provider imposé."
+  - type: textarea
+    id: return_to
+    attributes:
+      label: Liens et retour attendu
+      description: "Discussion, projet, mission, connaissance ou expérience à enrichir ; aucune Issue obligatoire."
