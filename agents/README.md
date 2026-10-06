@@ -52,3 +52,11 @@ pas une session LLM réelle. Les artifacts de disponibilité donnent les blocker
 Run workflow avec PR explicite, même agent, et `recover_jules_session=sessions/id`.
 Le contrôleur vérifie que le prompt original contient le même mission_id et SHA
 avant de réattacher et suivre la session. Il ne crée pas une nouvelle session.
+
+## Fabriquer depuis une Issue
+
+Le workflow `Aspace Issue Factory` traite une Issue ouverte portant `factory:ready`, sur ajout du label par un acteur disposant de write, lancement manuel ou réconciliation à :11/:41. Il utilise `JULES_API_KEY` et la source GitHub autorisée dans Jules pour créer une session de fabrication avec PR automatique. Le contrôleur reste dans Actions ; le code est exécuté par Jules. Aucun nouveau compute local.
+
+Un commentaire contrôleur conserve mission_id, session, état, SHA et return_to. Les runs suivants suivent la même session. Un POST ambigu devient UNKNOWN et nécessite l’entrée manuelle `recover_session=sessions/id`, avec le numéro d’Issue ; aucune nouvelle session n’est créée à l’aveugle. Connexion absente : BLOCKED dans l’Issue et workflow en échec. File vide : aucun appel modèle. Au plus une nouvelle session par run ; la concurrence globale des sessions reste à gouverner dans #2/#5.
+
+La PR produite entre dans les revues Agent Mesh existantes. Ce chemin ne fusionne pas automatiquement et ne ferme pas l’Issue parente ; réparation des findings et preuve de livraison restent à raccorder. Codex/Hermes sont des adapters de revue ici, pas des adapters de build déclarés fonctionnels. Tests : `python -m unittest discover -s tests -p test_issue_factory.py -v`.
