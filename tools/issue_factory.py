@@ -15,7 +15,11 @@ MARKER = '<!-- aspace-issue-factory:v1 -->'
 OUT = Path(os.environ.get('FACTORY_OUT', 'factory-out'))
 
 
+_LAST = {}
+
+
 def request(url, token, data=None, method=None, google=False):
+        _LAST['url'] = url.split('?')[0]
     headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
     headers['X-Goog-Api-Key' if google else 'Authorization'] = token if google else 'Bearer ' + token
     req = Request(url, headers=headers, data=None if data is None else json.dumps(data).encode(),
@@ -235,4 +239,6 @@ if __name__ == '__main__':
         OUT.mkdir(parents=True, exist_ok=True)
         (OUT / 'error.json').write_text(json.dumps({'error_type': type(error).__name__}))
         # Never log external response bodies or credentials.
+                print('DIAG_URL=' + _LAST.get('url', 'unknown'))
+                print('DIAG_STATUS=' + str(getattr(error, 'code', 'unknown')))
         raise SystemExit(type(error).__name__)
