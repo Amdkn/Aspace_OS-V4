@@ -107,8 +107,23 @@ def allowed_actor(actor):
 
 
 def eligible(issue):
-    return issue.get('state') == 'open' and 'pull_request' not in issue and any(
-        label['name'] == 'factory:ready' for label in issue.get('labels', []))
+    if issue.get('state') != 'open' or 'pull_request' in issue:
+        return False
+    if not any(label['name'] == 'factory:ready' for label in issue.get('labels', [])):
+        return False
+
+    body = issue.get('body') or ''
+    deps_match = re.search(r'(?i)d[ée]pendances?(?:\s*fonctionnelles?)?\s*:\s*([#0-9/,\s]+)', body)
+    if deps_match:
+        deps = re.findall(r'#([0-9]+)', deps_match.group(1))
+        for dep in deps:
+            try:
+                dep_issue = gh(f'issues/{dep}')
+                if dep_issue.get('state') == 'open':
+                    return False
+            except Exception:
+                pass
+    return True
 
 
 def prompt_for(issue, record, root):
@@ -129,8 +144,15 @@ def process(issue, root, recovery=''):
     repo = os.environ['GITHUB_REPOSITORY']
     ident = identity(repo, issue['number'])
     prior, comment_id = trusted_receipt(pages(f"issues/{issue['number']}/comments"), ident)
+
+    body = issue.get('body') or ''
+    doctor_match = re.search(r'(?i)A\s*:\s*(Doctor[0-9]+)', body)
+    holon_match = re.search(r'(?i)R\s*:\s*([A-Za-z]+)', body)
+    doctor = doctor_match.group(1).lower() if doctor_match else 'doctor-13'
+    holon = holon_match.group(1).lower() if holon_match else 'ryan'
+
     record = dict(prior or {'mission_id': ident, 'issue': issue['number'], 'repo': repo,
-        'holon': 'ryan', 'doctor': 'doctor-13', 'provider': 'jules', 'return_to': issue['html_url']})
+        'holon': holon, 'doctor': doctor, 'provider': 'jules', 'return_to': issue['html_url']})
     def persist(state, reason, **fields):
         nonlocal prior, comment_id, record
         record.update(state=state, reason=reason, **fields)
