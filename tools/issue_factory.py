@@ -30,8 +30,8 @@ def request(url, token, data=None, method=None, google=False):
 
 
 def gh(path, data=None, method=None):
-    return request('https://api.github.com/repos/' + os.environ['GITHUB_REPOSITORY'] + '/' + path,
-                   os.environ['GH_TOKEN'], data, method)
+    url = 'https://api.github.com/repos/' + os.environ['GITHUB_REPOSITORY'] + '/' + path
+    return request(url.rstrip('/'), os.environ['GH_TOKEN'], data, method)
 
 
 def jules(path, data=None):
