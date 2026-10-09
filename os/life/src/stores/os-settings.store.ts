@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-/** 
+/**
  * OS Settings Store — Global preferences & UI state (V0.3.1)
  * Persisted in localStorage as 'aspace-os-settings-v1'
  */
@@ -107,8 +107,8 @@ export const useOsSettingsStore = create<OsSettingsState>()(
       setDockPosition: (dockPosition) => set({ dockPosition }),
       setLanguage: (language) => set({ language }),
       toggleAnimations: () => set((state) => ({ animations: !state.animations })),
-      updateProfile: (partial) => set((state) => ({ 
-        profile: { ...state.profile, ...partial } 
+      updateProfile: (partial) => set((state) => ({
+        profile: { ...state.profile, ...partial }
       })),
       updateDomainConfig: (domain, partial) => set((state) => ({
         domainConfigs: state.domainConfigs.map(c => c.domain === domain ? { ...c, ...partial } : c)

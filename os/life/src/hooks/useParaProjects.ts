@@ -13,12 +13,12 @@ export function useParaProjects() {
   const fetchItems = useCallback(async () => {
     setIsLoading(true);
     try {
-      const domains: LDId[] = activeLdFilter === 'all' 
+      const domains: LDId[] = activeLdFilter === 'all'
         ? ['ld01', 'ld02', 'ld03', 'ld04', 'ld05', 'ld06', 'ld07', 'ld08']
         : [activeLdFilter as LDId];
 
       const storeName = activeTab as LDStore;
-      
+
       const results = await Promise.all(
         domains.map(ld => readFromLD<ParaItem>(ld, storeName))
       );

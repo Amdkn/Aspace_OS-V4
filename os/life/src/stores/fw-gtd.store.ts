@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { LDId, writeToLD, readFromLD } from '../lib/ld-router';
 
-/** 
+/**
  * GTD Framework Store — V0.7.1 Rutherford
  * Features: Clarify Wizard, ActionLogs, Reasoning
  * Persistence: ld05/items (IndexedDB)
@@ -40,7 +40,7 @@ interface GtdState {
   items: GTDItem[];
   logs: ActionLog[];
   isLoaded: boolean;
-  
+
   // Actions
   setActiveTab: (tab: GtdState['activeTab']) => void;
   setActiveContext: (c: string | 'all') => void;
@@ -151,7 +151,7 @@ export const useGtdStore = create<GtdState>((set, get) => ({
 
   processItem: async (id, patch, reasoning) => {
     let updatedItem: GTDItem | undefined;
-    
+
     set(s => {
       const newItems = s.items.map(i => {
         if (i.id === id) {
@@ -160,7 +160,7 @@ export const useGtdStore = create<GtdState>((set, get) => ({
         }
         return i;
       });
-      return { 
+      return {
         items: newItems,
         logs: [{ id: crypto.randomUUID(), itemId: id, action: 'clarified', reasoning, timestamp: Date.now() }, ...s.logs]
       };

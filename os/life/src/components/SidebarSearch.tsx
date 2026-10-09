@@ -23,4 +23,3 @@ export function SidebarSearch({ placeholder = 'Search...', value, onChange }: Si
     </div>
   );
 }
-

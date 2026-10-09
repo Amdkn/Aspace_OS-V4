@@ -4,5 +4,3 @@ command = "openwiki"
 args = ["mcp", "--host", "codex"]
 # OPENWIKI:MCP:END
 
-[mcp_servers.supabase_life]
-url = "https://mcp.supabase.com/mcp?project_ref=hjweyhpmrxqsxfbibsnc&read_only=true"

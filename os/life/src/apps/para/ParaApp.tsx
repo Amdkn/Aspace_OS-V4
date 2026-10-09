@@ -14,8 +14,8 @@ import { DomainCard } from './components/DomainCard';
 import { ResourceCard } from './components/ResourceCard';
 import { ItemModal } from './components/ItemModal';
 import { useDealStore } from '../../stores/fw-deal.store';
-import { 
-  Plus, LayoutDashboard, Box, 
+import {
+  Plus, LayoutDashboard, Box,
   Layers, Briefcase, Archive, Anchor, Zap, Wrench
 } from 'lucide-react';
 
@@ -88,7 +88,7 @@ export default function ParaApp() {
             <HeaderFilterBar items={domainFilters} activeFilter={activeLdFilter} onFilterChange={setActiveLdFilter as any} accentColor="emerald" scrollable />
           </div>
           {!['areas', 'archives', 'overview'].includes(activeTab) && (
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="flex items-center gap-2 px-5 py-2.5 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-[var(--theme-accent)] text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-emerald-500/20 transition-all active:scale-95 shadow-lg"
               style={{ color: 'var(--theme-accent)', backgroundColor: 'rgba(var(--theme-accent-rgb), 0.1)', borderColor: 'rgba(var(--theme-accent-rgb), 0.2)' }}
@@ -107,12 +107,12 @@ export default function ParaApp() {
                 const domainLabel = (LD_TO_DOMAIN[domain.id as keyof typeof LD_TO_DOMAIN] || domain.label.toLowerCase()) as typeof LD_TO_DOMAIN[keyof typeof LD_TO_DOMAIN];
                 const dProjects = areasFilteredProjects.filter(p => p.domain === domainLabel);
                 return (
-                  <DomainCard 
-                    key={domain.id} 
-                    domain={domainLabel} 
-                    activeProjects={dProjects} 
-                    selectedPillar={activePillarFilter} 
-                    onPillarSelect={setActivePillarFilter as any} 
+                  <DomainCard
+                    key={domain.id}
+                    domain={domainLabel}
+                    activeProjects={dProjects}
+                    selectedPillar={activePillarFilter}
+                    onPillarSelect={setActivePillarFilter as any}
                   />
                 );
               })}
@@ -128,11 +128,11 @@ export default function ParaApp() {
                   <div key={project.id} className="relative group">
                     <ProjectCard project={project} onClick={setSelectedProject} />
                     {activeTab === 'archives' && (
-                      <button 
-                        onClick={(e) => { 
-                          e.stopPropagation(); 
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
                           absorbProjectAsFriction(project.id, project.title);
-                          openApp('deal', 'DEAL'); 
+                          openApp('deal', 'DEAL');
                         }}
                         className="absolute bottom-4 right-4 p-2 rounded-xl bg-blue-500/20 border border-blue-500/30 text-blue-400 text-[8px] font-black uppercase opacity-0 group-hover:opacity-100 transition-all flex items-center gap-1.5"
                       >
@@ -156,8 +156,8 @@ export default function ParaApp() {
       <ProjectCommandCard project={selectedProject} onClose={() => setSelectedProject(null)} />
 
       {isModalOpen && (
-        <ItemModal 
-          item={null} 
+        <ItemModal
+          item={null}
           type={activeTab === 'resources' ? 'Resource' : 'Project'}
           onClose={() => setIsModalOpen(false)}
           onSave={(ldId, data) => {

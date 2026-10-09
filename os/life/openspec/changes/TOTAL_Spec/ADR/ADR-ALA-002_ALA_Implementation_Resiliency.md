@@ -48,4 +48,3 @@ En cas d'échec de l'ingestion :
 ## Vérification
 - Test d'un pivot de recherche simulé après une erreur `Command Not Found` forcée.
 - Existence des partitions de skills dans le registre.
-

@@ -4,10 +4,15 @@
   "capabilities": [
     {
       "name": "Agent OS",
-      "status": "to_qualify_from_sources",
+      "status": "abandonment_proposed",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "abandonment_proposal": {
+        "decision_council": "S2 Council",
+        "validation": "S1 Validation Required",
+        "motivation": "Proposed for abandonment by S2. Agent OS is not aligned with V4 minimal viable architecture."
+      }
     },
     {
       "name": "Life OS",
@@ -18,122 +23,207 @@
     },
     {
       "name": "Business OS",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/business_os._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Mobile OS",
-      "status": "to_qualify_from_sources",
+      "status": "abandonment_proposed",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "abandonment_proposal": {
+        "decision_council": "S2 Council",
+        "validation": "S1 Validation Required",
+        "motivation": "Proposed for abandonment by S2. Mobile OS is not aligned with V4 minimal viable architecture."
+      }
     },
     {
       "name": "The OMK Office JaaS — 75 services déclarés",
-      "status": "to_qualify_from_sources",
+      "status": "abandonment_proposed",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "abandonment_proposal": {
+        "decision_council": "S2 Council",
+        "validation": "S1 Validation Required",
+        "motivation": "Proposed for abandonment by S2. The OMK Office JaaS — 75 services déclarés is not aligned with V4 minimal viable architecture."
+      }
     },
     {
       "name": "Cube Farm",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/cube_farm._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Starnet",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/starnet._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "WorkAdventure",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/workadventure._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Gateway OpenClaw",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/gateway_openclaw._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Hermes surfaces et harness",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/hermes_surfaces_et_harness._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Prime Agent",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/prime_agent._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "DeepSeek Harness",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/deepseek_harness._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Automaton M0/M1/M2",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/automaton_m0_m1_m2._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Constructeur Universel",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/constructeur_universel._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "BMAD",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/bmad._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "gstack",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/gstack._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "CEO Bench",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/ceo_bench._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "OpenShell",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/openshell._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Octop",
-      "status": "to_qualify_from_sources",
+      "status": "qualification_planned",
       "source_revision": null,
       "runtime_evidence": null,
-      "destination_contract": null
+      "destination_contract": null,
+      "qualification_plan": {
+        "runtime_evidence_target": "evidence/octop._qualification.json",
+        "owner": "Ryan / Doctor 13",
+        "deadline": "2026-11-01"
+      }
     },
     {
       "name": "Graham memory continuity",

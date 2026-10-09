@@ -68,9 +68,15 @@ class Journal:
     def graph(self, as_known_at=None):
         graph = EvidenceGraph()
         cutoff = timestamp(as_known_at) if as_known_at else None
-        for kind, payload, digest in self.db.execute('SELECT kind,payload,digest FROM event ORDER BY seq'):
-            if hashlib.sha256(payload.encode()).hexdigest() != digest:
-                raise ValueError('Journal integrity failure')
+        expected_prev = ""
+        expected_seq = 1
+        for seq, kind, payload, digest in self.db.execute('SELECT seq,kind,payload,digest FROM event ORDER BY seq'):
+            if seq != expected_seq:
+                raise ValueError('Journal integrity failure: Sequence gap detected')
+            if hashlib.sha256((expected_prev + payload).encode()).hexdigest() != digest:
+                raise ValueError('Journal integrity failure: Digest mismatch')
+            expected_prev = digest
+            expected_seq += 1
             item = json.loads(payload)
             if cutoff and item['recorded_at'] > cutoff:
                 continue
@@ -96,9 +102,11 @@ class Journal:
         if kind == 'claim' and not item.get('temporal_state'):
             raise ValueError('Explicit temporal classification required')
         encoded = canonical(item)
-        digest = hashlib.sha256(encoded.encode()).hexdigest()
         try:
             self.db.execute('BEGIN IMMEDIATE')
+            prev = self.db.execute('SELECT digest FROM event ORDER BY seq DESC LIMIT 1').fetchone()
+            prev_hash = prev[0] if prev else ""
+            digest = hashlib.sha256((prev_hash + encoded).encode()).hexdigest()
             found = self.db.execute('SELECT payload FROM event WHERE kind=? AND identity=?', (kind, ident)).fetchone()
             if found:
                 if found[0] != encoded:

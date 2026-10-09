@@ -26,14 +26,14 @@ export function ProjectCommandCard({ project, onClose }: Props) {
 
   if (!project) return null;
 
-  const attachedRes = allResources.filter(r => 
+  const attachedRes = allResources.filter(r =>
     r.projectId === project.id || (project.linkedResources || []).includes(r.id)
   );
 
   const handleUnlink = async (resId: string) => {
     const isDirectChild = allResources.find(r => r.id === resId)?.projectId === project.id;
     if (isDirectChild) return; // Cannot unlink direct child in this version
-    
+
     const freshLinked = (project.linkedResources || []).filter(id => id !== resId);
     await updateProject(project.id, { linkedResources: freshLinked });
   };
@@ -45,8 +45,8 @@ export function ProjectCommandCard({ project, onClose }: Props) {
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-4">
             <span className="px-2 py-1 rounded bg-white/5 text-[9px] font-black uppercase text-[var(--theme-text)]/40 tracking-widest">{project.domain}</span>
-            <select 
-              value={project.status} 
+            <select
+              value={project.status}
               onChange={(e) => updateProject(project.id, { status: e.target.value as any })}
               className="px-2 py-1 rounded bg-transparent border border-white/10 text-[9px] font-black uppercase tracking-widest outline-none text-[var(--theme-text)]/60"
             >
@@ -55,7 +55,7 @@ export function ProjectCommandCard({ project, onClose }: Props) {
               <option value="completed" className="bg-[#0a0f0d]">Completed</option>
             </select>
           </div>
-          
+
           <textarea
             value={project.title}
             onChange={(e) => updateProject(project.id, { title: e.target.value })}
@@ -83,14 +83,14 @@ export function ProjectCommandCard({ project, onClose }: Props) {
         </div>
 
         <footer className="pt-8 border-t border-white/5 flex gap-2">
-          <button 
-            onClick={() => { archiveProject(project.id); onClose(); }} 
+          <button
+            onClick={() => { archiveProject(project.id); onClose(); }}
             className="flex-1 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-[10px] font-bold uppercase tracking-widest text-[var(--theme-text)]/40 transition-all flex items-center justify-center gap-2 border border-white/5"
           >
             <Archive className="w-3.5 h-3.5" /> Archive
           </button>
-          <button 
-            onClick={() => { if(window.confirm('Erase this project from existence?')) { deleteProject(project.id); onClose(); } }} 
+          <button
+            onClick={() => { if(window.confirm('Erase this project from existence?')) { deleteProject(project.id); onClose(); } }}
             className="px-4 rounded-xl border border-rose-500/20 text-rose-500 hover:bg-rose-500/10 transition-all"
           >
             <Trash2 className="w-4 h-4" />
@@ -123,14 +123,14 @@ export function ProjectCommandCard({ project, onClose }: Props) {
                 <Box className="w-3.5 h-3.5" /> Resources (Geordi)
                </h4>
                <div className="flex gap-2">
-                 <button 
-                   onClick={() => setIsLinkerOpen(!isLinkerOpen)} 
+                 <button
+                   onClick={() => setIsLinkerOpen(!isLinkerOpen)}
                    className="px-2.5 py-1.5 bg-white/5 text-[var(--theme-text)]/60 border border-white/10 rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-white/10 transition-all"
                  >
                    Link
                  </button>
-                 <button 
-                   onClick={() => setIsForgeOpen(true)} 
+                 <button
+                   onClick={() => setIsForgeOpen(true)}
                    className="px-3 py-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-amber-500/20 transition-all flex items-center gap-1"
                  >
                    <Box className="w-3 h-3" /> Forge

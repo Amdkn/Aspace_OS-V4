@@ -16,10 +16,10 @@ export function useSyncLD() {
           const items = await readFromLD<ParaItem>(ld, 'projects');
           return items.map(i => paraItemToProject(i, ld));
         });
-        
+
         const results = await Promise.all(allProjectsPromises);
         const flatProjects = results.flat();
-        
+
         if (flatProjects.length > 0) {
           initializeProjects(flatProjects);
           console.info("[useSyncLD] PARA Projects Hydrated:", flatProjects.length);
@@ -30,7 +30,7 @@ export function useSyncLD() {
         console.error("Failed to sync LD stores", err);
       }
     }
-    
+
     loadAll();
   }, [initializeProjects]);
 }

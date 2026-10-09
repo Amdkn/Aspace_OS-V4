@@ -34,4 +34,3 @@ export function Sidebar({ activeTab, onNavigate }: SidebarProps) {
     </div>
   );
 }
-

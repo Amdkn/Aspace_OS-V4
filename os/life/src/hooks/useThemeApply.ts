@@ -10,11 +10,11 @@ export function useThemeApply() {
     if (!tokens) return;
 
     const root = document.documentElement;
-    
+
     // Apply all tokens as CSS variables
     Object.entries(tokens).forEach(([key, value]) => {
       root.style.setProperty(key, value);
-      
+
       // If it's the accent color, also provide an RGB version for opacity handling
       if (key === '--theme-accent') {
         const rgb = hexToRgb(value);

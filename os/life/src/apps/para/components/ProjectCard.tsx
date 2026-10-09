@@ -11,7 +11,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
   const isArchived = project.status === 'archived';
 
   return (
-    <div 
+    <div
       onClick={() => onClick(project)}
       className={`group p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[var(--theme-accent)]/30 transition-all cursor-pointer relative overflow-hidden flex flex-col gap-6 ${isArchived ? 'opacity-60 grayscale-[0.5]' : ''}`}
     >
@@ -43,9 +43,9 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
               <span className="text-[9px] font-black font-mono text-[var(--theme-accent)]/80">{project.progress}%</span>
             </div>
             <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-[var(--theme-accent)]/40 rounded-full transition-all duration-1000" 
-                style={{ width: `${project.progress}%` }} 
+              <div
+                className="h-full bg-[var(--theme-accent)]/40 rounded-full transition-all duration-1000"
+                style={{ width: `${project.progress}%` }}
               />
             </div>
           </div>

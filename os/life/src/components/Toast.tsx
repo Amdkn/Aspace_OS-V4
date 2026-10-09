@@ -74,4 +74,3 @@ const ToastItem: React.FC<ToastItemProps> = ({ toast, onDismiss }) => {
     </div>
   );
 };
-

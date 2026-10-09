@@ -47,10 +47,10 @@ export function FrameworkBridge({ target, projectId }: Props) {
           ))}
         </div>
         <div className="flex gap-2">
-          <input 
+          <input
             value={quickAdd} onChange={e => setQuickAdd(e.target.value)}
             onKeyDown={e => { if(e.key === 'Enter' && quickAdd.trim()) { addGtdItem(quickAdd, { projectId }); setQuickAdd(''); }}}
-            placeholder="Quick add action..." 
+            placeholder="Quick add action..."
             className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-[var(--theme-text)] outline-none focus:border-[var(--theme-accent)]/30"
           />
           <button onClick={() => { if(quickAdd.trim()) { addGtdItem(quickAdd, { projectId }); setQuickAdd(''); }}} className="p-2 rounded-xl bg-[var(--theme-accent)]/10 border border-[var(--theme-accent)]/20 text-[var(--theme-accent)] hover:bg-[var(--theme-accent)]/20">

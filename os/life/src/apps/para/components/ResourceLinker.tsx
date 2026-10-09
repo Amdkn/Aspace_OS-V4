@@ -8,10 +8,10 @@ export function ResourceLinker({ project, onClose }: { project: Project, onClose
   const [search, setSearch] = useState('');
   const allResources = useParaStore(s => s.resources);
   const updateProject = useParaStore(s => s.updateProject);
-  
+
   // Exclure les ressources déjà liées par projectId ou incluses dans le tableau
-  const available = allResources.filter(r => 
-    r.projectId !== project.id && 
+  const available = allResources.filter(r =>
+    r.projectId !== project.id &&
     !(project.linkedResources || []).includes(r.id) &&
     r.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -26,9 +26,9 @@ export function ResourceLinker({ project, onClose }: { project: Project, onClose
     <div className="mt-4 p-4 rounded-2xl bg-black/40 border border-white/5 animate-in slide-in-from-top-2">
       <div className="relative mb-3">
         <Search className="absolute left-3 top-2.5 w-3.5 h-3.5 text-[var(--theme-text)]/30" />
-        <input 
+        <input
           autoFocus value={search} onChange={e => setSearch(e.target.value)}
-          placeholder="Search global repository..." 
+          placeholder="Search global repository..."
           className="w-full bg-white/5 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-[var(--theme-text)] focus:border-[var(--theme-accent)]/50 outline-none"
         />
       </div>
