@@ -159,6 +159,9 @@ class Journal:
         if destination.exists():
             raise FileExistsError(destination)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        with sqlite3.connect(destination) as target:
+        target = sqlite3.connect(destination)
+        try:
             self.db.backup(target)
+        finally:
+            target.close()
 
