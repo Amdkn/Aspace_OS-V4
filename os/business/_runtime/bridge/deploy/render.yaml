@@ -1,0 +1,21 @@
+# Repartition du Meta Triptyque Harness (decidee par le capitaine, 2026-08-24) :
+#
+#   Ori       -> Surface d'audit et d'interaction (humain-au-clavier)
+#   Omnigent  -> Runtime, priorite au systeme d'evenements, non-interactif
+#   OpenViking -> Memoire
+#
+# Ori n'a pas de mode serveur, et ce n'est pas un manque : ce n'est pas son
+# role. Verifie le 2026-08-24 contre la doc officielle OpenRouter
+# (openrouter.ai/docs/guides/ori/harness) : "Each command starts the real
+# agent CLI on your machine." `ori claude`, `ori codex`, `ori hermes`, etc.
+# lancent la vraie CLI en premier plan, authentification OAuth PKCE par
+# navigateur — une surface d'audit et d'interaction humaine, exactement ce
+# qu'on attend d'elle. Le runtime non-interactif, avec priorite au systeme
+# d'evenements, c'est Omnigent (voir deploy/omnigent/ une fois construit) —
+# pas une limitation d'Ori a contourner.
+#
+# Ce fichier reste vide de service Render : Ori ne se deploie pas ici par
+# nature, pas par defaut technique a corriger. Le blueprint Render du
+# runtime ira sous deploy/omnigent/ quand ce chantier commencera.
+
+services: []

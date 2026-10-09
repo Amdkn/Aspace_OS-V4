@@ -1,0 +1,22 @@
+[Unit]
+Description=Prime-Agent — surveillance 01_RH_Meta_Gouvernance, recursivite sous Ori
+After=network-online.target ori.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=coach-os
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/etc/coach-os/prime-agent.env
+# A CONFIRMER : la sous-commande de lancement persistant n'est pas verifiee
+# dans cette session — l'URL d'install l'est (Prime Intellect, 2026-08-24),
+# pas le mode d'execution en service. Verifier `prime-agent --help` apres
+# 03-install-prime-agent.sh.
+ExecStart=/usr/local/bin/prime-agent run
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
