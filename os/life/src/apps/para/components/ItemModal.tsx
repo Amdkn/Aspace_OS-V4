@@ -1,7 +1,7 @@
 /** PARA Item Modal — Shared Editor (P4.4) */
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import { ParaItem } from '../../../stores/ld01.store';
+import { ParaItem } from '../../../types/domains';
 import { LDId } from '../../../lib/ld-router';
 
 interface ItemModalProps {

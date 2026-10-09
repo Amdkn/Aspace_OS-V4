@@ -14,8 +14,8 @@ export interface AppManifest {
   a2Ship?: string;
 }
 
-// 🧿 APEX ZENITH — CORES: Statically import critical apps to bypass discovery race conditions
-import AgentPortalApp from '../apps/agent-portal/AgentPortalApp';
+// Phase 1 reduction: statically import the core app (para) to bypass discovery race conditions
+import ParaApp from '../apps/para/ParaApp';
 
 /* ═══ Registry ═══ */
 
@@ -36,14 +36,15 @@ const getRegistry = (): Map<string, AppManifest> => {
 
 const registry = getRegistry();
 
-// 🧿 APEX ZENITH — REGISTRATION: Force-register core apps statically
-registry.set('agent-portal', {
-  id: 'agent-portal',
-  name: 'Agent Portal',
-  icon: '🎛️',
-  version: '0.9.0',
-  description: 'The Nexus Convergence — Sovereign Control Center',
-  component: AgentPortalApp,
+// Phase 1 reduction: force-register the core app (para) statically in dockSlot 1
+// (replaces the removed agent-portal static registration)
+registry.set('para', {
+  id: 'para',
+  name: 'PARA Business',
+  icon: 'FolderKanban',
+  version: '1.0.0',
+  description: 'Enterprise-grade PARA management for LD01 domain.',
+  component: ParaApp,
   dockSlot: 1
 });
 

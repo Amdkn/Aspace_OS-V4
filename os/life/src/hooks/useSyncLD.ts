@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParaStore, Project } from '../stores/fw-para.store';
 import { readFromLD, LDId } from '../lib/ld-router';
 import { paraItemToProject } from '../utils/paraAdapter';
-import { ParaItem } from '../stores/ld01.store';
+import { ParaItem } from '../types/domains';
 
 const DOMAINS: LDId[] = ['ld01', 'ld02', 'ld03', 'ld04', 'ld05', 'ld06', 'ld07', 'ld08'];
 

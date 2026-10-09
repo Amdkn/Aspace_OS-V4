@@ -1,5 +1,5 @@
 import { Project, LifeWheelDomain } from '../stores/fw-para.store';
-import { ParaItem } from '../stores/ld01.store';
+import { ParaItem } from '../types/domains';
 import { LDId } from '../lib/ld-router';
 
 // Helper pour mapper ld01 vers le domaine "business" as LifeWheelDomain

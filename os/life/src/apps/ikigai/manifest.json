@@ -1,8 +1,0 @@
-{
-  "id": "ikigai",
-  "name": "Ikigai Protocol",
-  "icon": "Compass",
-  "version": "1.0.0",
-  "entry": "./IkigaiApp.tsx",
-  "description": "Ikigai framework for LD07 domain (Creativity)."
-}

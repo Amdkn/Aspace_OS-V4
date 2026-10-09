@@ -1,6 +1,6 @@
 /** A'Space OS V1.0 — Sovereign Entry (Landing Page) */
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useAuth } from '../../hooks/useAuth';
 
 export const LandingPage: React.FC = () => {

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { ParaItem } from './ld01.store';
+import type { ParaItem } from '../types/domains';
 import { writeToLD, readFromLD } from '../lib/ld-router';
 
 /**

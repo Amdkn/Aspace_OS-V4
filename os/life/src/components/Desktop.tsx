@@ -8,15 +8,9 @@ import { ToastContainer } from './Toast';
 import { AppDrawer } from './AppDrawer';
 import { ViewportGuard } from './ViewportGuard';
 import { ErrorBoundary } from './ErrorBoundary';
-import { AssistantOverlay } from './AssistantOverlay/AssistantOverlay';
 import { useShellStore } from '../stores/shell.store';
-import { useOsSettingsStore } from '../stores/os-settings.store';
 import { getApp, getAllApps } from '../lib/app-registry';
-import { useWallpaper } from '../hooks/useWallpaper';
 import { useSyncLD } from '../hooks/useSyncLD';
-
-/* ═══ ABSOLUTE ZENITH — BYPASS ═══ */
-import AgentPortalApp from '../apps/agent-portal/AgentPortalApp';
 
 /* 
    REGISTRY GUARD (Apex Nexus Line)
@@ -28,15 +22,9 @@ export function Desktop() {
   const restoreLayout = useShellStore(s => s.restoreLayout);
   const saveLayout = useShellStore(s => s.saveLayout);
   const openApp = useShellStore(s => s.openApp);
-  const activeWallpaperId = useOsSettingsStore(s => s.activeWallpaperId);
-  const wallpaper = useWallpaper();
 
   /* Global Data Synchronization (PARA x 8 Life Domains) */
   useSyncLD();
-
-  // Debugging log for RCA
-  console.log("[Desktop] Current Wallpaper ID:", activeWallpaperId);
-  console.log("[Desktop] Resolved Wallpaper URL:", wallpaper);
 
   /* Restore layout on boot & Registry Diagnostic */
   useEffect(() => {
@@ -110,9 +98,7 @@ export function Desktop() {
         Fixed to cover entire viewport, independent of UI flow.
       */}
       <div 
-        key={activeWallpaperId}
         className="fixed inset-0 z-[-10] bg-cover bg-center bg-no-repeat transition-all duration-700 ease-in-out" 
-        style={{ backgroundImage: `url(${wallpaper})` }}
       />
 
       {/* 
@@ -154,18 +140,7 @@ export function Desktop() {
                 }
               }
 
-              // 🧿 ABSOLUTE ZENITH V2 — DOUBLE-BLIND BYPASS OVERRIDE
-              // We check both Window ID and Window Title. 
-              // If either matches 'Agent Portal', we FORCIBLY inject the direct import as a failsafe.
-              const cleanId = win.id.toLowerCase().replace(/-/g, '');
-              const cleanTitle = win.title.toLowerCase().replace(/-/g, '').replace(/\s/g, '');
-              const isAgentPortal = cleanId.includes('agentportal') || cleanTitle.includes('agentportal');
-              
-              if (isAgentPortal && !app) {
-                console.info(`[Apex Zenith V2] Forced Bypass Active (ID: ${win.id}, Title: ${win.title})`);
-              }
-
-              const ComponentType = app?.component || (isAgentPortal ? AgentPortalApp : null);
+              const ComponentType = app?.component || null;
 
               return (
                 <div key={win.id} className="pointer-events-auto">
@@ -188,7 +163,6 @@ export function Desktop() {
         <ToastContainer />
         <AppDrawer />
         <Dock />
-        <AssistantOverlay />
       </div>
     </ViewportGuard>
   );

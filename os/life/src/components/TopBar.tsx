@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Shield, ShieldOff, RotateCcw, Bell, Search, Leaf } from 'lucide-react';
 import { useShellStore } from '../stores/shell.store';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useAuth } from '../hooks/useAuth';
 import { useProfileStore } from '../stores/profile.store';
 

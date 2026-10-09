@@ -1,6 +1,6 @@
 // src/apps/auth/MigrationScreen.tsx
 import React, { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useMigrationGuard } from '../../hooks/useMigrationGuard';
 
 interface MigrationScreenProps {

@@ -1,6 +1,6 @@
 // src/apps/auth/FirstLaunch.tsx — V1.0
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useProfileStore } from '../../stores/profile.store';
 
 const BOOT_LINES = [

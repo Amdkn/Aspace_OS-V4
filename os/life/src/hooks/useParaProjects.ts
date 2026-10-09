@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParaStore } from '../stores/fw-para.store';
 import { readFromLD, writeToLD, LDId, LDStore } from '../lib/ld-router';
-import { ParaItem } from '../stores/ld01.store';
+import { ParaItem } from '../types/domains';
 import { DOMAIN_TO_LD, projectToParaItem } from '../utils/paraAdapter';
 
 export function useParaProjects() {

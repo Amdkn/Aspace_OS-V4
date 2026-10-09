@@ -9,8 +9,8 @@ import { Desktop } from './components/Desktop';
 import { OmniCaptureModal } from './components/OmniCaptureModal';
 import { useThemeApply } from './hooks/useThemeApply';
 import { ldDBs } from './lib/idb';
-import { motion, AnimatePresence } from 'framer-motion';
-import { supabase } from './lib/supabase';
+import { motion, AnimatePresence } from 'motion/react';
+import { supabase, LIFE_LOCAL_ONLY } from './lib/supabase';
 
 export default function App() {
   const { session, loading: authLoading, initialize } = useAuthStore();
@@ -25,6 +25,8 @@ export default function App() {
   }, [session?.userId, fetchProfile]);
 
   useEffect(() => {
+    // D13-04 : en mode local-only, pas de session Supabase — on ne s'abonne pas.
+    if (LIFE_LOCAL_ONLY) return;
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event) => {
       if (event === 'SIGNED_OUT') {
         console.log('Admiral signed out. Wiping local bridge cache...');
@@ -33,16 +35,6 @@ export default function App() {
       }
     });
     return () => subscription.unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    let stop: (() => void) | null = null;
-    import('./apps/frameworks/services/bridge-worker').then(({ startBridgeWorker }) => {
-      stop = startBridgeWorker();
-    }).catch(e => console.error('[Bridge] Initialization failed', e));
-    return () => {
-      if (stop) stop();
-    };
   }, []);
 
   // Vérifier si migration nécessaire au premier vrai login (pas pendant FirstLaunch)
@@ -57,8 +49,10 @@ export default function App() {
   }, [session, profile]);
 
   const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  // D13-04 : le shell démarre sans compte en mode local-only (bypass auth explicite).
+  const noAuthGate = isLocal || LIFE_LOCAL_ONLY;
 
-  if (!isLocal && (authLoading || (session && profileLoading))) {
+  if (!noAuthGate && (authLoading || (session && profileLoading))) {
     return (
       <div className="flex h-screen items-center justify-center bg-black text-green-400 font-mono">
         <span className="animate-pulse tracking-widest text-xs uppercase">INITIALIZING STELLAR BRIDGE...</span>
@@ -66,7 +60,7 @@ export default function App() {
     );
   }
 
-  if (!isLocal && !session) {
+  if (!noAuthGate && !session) {
     return (
       <AnimatePresence mode="wait">
         <motion.div key="landing" exit={{ opacity: 0 }} className="h-full w-full">
@@ -76,7 +70,7 @@ export default function App() {
     );
   }
 
-  if (!isLocal && profile?.settings?.first_launch !== false) {
+  if (!noAuthGate && profile?.settings?.first_launch !== false) {
     return (
       <FirstLaunch
         onComplete={() => useProfileStore.getState().markFirstLaunchComplete()}
@@ -85,7 +79,7 @@ export default function App() {
   }
 
   // Gate migration
-  if (!isLocal && showMigration === true) {
+  if (!noAuthGate && showMigration === true) {
     return (
       <AnimatePresence mode="wait">
         <motion.div key="migration" exit={{ opacity: 0 }} className="h-full w-full">
@@ -98,7 +92,7 @@ export default function App() {
   }
 
   // showMigration === null → check en cours → afficher le splash habituel en prod
-  if (!isLocal && showMigration === null) {
+  if (!noAuthGate && showMigration === null) {
     return (
       <div className="flex h-screen items-center justify-center bg-black text-green-400 font-mono">
         <span className="animate-pulse tracking-widest text-xs uppercase">CHECKING MEMORY INTEGRITY...</span>
@@ -115,6 +109,12 @@ export default function App() {
         animate={{ opacity: 1 }} 
         className="h-full w-full"
       >
+        {/* D13-01 : bannière visible du mode dégradé local-only */}
+        {LIFE_LOCAL_ONLY && (
+          <div className="fixed top-0 left-0 right-0 z-[100] bg-amber-500 text-black text-[11px] font-bold uppercase tracking-[0.2em] text-center py-1">
+            Mode local — persistance locale uniquement
+          </div>
+        )}
         <Desktop />
         <OmniCaptureModal />
       </motion.div>

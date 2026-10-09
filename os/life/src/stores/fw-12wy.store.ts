@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { ParaItem } from './ld01.store';
+import type { ParaItem } from '../types/domains';
 import { readFromLD, writeToLD } from '../lib/ld-router';
 
 /**
@@ -521,7 +521,7 @@ export const useTwelveWeekStore = create<TwelveWeekState>((set, get) => ({
       const loadedTactics = data.filter(d => (d as any).type === 'wy-tactic') as any as WyTactic[];
       const loadedTimeBlocks = data.filter(d => (d as any).type === 'wy-timeblock') as any as WyTimeBlock[];
 
-      // Purge proactive des reliques obsoletes (ex: vieux mock OMK Service)
+      // Purge proactive des reliques obsoletes (ex: vieux faux OMK Service)
       const obsoleteVisions = loadedVisions.filter(v => v.title === 'OMK Service' || v.id === 'vis-q3-craft-omk');
       for (const obs of obsoleteVisions) {
         try {

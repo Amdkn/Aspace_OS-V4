@@ -7,5 +7,6 @@ registerApp({
   icon: 'FolderKanban', 
   version: '0.1.1',
   description: 'P.A.R.A. organization system for business and life.',
-  component: App 
+  component: App,
+  dockSlot: 1 // Phase 1 reduction: para is the core dock app
 });
