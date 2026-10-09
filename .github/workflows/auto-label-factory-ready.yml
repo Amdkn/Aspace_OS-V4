@@ -1,0 +1,23 @@
+name: "Auto-label factory:ready"
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  autolabel:
+    # Opt-out : ajouter le label `no-factory` a la creation pour exclure une issue du dispatch.
+    if: ${{ !contains(join(github.event.issue.labels.*.name, ' '), 'no-factory') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Add factory:ready label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue edit "${{ github.event.issue.number }}" \
+            --add-label "factory:ready" \
+            --repo "${{ github.repository }}"
