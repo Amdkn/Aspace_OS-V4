@@ -16,7 +16,11 @@ jobs:
     steps:
       - name: Add factory:ready label
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Si le secret LABEL_PAT existe (PAT personnel), le label est pose avec :
+          # l'evenement `labeled` declenche alors le factory INSTANTANEMENT.
+          # Regle anti-boucle GitHub : un label pose avec GITHUB_TOKEN ne declenche jamais de workflow.
+          # Sans LABEL_PAT : repli sur GITHUB_TOKEN, label pose, dispatch au prochain cron (<=30 min).
+          GH_TOKEN: ${{ secrets.LABEL_PAT != '' && secrets.LABEL_PAT || secrets.GITHUB_TOKEN }}
         run: |
           gh issue edit "${{ github.event.issue.number }}" \
             --add-label "factory:ready" \
