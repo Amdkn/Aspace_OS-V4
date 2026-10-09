@@ -14,7 +14,7 @@ Tables Life OS : fw_12wy, fw_deal, fw_gtd, fw_ikigai, fw_life_wheel, fw_para, ik
 - CubeFarm : surface et execution dans le Codespace V4. Etat actuellement sur disque cloud ; aucune synchronisation Supabase implementee.
 
 ## Decisions ouvertes
-LD05 Social et ld05_relations demandent une correspondance explicite. LD06 Famille et ld06_habitat ne sont pas synonymes : conserver les deux intentions. Inspecter colonnes, dependances et RLS avant toute migration. Agent OS inactif est acté comme abandonné et retiré du registre (conformément à l'audit M3 de qualification).
+LD05 Social et ld05_relations demandent une correspondance explicite. LD06 Famille et ld06_habitat ne sont pas synonymes : conserver les deux intentions. Inspecter colonnes, dependances et RLS avant toute migration. Agent OS inactif ne doit pas etre presente comme operationnel.
 
 Avant un brainstorming : lire REFONDATION.md, le Directory, ce document et les contrats de memoire. Comparer reutilisation avec adaptateurs et schema V4 distinct avec migration reversible. Montrer les consequences sur les huit LD, les six frameworks et les surfaces. Distinguer observation, proposition et preuve.
 
