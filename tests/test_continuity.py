@@ -108,6 +108,62 @@ class ContinuityTests(unittest.TestCase):
         self.put(claim('expired', valid_to='2026-10-05T17:30:00Z'))
         self.assertEqual(self.context(self.journal)['canon_slice'], [])
 
+    def test_intrusion_deletion(self):
+        # Intrusion: delete the row directly using sqlite3
+        import sqlite3
+        self.put(claim('c1'))
+        self.put(claim('c1b'))
+
+        conn = sqlite3.connect(self.home / 'source.sqlite')
+        conn.execute("DELETE FROM event WHERE identity='c1'")
+        conn.commit()
+        conn.close()
+
+        # Re-initialize journal (simulate fresh startup) or just call graph()
+        journal2 = Journal(self.home / 'source.sqlite')
+        with self.assertRaises(ValueError) as context:
+            journal2.graph()
+        self.assertIn("Journal integrity failure", str(context.exception))
+        journal2.close()
+
+    def test_intrusion_insertion(self):
+        # Intrusion: insert a fake row bypassing append() logic
+        import sqlite3
+        import hashlib
+        from aspace.journal import canonical
+
+        c1 = claim('c1')
+        self.put(c1)
+
+        fake_claim = dict(c1)
+        fake_claim["claim_id"] = "c2"
+        fake_claim["assertion"] = "forged"
+
+        encoded = canonical(fake_claim)
+        digest = hashlib.sha256(encoded.encode()).hexdigest()
+
+        conn = sqlite3.connect(self.home / 'source.sqlite')
+        conn.execute(
+            "INSERT INTO event(kind,identity,payload,digest) VALUES(?,?,?,?)",
+            ("claim", "c2", encoded, digest)
+        )
+        conn.commit()
+        conn.close()
+
+        journal2 = Journal(self.home / 'source.sqlite')
+        with self.assertRaises(ValueError) as context:
+            journal2.graph()
+
+        self.assertIn("Journal integrity failure", str(context.exception))
+
+        try:
+            state = journal2.graph().state_at("LD03", "fixture", AT, "life")
+            self.assertFalse(any(c["claim_id"] == "c2" for c in state), "Forged claim should not be returned by state_at")
+        except ValueError:
+            pass # graph() failing is expected and good
+
+        journal2.close()
+
 
 class HeritageTests(unittest.TestCase):
     def test_all_source_bytes_and_inventory_are_preserved(self):
