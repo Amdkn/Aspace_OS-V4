@@ -24,7 +24,7 @@ export function useDeepLink() {
 
         if (app) {
           openApp(appId, app.name);
-          
+
           // Future: pass searchParams to the app via a temporary deep-link store or props
           const view = uri.searchParams.get('view');
           if (view) {

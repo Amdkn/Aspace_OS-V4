@@ -38,7 +38,7 @@ export function useWindowManager(windowId: string) {
   /* ═══ DRAG ═══ */
   const handleTitleBarMouseDown = useCallback((e: React.MouseEvent) => {
     if (windowState?.isMaximized) return;
-    
+
     e.preventDefault();
     const rect = (e.currentTarget as HTMLElement).closest('[data-window-frame]')!.getBoundingClientRect();
     dragOffsetRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
@@ -62,7 +62,7 @@ export function useWindowManager(windowId: string) {
     if (!isDragging && !resizeDir) return;
 
     const handleMove = (e: MouseEvent) => {
-      if (rafRef.current !== null) return; 
+      if (rafRef.current !== null) return;
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = null;
 
@@ -132,10 +132,10 @@ export function useWindowManager(windowId: string) {
         const snapW = Math.floor(window.innerWidth / 2);
         const newPos = { x: snapZone === 'left' ? 0 : snapW, y: WC.TOPBAR_HEIGHT };
         const newSize = { width: snapW, height: snapH };
-        
-        posRef.current = newPos; 
+
+        posRef.current = newPos;
         sizeRef.current = newSize;
-        setWindowPosition(newPos); 
+        setWindowPosition(newPos);
         setWindowSize(newSize);
         updateWindowState(windowId, newPos, newSize);
       } else {

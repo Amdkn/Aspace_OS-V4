@@ -20,8 +20,8 @@ export function VisionAligner({ project }: { project: Project }) {
 
   return (
     <div className="relative mt-2">
-      <button 
-        onClick={() => setIsOpen(!isOpen)} 
+      <button
+        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/5 hover:bg-amber-500/10 border border-amber-500/10 rounded-lg text-[9px] font-black uppercase tracking-widest text-amber-500 transition-colors shadow-sm"
       >
         <Eye className="w-3 h-3" />
@@ -34,8 +34,8 @@ export function VisionAligner({ project }: { project: Project }) {
            <h5 className="text-[8px] uppercase tracking-widest text-white/30 px-2 py-1 mb-1 font-bold">Select Vision Node</h5>
            <div className="max-h-40 overflow-auto custom-scrollbar">
              {allVisions.map(v => (
-               <button 
-                 key={v.id} 
+               <button
+                 key={v.id}
                  onClick={() => handleAlign(v.id)}
                  className={`w-full text-left px-3 py-2 text-xs rounded-lg hover:bg-white/5 truncate transition-colors ${v.id === currentVision?.id ? 'text-amber-500 font-bold bg-amber-500/5' : 'text-white/60'}`}
                >

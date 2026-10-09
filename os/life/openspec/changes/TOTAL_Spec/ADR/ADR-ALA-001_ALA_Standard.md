@@ -55,4 +55,3 @@ Nous adoptons le standard **ALA (Agentic Local Adapter)**. Un ALA est un wrapper
 
 1.  Présence du fichier `registry/ala.json`.
 2.  Capacité d'un agent A3 à invoquer la commande `--help` d'un ALA nouvellement ingéré.
-

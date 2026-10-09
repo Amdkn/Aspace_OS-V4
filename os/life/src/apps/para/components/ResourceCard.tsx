@@ -27,7 +27,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           <span className="text-[8px] font-black text-[var(--theme-text)]/20 uppercase tracking-widest">{resource.category}</span>
         </div>
       </div>
-      
+
       <div className="mt-auto flex flex-col gap-3">
         <div className="flex flex-wrap gap-1.5">
           {resource.linkedProjects.map(p => (
@@ -40,4 +40,3 @@ export function ResourceCard({ resource }: { resource: Resource }) {
     </div>
   );
 }
-

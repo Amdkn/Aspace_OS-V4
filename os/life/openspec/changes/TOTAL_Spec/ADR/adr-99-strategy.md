@@ -28,7 +28,7 @@ flowchart TD
     D[ADR-007 : Shift OS V2] --> |Gouvernance A0| Z
     E[ADR-006 : Watchdog] --> |Service Autonome| Z
     F[ADR-002 : Rick A1] --> |Identité Injectée| Z
-    
+
     Z --> |Purge Définitive| X{Suppression Physique des 8 fichiers originaux}
 ```
 

@@ -12,15 +12,15 @@
 
 Pour garantir l'antifragilité, le développement suit désormais la structure E-Myth :
 
-1.  **Gemini CLI (L'Architecte de PRD) :** 
+1.  **Gemini CLI (L'Architecte de PRD) :**
     - **Mission :** Recherche profonde (Web, Documentation OpenClaw, API) pour définir LA solution optimale.
     - **Livrable :** Un PRD unique par difficulté, mis à jour par la recherche, jamais empilé.
     - **Validation :** Valide les résultats de Ralph Loop et archive les solutions en **Skills** autonomes.
     - **Patch V1.11 (Signalement Actif) :** Gemini doit explicitement signaler une "Action Requise" en cas de blocage sur des éléments hors de sa portée (ex: tokens expirés, intervention humaine BotFather) plutôt que de boucler. L'autonomie reste la règle d'or ("YOLO"), le signalement est l'exception de survie.
-2.  **Conductor (Le Manager) :** 
+2.  **Conductor (Le Manager) :**
     - **Mission :** Orchestration des extensions et du plan de route (Tracks).
     - **Rôle :** Assurer que l'exécution respecte les priorités du business et de l'infra.
-3.  **Ralph Loop (Le Technicien) :** 
+3.  **Ralph Loop (Le Technicien) :**
     - **Mission :** Test d'hypothèses, scripts de déploiement et corrections itératives.
     - **Rôle :** Exécuter les PRD de Gemini et rapporter les frictions réelles.
 
@@ -38,7 +38,7 @@ Le "Amadeus Verse" a évolué vers une fédération de 4 entités souveraines, c
 2. **[A'0] L1 - Life OS (Local Windows System)**
    - Rôle : Assistant Bureau, interaction UI, bureautique, navigation locale.
    - Accès : `openclaw.json` local sur le port 18789.
-3. **[A"0] L2 - Business Pulse (VPS Hostinger)** 
+3. **[A"0] L2 - Business Pulse (VPS Hostinger)**
    - Rôle : Pipelines de données externes, requêtes Always-On, serveurs distants.
    - Accès : Déploiement distant pur.
 4. **[A'"0] L3 - Anti Gravity Claws (Agents de Code / AGC)**
@@ -920,4 +920,3 @@ Mission Control — Orchestration Dashboard (externe au gateway)
 *ADR-WSL-001 — Émis le 2026-03-10 par A0 Amadeus*
 *"Ce qui naît propre, reste propre."*
 *Ancré dans : AGENTS.md — Rick's Verse Canon*
-

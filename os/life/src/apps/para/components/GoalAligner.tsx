@@ -18,8 +18,8 @@ export function GoalAligner({ project }: { project: Project }) {
 
   return (
     <div className="relative mt-2">
-      <button 
-        onClick={() => setIsOpen(!isOpen)} 
+      <button
+        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1.5 bg-teal-500/5 hover:bg-teal-500/10 border border-teal-500/10 rounded-lg text-[9px] font-black uppercase tracking-widest text-teal-400 transition-colors shadow-sm"
       >
         <Target className="w-3 h-3" />
@@ -32,8 +32,8 @@ export function GoalAligner({ project }: { project: Project }) {
            <h5 className="text-[8px] uppercase tracking-widest text-white/30 px-2 py-1 mb-1 font-bold">Select 12 Week Goal</h5>
            <div className="max-h-40 overflow-auto custom-scrollbar">
              {allGoals.map(g => (
-               <button 
-                 key={g.id} 
+               <button
+                 key={g.id}
                  onClick={() => handleAlign(g.id)}
                  className={`w-full text-left px-3 py-2 text-xs rounded-lg hover:bg-white/5 truncate transition-colors ${g.id === currentGoal?.id ? 'text-teal-400 font-bold bg-teal-500/5' : 'text-white/60'}`}
                >

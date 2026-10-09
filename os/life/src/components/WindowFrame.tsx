@@ -152,4 +152,3 @@ function TrafficLight({ color, onClick, icon }: TrafficLightProps) {
     </button>
   );
 }
-

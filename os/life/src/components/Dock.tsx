@@ -128,4 +128,3 @@ const DockIcon: React.FC<DockIconProps> = ({ item, isActive, badge, onClick }) =
   );
 }
 
-

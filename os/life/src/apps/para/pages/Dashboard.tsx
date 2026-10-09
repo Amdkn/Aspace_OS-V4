@@ -1,8 +1,8 @@
 /** PARA Dashboard — Framework Overview (V0.4.6) */
 import React, { useMemo } from 'react';
 import { useParaProjects } from '../../../hooks/useParaProjects';
-import { 
-  BarChart3, Box, Layers, Archive, 
+import {
+  BarChart3, Box, Layers, Archive,
   TrendingUp, Activity, Shield
 } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -16,7 +16,7 @@ interface ParaDashboardProps {
 
 export default function ParaDashboard({ embedded }: ParaDashboardProps) {
   const { items, isLoading } = useParaProjects();
-  
+
   const stats = useMemo(() => {
     const active = items.filter(i => i.status === 'active').length;
     const completed = items.filter(i => i.status === 'completed').length;

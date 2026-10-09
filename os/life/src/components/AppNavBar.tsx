@@ -19,14 +19,14 @@ interface AppNavBarProps {
   titleIcon?: LucideIcon;
 }
 
-export function AppNavBar({ 
-  items, 
-  activeTab, 
-  onTabChange, 
-  accentColor = 'blue', 
-  title, 
-  subtitle, 
-  titleIcon: TitleIcon 
+export function AppNavBar({
+  items,
+  activeTab,
+  onTabChange,
+  accentColor = 'blue',
+  title,
+  subtitle,
+  titleIcon: TitleIcon
 }: AppNavBarProps) {
   const accent = accentColors[accentColor] ?? accentColors.blue;
 
@@ -55,8 +55,8 @@ export function AppNavBar({
               onClick={() => onTabChange(item.id)}
               className={clsx(
                 "flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-all duration-500 border group relative overflow-hidden w-full text-left",
-                isActive 
-                  ? "bg-white/5 border-white/10 text-[var(--theme-text)] shadow-xl translate-x-1" 
+                isActive
+                  ? "bg-white/5 border-white/10 text-[var(--theme-text)] shadow-xl translate-x-1"
                   : "border-transparent text-[var(--theme-text)]/20 hover:bg-white/[0.02] hover:text-[var(--theme-text)]/40"
               )}
             >
@@ -84,4 +84,3 @@ const accentColors: Record<string, { bg: string; border: string; text: string; t
   pink:    { bg: 'bg-pink-500/10',    border: 'border-pink-500/20',    text: 'text-pink-400',    textMuted: 'text-pink-400/50',    indicator: 'bg-pink-500',    badgeBg: 'bg-pink-500' },
   slate:   { bg: 'bg-slate-500/10',   border: 'border-slate-500/20',   text: 'text-slate-400',   textMuted: 'text-slate-400/50',   indicator: 'bg-slate-500',   badgeBg: 'bg-slate-500' },
 };
-

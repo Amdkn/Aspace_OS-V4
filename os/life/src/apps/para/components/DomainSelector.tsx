@@ -25,8 +25,8 @@ export function DomainSelector() {
           key={domain.id}
           onClick={() => setActiveLdFilter(domain.id)}
           className={`px-3 py-1 rounded-xl text-[9px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
-            activeLdFilter === domain.id 
-              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.2)]' 
+            activeLdFilter === domain.id
+              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.2)]'
               : 'text-[var(--theme-text)]/30 hover:bg-white/5 hover:text-[var(--theme-text)]/60'
           }`}
         >
@@ -36,4 +36,3 @@ export function DomainSelector() {
     </div>
   );
 }
-
