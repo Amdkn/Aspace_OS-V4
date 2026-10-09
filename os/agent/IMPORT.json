@@ -1,0 +1,858 @@
+{
+  "files": [
+    {
+      "destination_sha256": "12a75ade4d487b3d00774d2aa1373a43bd275013100be2ea5447805ce274d30f",
+      "git_blob_sha": "0158fe7af08ed5c148f4f31d07eef66620618605",
+      "source_path": ".github/workflows/agent-os-ci.yml",
+      "source_sha256": "12a75ade4d487b3d00774d2aa1373a43bd275013100be2ea5447805ce274d30f"
+    },
+    {
+      "destination_sha256": "0bb6f0020d1bc6cc433776b86a482c3e1f3e49764ce6717916f5cebe39155c11",
+      "git_blob_sha": "5245b170b3ac29edfae26729ce50b87bf12d9bab",
+      "source_path": ".gitignore",
+      "source_sha256": "0bb6f0020d1bc6cc433776b86a482c3e1f3e49764ce6717916f5cebe39155c11"
+    },
+    {
+      "destination_sha256": "35136141be589f36bb6d02c1c98b362c7aa9df924b4ccd5057863b09326b1ffc",
+      "git_blob_sha": "cebc6dcd31514b52709da9a5a275ffe9710b96c4",
+      "source_path": "AGENTS.md",
+      "source_sha256": "35136141be589f36bb6d02c1c98b362c7aa9df924b4ccd5057863b09326b1ffc"
+    },
+    {
+      "destination_sha256": "d3696391e25e31a72db0697f7d4aeee2e3b971cface1bbe022187a5b9b0772b0",
+      "git_blob_sha": "0ace6f8d067fad83e53a34838cf024402507d532",
+      "source_path": "GATES.md",
+      "source_sha256": "d3696391e25e31a72db0697f7d4aeee2e3b971cface1bbe022187a5b9b0772b0"
+    },
+    {
+      "destination_sha256": "e8c3f8bb0e2d9868e39ebee2a5af634e0c021b018106bb938b03f705b7adc26c",
+      "git_blob_sha": "0de9fd862c13c342af1433e1d6abfbd64daeffb3",
+      "source_path": "delegation-a-jules/PRD-Interface-Amy-Agentic-OS-ARMS.md",
+      "source_sha256": "e8c3f8bb0e2d9868e39ebee2a5af634e0c021b018106bb938b03f705b7adc26c"
+    },
+    {
+      "destination_sha256": "52fe2efe9345df5109916b1c611f852ee81bc3ac0f1be8d551d4d89adf8b7d96",
+      "git_blob_sha": "9f2bb8a9c99bb51abf83b165d6cc049325334f85",
+      "source_path": "delegation-a-jules/README.md",
+      "source_sha256": "52fe2efe9345df5109916b1c611f852ee81bc3ac0f1be8d551d4d89adf8b7d96"
+    },
+    {
+      "destination_sha256": "b139a0114ea9d393a9418fe2c8ea620023de6044c5343b50ca6e7595d5476bfb",
+      "git_blob_sha": "f012f6c1178b31027c7397e1263a28bd5e10cb83",
+      "source_path": "eslint.config.js",
+      "source_sha256": "b139a0114ea9d393a9418fe2c8ea620023de6044c5343b50ca6e7595d5476bfb"
+    },
+    {
+      "destination_sha256": "550c74909865a24d786cd4143d9f954f7d927badc26192519f3b14d70ad5f22d",
+      "git_blob_sha": "fed6d7656640a66536ad52a207ca0bca7c028955",
+      "source_path": "index.html",
+      "source_sha256": "550c74909865a24d786cd4143d9f954f7d927badc26192519f3b14d70ad5f22d"
+    },
+    {
+      "destination_sha256": "22cd68ddbd5b2b7ee7a41aee39b06f2fce44f1b1789c4cb16e5a6b92325710eb",
+      "git_blob_sha": "f36c85e33157104ec4340e5afd368514708bc640",
+      "source_path": "lancer_agent_os.cmd",
+      "source_sha256": "22cd68ddbd5b2b7ee7a41aee39b06f2fce44f1b1789c4cb16e5a6b92325710eb"
+    },
+    {
+      "destination_sha256": "44403e356c65220e6e993a177c5f7d8d19a0cfb51b12d965f7c48d8d76b3ce2a",
+      "git_blob_sha": "2dbc09ffc7364a9907d28c7cbf86448a8a477ebb",
+      "source_path": "lancer_dsh.cmd",
+      "source_sha256": "44403e356c65220e6e993a177c5f7d8d19a0cfb51b12d965f7c48d8d76b3ce2a"
+    },
+    {
+      "destination_sha256": "122d544b640e00aaa1ad01f27a958e08d688e4fb07ad64a1786a28c8064cf60f",
+      "git_blob_sha": "b6fb50589a75faf84fdacee0962f85f96914e2b2",
+      "source_path": "lancer_hermes.cmd",
+      "source_sha256": "122d544b640e00aaa1ad01f27a958e08d688e4fb07ad64a1786a28c8064cf60f"
+    },
+    {
+      "destination_sha256": "16b733ed15602f903a447de1424a12b0e87b9ca520ce680fc4857f24cf21e0d4",
+      "git_blob_sha": "644888f2c3b996ef6c028fa0fb8795feef961914",
+      "source_path": "lancer_life_os.cmd",
+      "source_sha256": "16b733ed15602f903a447de1424a12b0e87b9ca520ce680fc4857f24cf21e0d4"
+    },
+    {
+      "destination_sha256": "6a8df83bce7de854463527a0768582c8183fb71905abe2c4759ba12384b8a00c",
+      "git_blob_sha": "258426b8d90c740e1f4afd9edc4b30770fb0060d",
+      "source_path": "lancer_pocketdb.cmd",
+      "source_sha256": "6a8df83bce7de854463527a0768582c8183fb71905abe2c4759ba12384b8a00c"
+    },
+    {
+      "destination_sha256": "088605bf5ce813ac08c58244fff63210a8d0b703fa9e25d54f4f968de4dc3826",
+      "git_blob_sha": "9816df0ccc87d6fa51bbebfc3ea42b5e73ae699a",
+      "source_path": "package-lock.json",
+      "source_sha256": "088605bf5ce813ac08c58244fff63210a8d0b703fa9e25d54f4f968de4dc3826"
+    },
+    {
+      "destination_sha256": "3515b57ec1a5ac268f5e38b22de63b7bd42cfef6688bb561ff098b254f6b0534",
+      "git_blob_sha": "d7b9d8ea9a5f07132dd836743d143d452b72dc4f",
+      "source_path": "package.json",
+      "source_sha256": "3515b57ec1a5ac268f5e38b22de63b7bd42cfef6688bb561ff098b254f6b0534"
+    },
+    {
+      "destination_sha256": "133f5336f6661ee0be07bd15c69db538f503eac012da127664cad63570e40d7c",
+      "git_blob_sha": "74b1a8f01e6ba57372f4a28951bf67a90e871404",
+      "source_path": "poser_raccourci.ps1",
+      "source_sha256": "133f5336f6661ee0be07bd15c69db538f503eac012da127664cad63570e40d7c"
+    },
+    {
+      "destination_sha256": "ff5112b0c0c5eaa3d4200496265940f5b00504381e433ece4139c5e737a386b4",
+      "git_blob_sha": "9ec8831c493f37fa0b50b5cae28e47440088311d",
+      "source_path": "public/wallpapers/solarpunk-3.jpg",
+      "source_sha256": "ff5112b0c0c5eaa3d4200496265940f5b00504381e433ece4139c5e737a386b4"
+    },
+    {
+      "destination_sha256": "9a340bd83670a7265d8ca2dc5591e79b027ae179bf70828242d1d4131d4b1cde",
+      "git_blob_sha": "74cfb40a596b9f07a64cce49463550a24d975138",
+      "source_path": "public/wallpapers/solarpunk-default.jpg",
+      "source_sha256": "9a340bd83670a7265d8ca2dc5591e79b027ae179bf70828242d1d4131d4b1cde"
+    },
+    {
+      "destination_sha256": "88454b89b5c28136cb23f924b7f362e6058247e094feb08f4bf6830e56b6a9e6",
+      "git_blob_sha": "b6419831731a2a325a6dc888aceed3e5df6afab2",
+      "source_path": "src/App.tsx",
+      "source_sha256": "88454b89b5c28136cb23f924b7f362e6058247e094feb08f4bf6830e56b6a9e6"
+    },
+    {
+      "destination_sha256": "eea65e7ba23eaff3fa917cfa0c7d2986e97215605778834151bca24015f030ec",
+      "git_blob_sha": "df8726844535034a2a94396eb8cd21b584ada6bd",
+      "source_path": "src/api/projection.test.ts",
+      "source_sha256": "eea65e7ba23eaff3fa917cfa0c7d2986e97215605778834151bca24015f030ec"
+    },
+    {
+      "destination_sha256": "7196d6f310eb0cc5521a7a556f0c313669a1f63aaa4725b70bdb5b829a1f87e4",
+      "git_blob_sha": "1e0a526f75f8f3c89962a7560e9e08afbf899127",
+      "source_path": "src/api/projection.ts",
+      "source_sha256": "7196d6f310eb0cc5521a7a556f0c313669a1f63aaa4725b70bdb5b829a1f87e4"
+    },
+    {
+      "destination_sha256": "ccaad3c10acb5913e3fcdfcde73c8195e4ec3436ac89def8c8ff376848c591dc",
+      "git_blob_sha": "4291feadd99e764bd674974bd817f4d28fbb690b",
+      "source_path": "src/apps/AgenticOS/components/AmyOmnibar.tsx",
+      "source_sha256": "ccaad3c10acb5913e3fcdfcde73c8195e4ec3436ac89def8c8ff376848c591dc"
+    },
+    {
+      "destination_sha256": "ab3e4f5b2e9229ed6240b2ae41fab592198a634658b3c7d5c3ca71370011cbd0",
+      "git_blob_sha": "fcc3a6e05846233b972091e592f6f1629b719d0a",
+      "source_path": "src/apps/AgenticOS/components/CadenceTicker.tsx",
+      "source_sha256": "ab3e4f5b2e9229ed6240b2ae41fab592198a634658b3c7d5c3ca71370011cbd0"
+    },
+    {
+      "destination_sha256": "5ceda3b62cf0809fd5b7b3c7d59f7ff984a2ff9b4fea1a86a9792c7f0e42d8f4",
+      "git_blob_sha": "ec6872752e1da6c92f11e07f67ffa15e2d01d7a1",
+      "source_path": "src/apps/AgenticOS/components/CommandCenter.tsx",
+      "source_sha256": "5ceda3b62cf0809fd5b7b3c7d59f7ff984a2ff9b4fea1a86a9792c7f0e42d8f4"
+    },
+    {
+      "destination_sha256": "650693baeb792472f30b9ebb67f376c476eb1e9fa9dc800446e9303b98d83846",
+      "git_blob_sha": "1294a81275141c54dde83d420ca37e6f0c00f7ae",
+      "source_path": "src/apps/AgenticOS/components/ContextBreadcrumb.tsx",
+      "source_sha256": "650693baeb792472f30b9ebb67f376c476eb1e9fa9dc800446e9303b98d83846"
+    },
+    {
+      "destination_sha256": "8c4cccbba3247a11e5cccb0e7b35ac02f65f7e4ed6c638f715e8418015615ba4",
+      "git_blob_sha": "6d5702ea2a8420fb5166d55517e489edcc948d1d",
+      "source_path": "src/apps/AgenticOS/components/DetailSidebarPanel.tsx",
+      "source_sha256": "8c4cccbba3247a11e5cccb0e7b35ac02f65f7e4ed6c638f715e8418015615ba4"
+    },
+    {
+      "destination_sha256": "9c4f8dda55f47dd6fd8a6439a5add9e09ca8498ee328cad23d9ac48faf279f1b",
+      "git_blob_sha": "792d70183f94a8fbb67f9ce81b02cc9900d04240",
+      "source_path": "src/apps/AgenticOS/components/DeterministicGuardHUD.tsx",
+      "source_sha256": "9c4f8dda55f47dd6fd8a6439a5add9e09ca8498ee328cad23d9ac48faf279f1b"
+    },
+    {
+      "destination_sha256": "d4eb41bdd99e20497b6864d061e6f35477290b0032f5bfac9b89d9966e1fbefb",
+      "git_blob_sha": "44935e7b7fc300f6745e738b5d1399db4cf3943e",
+      "source_path": "src/apps/AgenticOS/components/ExcalidrawCanvas.tsx",
+      "source_sha256": "d4eb41bdd99e20497b6864d061e6f35477290b0032f5bfac9b89d9966e1fbefb"
+    },
+    {
+      "destination_sha256": "649621dc4d45c125e7c16727a78db40a14c9c9efb126d1dd60d1e69168f5094c",
+      "git_blob_sha": "45fd6891658ab12c610d06a54cf883b42ff449e3",
+      "source_path": "src/apps/AgenticOS/components/GenerationsGallery.tsx",
+      "source_sha256": "649621dc4d45c125e7c16727a78db40a14c9c9efb126d1dd60d1e69168f5094c"
+    },
+    {
+      "destination_sha256": "9536bdecc0e46c50ce087d540842f5f3b0404bc0c1ea82dbd5307d6ddad0a9bc",
+      "git_blob_sha": "0555ba057ced8ef10398745631b65cbd0eb43008",
+      "source_path": "src/apps/AgenticOS/components/RiverEventStream.tsx",
+      "source_sha256": "9536bdecc0e46c50ce087d540842f5f3b0404bc0c1ea82dbd5307d6ddad0a9bc"
+    },
+    {
+      "destination_sha256": "de89d9f21735b8d6ba110f588bd13f130099f26fb9c707b13dcbaeb3711cf457",
+      "git_blob_sha": "fe51469cc40aaa806c38d50f3a35a0242d73784e",
+      "source_path": "src/apps/AgenticOS/components/SecondBrainOrbit.tsx",
+      "source_sha256": "de89d9f21735b8d6ba110f588bd13f130099f26fb9c707b13dcbaeb3711cf457"
+    },
+    {
+      "destination_sha256": "d15f3fb98b556b5b8cf204ac2b8d56c790f40db8a25841dee6143cf143dd9c0a",
+      "git_blob_sha": "eb53244935c644040648d7b975bc6dcb523749f8",
+      "source_path": "src/apps/AgenticOS/components/SilverPlatterGrid.tsx",
+      "source_sha256": "d15f3fb98b556b5b8cf204ac2b8d56c790f40db8a25841dee6143cf143dd9c0a"
+    },
+    {
+      "destination_sha256": "fc61d925ff44aa0cd02ec82aa1a3493aac55f18865701d1e3563d12a97858ee4",
+      "git_blob_sha": "d42ca99a1fcaa67459a17a763c1b052fb132e33b",
+      "source_path": "src/apps/AgenticOS/components/SkillsDeckModal.tsx",
+      "source_sha256": "fc61d925ff44aa0cd02ec82aa1a3493aac55f18865701d1e3563d12a97858ee4"
+    },
+    {
+      "destination_sha256": "0eddcc16606e1a0b2d5900b55e5e763431809822d8ef7211bd1e6ea8cc3bb5c7",
+      "git_blob_sha": "9cde836546224cd122087a38feca3034ccf2b761",
+      "source_path": "src/apps/AgenticOS/components/TeleprompterApp.tsx",
+      "source_sha256": "0eddcc16606e1a0b2d5900b55e5e763431809822d8ef7211bd1e6ea8cc3bb5c7"
+    },
+    {
+      "destination_sha256": "a6b87cb2573cd9186a42516d67390c6a973bf429cc4d1dc45ab2e23974b24d5e",
+      "git_blob_sha": "0fbceac34e72f89d28e4f5f02a9a777e45b020ca",
+      "source_path": "src/apps/AgenticOS/components/WarRoomDrawer.tsx",
+      "source_sha256": "a6b87cb2573cd9186a42516d67390c6a973bf429cc4d1dc45ab2e23974b24d5e"
+    },
+    {
+      "destination_sha256": "e9227e6d90d8dc53b9f1fd4e067c851d62eff4562c8a27950e17cadd0c26b171",
+      "git_blob_sha": "c6ce23da192ab638abd167b20feef5e66b9c93ec",
+      "source_path": "src/apps/AgenticOS/index.tsx",
+      "source_sha256": "e9227e6d90d8dc53b9f1fd4e067c851d62eff4562c8a27950e17cadd0c26b171"
+    },
+    {
+      "destination_sha256": "495b21a7f91f1da428a1f32cbccbbcb5bb2b17cce6477252bf4da8ab146e9a57",
+      "git_blob_sha": "548f7b4148afeab4de0985909edef8327a7e559d",
+      "source_path": "src/apps/AgenticOS/stores/useAmyCockpitStore.ts",
+      "source_sha256": "495b21a7f91f1da428a1f32cbccbbcb5bb2b17cce6477252bf4da8ab146e9a57"
+    },
+    {
+      "destination_sha256": "1d54a1cfc72e454769a46979604bb7ae480674611e4db60d7e3baf520972aec6",
+      "git_blob_sha": "72534cc0a06afb5ec51682422baed5a5c5c75281",
+      "source_path": "src/apps/AgenticOS/types.ts",
+      "source_sha256": "1d54a1cfc72e454769a46979604bb7ae480674611e4db60d7e3baf520972aec6"
+    },
+    {
+      "destination_sha256": "442527465bff61e5f0b78ca611cdf25126b3f0aeafa50dd350f7895938df3089",
+      "git_blob_sha": "a6630527db278c0da46b2e4af7cc53245025f27b",
+      "source_path": "src/apps/AntigravityRemote/index.tsx",
+      "source_sha256": "442527465bff61e5f0b78ca611cdf25126b3f0aeafa50dd350f7895938df3089"
+    },
+    {
+      "destination_sha256": "6f74cbc601987948e22c6bd29dd17de5e1f530cb5159c4e42b58b519fd819072",
+      "git_blob_sha": "e3cefc250439ed9b2332587442972e20d4542917",
+      "source_path": "src/apps/CanaryHarness/canary.test.ts",
+      "source_sha256": "6f74cbc601987948e22c6bd29dd17de5e1f530cb5159c4e42b58b519fd819072"
+    },
+    {
+      "destination_sha256": "06668d99331ddffc356f8d7bc84c729e5a822eac7246dc4454dec75781b26ba6",
+      "git_blob_sha": "5483b007a22ad1e7803ac71fc09f31c726401f92",
+      "source_path": "src/apps/CanaryHarness/fixtures.ts",
+      "source_sha256": "06668d99331ddffc356f8d7bc84c729e5a822eac7246dc4454dec75781b26ba6"
+    },
+    {
+      "destination_sha256": "29d01ed6de1d0207af972dd8072c77779000666df714fbcfbc4cd0e99f8ac9da",
+      "git_blob_sha": "c9cce588b04a6555de6e5c89e37954c62b9a9eac",
+      "source_path": "src/apps/CanaryHarness/index.tsx",
+      "source_sha256": "29d01ed6de1d0207af972dd8072c77779000666df714fbcfbc4cd0e99f8ac9da"
+    },
+    {
+      "destination_sha256": "13b2be4acd63804e7803cc9e01fd34b61e5b3096c6504af1d51d5ec6252f41ad",
+      "git_blob_sha": "750b25ccc9ef8b4059d44ac1dae1ea6da8cf3de6",
+      "source_path": "src/apps/CoachOS/index.tsx",
+      "source_sha256": "13b2be4acd63804e7803cc9e01fd34b61e5b3096c6504af1d51d5ec6252f41ad"
+    },
+    {
+      "destination_sha256": "daf31c83e29944d7e5ae40bc9fe1da9c52b2f3c511173b0d11b088e3d7a4fd08",
+      "git_blob_sha": "7270eb98ad0091e57be9cede83c8574fadea7bc8",
+      "source_path": "src/apps/CoachOSOnline/index.tsx",
+      "source_sha256": "daf31c83e29944d7e5ae40bc9fe1da9c52b2f3c511173b0d11b088e3d7a4fd08"
+    },
+    {
+      "destination_sha256": "07ebb744d22621ce07e712aac8f5a43f599e23007e08cffb3a3bbcc57a6f9008",
+      "git_blob_sha": "8115a5b6a3e70c7a4613f09c4dcc09809519a976",
+      "source_path": "src/apps/Corpus/index.tsx",
+      "source_sha256": "07ebb744d22621ce07e712aac8f5a43f599e23007e08cffb3a3bbcc57a6f9008"
+    },
+    {
+      "destination_sha256": "98b91bfc9ff6f67b06fb37d07bc988e85f036539f77b686af534c901e2eb2d4b",
+      "git_blob_sha": "4ec5d4a176e1d3a08f488cf073b9aa474f48363e",
+      "source_path": "src/apps/DeepSeekHarness/index.tsx",
+      "source_sha256": "98b91bfc9ff6f67b06fb37d07bc988e85f036539f77b686af534c901e2eb2d4b"
+    },
+    {
+      "destination_sha256": "bb79f63c17cfefa57dfb168cc0632bb7eef69a08cbedaba26130c693198c93d1",
+      "git_blob_sha": "894674a87a2b805266ae43e38af99ad164a6ca33",
+      "source_path": "src/apps/Doctor11Life/index.tsx",
+      "source_sha256": "bb79f63c17cfefa57dfb168cc0632bb7eef69a08cbedaba26130c693198c93d1"
+    },
+    {
+      "destination_sha256": "8c88813780d94f1d03752a2f5dec098457c1e7764bc49c77760136676eb57865",
+      "git_blob_sha": "2782912687058082a12cb37d12095d09737c6425",
+      "source_path": "src/apps/Doctor12Bus/index.tsx",
+      "source_sha256": "8c88813780d94f1d03752a2f5dec098457c1e7764bc49c77760136676eb57865"
+    },
+    {
+      "destination_sha256": "443815bd31755baa4c9c8f5ab8527706597bc7662e12930e3c053ced075fb946",
+      "git_blob_sha": "f24c5675f8b80ee3df87360edfb93b828c31e2e0",
+      "source_path": "src/apps/Doctor13Kernel/index.tsx",
+      "source_sha256": "443815bd31755baa4c9c8f5ab8527706597bc7662e12930e3c053ced075fb946"
+    },
+    {
+      "destination_sha256": "320f18ee4ee9e361f969aa09db4e6c21a1dffb8116cebba7de29c337743731c0",
+      "git_blob_sha": "b3ae274b73783d412db7cfbeb5202eb91f6265a2",
+      "source_path": "src/apps/External/index.tsx",
+      "source_sha256": "320f18ee4ee9e361f969aa09db4e6c21a1dffb8116cebba7de29c337743731c0"
+    },
+    {
+      "destination_sha256": "c6ec68502f13d61af58e81ffca5b72ae8e72512914e88aeefdb12819e6a05e6b",
+      "git_blob_sha": "033546d81690b62e6bc5d61f8cb7a510475a6acf",
+      "source_path": "src/apps/FranchiseCockpit/index.tsx",
+      "source_sha256": "c6ec68502f13d61af58e81ffca5b72ae8e72512914e88aeefdb12819e6a05e6b"
+    },
+    {
+      "destination_sha256": "5fa022cf049902afd4f47bf3ca12563997daab60c5244d6f463a2c2c1afc93bc",
+      "git_blob_sha": "f2450f50476dfc59aa38808ef9ce83e096f52eef",
+      "source_path": "src/apps/HermesWorkspace/index.tsx",
+      "source_sha256": "5fa022cf049902afd4f47bf3ca12563997daab60c5244d6f463a2c2c1afc93bc"
+    },
+    {
+      "destination_sha256": "76a5d9b90bc6f6b1adf507509e45642cb36746497f74bad04e49ddc55215c9b1",
+      "git_blob_sha": "6f46eb962cc3caf274df6795c6e4654a70a77d3e",
+      "source_path": "src/apps/LifeOS/index.tsx",
+      "source_sha256": "76a5d9b90bc6f6b1adf507509e45642cb36746497f74bad04e49ddc55215c9b1"
+    },
+    {
+      "destination_sha256": "1bdf3decfe311f7291502f4357b95d5882433347352039366bdac4436e398a32",
+      "git_blob_sha": "95024f5c10312f834dc4a683ea8ba0f69f85b25d",
+      "source_path": "src/apps/LifeOSOnline/index.tsx",
+      "source_sha256": "1bdf3decfe311f7291502f4357b95d5882433347352039366bdac4436e398a32"
+    },
+    {
+      "destination_sha256": "ae5d0a94f1cc603685b45b0bf849d59e0128095da9919d37177082998c871d7b",
+      "git_blob_sha": "98f27e91e8ba8ff874960900752619aac5827037",
+      "source_path": "src/apps/Memories/index.tsx",
+      "source_sha256": "ae5d0a94f1cc603685b45b0bf849d59e0128095da9919d37177082998c871d7b"
+    },
+    {
+      "destination_sha256": "7a79c615b3aa7c1d5e26a14db1f032a387863e52a77e4d904624886c9d6e4ccf",
+      "git_blob_sha": "af04d06ca4c11d883036bc52103eb982430b9f26",
+      "source_path": "src/apps/Observers/index.tsx",
+      "source_sha256": "7a79c615b3aa7c1d5e26a14db1f032a387863e52a77e4d904624886c9d6e4ccf"
+    },
+    {
+      "destination_sha256": "53b2f0a87b74148a7c703491ec0d7b61192720660daecef9c7092396b9f9d82f",
+      "git_blob_sha": "d66738ee8d6929ba647191f2968417de3d8a6f14",
+      "source_path": "src/apps/Onthology/index.tsx",
+      "source_sha256": "53b2f0a87b74148a7c703491ec0d7b61192720660daecef9c7092396b9f9d82f"
+    },
+    {
+      "destination_sha256": "1e2e874ea8e99b9f8e31c31823820eedca0b8be63b14b6a4750fb16d6d54a673",
+      "git_blob_sha": "0b7cd73a9e747963eebe78918dd8465a1348e994",
+      "source_path": "src/apps/PocketDB/index.tsx",
+      "source_sha256": "1e2e874ea8e99b9f8e31c31823820eedca0b8be63b14b6a4750fb16d6d54a673"
+    },
+    {
+      "destination_sha256": "1e54bd48cd81ab6fe3f8f5dba8898ac010c4473e94d921420e1cc0bb89e34d4d",
+      "git_blob_sha": "3734ab15a6e786fc67149c212f99b4a2c7ee090e",
+      "source_path": "src/apps/PostHogObservatory/index.tsx",
+      "source_sha256": "1e54bd48cd81ab6fe3f8f5dba8898ac010c4473e94d921420e1cc0bb89e34d4d"
+    },
+    {
+      "destination_sha256": "6877a1917866a6ca690dd784a0e5fac06f68e58cc02bbf120825a7c00ba26c46",
+      "git_blob_sha": "752d576bb9911ad5ca798a082de5619dccc73ed3",
+      "source_path": "src/apps/Revue/index.tsx",
+      "source_sha256": "6877a1917866a6ca690dd784a0e5fac06f68e58cc02bbf120825a7c00ba26c46"
+    },
+    {
+      "destination_sha256": "e953ca624297f5e0197c07eb2a44769e6a3370565b952c5b355e167404252e97",
+      "git_blob_sha": "90a632bff4c407579977588fe3f02c1df1f90121",
+      "source_path": "src/apps/Routeurs/index.tsx",
+      "source_sha256": "e953ca624297f5e0197c07eb2a44769e6a3370565b952c5b355e167404252e97"
+    },
+    {
+      "destination_sha256": "885b26fa2b4faf2af22a0eaa5131d3be49b29138dc82e1bba81bf3092ab18029",
+      "git_blob_sha": "83723d9e59002ce916a9eef65be8b08a1de4f872",
+      "source_path": "src/apps/Settings/index.tsx",
+      "source_sha256": "885b26fa2b4faf2af22a0eaa5131d3be49b29138dc82e1bba81bf3092ab18029"
+    },
+    {
+      "destination_sha256": "c99713cb4e088764f0aef24cbdca2250e33fd93d9b13c1708bc368822c6ff3bd",
+      "git_blob_sha": "9247cb79d7bd642f7cf8f6d7c99eea3f1f2fcd73",
+      "source_path": "src/apps/SoftwareFactory/index.tsx",
+      "source_sha256": "c99713cb4e088764f0aef24cbdca2250e33fd93d9b13c1708bc368822c6ff3bd"
+    },
+    {
+      "destination_sha256": "870ceb9232c3a25904ee45b45c83e96f990edef2e03094da0a09dd45f5533232",
+      "git_blob_sha": "084c20520bf39c77e48fcabdb961a4bd909a44ef",
+      "source_path": "src/apps/SubagentsRoster/AgentCard.tsx",
+      "source_sha256": "870ceb9232c3a25904ee45b45c83e96f990edef2e03094da0a09dd45f5533232"
+    },
+    {
+      "destination_sha256": "b21fd8fe396cf61e2b50d2546774967dbb94bd35cb87b806643438f84cb041e8",
+      "git_blob_sha": "8bff3b971b031abbbfc04e00e8c14a7b23f1f4f4",
+      "source_path": "src/apps/SubagentsRoster/index.tsx",
+      "source_sha256": "b21fd8fe396cf61e2b50d2546774967dbb94bd35cb87b806643438f84cb041e8"
+    },
+    {
+      "destination_sha256": "79f25cdd3bf1e407baa52e95def1c234e0ce992ac33020ea590ff4f0a6757b13",
+      "git_blob_sha": "43dd46fbf7a9f4626478dea73f9af84ea45252ad",
+      "source_path": "src/apps/TechOSDocs/index.tsx",
+      "source_sha256": "79f25cdd3bf1e407baa52e95def1c234e0ce992ac33020ea590ff4f0a6757b13"
+    },
+    {
+      "destination_sha256": "8154be32830c1a24124df2ade4ed38e67469bd0da56002b9fed851b51deb0e9f",
+      "git_blob_sha": "cb52c123c865d4bf01c42024ec2593b755f6edb5",
+      "source_path": "src/apps/TechOSWorkflows/index.tsx",
+      "source_sha256": "8154be32830c1a24124df2ade4ed38e67469bd0da56002b9fed851b51deb0e9f"
+    },
+    {
+      "destination_sha256": "93b705cf59e0e70ae71d1a372da31ef5378a56ae78a8d138398a5c78c122f408",
+      "git_blob_sha": "ee988f98de4e8af85370d43e0a4f0410d8111d20",
+      "source_path": "src/apps/Workspace/index.tsx",
+      "source_sha256": "93b705cf59e0e70ae71d1a372da31ef5378a56ae78a8d138398a5c78c122f408"
+    },
+    {
+      "destination_sha256": "49dd60a381f0f9c5c1dfb3f308f5b881afe94e4e55b0e3bdd76ed575086aab17",
+      "git_blob_sha": "44e6dbba3afec16e01b4a7fbb696bd64809ce5c5",
+      "source_path": "src/apps/Workspace/mapping.json",
+      "source_sha256": "49dd60a381f0f9c5c1dfb3f308f5b881afe94e4e55b0e3bdd76ed575086aab17"
+    },
+    {
+      "destination_sha256": "bd3f12627355707a9602a4158e4829e91f63755a7b83c33421c13d0b7a2018b4",
+      "git_blob_sha": "1fabc6afad00560e0931b6909e8ce37a907ff853",
+      "source_path": "src/apps/_cadre/Cadre.tsx",
+      "source_sha256": "bd3f12627355707a9602a4158e4829e91f63755a7b83c33421c13d0b7a2018b4"
+    },
+    {
+      "destination_sha256": "adc299c4d2fd06d3f7e64ceb2098b61911dbeaaa82c86993876399e63385f364",
+      "git_blob_sha": "87b1857e7660ec7bfeab042726b531025677dc94",
+      "source_path": "src/apps/_cadre/Poignee.tsx",
+      "source_sha256": "adc299c4d2fd06d3f7e64ceb2098b61911dbeaaa82c86993876399e63385f364"
+    },
+    {
+      "destination_sha256": "37811015bfd99e40a275dab19d236c2c740de7b35f3be2341e0b9db67e7c9159",
+      "git_blob_sha": "ed339d77099d587a7e4347452a5d23686b2297de",
+      "source_path": "src/apps/registry.ts",
+      "source_sha256": "37811015bfd99e40a275dab19d236c2c740de7b35f3be2341e0b9db67e7c9159"
+    },
+    {
+      "destination_sha256": "a80d38976f2a07c64be989e742b0497170796483f696c6fc94e395528f01fe60",
+      "git_blob_sha": "ce0e97422f92d802a48e469702d09a6a8d374ba8",
+      "source_path": "src/blueprints/ActionConsole.tsx",
+      "source_sha256": "a80d38976f2a07c64be989e742b0497170796483f696c6fc94e395528f01fe60"
+    },
+    {
+      "destination_sha256": "47e6cbf730edbfc0e303996477ba7c1c9034649b34ca5a254c51606e217ee884",
+      "git_blob_sha": "3331065ceda9abb3016706b711b844f8888c97df",
+      "source_path": "src/blueprints/BlueprintAppFactory.tsx",
+      "source_sha256": "47e6cbf730edbfc0e303996477ba7c1c9034649b34ca5a254c51606e217ee884"
+    },
+    {
+      "destination_sha256": "3d966220dc8d7f35c6eb28c06e28cb309446127cd066bf58eaec702d8bdbf07d",
+      "git_blob_sha": "b99db420f959f2251fa246d8b45c0aac89824b14",
+      "source_path": "src/blueprints/DataGrid.tsx",
+      "source_sha256": "3d966220dc8d7f35c6eb28c06e28cb309446127cd066bf58eaec702d8bdbf07d"
+    },
+    {
+      "destination_sha256": "55a96edf3d2a0f17fa7f1c70f773c46374c797f73b984054515b750d53536a13",
+      "git_blob_sha": "b49c1fb057113a04bdc60c84d4aa069ac0d35c67",
+      "source_path": "src/blueprints/KanbanBoard.tsx",
+      "source_sha256": "55a96edf3d2a0f17fa7f1c70f773c46374c797f73b984054515b750d53536a13"
+    },
+    {
+      "destination_sha256": "aa2f5312d0e60d08be1f1551bce708fd6192459a92d10e16652be65e17773ff0",
+      "git_blob_sha": "7fc6b63603229a75b4260703aa98f729965bde3b",
+      "source_path": "src/blueprints/MetricCard.tsx",
+      "source_sha256": "aa2f5312d0e60d08be1f1551bce708fd6192459a92d10e16652be65e17773ff0"
+    },
+    {
+      "destination_sha256": "ba9ff236eb5b221de771a9b7caf51d44de16d1ffad4568105f65a450b0e95100",
+      "git_blob_sha": "39f0e2862ff36a21f68300d9f144e9f943f809d2",
+      "source_path": "src/blueprints/templateManager.ts",
+      "source_sha256": "ba9ff236eb5b221de771a9b7caf51d44de16d1ffad4568105f65a450b0e95100"
+    },
+    {
+      "destination_sha256": "66b3d67d5d14dc46d846aa1c726cd6295a3bf0da39a207f255bcbef3fce02bdb",
+      "git_blob_sha": "65d08cda8e231db092a0dd19095d637d92634831",
+      "source_path": "src/blueprints/types.ts",
+      "source_sha256": "66b3d67d5d14dc46d846aa1c726cd6295a3bf0da39a207f255bcbef3fce02bdb"
+    },
+    {
+      "destination_sha256": "b28f73e14c2352526091f3a0a9acb6d25d524aa21a5cf0f82f598ae2853393d3",
+      "git_blob_sha": "1c9f2026e705ae8a07e1e9d4377c88eace46a50d",
+      "source_path": "src/cms/CmsView.tsx",
+      "source_sha256": "b28f73e14c2352526091f3a0a9acb6d25d524aa21a5cf0f82f598ae2853393d3"
+    },
+    {
+      "destination_sha256": "d7b94daf41eba3976e235925ee0292ea9ece540c553b8a9a3de5da77e75bccc1",
+      "git_blob_sha": "e71d0076dc8f4bd310f6636b218afd371108b69c",
+      "source_path": "src/cms/hierarchy.ts",
+      "source_sha256": "d7b94daf41eba3976e235925ee0292ea9ece540c553b8a9a3de5da77e75bccc1"
+    },
+    {
+      "destination_sha256": "4c194b9414bcc364a8cadafbba55e7f9b7c3506ef9f437cf083f1fda7dfd919f",
+      "git_blob_sha": "6116b2969255b0865b3ae8bd4c783f00d149a894",
+      "source_path": "src/cms/types.ts",
+      "source_sha256": "4c194b9414bcc364a8cadafbba55e7f9b7c3506ef9f437cf083f1fda7dfd919f"
+    },
+    {
+      "destination_sha256": "95b637d43213aad4c950d8ca9bf55492f6d1256329cff9a1973fb777a73577ea",
+      "git_blob_sha": "d14cc71932083d266419b9ef11aedd74af7085ec",
+      "source_path": "src/contracts/issue237-integration.test.ts",
+      "source_sha256": "95b637d43213aad4c950d8ca9bf55492f6d1256329cff9a1973fb777a73577ea"
+    },
+    {
+      "destination_sha256": "66e71f1012320dfbe1cd1b8e738f2524d6e54018ffcb4a29a6bc1fd7308068b9",
+      "git_blob_sha": "4269ba3696457cfb9df9f236becb0506cb74bb67",
+      "source_path": "src/contracts/truth.test.ts",
+      "source_sha256": "66e71f1012320dfbe1cd1b8e738f2524d6e54018ffcb4a29a6bc1fd7308068b9"
+    },
+    {
+      "destination_sha256": "87c7124bc3be69f89ca6b4c77410706bb3b95aed87b06b63033328f77a5b6430",
+      "git_blob_sha": "bf044f73d02a92cf4712f3602bd32ef57d2bc1db",
+      "source_path": "src/contracts/truth.ts",
+      "source_sha256": "87c7124bc3be69f89ca6b4c77410706bb3b95aed87b06b63033328f77a5b6430"
+    },
+    {
+      "destination_sha256": "caec73219f7854b7735a3988b985106e6d49deaf207f9184f72b1f04afdd1e6f",
+      "git_blob_sha": "b14fec6ad77c897a0350800a8672350ed323a077",
+      "source_path": "src/hooks/useRuntimePresence.test.ts",
+      "source_sha256": "caec73219f7854b7735a3988b985106e6d49deaf207f9184f72b1f04afdd1e6f"
+    },
+    {
+      "destination_sha256": "998fa3102ac8a16aa9e671a5895fb95304f73563029924d68485fde1d26ce6da",
+      "git_blob_sha": "a2c8b308a8a5edec22edb6c497be0da081b6e3b3",
+      "source_path": "src/hooks/useRuntimePresence.ts",
+      "source_sha256": "998fa3102ac8a16aa9e671a5895fb95304f73563029924d68485fde1d26ce6da"
+    },
+    {
+      "destination_sha256": "d6f26fc55b2f1eda42084c6d23db647485a62703f3899b7482a6c87d19ebbc7d",
+      "git_blob_sha": "e719c97148f2d2d464db96fc703e7dea48e15d96",
+      "source_path": "src/index.css",
+      "source_sha256": "d6f26fc55b2f1eda42084c6d23db647485a62703f3899b7482a6c87d19ebbc7d"
+    },
+    {
+      "destination_sha256": "74427df4605c761bfe556b8a625cef91b7ed61802ac66d5a9f5f747236c17483",
+      "git_blob_sha": "c17af6af5b2983a24f35109f5b99ba769bca9ea0",
+      "source_path": "src/main.tsx",
+      "source_sha256": "74427df4605c761bfe556b8a625cef91b7ed61802ac66d5a9f5f747236c17483"
+    },
+    {
+      "destination_sha256": "e608460fb01cf392751b72d0c0efb61d7f7ac13b1fbc729cb33f6cce0c542bbd",
+      "git_blob_sha": "14c4d44782d23df726df1ec30bd6d8d045702468",
+      "source_path": "src/observers.json",
+      "source_sha256": "e608460fb01cf392751b72d0c0efb61d7f7ac13b1fbc729cb33f6cce0c542bbd"
+    },
+    {
+      "destination_sha256": "f697ecf1414e282713a687083e79543596cc26a34b723fe048340493b16c14f9",
+      "git_blob_sha": "07cae4f938d5e97ce95708ba92fae04984ea0f85",
+      "source_path": "src/shell/AppDrawer.tsx",
+      "source_sha256": "f697ecf1414e282713a687083e79543596cc26a34b723fe048340493b16c14f9"
+    },
+    {
+      "destination_sha256": "ac276bfe9dc3da19c999229a4ce6eecee3ce979a6088ccab65ce153851bf929f",
+      "git_blob_sha": "0847bb505a923ec4d1123c2d6efa55d1a0e57ff1",
+      "source_path": "src/shell/AppLayout.tsx",
+      "source_sha256": "ac276bfe9dc3da19c999229a4ce6eecee3ce979a6088ccab65ce153851bf929f"
+    },
+    {
+      "destination_sha256": "a6f4d61277756479cf9cf841d3495e7b2693bb58a4347cf7d838d3877e3b65ca",
+      "git_blob_sha": "43eb6156870101cae4fe155c0dca5798c8272be7",
+      "source_path": "src/shell/Breadcrumbs.tsx",
+      "source_sha256": "a6f4d61277756479cf9cf841d3495e7b2693bb58a4347cf7d838d3877e3b65ca"
+    },
+    {
+      "destination_sha256": "0d2db40c9842371c2a0f754c6aa29cec460b08cc3a5f3f96f1e407265083f56b",
+      "git_blob_sha": "af3e92c0fc3256f58354dfff478393ed9d9f4a17",
+      "source_path": "src/shell/CommandPalette.tsx",
+      "source_sha256": "0d2db40c9842371c2a0f754c6aa29cec460b08cc3a5f3f96f1e407265083f56b"
+    },
+    {
+      "destination_sha256": "c16f145c5f6b8e5997b8133deb35b553c898ab9e0cd9202d5da6bf58c88d6aa2",
+      "git_blob_sha": "e1ec95396c73a0821cb01ecee72ccd5e5325b9a6",
+      "source_path": "src/shell/Desk.tsx",
+      "source_sha256": "c16f145c5f6b8e5997b8133deb35b553c898ab9e0cd9202d5da6bf58c88d6aa2"
+    },
+    {
+      "destination_sha256": "e6dd14b5ec6db7de1ec3181006bc1c228eab22383c41003dee843f95b40c3f3a",
+      "git_blob_sha": "f6b2951e91a62d4bf00b91bd165c7151f7d43b3e",
+      "source_path": "src/shell/DeskIcons.tsx",
+      "source_sha256": "e6dd14b5ec6db7de1ec3181006bc1c228eab22383c41003dee843f95b40c3f3a"
+    },
+    {
+      "destination_sha256": "5d499e51c91f7ddaf7ce90ace7e822474a88aad864cefed63029ae1ebe675520",
+      "git_blob_sha": "109ca869ed6f7e40816b7631b9fb144ed4f02feb",
+      "source_path": "src/shell/Dock.tsx",
+      "source_sha256": "5d499e51c91f7ddaf7ce90ace7e822474a88aad864cefed63029ae1ebe675520"
+    },
+    {
+      "destination_sha256": "822f5235cca0fc3dc3a655947ab2421b48c957f78122f3c8042f72236dcdc79e",
+      "git_blob_sha": "388ef4873c091be5b0491ecf6fe9ff9f23f1e9ab",
+      "source_path": "src/shell/DomainsView.tsx",
+      "source_sha256": "822f5235cca0fc3dc3a655947ab2421b48c957f78122f3c8042f72236dcdc79e"
+    },
+    {
+      "destination_sha256": "974024f7c631e8a732943aae13526c71a83dcade5dc3bb88857773a9ddaf4c5c",
+      "git_blob_sha": "c72566279f89300e3838dc8e09a7e4a71ce65244",
+      "source_path": "src/shell/MenuBar.tsx",
+      "source_sha256": "974024f7c631e8a732943aae13526c71a83dcade5dc3bb88857773a9ddaf4c5c"
+    },
+    {
+      "destination_sha256": "c3cac0476e4e05871f2767a120e3751b6711c578940643560a52bd74830ad60a",
+      "git_blob_sha": "75f8b9a6af248760d80d3ea17dab7927e12044ba",
+      "source_path": "src/shell/NotificationsDropdown.tsx",
+      "source_sha256": "c3cac0476e4e05871f2767a120e3751b6711c578940643560a52bd74830ad60a"
+    },
+    {
+      "destination_sha256": "16cb1db2660aeebab576231ad48166e249add0417b72f7f749bb6e6cf7da7724",
+      "git_blob_sha": "ae5db04547d85236e929c75154479ac7e3a56006",
+      "source_path": "src/shell/SnapGhostOverlay.tsx",
+      "source_sha256": "16cb1db2660aeebab576231ad48166e249add0417b72f7f749bb6e6cf7da7724"
+    },
+    {
+      "destination_sha256": "afb5c8e286a2fc21f360d36ae275bd2ab5830cc5a762ee964e236debfcea8b1c",
+      "git_blob_sha": "a4ba150caef4633c54b894f638ced25f790f5ba2",
+      "source_path": "src/shell/Toast.tsx",
+      "source_sha256": "afb5c8e286a2fc21f360d36ae275bd2ab5830cc5a762ee964e236debfcea8b1c"
+    },
+    {
+      "destination_sha256": "27932972889b963893126039bc653d5f1212de2c13538f8e484435e52f22cb35",
+      "git_blob_sha": "f405e007a108c596d175614036d3a8c4c83dbe33",
+      "source_path": "src/shell/VetoBand.tsx",
+      "source_sha256": "27932972889b963893126039bc653d5f1212de2c13538f8e484435e52f22cb35"
+    },
+    {
+      "destination_sha256": "4d65392be3b9ef0672ff8b76e1402ae91621dd31867db49f84c8b730507b9b5b",
+      "git_blob_sha": "d56b290d5f4b1442a4b1346af990fdb6384c6d69",
+      "source_path": "src/shell/ViewportGuard.tsx",
+      "source_sha256": "4d65392be3b9ef0672ff8b76e1402ae91621dd31867db49f84c8b730507b9b5b"
+    },
+    {
+      "destination_sha256": "930cd895223b44412dc8daf69b5955d2342c968e2254cda85e33ea34a62ebc27",
+      "git_blob_sha": "438c31b46720648767bcb109b6f84c124b2e5e25",
+      "source_path": "src/shell/Window.tsx",
+      "source_sha256": "930cd895223b44412dc8daf69b5955d2342c968e2254cda85e33ea34a62ebc27"
+    },
+    {
+      "destination_sha256": "ce3b07eb4a03ee492197f8ddcf2f4204e6da4365c481824ad3ab3103587e4334",
+      "git_blob_sha": "52b7704f49cab54e4974c61281998d5b2660e43a",
+      "source_path": "src/shell/WindowNavContext.tsx",
+      "source_sha256": "ce3b07eb4a03ee492197f8ddcf2f4204e6da4365c481824ad3ab3103587e4334"
+    },
+    {
+      "destination_sha256": "eb561020c2f6ca6a28c648ef17b3008bd61128e0870623bf590d8051a8599854",
+      "git_blob_sha": "b511e6a284d44988a13062c786c96683a0ce6bf1",
+      "source_path": "src/shell/dockSkins.ts",
+      "source_sha256": "eb561020c2f6ca6a28c648ef17b3008bd61128e0870623bf590d8051a8599854"
+    },
+    {
+      "destination_sha256": "1c501f691e2bf769a2dbcbf61bc46c59655bd4d41c852a996df7c9a0d9fc61e9",
+      "git_blob_sha": "9326e64c45a1fb9862723aceaa6fcd507b63e0dd",
+      "source_path": "src/shell/domaines.ts",
+      "source_sha256": "1c501f691e2bf769a2dbcbf61bc46c59655bd4d41c852a996df7c9a0d9fc61e9"
+    },
+    {
+      "destination_sha256": "af85001ad5428edfdfb55add46fbbccafb7465049838835b5b946acd31f397f7",
+      "git_blob_sha": "c95c3c7de562abb5392fb5ea0b3f0774a3a00876",
+      "source_path": "src/shell/migrationDefensive.ts",
+      "source_sha256": "af85001ad5428edfdfb55add46fbbccafb7465049838835b5b946acd31f397f7"
+    },
+    {
+      "destination_sha256": "13409de65ba4abd049673ad5f0ef4996f1a4f0c8b7c3843bab6719d0e8983b7f",
+      "git_blob_sha": "2060e1979c2685cd8e93013e18af37ebca11bca2",
+      "source_path": "src/shell/snapEngine.ts",
+      "source_sha256": "13409de65ba4abd049673ad5f0ef4996f1a4f0c8b7c3843bab6719d0e8983b7f"
+    },
+    {
+      "destination_sha256": "1ae7430a102cf5a93858258ed092ad7efd30337a19f62fd92cdcb1a407879390",
+      "git_blob_sha": "0b4e5e002f9e836c0016fa2e6d5819bb95d34249",
+      "source_path": "src/shell/store.ts",
+      "source_sha256": "1ae7430a102cf5a93858258ed092ad7efd30337a19f62fd92cdcb1a407879390"
+    },
+    {
+      "destination_sha256": "547ab4967c9cd9ef3073462307028788e0c63d5501d732a67627f962998af8d1",
+      "git_blob_sha": "66bb53bfd76a07ae6bfd5d51ad2ea3558d371340",
+      "source_path": "src/shell/wallpaper.ts",
+      "source_sha256": "547ab4967c9cd9ef3073462307028788e0c63d5501d732a67627f962998af8d1"
+    },
+    {
+      "destination_sha256": "b969c7de3309d6d4391d3756826a6ed59bf5d41e06dfe1fc98a13b5f7052cfa8",
+      "git_blob_sha": "9083ca71c0d78e20bd24e021492895a523604379",
+      "source_path": "src/storage/backup.ts",
+      "source_sha256": "b969c7de3309d6d4391d3756826a6ed59bf5d41e06dfe1fc98a13b5f7052cfa8"
+    },
+    {
+      "destination_sha256": "ca7bad01cb08a086d6073b1370977a7e8e6478765d87676cfd4f34f7d0a8bb42",
+      "git_blob_sha": "863a42ee604fafd3626232a5e397c38eac1ba87b",
+      "source_path": "src/storage/contract.ts",
+      "source_sha256": "ca7bad01cb08a086d6073b1370977a7e8e6478765d87676cfd4f34f7d0a8bb42"
+    },
+    {
+      "destination_sha256": "3117e3459027f1ee68c8c95d0c22dddbd794951e3702178044e50297a4314f05",
+      "git_blob_sha": "e113293a96df62c41d0a773f9b15129803a46381",
+      "source_path": "src/storage/local.ts",
+      "source_sha256": "3117e3459027f1ee68c8c95d0c22dddbd794951e3702178044e50297a4314f05"
+    },
+    {
+      "destination_sha256": "a0d272b89abb72b0ee5650ce98edecfce0bd11bf0bf10f832a3a66d13fe10e0a",
+      "git_blob_sha": "ce7c62431a0c260177980f931d81b7cb278edb30",
+      "source_path": "src/storage/pocketbase.ts",
+      "source_sha256": "a0d272b89abb72b0ee5650ce98edecfce0bd11bf0bf10f832a3a66d13fe10e0a"
+    },
+    {
+      "destination_sha256": "de095017070bf3f5392af30c95132f54a4c4d7c8fd9169bdf27109ec6370de09",
+      "git_blob_sha": "e3d31162445b0a4daf16b3dc1bdc158e1e400eaf",
+      "source_path": "src/storage/useStorage.ts",
+      "source_sha256": "de095017070bf3f5392af30c95132f54a4c4d7c8fd9169bdf27109ec6370de09"
+    },
+    {
+      "destination_sha256": "67bdbd6624eb69ef1ed6d2dc9dea2a73add1812cdb2fec2d4ab30a2c75a6f1cd",
+      "git_blob_sha": "9aaf9cd2ddd09de70ecb5ebbc3b7aa8e57bcdf4f",
+      "source_path": "src/themes/ThemeApplier.tsx",
+      "source_sha256": "67bdbd6624eb69ef1ed6d2dc9dea2a73add1812cdb2fec2d4ab30a2c75a6f1cd"
+    },
+    {
+      "destination_sha256": "27ce2fe93d71931cfa8e6f52f1c19a4eb40a60d492633661d591904b8d54be7b",
+      "git_blob_sha": "aec7621f1d3efce5b103782e76fca115265e3ba2",
+      "source_path": "src/themes/store.ts",
+      "source_sha256": "27ce2fe93d71931cfa8e6f52f1c19a4eb40a60d492633661d591904b8d54be7b"
+    },
+    {
+      "destination_sha256": "3e0d8a4886d09d09db8a1fc16981e2e18f60e1a721a0ed004055322a8ce26eca",
+      "git_blob_sha": "e5b510c4cfbb39bf217562ce0f90781b07d2cc65",
+      "source_path": "src/themes/tokens.ts",
+      "source_sha256": "3e0d8a4886d09d09db8a1fc16981e2e18f60e1a721a0ed004055322a8ce26eca"
+    },
+    {
+      "destination_sha256": "22207fde5154a7c02ed9d3fbb6bddabf85c30e2ee45df67309ade0efd98bd3b8",
+      "git_blob_sha": "51a080183150e0248fa62dde1274e3910327e774",
+      "source_path": "src/types.ts",
+      "source_sha256": "22207fde5154a7c02ed9d3fbb6bddabf85c30e2ee45df67309ade0efd98bd3b8"
+    },
+    {
+      "destination_sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "git_blob_sha": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+      "source_path": "src/vite-env.d.ts",
+      "source_sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "destination_sha256": "acff09be39aee8298c52a5d8a3603a761f55562d7d728f1222b756b8d4d81ce7",
+      "git_blob_sha": "da38aa916a3aaba9f800a04951dead2fdf3e9044",
+      "source_path": "tools/arms-api.ts",
+      "source_sha256": "acff09be39aee8298c52a5d8a3603a761f55562d7d728f1222b756b8d4d81ce7"
+    },
+    {
+      "destination_sha256": "93c94bcbe16d8e04495fa3c56a36acae4c7ff2885655ed36acf09e1ad345c9ad",
+      "git_blob_sha": "9b5623f4d63898b08c0c2bd4cfb4e41f44ff9f75",
+      "source_path": "tools/corpus-api.ts",
+      "source_sha256": "93c94bcbe16d8e04495fa3c56a36acae4c7ff2885655ed36acf09e1ad345c9ad"
+    },
+    {
+      "destination_sha256": "1307d6878b1767e241311801b69b19373141247fb790e141dedc17d4a9595aad",
+      "git_blob_sha": "23ac1fa730de6a7c720d87ef7639bf8efde02d04",
+      "source_path": "tools/live-projection-canary.test.ts",
+      "source_sha256": "1307d6878b1767e241311801b69b19373141247fb790e141dedc17d4a9595aad"
+    },
+    {
+      "destination_sha256": "30103a228c8f0bda12e1365a3ff92d560587d697d78d894611fe3abc2f0bf366",
+      "git_blob_sha": "16d44ebc657c56b25bc966f0abe95381be496b5f",
+      "source_path": "tools/live-projection-canary.ts",
+      "source_sha256": "30103a228c8f0bda12e1365a3ff92d560587d697d78d894611fe3abc2f0bf366"
+    },
+    {
+      "destination_sha256": "aa17d128403c51710bee24fb4be76f70e891ade8b6fcb1610fe240aa42eae7fe",
+      "git_blob_sha": "6c97da81f7a89bd73704c74eb734c6234fcb5f23",
+      "source_path": "tools/projection-service.ts",
+      "source_sha256": "aa17d128403c51710bee24fb4be76f70e891ade8b6fcb1610fe240aa42eae7fe"
+    },
+    {
+      "destination_sha256": "a1f274b41c12b82b8d67456d1e97d21690954f9692e405490808d86d499e1de9",
+      "git_blob_sha": "1887299d0bc9c8c1b2975ff4f68c92c022856031",
+      "source_path": "tools/revue-api.ts",
+      "source_sha256": "a1f274b41c12b82b8d67456d1e97d21690954f9692e405490808d86d499e1de9"
+    },
+    {
+      "destination_sha256": "dc5db8ee571c5aa3c52bbf91a9f0279e687ceb33e1a0b432ae384c6b24b89792",
+      "git_blob_sha": "7a9db4c2258e7ec8ad6a867c609ff39dca1cc2c9",
+      "source_path": "tools/routeurs-api.ts",
+      "source_sha256": "dc5db8ee571c5aa3c52bbf91a9f0279e687ceb33e1a0b432ae384c6b24b89792"
+    },
+    {
+      "destination_sha256": "4870aaf044719cf217ab6bc4e5f6c3a263083a111314c1cdecedd6f638be262f",
+      "git_blob_sha": "262b6a7a36d639aedd030b7dee9b15704a6fccaa",
+      "source_path": "tools/sync_life_os_pocketbase.py",
+      "source_sha256": "4870aaf044719cf217ab6bc4e5f6c3a263083a111314c1cdecedd6f638be262f"
+    },
+    {
+      "destination_sha256": "99c0f4776b582d19b6bcaa80656b78de4f36e3eb34b3052fad8ff584fb5f686a",
+      "git_blob_sha": "ec130cfde9fa168bf620a255bcc1493760fd15ea",
+      "source_path": "tools/tech-os-api.ts",
+      "source_sha256": "99c0f4776b582d19b6bcaa80656b78de4f36e3eb34b3052fad8ff584fb5f686a"
+    },
+    {
+      "destination_sha256": "c2541f54aadfca05f491de62bdca947f053fb819a370dbb98ac0460b330358fe",
+      "git_blob_sha": "ceb825dbc4f7b36438bf6686bb3213cc2bc63a6c",
+      "source_path": "tools/test-workgraph-projection.mjs",
+      "source_sha256": "c2541f54aadfca05f491de62bdca947f053fb819a370dbb98ac0460b330358fe"
+    },
+    {
+      "destination_sha256": "5c0edc00608bf72901dea500e199993c0c77dd125b837cf75998c0af66de579b",
+      "git_blob_sha": "59b3cf108a01cac7680e44bcf4daf3a7d79a2a5f",
+      "source_path": "tools/workgraph-projection.ts",
+      "source_sha256": "5c0edc00608bf72901dea500e199993c0c77dd125b837cf75998c0af66de579b"
+    },
+    {
+      "destination_sha256": "b024efb329e86d12c603c136237f10e039c56c79c5b8a91a8acbd7cc1a542b77",
+      "git_blob_sha": "2d0ee84ea01901239c36c8faf403cb66ca70f06e",
+      "source_path": "tools/workspace-api.ts",
+      "source_sha256": "b024efb329e86d12c603c136237f10e039c56c79c5b8a91a8acbd7cc1a542b77"
+    },
+    {
+      "destination_sha256": "ee42e7ca6cb0f06e1f43fa1293df18fc0b357701c42ca5341d288b31b8d41240",
+      "git_blob_sha": "a835a9055a65fbc4abb4a146d8e4004af094f359",
+      "source_path": "tsconfig.app.json",
+      "source_sha256": "ee42e7ca6cb0f06e1f43fa1293df18fc0b357701c42ca5341d288b31b8d41240"
+    },
+    {
+      "destination_sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "git_blob_sha": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+      "source_path": "tsconfig.json",
+      "source_sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "destination_sha256": "e60145ab8d17c8a8751723a214ec41cd1ec903739fc8f48f0f54fc03d7016bd8",
+      "git_blob_sha": "f315807f22d69896544780e75a5651eddd0470e6",
+      "source_path": "tsconfig.node.json",
+      "source_sha256": "e60145ab8d17c8a8751723a214ec41cd1ec903739fc8f48f0f54fc03d7016bd8"
+    },
+    {
+      "destination_sha256": "0cb3e4b4ae79a3f0ef91c315ed44fcc00cd4ab7d20802d8884d940fd2c49b715",
+      "git_blob_sha": "5d94c916de44a96add4c4284ec66dbc575c35057",
+      "source_path": "vercel.json",
+      "source_sha256": "0cb3e4b4ae79a3f0ef91c315ed44fcc00cd4ab7d20802d8884d940fd2c49b715"
+    },
+    {
+      "destination_sha256": "90e7a2d2bb980818358c9e6dce2dd2861675c329e229fdf902599fc901199599",
+      "git_blob_sha": "99279274dfe8a6da0872033416c9f054e554078d",
+      "source_path": "verif/verif_http.mjs",
+      "source_sha256": "90e7a2d2bb980818358c9e6dce2dd2861675c329e229fdf902599fc901199599"
+    },
+    {
+      "destination_sha256": "224720b2544adcdfeea054e072be714bb5f32183d778becf28646d191f107ff4",
+      "git_blob_sha": "145f332047b8f9a2c075de7966f0d89ee8962a62",
+      "source_path": "verif/verif_marqueurs.mjs",
+      "source_sha256": "224720b2544adcdfeea054e072be714bb5f32183d778becf28646d191f107ff4"
+    },
+    {
+      "destination_sha256": "db7964b736a45589aaf89300ee6099e67558117f5abd9ff75625939fead86e38",
+      "git_blob_sha": "d3a8cf0dc927f6450d04008695d965ee531d5e02",
+      "source_path": "verifie_v3.mjs",
+      "source_sha256": "db7964b736a45589aaf89300ee6099e67558117f5abd9ff75625939fead86e38"
+    },
+    {
+      "destination_sha256": "edd6f980fca3220ac5ee4640cac39532722661c1841b43c26da9053d18d577b4",
+      "git_blob_sha": "17ab44f18c1dcf6e71b957af15ff8b43f174eedd",
+      "source_path": "vite.config.ts",
+      "source_sha256": "edd6f980fca3220ac5ee4640cac39532722661c1841b43c26da9053d18d577b4"
+    }
+  ],
+  "repository": "Amdkn/Agent-OS-Desktop",
+  "revision": "2a05c928f4d6a78207f37be5a8b56e27a88862fd"
+}
