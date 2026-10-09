@@ -1,0 +1,72 @@
+{
+  "name": "coach-os",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "coach-os": "./cli/coach-os.mjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "vitest run --pool=threads",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b",
+    "typecheck:api": "tsc -p api/tsconfig.json --noEmit",
+    "tooling:build": "node scripts/build-tooling.mjs",
+    "tooling:skills": "node scripts/build-skills.mjs",
+    "tooling:harness": "node scripts/build-harness.mjs",
+    "tooling:verify": "node scripts/verify.mjs",
+    "bench:kernel": "node _runtime/kernel.mjs --autotest",
+    "bench:bridge": "node _runtime/bridge/bridge.mjs --autotest",
+    "bench:adapters": "node _runtime/bridge/adapters.mjs --autotest",
+    "bench:rbac": "node _runtime/bridge/rbac-test.mjs",
+    "bench": "npm run bench:kernel && npm run bench:bridge && npm run bench:adapters && npm run bench:rbac",
+    "verify": "npm run typecheck && npm run typecheck:api && npm test && npm run build && npm run bench"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.34",
+    "@ai-sdk/google": "^4.0.37",
+    "@ai-sdk/openai": "^4.0.34",
+    "@ai-sdk/react": "^4.0.59",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@supabase/supabase-js": "^2.110.8",
+    "ai": "^7.0.56",
+    "lucide-react": "^1.25.0",
+    "motion": "^12.42.2",
+    "posthog-js": "^1.407.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "three": "^0.185.1",
+    "usertour.js": "^0.0.24",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.185.1",
+    "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.4",
+    "jsdom": "^29.1.1",
+    "oxlint": "^1.71.0",
+    "postcss": "^8.5.21",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vitest": "^4.1.10"
+  },
+  "files": [
+    "dist",
+    "cli",
+    "mcp",
+    "coach-os-plugin",
+    "server.js",
+    "README.md",
+    "INSTALL.md"
+  ]
+}

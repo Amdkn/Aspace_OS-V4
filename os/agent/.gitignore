@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+observatoire.html
+*.log
+.DS_Store
+*._TRASH_*
+*.bak
+

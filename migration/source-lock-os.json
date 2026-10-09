@@ -1,0 +1,26 @@
+[
+  {
+    "repository": "Amdkn/Life-OS-2026",
+    "revision": "f9d6f27724d8b4a3691f0ec5d9cadefa3b22acdd",
+    "tree_sha": "7eb50b47f73805dc2ac4ff48d87f459b8aedb81a",
+    "files": 878,
+    "inventory": "os/life/IMPORT.json",
+    "adaptation": "byte-identical (faithful import, no reduction)"
+  },
+  {
+    "repository": "Amdkn/Agent-OS-Desktop",
+    "revision": "2a05c928f4d6a78207f37be5a8b56e27a88862fd",
+    "tree_sha": "3d2991cb1c61a5fd8f0f13cf7d39bfd87860ef01",
+    "files": 142,
+    "inventory": "os/agent/IMPORT.json",
+    "adaptation": "byte-identical (faithful import, no reduction)"
+  },
+  {
+    "repository": "Amdkn/BusinessOS",
+    "revision": "e9f1366d357ca992c74734b8c769999c0f7d7cb2",
+    "tree_sha": "8da7a14b6ec26aca649dbefe07c6e8caf0848d4e",
+    "files": 1345,
+    "inventory": "os/business/IMPORT.json",
+    "adaptation": "byte-identical (faithful import, no reduction)"
+  }
+]

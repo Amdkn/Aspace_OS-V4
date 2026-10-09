@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   Citadelle OS — PostHog-Light Design System
+   Forked from A'Space Life OS glass shell (proven canon)
+   Skin: warm paper light — #f4f5f0 canvas, #f08143 accent
+   ═══════════════════════════════════════════════════ */
+
+@layer base {
+  /* ── Selection : comportement d'OS, pas de page web ──────────────────
+     Un shell de bureau ne laisse pas selectionner ses libelles, ses onglets
+     ni ses cartes. Sans cette regle, le navigateur affiche un curseur I-beam
+     sur toute l'interface et, si la navigation au caret est active (F7 sous
+     Chrome), y depose un caret clignotant — comme si on pouvait ecrire dans
+     un titre de fenetre.
+
+     La selection reste active la ou elle a un sens : champs de saisie, et
+     tout element portant `data-selectable` ou la classe `.selectable`.
+     Pour rendre un bloc de donnees copiable, lui ajouter `data-selectable`. */
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"],
+  [data-selectable],
+  .selectable {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  :root {
+    /* Accent — PostHog orange */
+    --theme-accent: #f08143;
+    --theme-accent-rgb: 240, 129, 67;
+    --theme-accent-hover: #e07535;
+
+    /* Text — warm stone */
+    --theme-text: #292524;          /* stone-800 */
+    --theme-text-rgb: 41, 37, 36;
+    --theme-muted: #78716c;         /* stone-500 */
+
+    /* Surfaces */
+    --canvas: #f4f5f0;
+    --theme-bg: #ffffff;            /* window body */
+    --panel: rgba(255, 255, 255, 0.85);
+    --panel-solid: #ffffff;
+    --panel-border: #c4c6ba;
+    --panel-border-subtle: #e5e6dc;
+    --hairline: #e5e6dc;
+
+    /* Elevation */
+    --shadow-window: 0 24px 60px -20px rgba(41, 37, 36, 0.28);
+    --shadow-panel: 0 1px 2px rgba(41, 37, 36, 0.06), 0 8px 24px -16px rgba(41, 37, 36, 0.18);
+
+    /* Status */
+    --ok: #15803d;
+    --warn: #b45309;
+    --danger: #dc2626;
+
+    /* Layout */
+    --topbar-height: 40px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body, #root {
+    margin: 0;
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--canvas);
+    color: var(--theme-text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-outfit { font-family: 'Outfit', 'Inter', sans-serif; }
+}
+
+@layer utilities {
+  .top-bar { height: var(--topbar-height); }
+
+  /* Glass Level 1 — floating chrome (topbar, dock, window title strip) */
+  .glass {
+    background: var(--panel);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--shadow-panel);
+  }
+
+  /* Glass Level 2 — cards nested inside windows */
+  .glass-card {
+    background: var(--panel-solid);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-panel);
+  }
+
+  /* Custom scrollbar — thin, warm */
+  .custom-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--panel-border);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--theme-muted); background-clip: content-box; }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Toast slide-in */
+@keyframes toast-in {
+  from { transform: translateX(16px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.animate-toast-in { animation: toast-in 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* TopBar replacements for retired BorderBeam + ThinkingOrbs (CSS-only, no upstream equivalent). */
+@keyframes topbar-beam-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+@keyframes topbar-orb-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50%      { opacity: 1;   transform: scale(1.15); }
+}
+
+/* canvas-ui v30 always-visible CssFallback keyframes.
+   Mapped 1:1 to the 33 upstream effects by name (see CssFallback.tsx). */
+@keyframes blaze-flicker {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.6); }
+  50%      { opacity: 1;   transform: scaleY(1.05); }
+}
+@keyframes bubble-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-8px, -10px) scale(1.05); }
+  66%      { transform: translate(10px, -6px) scale(0.96); }
+}
+@keyframes cloth-drape {
+  0%, 100% { transform: skewX(-2deg); }
+  50%      { transform: skewX(2deg); }
+}
+@keyframes clouds-drift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-30%); }
+}
+@keyframes displacement-ripple {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(4px, -3px); }
+  50%      { transform: translate(-3px, 4px); }
+  75%      { transform: translate(3px, 3px); }
+}
+@keyframes droplets-run {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 40px; }
+}
+@keyframes flame-burn {
+  0%, 100% { box-shadow: 0 0 24px currentColor inset; }
+  50%      { box-shadow: 0 0 48px currentColor inset, 0 0 12px currentColor; }
+}
+@keyframes force-shimmer {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.9; }
+}
+@keyframes glitch-shift {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(-2px, 1px); }
+  66%  { transform: translate(2px, -1px); }
+}
+@keyframes glyph-fall {
+  0%   { transform: translateY(-20%); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(20%); opacity: 0; }
+}
+@keyframes hex-tilt {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50%      { transform: rotate(3deg) scale(1.02); }
+}
+@keyframes laser-sweep {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+@keyframes liquid-wave {
+  0%, 100% { border-radius: 46% 54% 38% 62% / 52% 38% 62% 48%; }
+  33%      { border-radius: 38% 62% 54% 46% / 62% 38% 46% 54%; }
+  66%      { border-radius: 54% 46% 62% 38% / 38% 62% 54% 46%; }
+}
+@keyframes magnify-radial {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+@keyframes particle-fall {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 80px; }
+}
+@keyframes ripple-out {
+  0%   { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1.06); opacity: 0.2; }
+}
+@keyframes shatter-pulse {
+  0%, 100% { transform: rotate(-1.5deg) scale(1); }
+  50%      { transform: rotate(1.5deg) scale(1.04); }
+}
+
+/* Onboarding Citadel: the Onboarding app now IS a Mini Desktop OS rendered
+   inside the Macro WindowFrame (with mac-style traffic lights from Macro).
+   The Macro WindowFrame chrome IS the prospect's window controls. */

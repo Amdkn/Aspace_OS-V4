@@ -1,0 +1,935 @@
+import { useState, useEffect, useRef } from 'react';
+import { Settings, SlidersHorizontal, ShieldAlert, Plug, Palette, Check, RotateCcw, HelpCircle, Play, Image as ImageIcon, Upload, RefreshCw, AlertTriangle, Bot } from 'lucide-react';
+import { AppFrame, SectionHead, type AppSection } from '../../components/AppFrame';
+import { Card, Badge } from '../_ui/kit';
+import { Toggle } from '../_ui/widgets';
+import { useCmsStore } from '../../lib/cms/cms.store';
+import { useThemeStore } from '../../lib/themes/store';
+import { THEME_META, CANONICAL_APP_THEMES } from '../../lib/themes/tokens';
+import { getObservabilityConsent, setObservabilityConsent } from '../../lib/observability';
+import { launchTour, TOUR_IDS, type TourId } from '../../lib/tours';
+import { useShellStore } from '../../stores/shell.store';
+import { ThemeDetailPage } from './ThemeDetailPage';
+import { registerItemDetail } from '../../components/cms/itemDetailRegistry';
+import { AppDetailOverlay } from '../../components/cms/AppDetailOverlay';
+import { useWindowPage } from '../../contexts/WindowContext';
+import type { CmsCollectionDef, CmsItem } from '../../lib/cms/types';
+import { SettingsItemDetail } from './SettingsItemDetail';
+import { AssistantSettings } from './AssistantSettings';
+import { seedSettingsCms } from './seed';
+import {
+  useWallpaper,
+  setWallpaper,
+  setWallpaperFit,
+  clearWallpaper,
+  resizeImageToDataUrl,
+  type WallpaperFit,
+} from '../../lib/wallpaper';
+import posthog from 'posthog-js';
+
+registerItemDetail('settings', SettingsItemDetail);
+seedSettingsCms();
+
+const ACCENT = '#78716c';
+
+/** localStorage key for the General/Privacy toggle flags. Versioned
+ *  (`-v1`) so a future schema change can ship a clean break without
+ *  dragging stale shape into a new release. */
+const FLAGS_STORAGE_KEY = 'coach-os-settings-flags-v1';
+
+interface FlagState {
+  autoBrief: boolean;
+  autoFollowup: boolean;
+  voicePublish: boolean;
+  egressLock: boolean;
+  localOnly: boolean;
+  weeklyDigest: boolean;
+}
+
+const DEFAULT_FLAGS: FlagState = {
+  autoBrief: true,
+  autoFollowup: true,
+  voicePublish: false,
+  egressLock: true,
+  localOnly: true,
+  weeklyDigest: true,
+};
+
+/** Read the persisted flag set, falling back to defaults when the key
+ *  is absent or the payload is malformed (older versions, partial
+ *  writes). Each field is read independently so a partial schema still
+ *  loads — no reason to throw the user back to defaults for one missing
+ *  key. */
+function loadFlags(): FlagState {
+  if (typeof window === 'undefined') return DEFAULT_FLAGS;
+  try {
+    const raw = window.localStorage.getItem(FLAGS_STORAGE_KEY);
+    if (!raw) return DEFAULT_FLAGS;
+    const parsed = JSON.parse(raw) as Partial<FlagState>;
+    return { ...DEFAULT_FLAGS, ...parsed };
+  } catch {
+    return DEFAULT_FLAGS;
+  }
+}
+
+function saveFlags(next: FlagState): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(FLAGS_STORAGE_KEY, JSON.stringify(next));
+  } catch {
+    // best-effort — QuotaExceeded or private mode. Don't crash the toggle.
+  }
+}
+
+// Registered business-domain apps (matches app-discovery.ts).
+const APP_REGISTRY: Array<{ id: string; name: string; }> = [
+  { id: 'dashboard', name: 'Dashboard' },
+  { id: 'people', name: 'People / Agents' },
+  { id: 'operations', name: 'Operations' },
+  { id: 'it-rd', name: 'IT / R&D' },
+  { id: 'clients', name: 'Clients' },
+  { id: 'tasks', name: 'Tasks' },
+  { id: 'marketplace', name: 'Marketplace' },
+  { id: 'product', name: 'Product' },
+  { id: 'growth', name: 'Growth' },
+  { id: 'sales', name: 'Sales OS' },
+
+];
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/*  Wallpaper section — upload, preview, fit, reset.                          */
+/*  Image is downscaled to 2560px max long edge + JPEG re-encode in           */
+/*  src/lib/wallpaper.ts. Stored under its own localStorage keys so the       */
+/*  theme store never has to re-serialize multi-MB data on every theme change. */
+/* ────────────────────────────────────────────────────────────────────────── */
+function WallpaperPanel() {
+  // Abonnement partage avec le bureau (cf. `useWallpaper` dans lib/wallpaper.ts).
+  // L'image reste hors de Zustand — c'est tout l'objet de ce module — mais les
+  // deux surfaces qui l'affichent lisent desormais la meme source reactive.
+  //
+  // La version precedente tenait un etat local et ecoutait un evenement
+  // `coach-os:wallpaper-changed` que personne n'emettait jamais. Le panneau se
+  // rafraichissait quand meme, par ses propres `setState` apres chaque
+  // ecriture ; le bureau, lui, n'entendait rien et gardait l'ancien fond.
+  const { dataUrl, fit } = useWallpaper();
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleFile = async (file: File) => {
+    setError(null);
+    setBusy(true);
+    try {
+      const dataUrl = await resizeImageToDataUrl(file);
+      const res = setWallpaper(dataUrl, fit);
+      if (!res.ok) {
+        // Don't lose the user's image silently — QuotaExceededError is the
+        // common case (private browsing, large photo, storage already half
+        // full from other apps' keys). The user should know the wallpaper
+        // didn't actually persist.
+        setError(
+          res.error.toLowerCase().includes('quota')
+            ? 'Browser storage is full. Clear some site data, then try a smaller image.'
+            : `Could not save the image: ${res.error}`
+        );
+        return;
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      setError(
+        msg === 'unsupported'
+          ? 'That file is not an image.'
+          : msg === 'decode'
+          ? 'The image could not be decoded.'
+          : `Could not load the image: ${msg}`
+      );
+    } finally {
+      setBusy(false);
+      if (fileRef.current) fileRef.current.value = '';
+    }
+  };
+
+  const onFitChange = (next: WallpaperFit) => {
+    setError(null);
+    const res = setWallpaperFit(next);
+    if (!res.ok) {
+      setError(`Could not save the fit: ${res.error}`);
+      return;
+    }
+  };
+
+  const onReset = () => {
+    setError(null);
+    clearWallpaper();
+  };
+
+  return (
+    <div className="p-7">
+      <SectionHead
+        title="Desktop wallpaper"
+        subtitle="Upload an image that fills the desktop behind your apps. Stored locally on this device."
+        action={
+          <button
+            type="button"
+            onClick={onReset}
+            disabled={!dataUrl}
+            className="flex items-center gap-1.5 rounded-lg border border-[var(--panel-border)] bg-[var(--theme-surface)] px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--theme-muted)] transition-colors hover:bg-[var(--theme-surface-hover)] disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <RotateCcw className="w-3 h-3" /> Restore default
+          </button>
+        }
+      />
+
+      <Card>
+        <div className="px-5 py-4 flex items-start gap-4 border-b border-[var(--hairline)]">
+          <div
+            className="relative h-28 w-48 shrink-0 rounded-lg overflow-hidden border border-[var(--panel-border)]"
+            style={{ background: dataUrl ? '#000' : 'var(--theme-canvas)' }}
+          >
+            {dataUrl ? (
+              <img
+                src={dataUrl}
+                alt="Current wallpaper preview"
+                className="absolute inset-0 h-full w-full"
+                style={{ objectFit: fit === 'repeat' ? 'unset' : fit, backgroundRepeat: fit === 'repeat' ? 'repeat' : 'no-repeat', backgroundSize: fit === 'repeat' ? 'auto' : undefined, backgroundImage: fit === 'repeat' ? `url(${dataUrl})` : undefined }}
+              />
+            ) : (
+              <div className="absolute inset-0 grid place-items-center text-[var(--theme-muted)]">
+                <ImageIcon className="w-6 h-6" />
+              </div>
+            )}
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-semibold text-[var(--theme-text)]">
+              {dataUrl ? 'Custom wallpaper set' : 'No custom wallpaper'}
+            </div>
+            <p className="text-xs text-[var(--theme-muted)] mt-1 leading-relaxed">
+              {dataUrl
+                ? 'This image renders behind your apps, over the Solarpunk default. On contain or repeat, that default is what you see around the edges. Restore it at any time.'
+                : 'Pick a photo or any image. The browser will resize it to fit a 2560-pixel desktop and re-encode it as JPEG to stay well under the local-storage budget.'}
+            </p>
+
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <input
+                ref={fileRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                data-testid="wallpaper-input"
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) void handleFile(f);
+                }}
+              />
+              <button
+                type="button"
+                onClick={() => fileRef.current?.click()}
+                disabled={busy}
+                className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-60 hover:scale-[1.01] active:scale-[0.99]"
+                style={{ background: 'var(--theme-accent)', color: 'var(--theme-accent)' }}
+              >
+                <Upload className="w-3 h-3" style={{ color: 'var(--theme-text)' }} />
+                <span style={{ color: 'var(--theme-text)' }}>{busy ? 'Processing…' : 'Upload image'}</span>
+              </button>
+
+              {dataUrl && (
+                <button
+                  type="button"
+                  onClick={onReset}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--panel-border)] bg-[var(--theme-surface)] px-3 py-1.5 text-[11px] font-semibold text-[var(--theme-muted)] hover:bg-[var(--theme-surface-hover)]"
+                >
+                  <RefreshCw className="w-3 h-3" /> Remove
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Fit selector — only meaningful when an image is set */}
+        <div className="px-5 py-4">
+          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--theme-muted)] mb-2">
+            Fit
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(['cover', 'contain', 'repeat'] as const).map((opt) => {
+              const active = fit === opt;
+              return (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => onFitChange(opt)}
+                  disabled={!dataUrl}
+                  className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                    active
+                      ? 'text-[var(--theme-text)]'
+                      : 'text-[var(--theme-muted)] hover:text-[var(--theme-text)]'
+                  }`}
+                  style={{
+                    border: `1px solid ${active ? 'var(--theme-accent)' : 'var(--panel-border)'}`,
+                    background: active ? 'var(--theme-surface-hover)' : 'var(--theme-surface)',
+                  }}
+                >
+                  {active && <Check className="w-3 h-3" style={{ color: 'var(--theme-accent)' }} />}
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
+          <p className="mt-2 text-[11px] text-[var(--theme-muted)] leading-relaxed">
+            Cover fills the desktop, cropping if needed. Contain shows the whole image, letterboxing if needed. Repeat tiles at native size — best for patterns.
+          </p>
+        </div>
+
+        {error && (
+          <div className="mx-5 mb-4 flex items-start gap-2 rounded-lg border p-3 text-[12px]"
+            style={{ borderColor: 'var(--theme-accent)', background: 'var(--theme-surface-hover)' }}
+          >
+            <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'var(--theme-accent)' }} />
+            <span className="text-[var(--theme-text)]">{error}</span>
+          </div>
+        )}
+      </Card>
+
+      <p className="mt-4 text-[11px] text-[var(--theme-muted)] leading-relaxed">
+        Images live in your browser's local storage, never on a server. The resize
+        step keeps a typical photograph under 1 MB so it does not collide with
+        the theme store's other keys.
+      </p>
+    </div>
+  );
+}
+
+export function SettingsApp() {
+  /* Fiche d'integration.
+   *
+   * SettingsItemDetail existait deja — formulaire controle, apercu vivant,
+   * sauvegarde vers le CMS et toast — mais restait inatteignable : le
+   * routage generique passe par COLLECTION_OWNERSHIP dans
+   * components/cms/itemDetailRegistry, ou `settings_integrations` n'est pas
+   * declaree (le commentaire y dit encore « Settings — none in seed », ce
+   * qui n'est plus vrai depuis la Phase-D2). L'app monte donc sa fiche
+   * elle-meme, comme le font Legal et Marketplace pour leur page de detail.
+   *
+   * L'etat vit ici et non dans la section Integrations : l'overlay se rend
+   * a cote d'AppFrame, et le crumb publie plus bas laisse
+   * AppFrame.navigateToSection fermer la fiche au changement de section. */
+  const [integrationDetail, setIntegrationDetail] = useState<{
+    def: CmsCollectionDef;
+    item: CmsItem;
+    index: number;
+    total: number;
+    prev?: CmsItem;
+    next?: CmsItem;
+  } | null>(null);
+
+  const openIntegrationDetail = (itemId: string) => {
+    const state = useCmsStore.getState();
+    const def = state.collections['settings_integrations'];
+    const list = state.items['settings_integrations'] ?? [];
+    const index = list.findIndex((i) => String(i.id) === itemId);
+    if (!def || index < 0) return;
+    setIntegrationDetail({
+      def,
+      item: list[index],
+      index,
+      total: list.length,
+      prev: list[index - 1],
+      next: list[index + 1],
+    });
+  };
+
+  // Le crumb partage : c'est ce qu'AppFrame.navigateToSection appelle pour
+  // fermer la fiche quand l'utilisateur change de section, sinon on
+  // naviguerait derriere un calque.
+  const { setDetail: setWindowDetail } = useWindowPage();
+  useEffect(() => {
+    if (integrationDetail) {
+      setWindowDetail({
+        label: String(integrationDetail.item[integrationDetail.def.titleField] ?? 'Integration'),
+        onBack: () => setIntegrationDetail(null),
+      });
+    } else {
+      setWindowDetail(null);
+    }
+  }, [integrationDetail, setWindowDetail]);
+
+  // Flags are now persisted across reloads (Phase-D1).
+  // Hydration runs once on mount via the lazy initializer; subsequent
+  // updates write back to localStorage in the same render that flips
+  // the toggle, so a reload immediately reflects the new state.
+  const [flags, setFlags] = useState<FlagState>(() => loadFlags());
+  const set = (k: keyof FlagState) => {
+    setFlags((f) => {
+      const next = { ...f, [k]: !f[k] };
+      saveFlags(next);
+      return next;
+    });
+  };
+
+  const [observabilityOptIn, setObservabilityOptInState] = useState<boolean>(() => getObservabilityConsent());
+  const onToggleObservability = (next: boolean) => {
+    setObservabilityOptInState(next);
+    setObservabilityConsent(next);
+    if (next) {
+      try {
+        posthog.capture('observability_opt_in');
+      } catch {
+        // best-effort
+      }
+    }
+  };
+
+  const Row = ({ label, hint, k }: { label: string; hint: string; k: keyof FlagState }) => (
+    <div className="flex items-center justify-between px-5 py-4">
+      <div>
+        <div className="text-sm font-medium text-[var(--theme-text)]">{label}</div>
+        <div className="text-xs text-[var(--theme-muted)]">{hint}</div>
+      </div>
+      <Toggle on={flags[k]} onClick={() => set(k)} />
+    </div>
+  );
+
+  const General = () => (
+    <div className="p-7">
+      <SectionHead title="General" subtitle="How the Citadelle works for you" />
+      <Card>
+        <div className="divide-y divide-[var(--hairline)]">
+          <Row label="Auto-brief before sessions" hint="Draft a prep note from prior notes" k="autoBrief" />
+          <Row label="Auto follow-up" hint="Send drafted replies after approval" k="autoFollowup" />
+          <Row label="Weekly digest" hint="Monday brief of what needs you" k="weeklyDigest" />
+        </div>
+      </Card>
+    </div>
+  );
+
+  const Privacy = () => {
+    // T5 — privacy tour. Fires once the first time the user opens the
+    // Privacy section. Idempotent via the per-tour localStorage guard.
+    useEffect(() => {
+      void launchTour(TOUR_IDS.PRIVACY);
+    }, []);
+
+    return (
+    <div className="p-7">
+      <SectionHead title="Privacy" subtitle="The seal every app trusts" action={<Badge tone="ok">Zero-PII</Badge>} />
+      <Card>
+        <div className="divide-y divide-[var(--hairline)]">
+          <Row label="Egress lock ready" hint="One-tap panic lock for all outbound calls" k="egressLock" />
+          <Row label="Local-only session content" hint="Never trains an outside model" k="localOnly" />
+          <Row label="Require approval to publish" hint="Nothing goes out in your name unseen" k="voicePublish" />
+        </div>
+      </Card>
+
+      <div className="mt-6">
+        <SectionHead
+          title="Observability"
+          subtitle="Anonymous analytics & in-app onboarding (RGPD opt-in)"
+          action={
+            <Badge tone={observabilityOptIn ? 'ok' : 'neutral'}>
+              {observabilityOptIn ? 'On' : 'Off'}
+            </Badge>
+          }
+        />
+        <Card>
+          <div className="px-5 py-4 flex items-start justify-between gap-4">
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-medium text-[var(--theme-text)]">
+                Observability (anonymous analytics + onboarding)
+              </div>
+              <p className="text-xs text-[var(--theme-muted)] mt-1 leading-relaxed">
+                Off by default. When on, PostHog Cloud (EU region) collects page navigation + feature usage;
+                UserTour can show in-app onboarding. RGPD-compliant: person profiles are only created if
+                you sign in. No PII collected unless you identify.
+              </p>
+            </div>
+            <Toggle
+              on={observabilityOptIn}
+              onClick={() => onToggleObservability(!observabilityOptIn)}
+            />
+          </div>
+        </Card>
+      </div>
+    </div>
+    );
+  };
+
+  const Integrations = () => {
+    // Phase-D2 : les intégrations vivent dans la collection CMS
+    // `settings_integrations`, enregistrée par `seedSettingsCms()` au
+    // chargement du module. Plus de valeurs en dur dans le JSX.
+    const items = useCmsStore((s) => s.items['settings_integrations']) ?? [];
+    const updateItem = useCmsStore((s) => s.updateItem);
+    const openApp = useShellStore((s) => s.openApp);
+    const addToast = useShellStore((s) => s.addToast);
+
+    // La liste était en lecture seule : trois cartes, un badge, aucune
+    // action. Connecter/Déconnecter est la seule mutation qui a du sens
+    // ici — l'ajout d'une intégration passe par le Marketplace, ce que
+    // dit déjà l'état vide plus bas. Même chemin d'écriture que la grille
+    // du Marketplace : updateItem + toast, pour que l'effet soit visible
+    // au-delà de la carte.
+    const toggleConnection = (id: string, name: string, connected: boolean) => {
+      updateItem('settings_integrations', id, { status: connected ? 'not connected' : 'connected' });
+      addToast({
+        source: 'Settings',
+        type: connected ? 'info' : 'success',
+        message: connected ? `${name} déconnecté.` : `${name} connecté.`,
+      });
+    };
+
+    return (
+      <div className="p-7">
+        <SectionHead title="Integrations" subtitle="Connected via the Marketplace" />
+        {items.length === 0 ? (
+          // Brief §3 — un écran blanc est un bug : phrase + bouton qui
+          // mène à l'endroit où on crée. La collection CMS peut être
+          // vide tant que la graine n'a pas été chargée par HMR ; le
+          // message reste utile en tout cas.
+          <Card>
+            <div className="px-5 py-6 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-[var(--theme-text)]">
+                  Aucune integration enregistree
+                </div>
+                <p className="text-[12px] text-[var(--theme-muted)] mt-0.5 leading-snug">
+                  Connectez Stripe, Calendly ou LinkedIn depuis le Marketplace pour les voir ici.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => openApp('marketplace', 'Marketplace')}
+                className="shrink-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-semibold transition-all hover:scale-[1.02] active:scale-[0.98]"
+                style={{ background: 'var(--theme-accent)', color: 'var(--theme-bg)' }}
+              >
+                Ouvrir le Marketplace
+              </button>
+            </div>
+          </Card>
+        ) : (
+          <div className="flex flex-col gap-3">
+            {items.map((it) => {
+              const name = String(it.name ?? '—');
+              const status = String(it.status ?? 'not connected');
+              const connected = status === 'connected';
+              return (
+                <Card key={String(it.id)} className="p-4 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-9 h-9 rounded-lg bg-[var(--theme-surface-hover)] flex items-center justify-center shrink-0"><Plug className="w-4.5 h-4.5 text-[var(--theme-muted)]" /></span>
+                    <div className="min-w-0">
+                      <button
+                        type="button"
+                        onClick={() => openIntegrationDetail(String(it.id))}
+                        data-integration-open={String(it.id)}
+                        className="text-sm font-semibold text-[var(--theme-text)] text-left hover:text-[var(--theme-accent)] transition-colors"
+                      >
+                        {name}
+                      </button>
+                      {it.description ? (
+                        <div className="text-[11px] text-[var(--theme-muted)] mt-0.5 line-clamp-1">
+                          {String(it.description)}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <Badge tone={connected ? 'ok' : 'neutral'}>{status}</Badge>
+                    <button
+                      type="button"
+                      onClick={() => toggleConnection(String(it.id), name, connected)}
+                      data-integration-toggle={String(it.id)}
+                      aria-label={`${connected ? 'Déconnecter' : 'Connecter'} ${name}`}
+                      className="rounded-lg px-2.5 py-1 text-[11px] font-semibold transition-all hover:scale-[1.02] active:scale-[0.98]"
+                      style={
+                        connected
+                          ? { color: 'var(--theme-muted)', border: '1px solid var(--panel-border)' }
+                          : { background: 'var(--theme-accent)', color: 'var(--theme-bg)' }
+                      }
+                    >
+                      {connected ? 'Déconnecter' : 'Connecter'}
+                    </button>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  /* ════════════════════════════════════════════════════════════════════════
+   *  Help section — replay any of the 5 onboarding tours.
+   *  Matches SettingsApp visual language (rounded-2xl cards, stone palette).
+   *  Each button bypasses the per-tour localStorage guard via { force: true }.
+   *  Buttons are disabled when observability consent is off (no-op to the user).
+   * ════════════════════════════════════════════════════════════════════════ */
+  const REPLAY_TOURS: { id: TourId; label: string; hint: string }[] = [
+    { id: TOUR_IDS.WELCOME_SOB,     label: 'Welcome',  hint: 'SOB onboarding (first window-open)' },
+    { id: TOUR_IDS.FIRST_STANDUP,   label: 'Standup',  hint: 'People → Overview · your daily standup' },
+    { id: TOUR_IDS.SQUAD_DRILLDOWN, label: 'Squad',    hint: 'Drill into a squad agent' },
+    { id: TOUR_IDS.CADENCE,         label: 'Cadence',  hint: 'People → Cadence · sprint heatmap' },
+    { id: TOUR_IDS.PRIVACY,         label: 'Privacy',  hint: 'Settings → Privacy' },
+  ];
+
+  const Help = () => {
+    const consentOn = observabilityOptIn;
+    return (
+      <div className="p-7 h-full flex flex-col gap-5 overflow-y-auto custom-scrollbar">
+        <SectionHead
+          title="Help"
+          subtitle="Replay any onboarding tour"
+          action={
+            <Badge tone={consentOn ? 'ok' : 'neutral'}>
+              {consentOn ? 'Consent on' : 'Consent off'}
+            </Badge>
+          }
+        />
+        <Card>
+          <div className="px-5 py-4 border-b border-[var(--hairline)] flex items-center gap-3">
+            <HelpCircle className="w-4 h-4 text-[var(--theme-muted)]" />
+            <div className="flex-1">
+              <div className="text-sm font-semibold text-[var(--theme-text)]">Replay onboarding tour</div>
+              <div className="text-xs text-[var(--theme-muted)] mt-0.5">
+                {consentOn
+                  ? 'Each tour plays in the order you first saw it. Re-runs override the per-browser guard.'
+                  : 'Turn on Observability in Privacy to enable UserTour onboarding.'}
+              </div>
+            </div>
+            {/* Les cinq boutons Replay sont desactives tant que le consentement
+                est off, et le texte disait ou aller sans y mener. Une phrase
+                qui nomme un reglage doit offrir le chemin vers ce reglage. */}
+            {!consentOn && (
+              <button
+                type="button"
+                data-help-goto-privacy
+                onClick={() => {
+                  const btn = document.querySelector('[data-section="Privacy"]');
+                  if (btn instanceof HTMLElement) btn.click();
+                }}
+                className="shrink-0 rounded-lg px-3 py-1.5 text-[11px] font-semibold transition-all hover:scale-[1.02] active:scale-[0.98]"
+                style={{ background: 'var(--theme-accent)', color: 'var(--theme-bg)' }}
+              >
+                Ouvrir Privacy
+              </button>
+            )}
+          </div>
+          <div className="divide-y divide-[var(--hairline)]">
+            {REPLAY_TOURS.map(t => (
+              <div key={t.id} className="px-5 py-3 flex items-center gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-semibold text-[var(--theme-text)]">{t.label}</div>
+                  <div className="text-xs text-[var(--theme-muted)]">{t.hint}</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => { void launchTour(t.id, { force: true }); }}
+                  disabled={!consentOn}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98]"
+                  style={{
+                    color: consentOn ? '#0f766e' : 'var(--theme-muted)',
+                    background: consentOn ? '#ccfbf1' : 'var(--theme-surface-hover)',
+                    boxShadow: consentOn ? 'inset 0 0 0 1px rgba(15,118,110,0.25)' : 'inset 0 0 0 1px var(--panel-border-subtle)',
+                  }}
+                >
+                  <Play className="w-3 h-3" /> Replay
+                </button>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    );
+  };
+
+  /* ════════════════════════════════════════════════════════════════════════
+   *  Themes section — 12-theme picker with per-app assignment.
+   *  Pattern from KomputerMechanic Hermes + UI UX Pro Max skill catalogue.
+   *  Per-app override only governs the app's left sidebar + section
+   *  surfaces — the detail page overlay (AppDetailOverlay) reads the global
+   *  theme on :root and stays consistent with the top bar.
+   * ════════════════════════════════════════════════════════════════════════ */
+
+  const globalTheme = useThemeStore((s) => s.globalTheme);
+  const appThemes = useThemeStore((s) => s.appThemes);
+  const setGlobalTheme = useThemeStore((s) => s.setGlobalTheme);
+  const setAppTheme = useThemeStore((s) => s.setAppTheme);
+  const resetAppTheme = useThemeStore((s) => s.resetAppTheme);
+  const resetAll = useThemeStore((s) => s.resetAll);
+
+  // Listen for the cross-window intent to focus the Themes section.
+  const [themesSection, setThemesSection] = useState<string | null>(null);
+  useEffect(() => {
+    const onOpen = (e: Event) => {
+      const detail = (e as CustomEvent<{ appId: string; sectionId: string }>).detail;
+      if (detail?.appId === 'settings' && detail.sectionId === 'themes') {
+        setThemesSection('themes');
+      }
+    };
+    window.addEventListener('coach-os:open-app-section', onOpen);
+    return () => window.removeEventListener('coach-os:open-app-section', onOpen);
+  }, []);
+
+  /** Per-app theme preview card — accent + bg + text + radius based on tokens.
+   *  These swatches INTENTIONALLY render the other theme's accent color, even
+   *  when the current theme is dark. The exception to the "no hard palette
+   *  classes" rule applies to preview swatches that show other themes. */
+  const ThemePreview = ({ themeId, size = 'lg' }: { themeId: string; size?: 'lg' | 'sm' }) => {
+    const t = THEME_META.find(th => th.id === themeId);
+    if (!t) return null;
+    const isLg = size === 'lg';
+    return (
+      <div
+        className={`relative overflow-hidden ${isLg ? 'h-32' : 'h-14'} rounded-t-lg`}
+        style={{
+          background: t.isDark ? '#0a0a0a' : '#fafaf9',
+          borderBottom: `1px solid ${t.isDark ? '#27272a' : '#e7e5e4'}`,
+        }}
+      >
+        {/* fake mini-app preview */}
+        <div className="absolute top-2 left-2 flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-full" style={{ background: t.accent }} />
+          {/* Preview exception: name shows on the swatch background for that theme. */}
+          <span
+            className="text-[9px] font-bold uppercase tracking-wider"
+            style={{ color: t.isDark ? '#ffffff' : '#1c1917' }}
+          >
+            {t.name}
+          </span>
+        </div>
+        <div className="absolute top-2 right-2 flex gap-1">
+          {/* Preview exception: dot palette swatches of the previewed theme. */}
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: t.isDark ? '#57534e' : '#d6d3d1' }} />
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: t.isDark ? '#57534e' : '#d6d3d1' }} />
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: t.accent }} />
+        </div>
+        {/* fake button + card */}
+        <div className={`absolute ${isLg ? 'bottom-3 left-3 right-3' : 'bottom-2 left-2 right-2'} flex items-center gap-1.5`}>
+          <div
+            className={`px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider`}
+            style={{
+              background: t.accent,
+              // Preview exception: contrast on the swatch accent.
+              color: t.isDark ? '#000000' : '#ffffff',
+            }}
+          >
+            {isLg ? 'Primary' : ''}
+          </div>
+          <div
+            className={`flex-1 h-1.5 rounded-full`}
+            style={{ background: t.isDark ? '#27272a' : '#e7e5e4' }}
+          >
+            <div className="h-full rounded-full" style={{ background: t.accent, width: '60%' }} />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const Themes = () => {
+    const [detailTheme, setDetailTheme] = useState<string | null>(null);
+
+    if (detailTheme) {
+      return <ThemeDetailPage themeId={detailTheme} onBack={() => setDetailTheme(null)} />;
+    }
+
+    return (
+    <div className="p-7 h-full flex flex-col gap-5 overflow-y-auto custom-scrollbar">
+      <SectionHead
+        title="Themes"
+        subtitle="12 styles from the UI UX Pro Max catalogue · per-app override governs the sidebar"
+        action={
+          <button
+            onClick={() => { if (window.confirm('Reset all theme overrides to canonical defaults?')) resetAll(); }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[var(--theme-text)] bg-[var(--theme-surface-hover)] hover:bg-[var(--theme-surface-hover)] transition-colors"
+          >
+            <RotateCcw className="w-3 h-3" /> Reset all
+          </button>
+        }
+      />
+
+      {/* Global default */}
+      <Card>
+        <div className="px-5 py-4 border-b border-[var(--hairline)] flex items-center gap-3">
+          <Palette className="w-4 h-4 text-[var(--theme-muted)]" />
+          <div className="flex-1">
+            <div className="text-sm font-semibold text-[var(--theme-text)]">Global default</div>
+            <div className="text-xs text-[var(--theme-muted)]">
+              Drives the top bar and every detail page. Per-app overrides only repaint the sidebar.
+            </div>
+          </div>
+          <span className="text-xs font-mono text-[var(--theme-muted)]">{THEME_META.find(t => t.id === globalTheme)?.name ?? '—'}</span>
+        </div>
+        {/* Brief §4 — une grille a 4 colonnes ne passe a 4 qu'a `xl:`.
+            Avant : on hitait 4 des `lg` (1024px), ce qui etirait les cartes
+            dans la fenetre par defaut 920x600. */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 p-5">
+          {THEME_META.map(t => {
+            const isActive = t.id === globalTheme;
+            return (
+              <button
+                key={t.id}
+                onClick={() => setGlobalTheme(t.id)}
+                onDoubleClick={() => setDetailTheme(t.id)}
+                title={`Click to set as global · Double-click to preview ${t.name}`}
+                className={`relative text-left rounded-lg overflow-hidden border-2 transition-all ${
+                  isActive ? 'border-[var(--theme-text)] ring-2 ring-[var(--theme-text)]/30' : 'border-[var(--panel-border)] hover:border-[var(--theme-text-muted)]'
+                }`}
+              >
+                <ThemePreview themeId={t.id} />
+                <div className="bg-[var(--theme-surface)] px-3 py-2 flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="text-[12px] font-bold text-[var(--theme-text)] truncate">{t.name}</div>
+                    <div className="text-[10px] text-[var(--theme-muted)] line-clamp-1">{t.mood}</div>
+                  </div>
+                  {isActive && (
+                    <span
+                      className="shrink-0 inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
+                      style={{ background: 'var(--theme-surface-hover)', color: 'var(--theme-accent)' }}
+                    >
+                      <Check className="w-2.5 h-2.5" /> On
+                    </span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </Card>
+
+      {/* Per-app overrides — legibility pass: large cards w/ name + reset, no swatch carousel */}
+      <Card>
+        <div className="px-5 py-4 border-b border-[var(--hairline)]">
+          <div className="text-sm font-semibold text-[var(--theme-text)]">Per-app sidebar theme</div>
+          <div className="text-xs text-[var(--theme-muted)] leading-relaxed mt-0.5">
+            The override paints the left sidebar and section surfaces of that app. Detail pages
+            always follow the global theme on the top bar — that's by design.
+          </div>
+        </div>
+        <div className="divide-y divide-[var(--hairline)]">
+          {APP_REGISTRY.map(app => {
+            const override = appThemes[app.id];
+            const canonical = CANONICAL_APP_THEMES[app.id] ?? globalTheme;
+            const current = override ?? canonical;
+            const currentMeta = THEME_META.find(t => t.id === current);
+            const canonicalMeta = THEME_META.find(t => t.id === canonical);
+            const isCustom = !!override;
+            return (
+              <div key={app.id} className="px-5 py-4">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[13px] font-semibold text-[var(--theme-text)]">{app.name}</div>
+                    <div className="text-[11px] text-[var(--theme-muted)] mt-0.5">
+                      Sidebar now:{' '}
+                      <span className="font-mono font-semibold" style={{ color: 'var(--theme-accent)' }}>
+                        {currentMeta?.name ?? '—'}
+                      </span>
+                      {!isCustom && canonicalMeta && (
+                        <> · default · {canonicalMeta.name}</>
+                      )}
+                      {isCustom && canonicalMeta && (
+                        <> · default · {canonicalMeta.name}</>
+                      )}
+                    </div>
+                  </div>
+                  {isCustom ? (
+                    <button
+                      onClick={() => resetAppTheme(app.id)}
+                      className="shrink-0 inline-flex items-center gap-1 rounded-md border border-[var(--panel-border)] bg-[var(--theme-surface)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-[var(--theme-muted)] hover:bg-[var(--theme-surface-hover)] hover:text-[var(--theme-text)]"
+                    >
+                      <RotateCcw className="w-3 h-3" /> Reset
+                    </button>
+                  ) : (
+                    <Badge tone="neutral">default</Badge>
+                  )}
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2">
+                  {THEME_META.map(t => {
+                    const isActive = t.id === current;
+                    return (
+                      <button
+                        key={t.id}
+                        onClick={() => setAppTheme(app.id, t.id)}
+                        title={isActive ? `${t.name} — active` : `Use ${t.name} on the sidebar`}
+                        className={`relative text-left rounded-lg overflow-hidden border-2 transition-all ${
+                          isActive ? 'border-[var(--theme-text)] ring-2 ring-[var(--theme-text)]/30' : 'border-[var(--panel-border)] hover:border-[var(--theme-text-muted)]'
+                        }`}
+                      >
+                        <ThemePreview themeId={t.id} size="sm" />
+                        <div className="bg-[var(--theme-surface)] px-2 py-1.5 flex items-center justify-between gap-1">
+                          <span className="text-[10px] font-bold text-[var(--theme-text)] truncate">
+                            {t.name}
+                          </span>
+                          {isActive && (
+                            <Check className="w-3 h-3 shrink-0" style={{ color: 'var(--theme-accent)' }} />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </Card>
+    </div>
+    );
+  };
+
+  const Wallpaper = () => <WallpaperPanel />;
+
+  const sections: AppSection[] = [
+    { id: 'general', label: 'General', icon: SlidersHorizontal, render: General },
+    { id: 'themes', label: 'Themes', icon: Palette, render: Themes },
+    { id: 'wallpaper', label: 'Wallpaper', icon: ImageIcon, render: Wallpaper },
+    { id: 'assistant', label: 'Assistant', icon: Bot, render: AssistantSettings },
+    { id: 'privacy', label: 'Privacy', icon: ShieldAlert, render: Privacy },
+    { id: 'integrations', label: 'Integrations', icon: Plug, render: Integrations },
+    { id: 'help', label: 'Help', icon: HelpCircle, render: Help },
+  ];
+
+  // If cross-window intent asked us to focus Themes, click the sidebar
+  // button that AppFrame renders with `data-section={label}`. AppFrame
+  // owns its own `activeId` state, so we drive the navigation through
+  // the same DOM hook the sidebar uses internally — same trick as
+  // WelcomeApp for its brand labels (cf. `navigateToPage`).
+  useEffect(() => {
+    if (!themesSection) return;
+    const btn = document.querySelector('[data-section="Themes"]');
+    if (btn instanceof HTMLButtonElement) btn.click();
+  }, [themesSection]);
+
+  return (
+    <>
+    <AppFrame
+      title="Settings"
+      subtitle="System"
+      icon={Settings}
+      accent={ACCENT}
+      sections={sections}
+      disableSignatureFx
+    />
+    {integrationDetail ? (
+      <AppDetailOverlay
+        appId="settings"
+        accent={ACCENT}
+        onBack={() => setIntegrationDetail(null)}
+        motion={{ kind: 'fade-up', durationMs: 200 }}
+      >
+        <SettingsItemDetail
+          def={integrationDetail.def}
+          item={integrationDetail.item}
+          index={integrationDetail.index}
+          total={integrationDetail.total}
+          accent={ACCENT}
+          onBack={() => setIntegrationDetail(null)}
+          prev={integrationDetail.prev}
+          next={integrationDetail.next}
+          onNavigate={openIntegrationDetail}
+        />
+      </AppDetailOverlay>
+    ) : null}
+    </>
+  );
+}
