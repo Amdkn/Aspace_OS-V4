@@ -1,0 +1,1 @@
+{"input":"textarea[data-hatch-composer-prehydration-input=\"true\"]","newChatButton":"button[aria-label=\"New side chat\"]","sendAction":"div[data-hatch-composer-action=\"send\"]","sendButton":"button[aria-label=\"Send\"]","stopAction":"div[data-hatch-composer-action=\"stop\"]","streamingMessage":"[message-body=\"true\"]","threadContainer":"main"}
