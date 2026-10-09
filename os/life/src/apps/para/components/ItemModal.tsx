@@ -43,7 +43,7 @@ export function ItemModal({ item, type, onSave, onClose }: ItemModalProps) {
           {!item && (
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-[var(--theme-text)]/30 uppercase tracking-widest px-1">Target Life Domain</label>
-              <select 
+              <select
                 value={selectedLd}
                 onChange={e => setSelectedLd(e.target.value as LDId)}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-[var(--theme-text)]/60 outline-none focus:border-emerald-500/40 transition-all appearance-none"
@@ -52,10 +52,10 @@ export function ItemModal({ item, type, onSave, onClose }: ItemModalProps) {
               </select>
             </div>
           )}
-          
+
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold text-[var(--theme-text)]/30 uppercase tracking-widest px-1">Title</label>
-            <input 
+            <input
               autoFocus
               value={title}
               onChange={e => setTitle(e.target.value)}
@@ -63,10 +63,10 @@ export function ItemModal({ item, type, onSave, onClose }: ItemModalProps) {
               className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-[var(--theme-text)] outline-none focus:border-emerald-500/40 transition-all"
             />
           </div>
-          
+
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold text-[var(--theme-text)]/30 uppercase tracking-widest px-1">Description</label>
-            <textarea 
+            <textarea
               value={description}
               onChange={e => setDescription(e.target.value)}
               placeholder={`Describe this ${type}...`}
@@ -77,13 +77,13 @@ export function ItemModal({ item, type, onSave, onClose }: ItemModalProps) {
         </div>
 
         <div className="flex gap-3 mt-8">
-          <button 
+          <button
             onClick={onClose}
             className="flex-1 py-3 rounded-2xl bg-white/5 text-[var(--theme-text)]/60 font-bold uppercase tracking-widest text-[10px] hover:bg-white/10 transition-all"
           >
             Cancel
           </button>
-          <button 
+          <button
             onClick={() => onSave(selectedLd, { title, description })}
             disabled={!title.trim()}
             className="flex-1 py-3 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold uppercase tracking-widest text-[10px] hover:bg-emerald-500/30 transition-all disabled:opacity-20 disabled:hover:bg-emerald-500/20"
@@ -95,4 +95,3 @@ export function ItemModal({ item, type, onSave, onClose }: ItemModalProps) {
     </div>
   );
 }
-

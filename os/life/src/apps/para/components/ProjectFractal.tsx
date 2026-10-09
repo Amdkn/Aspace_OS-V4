@@ -21,11 +21,11 @@ export function ProjectFractal({ project }: { project: Project }) {
 
   const handleSave = async (content: string) => {
     if (!activePillar) return;
-    
+
     // Garantir un spread propre même si pillarsContent est undefined
     const currentContent = project.pillarsContent || {};
     const newContent = { ...currentContent, [activePillar]: content };
-    
+
     // Mise à jour via le store (qui gère déjà la sauvegarde IDB via writeToLD et updatedAt)
     await updateProject(project.id, { pillarsContent: newContent });
   };
@@ -44,10 +44,10 @@ export function ProjectFractal({ project }: { project: Project }) {
               key={pillar}
               onClick={() => setActivePillar(isActive ? null : pillar)}
               className={`p-2 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${
-                isActive 
-                  ? 'text-white shadow-lg shadow-black/20' 
-                  : hasContent 
-                    ? 'bg-white/5 text-[var(--theme-text)]/60 hover:bg-white/10' 
+                isActive
+                  ? 'text-white shadow-lg shadow-black/20'
+                  : hasContent
+                    ? 'bg-white/5 text-[var(--theme-text)]/60 hover:bg-white/10'
                     : 'bg-transparent border border-white/5 text-[var(--theme-text)]/20 hover:border-white/10 hover:text-[var(--theme-text)]/40'
               }`}
               style={isActive ? { backgroundColor: `${accentColor}cc`, border: `1px solid ${accentColor}`, color: '#fff' } : {}}
@@ -58,7 +58,7 @@ export function ProjectFractal({ project }: { project: Project }) {
           );
         })}
       </div>
-      
+
       {activePillar && (
         <div className="animate-in slide-in-from-top-2 duration-300">
           <textarea

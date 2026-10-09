@@ -5,7 +5,7 @@ import { useOsSettingsStore } from '../../../stores/os-settings.store';
 
 export function FractalReadView({ project }: { project: Project }) {
   const [expandedPillar, setExpandedPillar] = useState<BusinessPillar | null>(null);
-  
+
   const config = useOsSettingsStore(s => s.domainConfigs?.find(c => c.domain === 'business'));
   const accentColor = config?.color || '#3b82f6';
 
@@ -29,7 +29,7 @@ export function FractalReadView({ project }: { project: Project }) {
       <h4 className="text-[10px] font-bold text-[var(--theme-text)]/30 uppercase tracking-widest mb-4 flex items-center gap-2">
         <Briefcase className="w-3.5 h-3.5" /> Fractal Insights (Reading Mode)
       </h4>
-      
+
       {activePillars.map(pillar => {
         const isExpanded = expandedPillar === pillar;
         const content = project.pillarsContent?.[pillar];
@@ -48,10 +48,10 @@ export function FractalReadView({ project }: { project: Project }) {
               </div>
               {isExpanded ? <ChevronUp className="w-4 h-4 text-white/20" /> : <ChevronDown className="w-4 h-4 text-white/20" />}
             </button>
-            
+
             {isExpanded && (
               <div className="px-10 pb-6 pt-2 animate-in slide-in-from-top-2 duration-300">
-                <div 
+                <div
                   className="text-xs leading-relaxed text-[var(--theme-text)]/80 whitespace-pre-wrap border-l-2 pl-4 py-1"
                   style={{ borderColor: `${accentColor}40` }}
                 >

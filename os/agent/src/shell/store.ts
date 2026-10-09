@@ -563,4 +563,3 @@ export function useOrderedWindows(): WindowState[] {
     [order, windows, activeWs],
   );
 }
-

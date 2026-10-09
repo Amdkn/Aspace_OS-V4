@@ -14,15 +14,15 @@ interface HeaderFilterBarProps {
   accentColor?: 'emerald' | 'blue' | 'amber' | 'teal' | 'red' | 'purple';
 }
 
-export function HeaderFilterBar({ 
-  items, 
-  activeFilter, 
-  onFilterChange, 
-  scrollable = false, 
-  accentColor = 'emerald' 
+export function HeaderFilterBar({
+  items,
+  activeFilter,
+  onFilterChange,
+  scrollable = false,
+  accentColor = 'emerald'
 }: HeaderFilterBarProps) {
   const accent = accents[accentColor] ?? accents.emerald;
-  
+
   return (
     <div className={clsx(
       "flex items-center gap-1 min-w-0 px-2 py-1 bg-white/[0.02] rounded-xl border border-white/5",
@@ -54,4 +54,3 @@ const accents: Record<string, { bg: string; border: string; text: string }> = {
   red:     { bg: 'bg-red-500/10',     border: 'border-red-500/30',     text: 'text-red-400' },
   purple:  { bg: 'bg-purple-500/10',  border: 'border-purple-500/30',  text: 'text-purple-400' },
 };
-

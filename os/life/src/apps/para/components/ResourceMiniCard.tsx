@@ -4,7 +4,7 @@ import { ExternalLink, FileText, Video, Book, PenTool, Link as LinkIcon, X } fro
 
 export function ResourceMiniCard({ resource, onUnlink }: { resource: Resource, onUnlink?: () => void }) {
   const Icon = resource.type === 'video' ? Video : resource.type === 'book' ? Book : resource.type === 'tool' ? PenTool : resource.type === 'article' ? FileText : LinkIcon;
-  
+
   return (
     <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between group hover:border-[var(--theme-accent)]/30 transition-all">
       <div className="flex items-center gap-3 min-w-0">

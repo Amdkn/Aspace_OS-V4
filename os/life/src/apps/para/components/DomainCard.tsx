@@ -34,9 +34,9 @@ export function DomainCard({ domain, activeProjects, selectedPillar, onPillarSel
   const [activePillar, setActivePillar] = useState<BusinessPillar | null>(null);
   const { domainConfigs } = useOsSettingsStore();
   const openApp = useShellStore(s => s.openApp);
-  
+
   const config = domainConfigs?.find(c => c.domain === domain);
-  const color = config?.color || '#10b981'; 
+  const color = config?.color || '#10b981';
   const count = activeProjects.length;
   const squad = JERRY_SQUADS[domain];
 
@@ -47,12 +47,12 @@ export function DomainCard({ domain, activeProjects, selectedPillar, onPillarSel
     )} style={{ borderColor: isExpanded ? color : undefined }}>
       <div className="w-full p-8 flex items-center justify-between group">
         <button onClick={() => setIsExpanded(!isExpanded)} className="flex items-center gap-6 flex-1 text-left">
-          <div 
+          <div
             className="w-14 h-14 rounded-2xl border flex items-center justify-center shadow-lg transition-transform group-hover:scale-110"
-            style={{ 
-              backgroundColor: color + '1a', 
-              borderColor: color + '33', 
-              color: color 
+            style={{
+              backgroundColor: color + '1a',
+              borderColor: color + '33',
+              color: color
             }}
           >
             <Layers className="w-6 h-6" />
@@ -76,10 +76,10 @@ export function DomainCard({ domain, activeProjects, selectedPillar, onPillarSel
             )}
           </div>
         </button>
-        
+
         <div className="flex items-center gap-4">
-          <button 
-            onClick={(e) => { e.stopPropagation(); openApp('ikigai', 'Ikigai Engine'); }} 
+          <button
+            onClick={(e) => { e.stopPropagation(); openApp('ikigai', 'Ikigai Engine'); }}
             className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-[var(--theme-text)]/40 hover:text-[var(--theme-text)] transition-all flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest border border-white/5"
           >
             <Compass className="w-4 h-4" /> Ikigai
@@ -99,7 +99,7 @@ export function DomainCard({ domain, activeProjects, selectedPillar, onPillarSel
               return (
                 <div key={p.id} onClick={() => {
                   setActivePillar(isSelected ? null : p.id);
-                  if (onPillarSelect) onPillarSelect(isSelected ? null : p.id); 
+                  if (onPillarSelect) onPillarSelect(isSelected ? null : p.id);
                 }}
                   className={clsx("p-4 rounded-2xl border transition-all cursor-pointer flex flex-col items-center relative",
                     isSelected ? "bg-white/10" : "bg-white/[0.02] border-white/5 hover:border-white/20"
@@ -111,7 +111,7 @@ export function DomainCard({ domain, activeProjects, selectedPillar, onPillarSel
               );
             })}
           </div>
-          
+
           {activePillar && (
             <PillarDashboard domain={domain} pillar={activePillar} onClose={() => setActivePillar(null)} />
           )}

@@ -1,6 +1,6 @@
 /** LD-Router — Unified entry point for cross-LD operations (ADR-FWK-020) */
-import { 
-  ld01DB, ld02DB, ld03DB, ld04DB, 
+import {
+  ld01DB, ld02DB, ld03DB, ld04DB,
   ld05DB, ld06DB, ld07DB, ld08DB,
   DomainDB
 } from './idb';
@@ -24,19 +24,19 @@ const domainMap: Record<LDId, DomainDB> = {
 // R = Read, W = Write
 type Permission = 'R' | 'W';
 const PERMISSIONS: Record<string, Partial<Record<LDId, Permission[]>>> = {
-  para: { 
+  para: {
     ld01: ['R', 'W'], ld02: ['R', 'W'], ld03: ['R', 'W'], ld04: ['R', 'W'],
-    ld05: ['R', 'W'], ld06: ['R', 'W'], ld07: ['R', 'W'], ld08: ['R', 'W'] 
+    ld05: ['R', 'W'], ld06: ['R', 'W'], ld07: ['R', 'W'], ld08: ['R', 'W']
   },
   ikigai: { ld01: ['R', 'W'], ld02: ['R', 'W'], ld03: ['R', 'W'], ld04: ['R', 'W'], ld05: ['R', 'W'], ld06: ['R', 'W'], ld07: ['R', 'W'], ld08: ['R', 'W'] },
-  gtd: { 
-    ld01: ['R', 'W'], ld03: ['R', 'W'], ld04: ['R', 'W'], ld05: ['R', 'W'], ld06: ['R', 'W'] 
+  gtd: {
+    ld01: ['R', 'W'], ld03: ['R', 'W'], ld04: ['R', 'W'], ld05: ['R', 'W'], ld06: ['R', 'W']
   },
-  '12wy': { 
+  '12wy': {
     ld01: ['R', 'W'], ld02: ['R'], ld03: ['R'], ld04: ['R'],
     ld05: ['R'], ld06: ['R'], ld07: ['R'], ld08: ['R']
   },
-  wheel: { 
+  wheel: {
     ld01: ['R'], ld02: ['R'], ld03: ['R'], ld04: ['R'],
     ld05: ['R'], ld06: ['R'], ld07: ['R'], ld08: ['R']
   },
@@ -48,14 +48,14 @@ const PERMISSIONS: Record<string, Partial<Record<LDId, Permission[]>>> = {
 
 /** Unified write operation with permission check */
 export async function writeToLD(
-  ldId: LDId, 
-  store: LDStore, 
-  action: LDAction, 
-  data: any, 
+  ldId: LDId,
+  store: LDStore,
+  action: LDAction,
+  data: any,
   caller: string
 ): Promise<void> {
   const perms = PERMISSIONS[caller]?.[ldId];
-  
+
   if (!perms?.includes('W')) {
     throw new Error(`[LD-Router] Permission Denied: ${caller} cannot write to ${ldId}`);
   }
@@ -78,11 +78,11 @@ export async function writeToLD(
 
 /** Unified read operation */
 export async function readFromLD<T>(
-  ldId: LDId, 
+  ldId: LDId,
   store: LDStore
 ): Promise<T[]> {
   const db = domainMap[ldId];
   if (!db) throw new Error(`[LD-Router] Unknown Life Domain: ${ldId}`);
-  
+
   return await db.getAll<T>(store);
 }

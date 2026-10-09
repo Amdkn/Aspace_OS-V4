@@ -1,8 +1,8 @@
 /** App Drawer — Fullscreen Launchpad for all OS modules (P6.1) */
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  X, Search, LayoutDashboard, Compass, CircleDot, 
-  CalendarCheck, FolderKanban, CheckSquare, Unlock, 
+import {
+  X, Search, LayoutDashboard, Compass, CircleDot,
+  CalendarCheck, FolderKanban, CheckSquare, Unlock,
   Users, Settings, ShoppingBag, Globe, Cpu
 } from 'lucide-react';
 import { useShellStore } from '../stores/shell.store';
@@ -29,14 +29,14 @@ export function AppDrawer() {
   if (!isDrawerOpen) return null;
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[3000] bg-[#0a0f0d]/90 backdrop-blur-2xl p-12 flex flex-col items-center"
     >
       {/* Close Button */}
-      <button 
+      <button
         onClick={() => closeApp('drawer')}
         className="absolute top-8 right-12 p-3 rounded-full bg-white/5 hover:bg-white/10 text-[var(--theme-text)]/40 hover:text-[var(--theme-text)] transition-all border border-white/5"
       >
@@ -48,9 +48,9 @@ export function AppDrawer() {
         <h2 className="text-3xl font-bold text-[var(--theme-text)] uppercase tracking-[0.4em] font-outfit">Launchpad</h2>
         <div className="relative group">
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--theme-text)]/20 group-hover:text-emerald-400 transition-colors" />
-          <input 
+          <input
             autoFocus
-            type="text" 
+            type="text"
             placeholder="Search apps, frameworks, or agents..."
             className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-16 pr-6 text-lg text-[var(--theme-text)] outline-none focus:border-emerald-500/40 transition-all shadow-2xl"
           />
@@ -88,4 +88,3 @@ export function AppDrawer() {
     </motion.div>
   );
 }
-
