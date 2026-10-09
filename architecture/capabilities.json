@@ -3,11 +3,137 @@
   "source": "user-instructions",
   "capabilities": [
     {
+      "name": "Agent OS",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
       "name": "Life OS",
       "status": "sources_transferred_review_and_journal_tested",
       "source_revision": "ad5e68e2867854ad952495cf1fcd37d76acbd33e",
       "runtime_evidence": "evidence/continuity-canary.json (isolated fixture, no live domain assertion)",
       "destination_contract": "life/registry.json"
+    },
+    {
+      "name": "Business OS",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Mobile OS",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "The OMK Office JaaS — 75 services déclarés",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Cube Farm",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Starnet",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "WorkAdventure",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Gateway OpenClaw",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Hermes surfaces et harness",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Prime Agent",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "DeepSeek Harness",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Automaton M0/M1/M2",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Constructeur Universel",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "BMAD",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "gstack",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "CEO Bench",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "OpenShell",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
+    },
+    {
+      "name": "Octop",
+      "status": "to_qualify_from_sources",
+      "source_revision": null,
+      "runtime_evidence": null,
+      "destination_contract": null
     },
     {
       "name": "Graham memory continuity",
