@@ -1,0 +1,47 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "Automaton M0/M1/M2",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mentions V4",
+      "result": "pass",
+      "evidence": "architecture/ASpace-V4-PRD-Fork-CubeFarm.md:111, architecture/REFONDATION.md:134-137, architecture/Conseil_S2_Decision_18_capacites.md, architecture/GITHUB_LIFE_SOCIAL_TOPOLOGY.md, presentations/v3-v4/Analyse-transfert-V3-V4.md"
+    },
+    {
+      "check": "Héritage V3",
+      "result": "pass",
+      "evidence": "migration/v3-inventory.json : _INBOX/handoffs/HANDOVER-2026-10-05-AUDIT-GATEWAY-AUTOMATON.md et docs/architecture/AUTOMATON_GATEWAY_M0_M1_M2_PROPOSAL.md (V3 @ ad5e68e), disposition REFERENCE_PENDING_QUALIFICATION"
+    },
+    {
+      "check": "Code V4",
+      "result": "fail",
+      "evidence": "Aucun module, service, test ou config automaton dans le repo V4 (hors docs et inventaire)"
+    },
+    {
+      "check": "Exécution M0/M1/M2",
+      "result": "fail",
+      "evidence": "Aucune trace d'exécution des échelles M0/M1/M2 dans V4"
+    },
+    {
+      "check": "Référence externe",
+      "result": "fail",
+      "evidence": "PARTIEL/hors périmètre : https://github.com/Conway-Research/automaton — référence de recherche (triptyque), pas une capacité runtime V4 ; non vérifiée live dans cette passe"
+    }
+  ],
+  "artifacts": [
+    "migration/v3-inventory.json (entrées AUTOMATON, disposition REFERENCE_PENDING_QUALIFICATION)",
+    "architecture/ASpace-V4-PRD-Fork-CubeFarm.md:109-111 — doctrine : « BMAD, gstack, CEO Bench, Automaton, OpenClaw, Hermes, Prime Agent et DeepSeek Harness restent des candidats présents dans le périmètre historique. […] Aucun nom de framework n'est assimilé à une capacité prouvée. »"
+  ],
+  "not_verified": [
+    "Contenu réel des docs V3 (non lus en détail — héritage, pas runtime V4)",
+    "Repo externe Conway-Research/automaton (référence, pas preuve V4)"
+  ],
+  "live_checks_needed": [],
+  "scope_note": "Automaton M0/M1/M2 est un candidat du périmètre historique (proposition d'architecture V3), sans implémentation ni exécution dans V4. Si le Conseil veut le qualifier, la voie serait : implémenter ou démontrer M0/M1/M2 contre des usages Life/Business observables (cf. REFONDATION.md:134-137)."
+}

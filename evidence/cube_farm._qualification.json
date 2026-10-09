@@ -1,0 +1,63 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "Cube Farm",
+  "verdict": "NEEDS_LIVE_CHECK",
+  "proof_level": "installed",
+  "checks": [
+    {
+      "check": "Scripts control-plane présents",
+      "result": "pass",
+      "evidence": "control-plane/ : README.md (4 Ko), setup.sh, office.sh, directory.py, codex.sh, ensure-claude.sh"
+    },
+    {
+      "check": "Fork épinglé (lock)",
+      "result": "pass",
+      "evidence": "control-plane/runtime.lock.json : Amdkn/cubefarm @ 31e7ce01a1dcc1da2b576d1da36718c16b05b8ca"
+    },
+    {
+      "check": "Fork + commit existent sur GitHub",
+      "result": "pass",
+      "evidence": "gh api repos/Amdkn/cubefarm/commits/31e7ce0… → sha 31e7ce01a1dc ; repo poussé le 2026-10-05"
+    },
+    {
+      "check": "Devcontainer câblé (port 4417)",
+      "result": "pass",
+      "evidence": ".devcontainer/devcontainer.json : forwardPorts: [4417], label « CubeFarm · A'Space V4 », postCreateCommand: bash control-plane/setup.sh, postStartCommand: … office.sh start"
+    },
+    {
+      "check": "setup.sh hydrate + build l'app",
+      "result": "pass",
+      "evidence": "portable/instance.py hydrate --manifest …, npm ci, npm run build, playwright install --with-deps chrome dans apps/cubefarm (constat code)"
+    },
+    {
+      "check": "Bureau live sur 4417",
+      "result": "fail",
+      "evidence": "NON VÉRIFIABLE : hydratation uniquement dans le Codespace (/workspaces/aspace/apps/cubefarm) — injoignable depuis cette VM"
+    },
+    {
+      "check": "Auth + mission avec résultat",
+      "result": "fail",
+      "evidence": "NON VÉRIFIÉ : le README lui-même l'avoue : « L'authentification et une mission avec résultat restent à vérifier. »"
+    }
+  ],
+  "artifacts": [
+    "control-plane/ (scripts + lock)",
+    ".devcontainer/devcontainer.json",
+    "fork GitHub Amdkn/cubefarm @ 31e7ce01a1dc vérifié live"
+  ],
+  "not_verified": [
+    "Bureau 3D répondant sur le port 4417 (privé, Codespace)",
+    "cubefarm.js login / cubefarm.js doctor",
+    "Une mission bornée avec résultat observable"
+  ],
+  "live_checks_needed": [
+    "Codespace : bash control-plane/office.sh status → bureau sur le port privé 4417 répondant (HTTP 200)",
+    "Codespace : (cd /workspaces/aspace/apps/cubefarm && node bin/cubefarm.js doctor) → output sans erreur",
+    "Codespace : une mission bornée exécutée avec résultat observable (reçu conservé)"
+  ],
+  "scope_note": "Capacité prouvée comme control-plane installé et câblé (scripts réels, fork épinglé vérifié, devcontainer opérationnel). L'exécution runtime vit dans le Codespace et n'est pas prouvable depuis cette VM. Les 3 checks live ci-dessus, exécutés dans le Codespace, suffiraient à passer en QUALIFIED."
+}
