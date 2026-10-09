@@ -1,7 +1,7 @@
 # Supabase dans la refondation V4
 
 ## Observation du 6 octobre 2026
-Life OS (hjweyhpmrxqsxfbibsnc) : ACTIVE_HEALTHY. Agent OS Backend (biyecksylqonuovqmbtz) : INACTIVE. Verification par list_projects et information_schema.tables ; aucune donnee personnelle exportee, aucune migration executee.
+Life OS (hjweyhpmrxqsxfbibsnc) : ACTIVE_HEALTHY. Agent OS Backend (biyecksylqonuovqmbtz) : ABANDON_ACTE (Decision S2). Verification par list_projects et information_schema.tables ; aucune donnee personnelle exportee, aucune migration executee.
 
 Tables Life OS : fw_12wy, fw_deal, fw_gtd, fw_ikigai, fw_life_wheel, fw_para, ikigai_visions, life_wheel_ambitions, ld01_business, ld02_finance, ld03_health, ld04_cognition, ld05_relations, ld06_habitat, ld07_creativity, ld08_impact, symphony_state, sys_agent_veto, sys_shell_routing, user_profiles, wrappers_fdw_stats.
 
