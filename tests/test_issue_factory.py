@@ -31,9 +31,17 @@ class IssueFactoryTests(unittest.TestCase):
         if path == 'issues/5/comments' and data:
             self.comments.append({'id': 1, 'user': {'login': 'github-actions[bot]'}, 'body': data['body']})
             return self.comments[-1]
+        if path == 'issues/8/comments' and data:
+            self.comments.append({'id': 2, 'user': {'login': 'github-actions[bot]'}, 'body': data['body']})
+            return self.comments[-1]
         if path == 'issues/comments/1' and data:
             self.comments[0]['body'] = data['body']
             return self.comments[0]
+        if path == 'issues/comments/2' and data:
+            for comment in self.comments:
+                if comment['id'] == 2:
+                    comment['body'] = data['body']
+                    return comment
         if path == '':
             return {'default_branch': 'main'}
         if path == 'git/ref/heads/main':
@@ -128,6 +136,46 @@ class IssueFactoryTests(unittest.TestCase):
             with self.assertRaises(SystemExit) as exc:
                 factory.main()
             self.assertEqual(exc.exception.code, 1)
+
+    def test_eligible_checks_dependencies(self):
+        issue_with_open_dep = {
+            'number': 6,
+            'state': 'open',
+            'labels': [{'name': 'factory:ready'}],
+            'body': 'Dépendances fonctionnelles : #2/#3'
+        }
+        issue_with_closed_deps = {
+            'number': 7,
+            'state': 'open',
+            'labels': [{'name': 'factory:ready'}],
+            'body': 'Dépendances fonctionnelles : #2'
+        }
+
+        def mock_gh(path):
+            if path == 'issues/2':
+                return {'state': 'closed'}
+            if path == 'issues/3':
+                return {'state': 'open'}
+            raise AssertionError(path)
+
+        with patch.object(factory, 'gh', side_effect=mock_gh):
+            self.assertFalse(factory.eligible(issue_with_open_dep))
+            self.assertTrue(factory.eligible(issue_with_closed_deps))
+
+    def test_process_parses_doctor_and_holon(self):
+        self.setup_transport()
+        issue_with_roles = {
+            'number': 8,
+            'state': 'open',
+            'html_url': 'https://github.com/owner/repo/issues/8',
+            'labels': [{'name': 'factory:ready'}],
+            'body': 'A : Doctor11 ; R : Amy\nSome other text.'
+        }
+        with patch.object(factory, 'jules', return_value={'name': 'sessions/xyz'}):
+            factory.process(issue_with_roles, Path('.'))
+        record = json.loads((Path(self.temp.name) / 'receipt.json').read_text())
+        self.assertEqual(record['doctor'], 'doctor11')
+        self.assertEqual(record['holon'], 'amy')
 
 
 if __name__ == '__main__':
