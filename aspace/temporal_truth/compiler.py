@@ -160,13 +160,14 @@ class ContextCompiler:
                     observed_t.replace("Z", "+00:00")
                 )
                 age_secs = (dt_now - dt_observed).total_seconds()
+                derived_freshness = "FRESH" if age_secs < 2592000 else "STALE"
                 dimensions.append(
                     {
                         "name": pred,
                         "value": head["assertion"],
                         "source_ref": head["claim_id"],
                         "source_observed_at": head["observed_at"],
-                        "freshness": "UNKNOWN",
+                        "freshness": derived_freshness,
                         "epistemic_state": (
                             "CONTRADICTED" if is_contradicted else "KNOWN"
                         ),
