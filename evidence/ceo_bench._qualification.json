@@ -1,0 +1,49 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "CEO Bench",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mention registre V4",
+      "result": "pass",
+      "evidence": "architecture/capabilities.json → statut qualification_planned, preuve cible evidence/ceo_bench._qualification.json (déclarée)"
+    },
+    {
+      "check": "Décision S2",
+      "result": "pass",
+      "evidence": "architecture/Conseil_S2_Decision_18_capacites.md → QUALIFIER, échéance 2026-11-01 (décidée)"
+    },
+    {
+      "check": "Substance dans le repo",
+      "result": "pass",
+      "evidence": "os/business/_prd/PRD_DARK_FACTORY_RUNTIME_AMBIANT.md:17-24 : « Un script à base de règles a battu la majorité des LLM de pointe sur CEO-Bench (arXiv 2606.18543)… le harnais doit être mesuré, pas supposé » ; os/business/_runtime/GATES.md:53 : porte la plus importante du registre, « CEO-Bench (arXiv 2606.18543) a mesure qu'un harnais peut degrader un modele de tete… Non franchie a ce jour, et c'est declare » ; portable/README.md:35 : « exploration BMAD/Gstack/CEO Bench »"
+    },
+    {
+      "check": "Capacité runtime V4",
+      "result": "fail",
+      "evidence": "CEO Bench est un benchmark externe (arXiv 2606.18543), pas un composant exécuté par V4 : aucun runner, aucun harness de bench, aucun résultat de bench produit dans le repo"
+    },
+    {
+      "check": "Tests",
+      "result": "fail",
+      "evidence": "0 test bench dans tests/"
+    }
+  ],
+  "artifacts": [
+    "os/business/_prd/PRD_DARK_FACTORY_RUNTIME_AMBIANT.md (citation doctrinale, §§ benchmark)",
+    "os/business/_runtime/GATES.md (porte : delta observable, « non franchie à ce jour, et c'est déclaré »)",
+    "architecture/capabilities.json (entrée, qualification_planned)"
+  ],
+  "not_verified": [
+    "Exécution du benchmark arXiv 2606.18543 contre quoi que ce soit dans V4 — jamais faite (et ce n'est pas le rôle de V4 : c'est une référence externe)"
+  ],
+  "live_checks_needed": [
+    "Clarification de périmètre (S2) : la « capacité » à qualifier est-elle (a) la référence doctrinale — auquel cas la preuve = les citations ci-dessus, statut à renommer en doctrinal_reference — ou (b) une exécution du bench — auquel cas runner + résultats requis, hors de portée sans cadrage"
+  ],
+  "scope_note": "CEO Bench existe (benchmark externe réel, arXiv 2606.18543) et sert (doctrine « mesuré, pas supposé » gravée dans les gates), mais ce n'est pas une capacité runtime de V4 : V4 ne l'exécute pas, V4 le cite. Le verdict NOT_PROVEN porte sur la qualification comme capacité d'exécution ; la recommandation est un re-typage (référence doctrinale) plutôt qu'un retrait — décision S2, pas unilatérale (M-08)."
+}

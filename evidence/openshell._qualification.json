@@ -1,0 +1,60 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "OpenShell",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mention registre V4",
+      "result": "pass",
+      "evidence": "architecture/capabilities.json → statut qualification_planned, preuve cible evidence/openshell._qualification.json (déclarée)"
+    },
+    {
+      "check": "Décision S2",
+      "result": "pass",
+      "evidence": "architecture/Conseil_S2_Decision_18_capacites.md → QUALIFIER, échéance 2026-11-01 (décidée)"
+    },
+    {
+      "check": "Autres mentions docs",
+      "result": "fail",
+      "evidence": "PARTIEL (listes) : migration/README.md:77 : cité dans une énumération (« OpenShell/Octop ») parmi les éléments « rest[ant] dans architecture/capabilities.json » — aucune spec"
+    },
+    {
+      "check": "Code",
+      "result": "fail",
+      "evidence": "0 référence dans tout le code (*.mjs/*.ts/*.tsx/*.py/*.sh : 0 hit hors .git)"
+    },
+    {
+      "check": "Fichiers dédiés",
+      "result": "fail",
+      "evidence": "aucun fichier *openshell* dans le repo"
+    },
+    {
+      "check": "Tests",
+      "result": "fail",
+      "evidence": "0 hit dans tests/"
+    },
+    {
+      "check": "Exécution / endpoint / service",
+      "result": "fail",
+      "evidence": "rien d'exécutable, aucun port, aucun binaire, aucune config"
+    }
+  ],
+  "artifacts": [
+    "architecture/capabilities.json (entrée, qualification_planned)",
+    "architecture/Conseil_S2_Decision_18_capacites.md (décision S2 QUALIFIER)",
+    "migration/README.md (mention en liste)"
+  ],
+  "not_verified": [
+    "Tout : aucune définition fonctionnelle d'OpenShell comme capacité runtime (ni spec, ni interface, ni implémentation)"
+  ],
+  "live_checks_needed": [
+    "Définir la capacité : spec minimale (entrées/sorties, interface) — à défaut, il n'y a rien à prouver",
+    "Si une implémentation existe hors repo : la localiser, l'exécuter, capturer un output observable"
+  ],
+  "scope_note": "OpenShell est un nom au registre, pas une capacité observable : 3 mentions documentaires, zéro substance exécutable. Sans preuve au 2026-11-01, retour devant le Conseil (condition S2) ; aucun retrait unilatéral (M-08)."
+}

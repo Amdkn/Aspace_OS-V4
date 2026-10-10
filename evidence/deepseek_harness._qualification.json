@@ -1,0 +1,75 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "DeepSeek Harness",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "installed",
+  "checks": [
+    {
+      "check": "Entrée registre harnais",
+      "result": "pass",
+      "evidence": "os/business/_runtime/bridge/harnesses.json → id dsh, statut: \"suppose\", mesure_le: null (déclarée)"
+    },
+    {
+      "check": "Sonde de joignabilité",
+      "result": "fail",
+      "evidence": "même fichier : sonde.joignable: false, « absent du PATH et des repertoires connus (68 repertoires sondes) », sonde du 2026-08-24"
+    },
+    {
+      "check": "Code wrapper UI",
+      "result": "pass",
+      "evidence": "os/agent/src/apps/DeepSeekHarness/index.tsx (23 lignes : DeepSeekHarnessApp = Cadre iframe vers http://127.0.0.1:3080, remède « dsh web --port 3080 ou cliquer sur Lancer »)"
+    },
+    {
+      "check": "Entrée routeur",
+      "result": "pass",
+      "evidence": "os/agent/tools/routeurs-api.ts:105-111 (cle deepseek, port 3080, lanceur C:/Users/amado/agent-os/desktop/lancer_dsh.cmd — chemin Windows) (déclarée)"
+    },
+    {
+      "check": "Lanceur",
+      "result": "pass",
+      "evidence": "os/agent/lancer_dsh.cmd présent (fichier)"
+    },
+    {
+      "check": "Binaire dsh présent",
+      "result": "fail",
+      "evidence": "absent du PATH et des répertoires connus sur cette VM (recherche système : 0 résultat)"
+    },
+    {
+      "check": "Serveur :3080 joignable",
+      "result": "fail",
+      "evidence": "curl http://127.0.0.1:3080/ : pas de réponse (000)"
+    },
+    {
+      "check": "Dépendance package",
+      "result": "fail",
+      "evidence": "aucune mention dsh/deepseek dans os/agent/package.json ni package.json racine"
+    },
+    {
+      "check": "Tests",
+      "result": "fail",
+      "evidence": "aucun test ne référence deepseek/dsh (os/agent/src : 0 fichier *.test.*)"
+    }
+  ],
+  "artifacts": [
+    "os/agent/src/apps/DeepSeekHarness/index.tsx (wrapper UI)",
+    "os/agent/tools/routeurs-api.ts (entrée routeur, chemins Windows)",
+    "os/agent/lancer_dsh.cmd",
+    "os/business/_runtime/bridge/harnesses.json (entrée dsh, statut suppose, sonde négative du 2026-08-24)"
+  ],
+  "not_verified": [
+    "Installation de dsh (binaire introuvable, source d'installation non documentée dans le repo)",
+    "dsh web --port 3080 démarré et servant l'UI — jamais observé",
+    "Plugin ACP supposé (dsh-plugin-acp) — piste non vérifiée contre la doc Cordis/DSH",
+    "Capacités annoncées (tool_call, file_edit, shell, mcp) — jamais exercées"
+  ],
+  "live_checks_needed": [
+    "Installer dsh depuis sa source officielle (à identifier — absente du repo), dsh --version",
+    "dsh web --port 3080, curl -s http://127.0.0.1:3080/ → 200 + capture d'écran du rendu",
+    "Exercer une capacité (ex. tool_call) et conserver le reçu"
+  ],
+  "scope_note": "Le périphérique existe (app UI + routeur + lanceur), mais le harnais n'a jamais été mesuré : la sonde du registre elle-même a constaté son absence le 2026-08-24. Wrapper ≠ capacité prouvée. Sans preuve au 2026-11-01, retour devant le Conseil (condition S2) ; aucun retrait unilatéral (M-08)."
+}

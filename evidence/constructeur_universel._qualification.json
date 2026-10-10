@@ -1,0 +1,60 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "Constructeur Universel",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mention registre V4",
+      "result": "pass",
+      "evidence": "architecture/capabilities.json → statut qualification_planned, preuve cible evidence/constructeur_universel._qualification.json (déclarée)"
+    },
+    {
+      "check": "Décision S2",
+      "result": "pass",
+      "evidence": "architecture/Conseil_S2_Decision_18_capacites.md → QUALIFIER, échéance 2026-11-01 (décidée)"
+    },
+    {
+      "check": "Substance architecture",
+      "result": "fail",
+      "evidence": "PARTIEL (listes) : architecture/REFONDATION.md:134-137 : cité dans une liste de capacités « rest[ant] dans ce périmètre » dont « la répartition finale doit répondre à des usages Life/Business observables, pas à la seule multiplication des composants » — aucune spec fonctionnelle"
+    },
+    {
+      "check": "Code",
+      "result": "fail",
+      "evidence": "0 fichier hors docs ; les 2 hits « constructeur » en code sont des faux positifs (mapping.json : rôle « Jerry - Constructeur A » ; AUDIT_RAPPORT.md : constructeur JS/TS)"
+    },
+    {
+      "check": "Tests",
+      "result": "fail",
+      "evidence": "0 hit dans tests/"
+    },
+    {
+      "check": "Exécution / endpoint / service",
+      "result": "fail",
+      "evidence": "rien d'exécutable, aucun port, aucun binaire, aucune config"
+    },
+    {
+      "check": "PRD-Fork-CubeFarm",
+      "result": "fail",
+      "evidence": "PARTIEL : architecture/ASpace-V4-PRD-Fork-CubeFarm.md:111 : « leurs fonctions exactes et versions doivent être qualifiées avant attribution. Aucun nom de framework n'est assimilé à une capacité prouvée. »"
+    }
+  ],
+  "artifacts": [
+    "architecture/capabilities.json (entrée, qualification_planned)",
+    "architecture/Conseil_S2_Decision_18_capacites.md (décision S2 QUALIFIER)",
+    "architecture/REFONDATION.md (mention liste)"
+  ],
+  "not_verified": [
+    "Tout : aucune définition fonctionnelle de ce qu'est le « Constructeur Universel » comme capacité runtime (ni spec, ni interface, ni implémentation)"
+  ],
+  "live_checks_needed": [
+    "Définir la capacité : spec minimale (entrées/sorties, interface) — à défaut, il n'y a rien à prouver",
+    "Si une implémentation existe hors repo : la localiser, l'exécuter, capturer un output observable"
+  ],
+  "scope_note": "Le Constructeur Universel est un nom au registre, pas une capacité observable : aucune spec, aucun code, aucun test, aucune exécution. Le PRD lui-même interdit d'assimiler le nom à une capacité prouvée. Sans preuve au 2026-11-01, retour devant le Conseil (condition S2) ; aucun retrait unilatéral (M-08)."
+}

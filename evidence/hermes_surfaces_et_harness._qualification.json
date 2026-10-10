@@ -1,0 +1,54 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "Hermes surfaces et harness",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mention doctrine",
+      "result": "pass",
+      "evidence": "agents/CONTRACT.md:19-20 : « Codex et Hermes produisent le même résultat typé » ; :41 : « connexion Hermes sur runner cloud éphémère »"
+    },
+    {
+      "check": "Slot provider",
+      "result": "pass",
+      "evidence": "agents/registry.json → providers: [\"codex\", \"jules\", \"hermes\"] — noms seuls, aucun objet de configuration (pas d'endpoint, pas de credentials, pas de paramètres)"
+    },
+    {
+      "check": "Mentions repo",
+      "result": "pass",
+      "evidence": "15 occurrences (AGENTS.md, README.md, agents/README.md, control-plane/README.md, architecture/*, migration/v3-inventory.json, os/agent/*) — toutes nominatives/doctrinales"
+    },
+    {
+      "check": "Code harness Hermes",
+      "result": "fail",
+      "evidence": "Aucun fichier d'implémentation trouvé : pas de client, pas d'adaptateur, pas de skill, pas de config sous harness/, agents/, control-plane/, tools/"
+    },
+    {
+      "check": "Surfaces Hermes",
+      "result": "fail",
+      "evidence": "Aucune « surface » (UI/API) attribuable à Hermes dans le repo"
+    },
+    {
+      "check": "Connexion live",
+      "result": "fail",
+      "evidence": "Aucune connexion établissable : rien à quoi se connecter (pas d'URL, pas de credential)"
+    }
+  ],
+  "artifacts": [
+    "agents/CONTRACT.md (lignes 19-20, 41) — description doctrinale du rôle Hermes",
+    "agents/registry.json — slot hermes dans providers (sans config)"
+  ],
+  "not_verified": [
+    "Existence d'un service Hermes externe (aucune URL connue dans le repo)",
+    "Toute exécution via Hermes (aucune trace : pas de logs, pas de reçus, pas de runs)"
+  ],
+  "live_checks_needed": [
+    "Si un runner Hermes existe hors repo : URL + credential requis pour tester une connexion ; à défaut, la capacité reste indémontrable depuis la factory."
+  ],
+  "scope_note": "Hermes est aujourd'hui un nom de provider dans la doctrine du plan de contrôle, pas une capacité runtime. Le PRD-Fork-CubeFarm le dit explicitement : « Aucun nom de framework n'est assimilé à une capacité prouvée. » Sans endpoint ni exécution, le statut honnête est NOT_PROVEN → retour devant le Conseil S2 à l'échéance (retrait éventuel : décision S2 + validation S1, jamais unilatéral — M-08)."
+}

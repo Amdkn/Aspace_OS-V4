@@ -1,0 +1,44 @@
+{
+  "mission": "M-16",
+  "dispatch": "D-N019",
+  "date": "2026-10-09",
+  "owner": "Ryan / Doctor 13",
+  "deadline": "2026-11-01",
+  "capability": "Starnet",
+  "verdict": "NOT_PROVEN",
+  "proof_level": "documented",
+  "checks": [
+    {
+      "check": "Mentionné en architecture",
+      "result": "pass",
+      "evidence": "architecture/ASpace-V4-PRD-Fork-CubeFarm.md, architecture/REFONDATION.md, architecture/Conseil_S2_Decision_18_capacites.md, architecture/capabilities.json, presentations/v3-v4/*"
+    },
+    {
+      "check": "Code / config / déploiement dans le repo",
+      "result": "fail",
+      "evidence": "Zéro trace hors docs : aucun fichier non-doc ne mentionne starnet (grep -rli : seuls .md/.html/.ts de présentation)"
+    },
+    {
+      "check": "URL / endpoint / port",
+      "result": "fail",
+      "evidence": "Aucune URL, aucun port, aucun docker-compose/service trouvé"
+    },
+    {
+      "check": "Service live",
+      "result": "fail",
+      "evidence": "NON VÉRIFIABLE : aucun endpoint connu à sonder"
+    }
+  ],
+  "artifacts": [
+    "Mentions docs uniquement (aucun artefact runtime)."
+  ],
+  "not_verified": [
+    "Existence d'un runtime Starnet (binaire, service, déploiement)",
+    "Toute exécution observable",
+    "Toute authentification / connexion"
+  ],
+  "live_checks_needed": [
+    "Aucun identifié : aucun endpoint connu. Le Conseil doit d'abord clarifier ce que serait le runtime Starnet (service ? URL ? périmètre ?) avant tout check live."
+  ],
+  "scope_note": "Starnet est une interface du périmètre de composition dans le PRD (« Les interfaces Agent OS, Life OS, Business OS, Mobile OS, Starnet et WorkAdventure appartiennent au même périmètre de composition ») — ambition documentée, pas capacité exécutée. Zéro trace runtime dans le repo."
+}

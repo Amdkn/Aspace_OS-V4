@@ -23,15 +23,17 @@
     },
     {
       "name": "Business OS",
-      "status": "qualification_planned",
+      "status": "qualified",
       "source_revision": null,
-      "runtime_evidence": null,
+      "runtime_evidence": "evidence/business_os._qualification.json (autotest 27/27 rejouable (exit 0) ; périmètre production non asserté)",
       "destination_contract": null,
       "qualification_plan": {
         "runtime_evidence_target": "evidence/business_os._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
-      }
+      },
+      "qualified_date": "2026-10-09",
+      "qualified_by": "Ryan / Doctor 13 (D-N019)"
     },
     {
       "name": "Mobile OS",
@@ -67,6 +69,13 @@
         "runtime_evidence_target": "evidence/cube_farm._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NEEDS_LIVE_CHECK",
+        "proof_level": "installed",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/cube_farm._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -79,6 +88,13 @@
         "runtime_evidence_target": "evidence/starnet._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/starnet._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -91,6 +107,13 @@
         "runtime_evidence_target": "evidence/workadventure._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/workadventure._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -103,6 +126,13 @@
         "runtime_evidence_target": "evidence/gateway_openclaw._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NEEDS_LIVE_CHECK",
+        "proof_level": "executed",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/gateway_openclaw._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -115,6 +145,13 @@
         "runtime_evidence_target": "evidence/hermes_surfaces_et_harness._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/hermes_surfaces_et_harness._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -127,6 +164,13 @@
         "runtime_evidence_target": "evidence/prime_agent._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/prime_agent._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -139,6 +183,13 @@
         "runtime_evidence_target": "evidence/deepseek_harness._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "installed",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/deepseek_harness._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -151,6 +202,13 @@
         "runtime_evidence_target": "evidence/automaton_m0_m1_m2._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/automaton_m0_m1_m2._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -163,19 +221,28 @@
         "runtime_evidence_target": "evidence/constructeur_universel._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/constructeur_universel._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
       "name": "BMAD",
-      "status": "qualification_planned",
+      "status": "qualified",
       "source_revision": null,
-      "runtime_evidence": null,
+      "runtime_evidence": "evidence/bmad._qualification.json (52 skills installées, runs réels avec reçus honnêtes ; couverture individuelle non assertée)",
       "destination_contract": null,
       "qualification_plan": {
         "runtime_evidence_target": "evidence/bmad._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
-      }
+      },
+      "qualified_date": "2026-10-09",
+      "qualified_by": "Ryan / Doctor 13 (D-N019)"
     },
     {
       "name": "gstack",
@@ -187,6 +254,13 @@
         "runtime_evidence_target": "evidence/gstack._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/gstack._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -199,6 +273,13 @@
         "runtime_evidence_target": "evidence/ceo_bench._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/ceo_bench._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -211,6 +292,13 @@
         "runtime_evidence_target": "evidence/openshell._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/openshell._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
@@ -223,6 +311,13 @@
         "runtime_evidence_target": "evidence/octop._qualification.json",
         "owner": "Ryan / Doctor 13",
         "deadline": "2026-11-01"
+      },
+      "investigation": {
+        "verdict": "NOT_PROVEN",
+        "proof_level": "documented",
+        "date": "2026-10-09",
+        "evidence_file": "evidence/octop._qualification.json",
+        "investigator": "Ryan / Doctor 13 (D-N019)"
       }
     },
     {
