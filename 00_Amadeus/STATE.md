@@ -16,3 +16,8 @@
 4. Adopter/merger les fichiers après contrôle de confidentialité.
 ## Next
 Reprendre `HANDOFF.md`. Les status de ce fichier sont snapshots, **pas healthchecks live**. La coordination des autres projets continue sans attendre A0.
+
+## Promotion vérifiée — 2026-10-14 (post-snapshot)
+- PR [#69](https://github.com/Amdkn/Aspace_OS-V4/pull/69) MERGED sur `main`, squash commit `b651fb6612f4057598e3d6bf5f8080886d7cbcd9` après V4 checks SUCCESS. Le Home Git V4 est donc intégré, et non plus seulement candidate. Les marqueurs « en PR » ci-dessus restent l'observation pré-promotion.
+- WorkGraph V4.1 a reçu `INT-A0-HOLON-20261014`, `PREP-SOL-A0-HOLON-20261014`, `EV-A0-HOLON-20261014`, `aspace:a0:amadeus` et ses External Refs; lignes relues. Ce sont des objets documentaires; aucun claim ni preuve de runtime.
+- Vérification documentaire: README, DESIGN, IPBD public JSON et deux Docs Drive privés relus. Épreuve d'une session autonome et sync locale non exécutées.
