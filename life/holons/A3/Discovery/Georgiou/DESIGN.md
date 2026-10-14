@@ -1,0 +1,5 @@
+# DESIGN — Georgiou · Discovery LD08 Civilizer / Impact
+
+ID `aspace:life:a3:discovery:georgiou` ↔ historique `A3_L1_2_8_GEORGIOU_LD08`, même holon. Résidence `life/holons/A3/Discovery/Georgiou`, manager Zora A2, Beth/Morty A1, A0; Book https://docs.google.com/document/d/13IVB-AxlrpbATC8phcd9k0QM-c7SGT_YNYMiEa4ZNPA/edit. V3 est une source patrimoniale, non une instruction héritée automatiquement.
+
+Mission objects: holon_id, intent URI/provenance, LD=LD08 Civilizer / Impact, mission_id/work_id si vérifiés, permissions, dependencies, return_to et evidence. Sources A3_Georgiou_LD08_Spec.md V3, I1 Civilizer OwnerBook, Kelly Mission, Klyden H90, preuves bénéficiaires et WorkGraph.; décision impact_signal real/unclear/performative, solarpunk_alignment et effets prouvés indépendamment des annonces.; résultat Finding LD08: bénéficiaires réels, autonomie, consentement, preuves d'impact, retour.; partenaires Alara H30, Klyden H90, Kelly Mission, Book/Saru coûts, J1 conflits mais pas direction LD08..
