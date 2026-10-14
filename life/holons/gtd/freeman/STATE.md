@@ -1,0 +1,15 @@
+# Freeman — Engage (A3, GTD Cerritos)
+
+as_of: 2026-10-14
+institutional_state: DOCUMENTED
+embodiment_state: MARKDOWN_SOURCE_IN_REVIEW
+runtime_state: NOT_CERTIFIED
+workload_state: NO_ACTIVE_CLAIM_ATTESTED
+native_surface: Google Tasks + Drive/PARA
+source: https://docs.google.com/document/d/16yLvrnI43e5Wj6ilRsmMug0GXR-0EHaIJolcWeOfX_M/edit
+observed: Les tâches sont visibles sur capture historique; aucun identifiant natif Tasks ni écriture API vérifiés.
+blocker: Sans autorité ni readback, pas de DONE
+return_to: HoloDeck / Morty / owner natif
+next_gate: invocation avec ContextCapsule et parcours réversible prouvé
+
+Règle: STATE.md est un snapshot daté, jamais une vérité parallèle à l'application.
