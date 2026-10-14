@@ -1,0 +1,20 @@
+{
+  "mission_id": "SOH-153",
+  "correlation_id": "gtd-book-20261014",
+  "owner": "HoloDeck/Boimler",
+  "observed_at": "2026-10-14",
+  "latest_native_refs": [
+    "https://linear.app/aspace-os/issue/SOH-153",
+    "https://drive.google.com/file/d/15iWY1w0FtiJpU9_YNUJngnv6tSL_YOwk/view",
+    "https://github.com/Amdkn/Aspace_OS-V4/pull/68"
+  ],
+  "last_verified_effect": "Read Book LD01; confirmed Picard project, SOH-145, B1 BOOK and PR #22 links. Did not execute Tasks.",
+  "pending_authority": "LD01 service offer and beneficiary remain proposed",
+  "blocked_outcome": "Google Tasks write connector not certified",
+  "next_executable_action": "Inspect PR #22 and B1 BOOK to identify next accepted deliverable and owner",
+  "return_to": "HoloDeck -> Curie/Una -> Picard/Book",
+  "effect_status": "OBSERVED",
+  "evidence_refs": [
+    "https://drive.google.com/file/d/15iWY1w0FtiJpU9_YNUJngnv6tSL_YOwk/view"
+  ]
+}
