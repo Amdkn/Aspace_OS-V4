@@ -17,3 +17,6 @@ Légende : DOCUMENTED = contrat/source; INSTALLED = installation; EXECUTED = sor
 | Drive/GWS Tasks/Calendar/Keep | PARTIALLY_DOCUMENTED | handoff A0 2026-10-14 | IDs/exécution / projection |
 | Full loop IPBD→outcome→A0 | TARGET | DESIGN | mission réversible avec preuve |
 Sous-agent qui n'a que ses documents ≠ capacité réellement raccordée. Ne jamais promouvoir depuis screenshot, Docs ou état `In Progress` sans receipt adapté.
+
+## Mise à jour vérifiée de la livraison — 2026-10-14
+V4 Home GitHub `00_Amadeus`: **MERGED** via PR #69, commit `b651fb6612f4057598e3d6bf5f8080886d7cbcd9`; GitHub CI `V4 checks` SUCCESS. Statut d'intégration documentaire VERIFIED, **embodiment / outcome humain / synchro en temps réel toujours NOT_VERIFIED**. Les mentions PR candidate de la matrice précédente sont datées d'avant promotion.
