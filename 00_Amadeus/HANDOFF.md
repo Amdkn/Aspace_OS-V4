@@ -8,3 +8,6 @@ A0 n'est pas humain, pas Kirby concurrent; quatre piliers, cinq horizons fixes d
 Cette livraison = documentation/contrats + registre de projection. Elle ne démarre ni Gateway ni S3 ni WorkGraph claim; ne répète pas l'audit complet. Prochaine cellule concrète : une reprise indépendante avec même `holon_id`, une IPBD prise de `IPBD.md`, un responsable LD, une permission réelle et une action réversible, puis preuve `A0ReturnEnvelope`.
 ## Return contract
 `{holon_id, ipbd_ids, mission_id?, work_id?, correlation_id?, source_cutoff, authority, delta, evidence_refs, outcome_state, open_questions, return_to:"aspace:a0:amadeus"}`. Laisser les IDs d'exécution inconnus absents, jamais synthétiques. Rapport humain: progression réelle, économie d'attention, conflits qui demandent choix, pas des compteurs de fichiers.
+
+## Fait post-handover, à consommer en priorité (2026-10-14)
+PR #69 a été mergée sur `main` en `b651fb6612f4057598e3d6bf5f8080886d7cbcd9`, `V4 checks` verts. WorkGraph Sheet a reçu l'ID unique du holon, l'intention, le work documentaire et ses evidence/external refs sans claim runtime. Le Drive A0 conserve son ID et deux nouveaux Docs privés. Ne recommence pas la création des fichiers; prochaine étape = liaison A0-ContextCompiler et vrai cold start avec receipt puis retour humain.
