@@ -1,0 +1,5 @@
+# DESIGN — Ed Mercer · A3 Orville · Profession
+
+ID `aspace:life:a3:orville:ed-mercer` (alias historique `A3_L1_1_1_ED_MERCER`); résidence `life/holons/A3/Orville/Ed_Mercer`. Manager A2 Orville; gates A1 Beth/Morty, sous A0. Source Book https://docs.google.com/document/d/1xxmbYBT_VOBZvsnuSMoaEScs3Tlx1JwH0kmMS1BdirQ/edit et V3 A3_Ed_Mercer_Spec.md V3; Book Profession; Book LD01, Saru LD02, preuves de clients et engagements Curie.; V3 est patrimoine non hérité automatiquement en V4.
+
+Entrée mission_id, source/version, pilier=Profession, holon_id, work_id éventuel, permissions et return_to; Projet de service AaaS, garderie, offre Drop Servicing ou effet de surcharge technique.. Décision craft_delta et technician_risk; valeur réelle séparée d'annonce et d'une ambition de revenu.. Source A3_Ed_Mercer_Spec.md V3; Book Profession; Book LD01, Saru LD02, preuves de clients et engagements Curie.. Sortie Finding Profession, client/résultat, preuves, heures A0 libérées, risque de sous-rémunération.. Pairs Gordon protège temps de passion, Claire durabilité, Isaac réalisme H1..
