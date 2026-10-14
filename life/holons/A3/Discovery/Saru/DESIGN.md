@@ -1,0 +1,5 @@
+# DESIGN — Saru · Discovery LD02
+
+Identité V4 `aspace:life:a3:discovery:saru` liée à `A3_L1_2_2_SARU_LD02` dans l'archive V3, même mandat. Résidence `life/holons/A3/Discovery/Saru`, sous Zora A2 (USS Discovery vaisseau), Beth/Morty A1 et A0. Book Drive https://docs.google.com/document/d/1n8pznlGF-EYrf3AjUoLBXh9niJuuiZk18AHGylEnNtQ/edit; source V3 = preuve de provenance non héritée automatiquement.
+
+Objets contextuels: intent source/version, LD=LD02, holon_id, work_id si connu, deps, permission et return_to. Entrée Dépense personnelle, runway, engagement d'abonnement ou discours de «1000T» traité comme cash.. Décide runway_signal si soldes/inflows vérifiés et scarcity_mode interprété explicitement, sans confondre patrimoine et aspiration.. Pairs Book financement d'entreprise, Isaac réalisme H1, Gordon temps/famille, Beth arbitrage de risque.. Source A3_Saru_LD02_Spec.md V3, C1 Jerry, budget consenti, Book LD01, Isaac H1 et objectifs financiers datés.. Sortie Finding LD02: budget/runway sourcé, tension de sécurité, autorité pour next action.. Les frameworks Ikigai/PARA/12WY/GTD/DEAL sont transversaux.

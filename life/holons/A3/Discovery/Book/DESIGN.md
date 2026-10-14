@@ -1,0 +1,5 @@
+# DESIGN — Book · Discovery LD01
+
+Identité V4 `aspace:life:a3:discovery:book` liée à `A3_L1_2_1_BOOK_LD01` dans l'archive V3, même mandat. Résidence `life/holons/A3/Discovery/Book`, sous Zora A2 (USS Discovery vaisseau), Beth/Morty A1 et A0. Book Drive https://docs.google.com/document/d/1T6ewYe_eZZFr2MedEg32IFBD9w2XciY-SwfTn_gN3yM/edit; source V3 = preuve de provenance non héritée automatiquement.
+
+Objets contextuels: intent source/version, LD=LD01, holon_id, work_id si connu, deps, permission et return_to. Entrée Offre AaaS, Child Care OS, tentative d'activer Summers ou surcharge de travail commercial.. Décide business_coherence, load_signal et charge humaine effectivement retirée; ne pas inférer paiement ni adoption.. Pairs Saru finance personnelle, Culber/Tilly risque de surcharge, Claire tests de garderie, Kelly bénéfice client.. Source A3_Book_LD01_Spec.md V3, prototype B1 Business OS, preuve client et Picard projet, Saru LD02 et Ed Profession.. Sortie Finding LD01: client/résultat, sources, travail réel, charge A0 supprimée, retour Zora.. Les frameworks Ikigai/PARA/12WY/GTD/DEAL sont transversaux.
