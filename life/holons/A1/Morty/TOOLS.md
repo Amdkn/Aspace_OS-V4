@@ -1,0 +1,5 @@
+# TOOLS — Morty A1 | Gatekeepers
+
+Holon V4: `aspace:life:a1:morty`; ancien identifiant V3 `L1_A1_Morty` (alias sourcé, non personne distincte). Résidence `life/holons/A1/Morty`. Constitution et norme: `AGENTS.md` et `00_Amadeus/` V4. Source patrimoniale/Book (non fichier Markdown natif): https://github.com/Amdkn/Aspace_OS_V3/blob/main/20_Life_OS/00_Gatekeepers_Beth_Morty/A1_Morty_Spec.md. Aucun héritage automatique V3.
+
+Références ContextPack.template.yml V3, Beth clearance, WorkGraph, Curie/PARA/Cerritos/Protostar et permissions réelles. et https://github.com/Amdkn/Aspace_OS_V3/blob/main/20_Life_OS/00_Gatekeepers_Beth_Morty/A1_Morty_Spec.md; WorkGraph registre d'effets, non mémoire de personne. Harness candidats via Tech OS ChatGPT/Hermes/Codex/Claude Code/Antigravity/Pi, par appel et selon permission. Aucun credential runtime propre à Morty attesté, aucun accès personnel privé divulgué. Aucun effet sans grant, idempotence et readback; les fournisseurs historiques ne sont pas automatiquement connectés.

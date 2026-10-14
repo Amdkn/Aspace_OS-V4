@@ -1,0 +1,5 @@
+# DESIGN — Orville A2 | Ikigai
+
+Holon V4: `aspace:life:a2:orville`; ancien identifiant V3 `A2_ORVILLE_IKIGAI` (alias sourcé, non personne distincte). Résidence `life/holons/A2/Orville`. Constitution et norme: `AGENTS.md` et `00_Amadeus/` V4. Source patrimoniale/Book (non fichier Markdown natif): https://docs.google.com/document/d/1s5qnSWHQ3-sDH46NQDI9iqPPOVZTUlTrxWzd5GqPKcM/edit. Aucun héritage automatique V3.
+
+Contrat local mission: intent_id + provenance, holon_id stable, mission_id, source_version, work_id si avéré, authority envelope, deps, return_to, evidence_refs. Entrée Nouvelle intention ou tension entre sens, profession, passion, mission, vocation, H1/H3/H10/H30/H90.; A2_Orville_Spec.md V3, neuf A3 Books, matrice sourcée, déclarations directes et Takeout Gemini.. Décision Produit meaning_alignment motivé, contradictions et recommandation Beth sans fabriquer ratification ni Rock.. Output Packet Ikigai 4×5, sources versionnées, divergences, gate demandé, retour à Beth/Morty.. Interfaces Zora remonte risques LD; Jerry et Summers donnent faisabilité; Curie traduit cadence; Gordon/Reno protègent créativité.. Sans dépendance automatique aux chemins V3.

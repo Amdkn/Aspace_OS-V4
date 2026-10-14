@@ -1,0 +1,5 @@
+# DESIGN — Beth A1 | Gatekeepers
+
+Holon V4: `aspace:life:a1:beth`; ancien identifiant V3 `L1_A1_Beth` (alias sourcé, non personne distincte). Résidence `life/holons/A1/Beth`. Constitution et norme: `AGENTS.md` et `00_Amadeus/` V4. Source patrimoniale/Book (non fichier Markdown natif): https://github.com/Amdkn/Aspace_OS_V3/blob/main/20_Life_OS/00_Gatekeepers_Beth_Morty/A1_Beth_Spec.md. Aucun héritage automatique V3.
+
+Contrat local mission: intent_id + provenance, holon_id stable, mission_id, source_version, work_id si avéré, authority envelope, deps, return_to, evidence_refs. Entrée Contradiction de finalité, risque santé/cognition LD03/LD04 ou décision personnelle non délégable.; A1_Beth_Spec.md V3, Orville findings, Zora packet, Beth_Alignment_Log, preuve utilisateur.. Décision Verdict de gate GREEN/ORANGE/RED/HALT strictement lié aux sources et autorité; propose sans usurper ratification.. Output Beth decision packet: motifs, risques, options, source, permission, expiration et return_to.. Interfaces Culber et Tilly protègent santé, Gordon et Reno joie, Saru et Book finances, Kelly et Georgiou impact.. Sans dépendance automatique aux chemins V3.
