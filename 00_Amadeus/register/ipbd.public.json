@@ -1,0 +1,572 @@
+{
+  "schema_version": "1.0",
+  "holon_id": "aspace:a0:amadeus",
+  "generated_at": "2026-10-14",
+  "scope": "public_projection_only",
+  "privacy_notice": "Private details and original quotations in Drive A0; this is not a complete personal data export",
+  "records": [
+    {
+      "id": "IPBD-I-0001",
+      "kind": "I",
+      "formulation": "Maintenir une continuité personnelle indépendante des sessions et environnements",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "H01"
+      ],
+      "source_date": "2026-10-14",
+      "observed_at": "2026-10-14",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Mission",
+          "Vocation"
+        ],
+        "horizons": [
+          "H1",
+          "H3"
+        ]
+      },
+      "life_domains": [
+        "LD01",
+        "LD04",
+        "LD08"
+      ],
+      "links": {
+        "stewards": [
+          "Graham",
+          "Doctor 11"
+        ],
+        "capability": "context compiler / identity home",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "A0 session sans reconstruction",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-P-0002",
+      "kind": "P",
+      "formulation": "Réduire l'attention gaspillée à router et expliquer les mêmes tâches",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "H01"
+      ],
+      "source_date": "2026-10-14",
+      "observed_at": "2026-10-14",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Profession",
+          "Mission"
+        ],
+        "horizons": [
+          "H1"
+        ]
+      },
+      "life_domains": [
+        "LD01",
+        "LD03",
+        "LD04",
+        "LD06"
+      ],
+      "links": {
+        "stewards": [
+          "Doctor 11",
+          "Nardole"
+        ],
+        "capability": "return_to + autonomous holon stewardship",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "heures humaines libérées",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-B-0003",
+      "kind": "B",
+      "formulation": "Assurer une correspondance Ikigai et huit domaines avant objectifs d'exécution",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "H02"
+      ],
+      "source_date": "2026-03-13",
+      "observed_at": "2026-03-13",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Profession",
+          "Passion",
+          "Mission",
+          "Vocation"
+        ],
+        "horizons": [
+          "H1",
+          "H3",
+          "H10",
+          "H30",
+          "H90"
+        ]
+      },
+      "life_domains": [
+        "LD01",
+        "LD02",
+        "LD03",
+        "LD04",
+        "LD05",
+        "LD06",
+        "LD07",
+        "LD08"
+      ],
+      "links": {
+        "stewards": [
+          "Orville",
+          "Discovery"
+        ],
+        "capability": "Life 6 frameworks",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "priorités justifiées par le sens",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-I-0004",
+      "kind": "I",
+      "formulation": "Construire une autonomie économique fondée sur résultats et indépendance",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "H02"
+      ],
+      "source_date": "2026-03-13",
+      "observed_at": "2026-03-13",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Profession"
+        ],
+        "horizons": [
+          "H1",
+          "H3"
+        ]
+      },
+      "life_domains": [
+        "LD01",
+        "LD02"
+      ],
+      "links": {
+        "stewards": [
+          "Book",
+          "Saru",
+          "B1",
+          "C1"
+        ],
+        "capability": "Business Pulse / cashflow outcomes",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "résultats de revenus attestés",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-D-0005",
+      "kind": "D",
+      "formulation": "Protéger la créativité libre et MC Sandbox",
+      "statement_type": "ENCODED_REPORT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "S01"
+      ],
+      "source_date": "2026-05-21",
+      "observed_at": "2026-05-21",
+      "recorded_at": "2026-10-14",
+      "source_authority": "agent_encoding_reported_directive",
+      "epistemic_state": "HISTORICAL",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Passion"
+        ],
+        "horizons": [
+          "H3"
+        ]
+      },
+      "life_domains": [
+        "LD07",
+        "LD04"
+      ],
+      "links": {
+        "stewards": [
+          "Reno",
+          "H1"
+        ],
+        "capability": "MC Sandbox/Projects Picard",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "temps créatif/œuvre",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-I-0006",
+      "kind": "I",
+      "formulation": "Démocratiser savoirs et bâtir ABC OS Learn Hub",
+      "statement_type": "ENCODED_REPORT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "S01"
+      ],
+      "source_date": "2026-05-21",
+      "observed_at": "2026-05-21",
+      "recorded_at": "2026-10-14",
+      "source_authority": "agent_encoding_reported_directive",
+      "epistemic_state": "HISTORICAL",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Mission",
+          "Vocation"
+        ],
+        "horizons": [
+          "H3",
+          "H10",
+          "H30"
+        ]
+      },
+      "life_domains": [
+        "LD08",
+        "LD04"
+      ],
+      "links": {
+        "stewards": [
+          "Georgiou",
+          "I1"
+        ],
+        "capability": "Education/Capability Graph",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "bénéficiaires vérifiables",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-B-0007",
+      "kind": "B",
+      "formulation": "Préserver vitalité, relations et foyer contre la capture par les tâches",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "S01"
+      ],
+      "source_date": "2026-05-21",
+      "observed_at": "2026-05-21",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Mission",
+          "Passion"
+        ],
+        "horizons": [
+          "H1",
+          "H3"
+        ]
+      },
+      "life_domains": [
+        "LD03",
+        "LD05",
+        "LD06"
+      ],
+      "links": {
+        "stewards": [
+          "Culber",
+          "Stamets",
+          "Burnham"
+        ],
+        "capability": "Life Wheel / protected private goals",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "qualité de vie évaluée par humain",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-I-0008",
+      "kind": "I",
+      "formulation": "Créer un habitat autonome favorable à la vie et à la transmission",
+      "statement_type": "ENCODED_REPORT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "S01"
+      ],
+      "source_date": "2026-05-21",
+      "observed_at": "2026-05-21",
+      "recorded_at": "2026-10-14",
+      "source_authority": "agent_encoding_reported_directive",
+      "epistemic_state": "HISTORICAL",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Mission",
+          "Passion"
+        ],
+        "horizons": [
+          "H3",
+          "H90"
+        ]
+      },
+      "life_domains": [
+        "LD06",
+        "LD08"
+      ],
+      "links": {
+        "stewards": [
+          "Burnham",
+          "G1"
+        ],
+        "capability": "habitat/Projects Picard",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "habitabilité selon personne",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-P-0009",
+      "kind": "P",
+      "formulation": "Transformer la surcharge informationnelle en apprentissage pratiqué",
+      "statement_type": "ENCODED_REPORT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "S01"
+      ],
+      "source_date": "2026-05-21",
+      "observed_at": "2026-05-21",
+      "recorded_at": "2026-10-14",
+      "source_authority": "agent_encoding_reported_directive",
+      "epistemic_state": "HISTORICAL",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Passion",
+          "Vocation"
+        ],
+        "horizons": [
+          "H10"
+        ]
+      },
+      "life_domains": [
+        "LD04",
+        "LD08"
+      ],
+      "links": {
+        "stewards": [
+          "Tilly",
+          "E1",
+          "Graham"
+        ],
+        "capability": "GTD/Resources/WATCH",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "connaissance appliquée",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    },
+    {
+      "id": "IPBD-I-0010",
+      "kind": "I",
+      "formulation": "Construire une architecture de capacités transverses qui serve réellement tous les domaines",
+      "statement_type": "PUBLIC_ABSTRACT",
+      "context": "Projection publique; circonstances et verbatim personnel sont privés/à relier",
+      "source_refs": [
+        "H01"
+      ],
+      "source_date": "2026-10-14",
+      "observed_at": "2026-10-14",
+      "recorded_at": "2026-10-14",
+      "source_authority": "human_or_curated_summary_needs_provenance",
+      "epistemic_state": "CURRENT",
+      "handling_status": "OPEN",
+      "evolution_known": "No documented closure or replacement; see source chronology for variants",
+      "ikigai": {
+        "pillars": [
+          "Mission",
+          "Profession"
+        ],
+        "horizons": [
+          "H1",
+          "H3"
+        ]
+      },
+      "life_domains": [
+        "LD01",
+        "LD02",
+        "LD03",
+        "LD04",
+        "LD05",
+        "LD06",
+        "LD07",
+        "LD08"
+      ],
+      "links": {
+        "stewards": [
+          "Rick",
+          "Doctor 13",
+          "Doctor 11",
+          "Doctor 12"
+        ],
+        "capability": "Gateway/WorkGraph/Adapters",
+        "projects": [],
+        "commitments": [],
+        "work_ids": [],
+        "outcomes": [],
+        "return_to": "aspace:a0:amadeus"
+      },
+      "expected_outcome": "résultat de vie lié à un receipt",
+      "observed_outcome": null,
+      "contradictions": [
+        "Historical interpretation versus human direct statement requires reconciliation"
+      ],
+      "dependencies": [
+        "source authority check",
+        "outcome evidence"
+      ],
+      "next_intake": "Map to existing Area/Project if real; do not auto-create a work item",
+      "privacy": "PUBLIC_ABSTRACT_ONLY"
+    }
+  ]
+}

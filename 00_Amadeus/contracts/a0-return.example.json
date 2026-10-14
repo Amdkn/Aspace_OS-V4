@@ -1,0 +1,19 @@
+{
+  "example_only": true,
+  "holon_id": "aspace:a0:amadeus",
+  "ipbd_ids": [
+    "IPBD-I-0001"
+  ],
+  "mission_id": null,
+  "work_id": null,
+  "correlation_id": null,
+  "source_cutoff": "2026-10-14",
+  "authority": "READ_ONLY_EXAMPLE",
+  "delta": "No runtime effect recorded",
+  "evidence_refs": [],
+  "outcome_state": "UNKNOWN",
+  "open_questions": [
+    "Which authorized adapter will execute a first reversible test?"
+  ],
+  "return_to": "aspace:a0:amadeus"
+}

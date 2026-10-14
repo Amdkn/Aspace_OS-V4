@@ -95,3 +95,7 @@ Les connexions absentes sont signalées BLOCKED, jamais promues en flotte active
 inventaire GitHub paginé et workspace multi-dépôts. Le lock portable historique
 reste optionnel ; ses tickets V3 sont de la provenance. Les nouveaux travaux
 se font dans V4. Authentifications et première mission à vérifier sur la cible.
+
+## Home A0 — Amadeus
+
+Le jumeau numérique personnel unique est documenté dans [00_Amadeus/README.md](00_Amadeus/README.md) avec identité, constitution de travail, IPBD, DESIGN, gouvernance et handoff. `AGENT.md` définit le holon; `AGENTS.md` contient les instructions locales. Les données personnelles restent sur un Drive privé ; V4 public ne publie que les contrats et projections non sensibles. L'existence des fichiers ne prouve ni incarnation ni synchronisation runtime.
