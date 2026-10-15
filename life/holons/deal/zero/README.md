@@ -1,13 +1,9 @@
-# Zero — Automate (A3, DEAL Protostar)
+# Résidence déplacée — redirection patrimoniale
 
-Identity: deal/zero; parent A2 HoloJaneway; status DOCUMENTED; current_time 2026-10-14.
+**Ce dossier est un alias historique NON exécutable, pas un second holon.**
 
-Pourquoi: DEAL Protostar sert la vie; Automate a pour résultat « AutomationBlueprint: trigger, receipt, exception, rollback, costs, owner ».
-
-Fichiers: [SOUL](SOUL.md), [AGENTS](AGENTS.md), [CONTRACTS](CONTRACTS.md), [CAPABILITIES](CAPABILITIES.md), [RUNBOOK](RUNBOOK.md), [STATE](STATE.md), [MEMORY](MEMORY.md).
-
-Résidence Drive: https://drive.google.com/drive/folders/1nwr3RQzobyPyfoSIxnmr9Dd6Rm-54iLT
-Contrat Workspace: https://docs.google.com/document/d/1R_V7O-RkfZIjP-eoMlKx4RXSVNJBV6KTGjrm7OgrVN0/edit
-Framework: https://drive.google.com/drive/folders/1VM3MngFktk5PCSFfa8iYWb6EwKqhU2Tr
-
-Reprise: vérifier scope, état et IDs natifs; décider localement; produire receipt avec return_to, ou WAIT/UNKNOWN. Ce profil n'atteste pas une session active.
+- Source canonique : [A3/Protostar/Zero](../../A3/Protostar/Zero/README.md)
+- Home GitHub versionné : https://github.com/Amdkn/Aspace_OS-V4/tree/main/life/holons/A3/Protostar/Zero
+- Ancienne identité / chemin `life/holons/deal/zero` conservé pour traçabilité et compatibilité des anciens liens README.
+- Toutes les instructions `AGENTS.md`, contrats, `STATE.md`, `MEMORY.md` sont dans le nouveau home; ne pas les chercher ici. Anciens blobs accessibles dans l'historique de la PR #68.
+- Ne pas charger ce fichier comme agent.
