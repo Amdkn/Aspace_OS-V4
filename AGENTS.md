@@ -112,3 +112,8 @@ Chargement Tech obligatoire: [tech/holons/README.md](tech/holons/README.md), [bi
 ## CROSS-OS-20261014 — chargement de la collaboration bilatérale
 
 Lire `architecture/CROSS_OS_COLLABORATION.md` et `architecture/cross_os_collaboration.json` AVANT tout mandat Tech↔Life↔Business. Les ancrages du 30 juin (Gemini #1615) ne remplacent ni les 8 fonctions Jerry ni les contributions Linear du 8 octobre. En Tech/Business, lire `AGENT.md` (capacité et limites décisionnelles) et `DESIGN.md` (contrats d'échange) en plus de `AGENTS.md`, `CONTRACTS.md` et `STATE.md`. Côté A3, charger `RELATIONS.md` ET `CONTRACTS.md`. Bill/Tilly et le manifest `research/bill_tilly/video_manifest.json` sont un premier intake, pas un runtime actif. Sans preuve/autorité native, conserver UNKNOWN et return_to.
+
+
+## Chargement PARA et mission cross-OS v2 — 2026-10-15
+
+Les six A2 sont Orville, Zora, **Computer**, Curie, HoloDeck et HoloJaneway. Charger les résidences PARA existantes: `life/holons/A2/Computer` et `life/holons/A3/Enterprise/{Picard,Spock,Geordi,Data}`. Aucun nouveau holon. L'orientation de mission est `python tools/holon_route.py --cases` et `architecture/cross_os_collaboration.json`: historic_anchor ≠ selected_business_function; spécialiste S3 transverse ≠ responsable Life; autorité déclarée ≠ permission exécutable. Les écarts d'autorité, appel S2 et absence cumulée bloquent les effets. Pour une PR technique liée à SOH-148, ne pas confondre son merge avec la DoD cognition LD04. 
