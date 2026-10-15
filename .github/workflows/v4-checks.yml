@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
+      - name: Prevent technical PR auto-link to Life acceptance issues
+        if: github.event_name == 'pull_request'
+        run: python tools/pr_life_status_guard.py
       - run: python -m unittest discover -s tests -v
       - run: python tools/holon_route.py --cases
       - run: python -m unittest -v
@@ -33,4 +36,29 @@ jobs:
         with:
           name: bill-tilly-factory-qualification-${{ runner.os }}
           path: factory-out/
+          retention-days: 30
+
+  independent-factory-replay:
+    needs: [verify]
+    if: needs.verify.result == 'success'
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download Linux handoff artifact without A0 copy/paste
+        uses: actions/download-artifact@v4
+        with:
+          name: bill-tilly-factory-qualification-Linux
+          path: imported-qualification/
+      - name: Verify independently checked-out source and imported receipt
+        run: python tools/factory_resume.py imported-qualification/qualification.json imported-qualification/handoff.json --out replay-out
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bill-tilly-independent-replay
+          path: replay-out/
           retention-days: 30
