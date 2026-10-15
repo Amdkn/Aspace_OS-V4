@@ -1,0 +1,6 @@
+# B3 IT — Kang Dynasty (IT/R&D)
+
+- holon_id `aspace:business:B3:IT`; classe **B3 squad institutionnelle**, parent [B2/IT VP Cyborg](../../../B2/B2/IT/README.md) et Jerry [B1 Book](../../../B1/B1/README.md) (Business Pulse).
+- [Dossier squad](https://github.com/Amdkn/Aspace_OS-V4/tree/main/os/business/04_Business_Domains/07_RD_et_IT_Cyborg_KangDynasty/squad) · [Runbook canonique](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/07_RD_et_IT_Cyborg_KangDynasty/SPRINTS.md) · [Playbook DC](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/07_RD_et_IT_Cyborg_KangDynasty/VP_AGENT.md) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : KangPrime (Infra), IronLad (Provisioning), ScarletCenturion (Security), Immortus (Capacity), VictorTimely (CICD), RamaTut (Backup). Cette liste décrit des spécialités de lore historiques, **pas 6 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Priorité au résultat utile pour le domaine Business Pulse, à la sécurité du bénéficiaire et à la vérification. Le choix de tactique appartient à B3 dans son mandat; une fausse complétion est refusée.

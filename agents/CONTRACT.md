@@ -1,3 +1,13 @@
+# ÉTAT COURANT DES EFFETS — constitution et runtime distincts (2026-10-14)
+
+**Autorité institutionnelle** : dans un mandat et une portée d'accès explicitement valides, Rick et les Doctors peuvent proposer, modifier, tester, pousser et fusionner, avec trace du résultat et relecture native. L'absence de gate humain routinier N'abolit PAS les permissions GitHub, la protection des branches, la validation du besoin ni la preuve.
+
+**Mécanisme implémenté** : [Agent Mesh](README.md) prend aujourd'hui surtout les PR pour REVUE (status/receipt typé). [Issue Factory](README.md) peut déclencher fabrication par Jules sur Issue éligible et recevoir une PR. Les findings ne sont pas automatiquement réparés, l'auto-merge n'est PAS implanté comme chaîne générale, le déploiement et le gain humain ne sont pas attestés par le statut READY. Ceci n'interdit pas un holon possédant un mandat d'utiliser un autre harness capable de push/merge avec les droits réels et preuves nécessaires.
+
+**Résidence institutionnelle** : [13 holons Tech](../tech/holons/README.md), [liaison registry et Drive](../tech/holons/HARNESS_BINDINGS.md). Une autorité accordée ≠ un effet automatique réellement câblé ≠ une session en ligne. Cette section prime sur les formulations ambiguës datées ci-dessous, qui sont de l'historique.
+
+---
+
 # Contrat de mission — Agents GitHub agnostiques
 
 

@@ -1,0 +1,1114 @@
+{
+  "schema": "aspace.business.holons.v1",
+  "as_of": "2026-10-14",
+  "source_portal": "https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit",
+  "source_j1": "https://docs.google.com/document/d/13soKY4oTAWpFilHx1uYFgXYHjJtEB-eAe31eosYTalE/edit",
+  "runtime_status": "NOT_VERIFIED",
+  "directions": [
+    {
+      "id": "aspace:business:B1",
+      "home": "B1/B1",
+      "life_domain": "LD01",
+      "owner": "Book",
+      "name": "Business Pulse",
+      "ownerbook": "https://docs.google.com/document/d/1o2MN_2U4hGuVQIC_Muu0QnsMvYfVUUKCZrGFCSoV4so/edit",
+      "issue": "SOH-145"
+    },
+    {
+      "id": "aspace:business:C1",
+      "home": "B1/C1",
+      "life_domain": "LD02",
+      "owner": "Saru",
+      "name": "Trillion Finances",
+      "ownerbook": "https://docs.google.com/document/d/1SiLMvKQHBcmyTV2JXdyGn9Hy0Fz3yDqRuREkOv0uXGk/edit",
+      "issue": "SOH-146"
+    },
+    {
+      "id": "aspace:business:D1",
+      "home": "B1/D1",
+      "life_domain": "LD03",
+      "owner": "Culber",
+      "name": "Blue Life Zone",
+      "ownerbook": "https://docs.google.com/document/d/1JhHDmI7U-cNFpuyIo_c22TawT742kdk48sL5UPDWTv0/edit",
+      "issue": "SOH-147"
+    },
+    {
+      "id": "aspace:business:E1",
+      "home": "B1/E1",
+      "life_domain": "LD04",
+      "owner": "Tilly",
+      "name": "Meta Cognition Men",
+      "ownerbook": "https://docs.google.com/document/d/1c589Bqej7CyeHEPwzedgdPGVe409Zwjj9dQ3BwQ7OE0/edit",
+      "issue": "SOH-148"
+    },
+    {
+      "id": "aspace:business:F1",
+      "home": "B1/F1",
+      "life_domain": "LD05",
+      "owner": "Stamets",
+      "name": "Sovereign Triangle",
+      "ownerbook": "https://docs.google.com/document/d/1quA1_nnjCZEU2d8zFQDOZSqzulIW4x7wZ7BWQZ4_BNo/edit",
+      "issue": "SOH-149"
+    },
+    {
+      "id": "aspace:business:G1",
+      "home": "B1/G1",
+      "life_domain": "LD06",
+      "owner": "Burnham",
+      "name": "Solarpunk Habitat",
+      "ownerbook": "https://docs.google.com/document/d/1hVGHSyB_VwjzG77X0sFdvi-4znVIeP_u58caSfXYgq8/edit",
+      "issue": "SOH-150"
+    },
+    {
+      "id": "aspace:business:H1",
+      "home": "B1/H1",
+      "life_domain": "LD07",
+      "owner": "Reno",
+      "name": "MC Sandbox",
+      "ownerbook": "https://docs.google.com/document/d/1mmSYSomK-tE2_6Xjf_KJI5wGAqdmateciBZ8m4HLnGo/edit",
+      "issue": "SOH-151"
+    },
+    {
+      "id": "aspace:business:I1",
+      "home": "B1/I1",
+      "life_domain": "LD08",
+      "owner": "Georgiou",
+      "name": "Civilizer / ABC OS",
+      "ownerbook": "https://docs.google.com/document/d/1ULIWd3o4IpEHjQPkoHBA4AkoD-K5qNjEjk9vTwOuGSw/edit",
+      "issue": "SOH-152"
+    }
+  ],
+  "managers": [
+    {
+      "id": "aspace:business:B2:GRO",
+      "home": "B2/B2/GRO",
+      "parent": "aspace:business:B1",
+      "vp": "Superman",
+      "playbook": "https://drive.google.com/file/d/1eLfXPcFfGXzmxJpeZHglEGn7DnG5xS0l/view",
+      "child": "aspace:business:B3:GRO"
+    },
+    {
+      "id": "aspace:business:B2:SAL",
+      "home": "B2/B2/SAL",
+      "parent": "aspace:business:B1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://drive.google.com/file/d/1bCYLbTtAp-qJK6NAjrlICqtuxdVfAc8m/view",
+      "child": "aspace:business:B3:SAL"
+    },
+    {
+      "id": "aspace:business:B2:PRD",
+      "home": "B2/B2/PRD",
+      "parent": "aspace:business:B1",
+      "vp": "Flash",
+      "playbook": "https://drive.google.com/file/d/1n4QpOkUaYRPTp3nW901-3FYppIhGl2e1/view",
+      "child": "aspace:business:B3:PRD"
+    },
+    {
+      "id": "aspace:business:B2:OPS",
+      "home": "B2/B2/OPS",
+      "parent": "aspace:business:B1",
+      "vp": "Batman",
+      "playbook": "https://drive.google.com/file/d/1iNnkxIaqVXUR8eLZxr0GfPo-csYHg691/view",
+      "child": "aspace:business:B3:OPS"
+    },
+    {
+      "id": "aspace:business:B2:IT",
+      "home": "B2/B2/IT",
+      "parent": "aspace:business:B1",
+      "vp": "Cyborg",
+      "playbook": "https://drive.google.com/file/d/1ZXWcUvaRHyBvUHlJy72dD8Npf-U6UHvg/view",
+      "child": "aspace:business:B3:IT"
+    },
+    {
+      "id": "aspace:business:B2:FIN",
+      "home": "B2/B2/FIN",
+      "parent": "aspace:business:B1",
+      "vp": "Wonder Woman",
+      "playbook": "https://drive.google.com/file/d/1Od6ZeEvTm6xeklEjM970H0h8xMi7KjZR/view",
+      "child": "aspace:business:B3:FIN"
+    },
+    {
+      "id": "aspace:business:B2:PPL",
+      "home": "B2/B2/PPL",
+      "parent": "aspace:business:B1",
+      "vp": "Green Lantern",
+      "playbook": "https://drive.google.com/file/d/19QO4L6EX23EbF5hQfOe7UJKh7CjMRlRH/view",
+      "child": "aspace:business:B3:PPL"
+    },
+    {
+      "id": "aspace:business:B2:LEG",
+      "home": "B2/B2/LEG",
+      "parent": "aspace:business:B1",
+      "vp": "Aquaman",
+      "playbook": "https://drive.google.com/file/d/1diyN4eBelxtDmGser0p5hfq23zgXp642/view",
+      "child": "aspace:business:B3:LEG"
+    },
+    {
+      "id": "aspace:business:C2:GRO",
+      "home": "B2/C2/GRO",
+      "parent": "aspace:business:C1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/115hpmKL4pLUcaYygW2GZrZskqYRQHfaEUMafwbUaBpg/edit",
+      "child": "aspace:business:C3:GRO"
+    },
+    {
+      "id": "aspace:business:C2:SAL",
+      "home": "B2/C2/SAL",
+      "parent": "aspace:business:C1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/1Dn4Tk0uGGQETTV-A3Fca8tAG5rLs87716WFLLWWi25Q/edit",
+      "child": "aspace:business:C3:SAL"
+    },
+    {
+      "id": "aspace:business:C2:PRD",
+      "home": "B2/C2/PRD",
+      "parent": "aspace:business:C1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/1hI0atcIR_jJiCBpNDIAN4PAiBrT7pCYIVKcUDeovXE8/edit",
+      "child": "aspace:business:C3:PRD"
+    },
+    {
+      "id": "aspace:business:C2:OPS",
+      "home": "B2/C2/OPS",
+      "parent": "aspace:business:C1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/1aUcUvRZj8NI6ne0J1Q_1iO-McpQjGzjz-6Ycih69b4s/edit",
+      "child": "aspace:business:C3:OPS"
+    },
+    {
+      "id": "aspace:business:C2:IT",
+      "home": "B2/C2/IT",
+      "parent": "aspace:business:C1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1csilZCjppkhI-cYuqMSrcKRQQQKpfzFbWDKZqZZ8H2I/edit",
+      "child": "aspace:business:C3:IT"
+    },
+    {
+      "id": "aspace:business:C2:FIN",
+      "home": "B2/C2/FIN",
+      "parent": "aspace:business:C1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/1wDtRH1hmteGiBYKs1fi2nA0nERbomFUJryxQ2kSWJnI/edit",
+      "child": "aspace:business:C3:FIN"
+    },
+    {
+      "id": "aspace:business:C2:PPL",
+      "home": "B2/C2/PPL",
+      "parent": "aspace:business:C1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1zqUhym6RHhu2bMRjtNHSCana7WbBnOyNRY2V-v2-QhM/edit",
+      "child": "aspace:business:C3:PPL"
+    },
+    {
+      "id": "aspace:business:C2:LEG",
+      "home": "B2/C2/LEG",
+      "parent": "aspace:business:C1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/1QD_KSnnZ2Q3_lnbUTnu9yO6qiPtFxWEQZWp1EzothH4/edit",
+      "child": "aspace:business:C3:LEG"
+    },
+    {
+      "id": "aspace:business:D2:GRO",
+      "home": "B2/D2/GRO",
+      "parent": "aspace:business:D1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/1jX9JxnDKR8tcTH9P_gQvDguJWY-NEh8OEmXkmn6BjAE/edit",
+      "child": "aspace:business:D3:GRO"
+    },
+    {
+      "id": "aspace:business:D2:SAL",
+      "home": "B2/D2/SAL",
+      "parent": "aspace:business:D1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/1J6R8UMqK3FylEDiw8gAwvAmBQS7BKOs2zJQVQ9pjfzE/edit",
+      "child": "aspace:business:D3:SAL"
+    },
+    {
+      "id": "aspace:business:D2:PRD",
+      "home": "B2/D2/PRD",
+      "parent": "aspace:business:D1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/16vjYl87UEnvrv2XnXg3ggZwhECTHRTG5B-zgrOSsOuA/edit",
+      "child": "aspace:business:D3:PRD"
+    },
+    {
+      "id": "aspace:business:D2:OPS",
+      "home": "B2/D2/OPS",
+      "parent": "aspace:business:D1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/1FECgcmK_KXxiOthEY_pnHr0IHdhnElqfP94HbzvBk1s/edit",
+      "child": "aspace:business:D3:OPS"
+    },
+    {
+      "id": "aspace:business:D2:IT",
+      "home": "B2/D2/IT",
+      "parent": "aspace:business:D1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1XEVH0OVoqiFcW7UjoFp54dDXIlXKfASYfSDw9QxQeL8/edit",
+      "child": "aspace:business:D3:IT"
+    },
+    {
+      "id": "aspace:business:D2:FIN",
+      "home": "B2/D2/FIN",
+      "parent": "aspace:business:D1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/17eKo-rvQ33rfQjPGpjAq_MYUEy7jEqnQo-di_3fT-ZI/edit",
+      "child": "aspace:business:D3:FIN"
+    },
+    {
+      "id": "aspace:business:D2:PPL",
+      "home": "B2/D2/PPL",
+      "parent": "aspace:business:D1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1agkyD6pjdvYVYi_FsPM6h9P8dBFM0HiEN_kM3QOYUbM/edit",
+      "child": "aspace:business:D3:PPL"
+    },
+    {
+      "id": "aspace:business:D2:LEG",
+      "home": "B2/D2/LEG",
+      "parent": "aspace:business:D1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/11aPEd-FvYvHHMJaF2nh8O6esJPmTqjSNJshhYsfSsc8/edit",
+      "child": "aspace:business:D3:LEG"
+    },
+    {
+      "id": "aspace:business:E2:GRO",
+      "home": "B2/E2/GRO",
+      "parent": "aspace:business:E1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/1eHGkl6uriZazrL0ri5zyeHFa4p7Bf7CfXWlYHxA1LC0/edit",
+      "child": "aspace:business:E3:GRO"
+    },
+    {
+      "id": "aspace:business:E2:SAL",
+      "home": "B2/E2/SAL",
+      "parent": "aspace:business:E1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/1Fh8erpZvW_8SkAjqB8kO2OYSVELjoPvZjFazBL0a4hA/edit",
+      "child": "aspace:business:E3:SAL"
+    },
+    {
+      "id": "aspace:business:E2:PRD",
+      "home": "B2/E2/PRD",
+      "parent": "aspace:business:E1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/17nYt-lApagTE7w8jU028TN-EE8ZlidSKL9rclZHH5Wk/edit",
+      "child": "aspace:business:E3:PRD"
+    },
+    {
+      "id": "aspace:business:E2:OPS",
+      "home": "B2/E2/OPS",
+      "parent": "aspace:business:E1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/1cW-7qLQB3jTqljU9XrmGkYLcVSkgd6A0vrSukV3weAY/edit",
+      "child": "aspace:business:E3:OPS"
+    },
+    {
+      "id": "aspace:business:E2:IT",
+      "home": "B2/E2/IT",
+      "parent": "aspace:business:E1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/17YE9RQeVeYoy522DLFwfiErLLi-ZCWAVTVfZQ1EuIuQ/edit",
+      "child": "aspace:business:E3:IT"
+    },
+    {
+      "id": "aspace:business:E2:FIN",
+      "home": "B2/E2/FIN",
+      "parent": "aspace:business:E1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/1cHnrfGKjow5Y8CkBv-AC3sK73LQmv4ZKRNCVkpZGyqM/edit",
+      "child": "aspace:business:E3:FIN"
+    },
+    {
+      "id": "aspace:business:E2:PPL",
+      "home": "B2/E2/PPL",
+      "parent": "aspace:business:E1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1AVW_daIIZfv2AG2LHIhR1xcwYeASc0y-qB8d7vn66D0/edit",
+      "child": "aspace:business:E3:PPL"
+    },
+    {
+      "id": "aspace:business:E2:LEG",
+      "home": "B2/E2/LEG",
+      "parent": "aspace:business:E1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/1WvIGoii6DRdLGIoabk8M9DfMt5zXNZuJN7QrTXmUZtw/edit",
+      "child": "aspace:business:E3:LEG"
+    },
+    {
+      "id": "aspace:business:F2:GRO",
+      "home": "B2/F2/GRO",
+      "parent": "aspace:business:F1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/14oJJJgIXImbaSOKGG8P0lkv3zGyuZBv9yOA_AwF4_Ck/edit",
+      "child": "aspace:business:F3:GRO"
+    },
+    {
+      "id": "aspace:business:F2:SAL",
+      "home": "B2/F2/SAL",
+      "parent": "aspace:business:F1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/12F7KjQfqKxP35Vn-Z3PFYSuT9d56HBgupYfqcUGGY2s/edit",
+      "child": "aspace:business:F3:SAL"
+    },
+    {
+      "id": "aspace:business:F2:PRD",
+      "home": "B2/F2/PRD",
+      "parent": "aspace:business:F1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/1LbDh_KVBPIDxMj28jQYpDwitlTGDR1ajt-BcTG1zRaY/edit",
+      "child": "aspace:business:F3:PRD"
+    },
+    {
+      "id": "aspace:business:F2:OPS",
+      "home": "B2/F2/OPS",
+      "parent": "aspace:business:F1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/1iSqkiJ1DXoyMWMcZCprvJP-8BL8DC330pJZr-YkWs6E/edit",
+      "child": "aspace:business:F3:OPS"
+    },
+    {
+      "id": "aspace:business:F2:IT",
+      "home": "B2/F2/IT",
+      "parent": "aspace:business:F1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1Tm3jTuV4R-QzMKS5lRvwM_pNqrFDdkzM4rLPHySceE8/edit",
+      "child": "aspace:business:F3:IT"
+    },
+    {
+      "id": "aspace:business:F2:FIN",
+      "home": "B2/F2/FIN",
+      "parent": "aspace:business:F1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/162sJ2gXVoGblB96Znx4iv9Cr1Ov22XcxXr8iyCe7BRo/edit",
+      "child": "aspace:business:F3:FIN"
+    },
+    {
+      "id": "aspace:business:F2:PPL",
+      "home": "B2/F2/PPL",
+      "parent": "aspace:business:F1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1wvRVoLTdBugwEegt6ULCJi4XbN8Hqf4YTRMyUbbwSxo/edit",
+      "child": "aspace:business:F3:PPL"
+    },
+    {
+      "id": "aspace:business:F2:LEG",
+      "home": "B2/F2/LEG",
+      "parent": "aspace:business:F1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/1Y33eSpsBj6z1a7mSu70xBOTCeugC8d19R0K_O7aQr2w/edit",
+      "child": "aspace:business:F3:LEG"
+    },
+    {
+      "id": "aspace:business:G2:GRO",
+      "home": "B2/G2/GRO",
+      "parent": "aspace:business:G1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/1TFGfO0eKPKFWJNbxvdyRgOslUk2AfxqnqWl9dpMZbeY/edit",
+      "child": "aspace:business:G3:GRO"
+    },
+    {
+      "id": "aspace:business:G2:SAL",
+      "home": "B2/G2/SAL",
+      "parent": "aspace:business:G1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/1nTayku6kadEmQ9Ne9kkbu1Ud9y2YgUkJfCTcxjc574w/edit",
+      "child": "aspace:business:G3:SAL"
+    },
+    {
+      "id": "aspace:business:G2:PRD",
+      "home": "B2/G2/PRD",
+      "parent": "aspace:business:G1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/1bzFiaWw8ZVUFr4t68Qj3gcMgm9_jyox_VJx--bc-Liw/edit",
+      "child": "aspace:business:G3:PRD"
+    },
+    {
+      "id": "aspace:business:G2:OPS",
+      "home": "B2/G2/OPS",
+      "parent": "aspace:business:G1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/13pxv_MbL3rn1yLD2Y9cWKXO7tVj0ceQ0z27Eoubw1jU/edit",
+      "child": "aspace:business:G3:OPS"
+    },
+    {
+      "id": "aspace:business:G2:IT",
+      "home": "B2/G2/IT",
+      "parent": "aspace:business:G1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1r9-uBcMGGTSjjcjbOkaKfNvvrDr4rkPE1lcVIuKzWSE/edit",
+      "child": "aspace:business:G3:IT"
+    },
+    {
+      "id": "aspace:business:G2:FIN",
+      "home": "B2/G2/FIN",
+      "parent": "aspace:business:G1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/1Pz7fw7k9W0VR0sDOfH3G1p9ED-jR8y1nKQsvTjtn6xI/edit",
+      "child": "aspace:business:G3:FIN"
+    },
+    {
+      "id": "aspace:business:G2:PPL",
+      "home": "B2/G2/PPL",
+      "parent": "aspace:business:G1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1_8ngJcBhWh3QH0u6ETiyhE-Z5kUAAy70TmGJZj_4Qyw/edit",
+      "child": "aspace:business:G3:PPL"
+    },
+    {
+      "id": "aspace:business:G2:LEG",
+      "home": "B2/G2/LEG",
+      "parent": "aspace:business:G1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/1-JHYjgCnGcoy1XlI-x3jp0hsmm2iZJRHvb9XLDOZlQE/edit",
+      "child": "aspace:business:G3:LEG"
+    },
+    {
+      "id": "aspace:business:H2:GRO",
+      "home": "B2/H2/GRO",
+      "parent": "aspace:business:H1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/1S_GB3W5Mp4iu62QQCl96zSXZHceROcY5z8n5RL9xrRE/edit",
+      "child": "aspace:business:H3:GRO"
+    },
+    {
+      "id": "aspace:business:H2:SAL",
+      "home": "B2/H2/SAL",
+      "parent": "aspace:business:H1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/129n5ZyS46Tk067wYtXWkrYFUbJLOueC0a9lfNWscUbw/edit",
+      "child": "aspace:business:H3:SAL"
+    },
+    {
+      "id": "aspace:business:H2:PRD",
+      "home": "B2/H2/PRD",
+      "parent": "aspace:business:H1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/138PfObTZj2dq2WeglmRg0rc_6t_H-FdbRxpcjvrbHRk/edit",
+      "child": "aspace:business:H3:PRD"
+    },
+    {
+      "id": "aspace:business:H2:OPS",
+      "home": "B2/H2/OPS",
+      "parent": "aspace:business:H1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/18WySn9AOUmiQKgqe9NVZ1SrHlZMalz-vp7FOh5kcuwI/edit",
+      "child": "aspace:business:H3:OPS"
+    },
+    {
+      "id": "aspace:business:H2:IT",
+      "home": "B2/H2/IT",
+      "parent": "aspace:business:H1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1zMP-fMdDsyI5i_d-HNloJBHU0MzRFVdiZpMdUxXvl0c/edit",
+      "child": "aspace:business:H3:IT"
+    },
+    {
+      "id": "aspace:business:H2:FIN",
+      "home": "B2/H2/FIN",
+      "parent": "aspace:business:H1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/1rhXKZ6GA71OoQf2Rcg3znbfBr0e2Q73teCl16SGD590/edit",
+      "child": "aspace:business:H3:FIN"
+    },
+    {
+      "id": "aspace:business:H2:PPL",
+      "home": "B2/H2/PPL",
+      "parent": "aspace:business:H1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1i5NEEEwqiQDf3Ud1Kit-wzKuqHMWnYn76nf56R3Dkq0/edit",
+      "child": "aspace:business:H3:PPL"
+    },
+    {
+      "id": "aspace:business:H2:LEG",
+      "home": "B2/H2/LEG",
+      "parent": "aspace:business:H1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/12SKKts-q43_xbj-NyYfraxRDvS_GkHqRycl-wS9fu6g/edit",
+      "child": "aspace:business:H3:LEG"
+    },
+    {
+      "id": "aspace:business:I2:GRO",
+      "home": "B2/I2/GRO",
+      "parent": "aspace:business:I1",
+      "vp": "Superman",
+      "playbook": "https://docs.google.com/document/d/1LGphrpBOZKMF1h_CyQ8OqZmDoM24tZUjd8m4hyfp1zU/edit",
+      "child": "aspace:business:I3:GRO"
+    },
+    {
+      "id": "aspace:business:I2:SAL",
+      "home": "B2/I2/SAL",
+      "parent": "aspace:business:I1",
+      "vp": "Martian Manhunter",
+      "playbook": "https://docs.google.com/document/d/1RASXQ0rFt0qYWyIVK65OIyOfWw5qdLGQRkZtJI9xu9A/edit",
+      "child": "aspace:business:I3:SAL"
+    },
+    {
+      "id": "aspace:business:I2:PRD",
+      "home": "B2/I2/PRD",
+      "parent": "aspace:business:I1",
+      "vp": "Flash",
+      "playbook": "https://docs.google.com/document/d/1lclvkWtFaRVpPOxF7DU8foUW54G2hSUx9nsW3B_hhIU/edit",
+      "child": "aspace:business:I3:PRD"
+    },
+    {
+      "id": "aspace:business:I2:OPS",
+      "home": "B2/I2/OPS",
+      "parent": "aspace:business:I1",
+      "vp": "Batman",
+      "playbook": "https://docs.google.com/document/d/1Eqprq7XGBxdKUdhK5nCTQBcNJI4ITA9uQKTPAO5QLsA/edit",
+      "child": "aspace:business:I3:OPS"
+    },
+    {
+      "id": "aspace:business:I2:IT",
+      "home": "B2/I2/IT",
+      "parent": "aspace:business:I1",
+      "vp": "Cyborg",
+      "playbook": "https://docs.google.com/document/d/1yj2uaOSXqXXzrM6IMaNZX7FthPfT-3Vj9Cdb1gwTOJw/edit",
+      "child": "aspace:business:I3:IT"
+    },
+    {
+      "id": "aspace:business:I2:FIN",
+      "home": "B2/I2/FIN",
+      "parent": "aspace:business:I1",
+      "vp": "Wonder Woman",
+      "playbook": "https://docs.google.com/document/d/1wZpeZ7j16Fe8ftQMo9gNU9xO9b61-HV-3gcVHC3RvmE/edit",
+      "child": "aspace:business:I3:FIN"
+    },
+    {
+      "id": "aspace:business:I2:PPL",
+      "home": "B2/I2/PPL",
+      "parent": "aspace:business:I1",
+      "vp": "Green Lantern",
+      "playbook": "https://docs.google.com/document/d/1SXLZMf0QhpnGBpQDizJPqccCzqe4vw05m8_Vg7lZ_-s/edit",
+      "child": "aspace:business:I3:PPL"
+    },
+    {
+      "id": "aspace:business:I2:LEG",
+      "home": "B2/I2/LEG",
+      "parent": "aspace:business:I1",
+      "vp": "Aquaman",
+      "playbook": "https://docs.google.com/document/d/1S9oPLOc9FZ7Fh_M46mmHsySpkiRcaMy0yywxYGEGtF4/edit",
+      "child": "aspace:business:I3:LEG"
+    }
+  ],
+  "squads": [
+    {
+      "id": "aspace:business:B3:GRO",
+      "home": "B3/B3/GRO",
+      "parent": "aspace:business:B2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1qLFZ681FpUlklBT35e-QZ61NjPDKzJyw",
+      "runbook": "https://drive.google.com/file/d/1u89tJ4qRENpvfD4ZeHjvbhK5JQpvMDRy/view"
+    },
+    {
+      "id": "aspace:business:B3:SAL",
+      "home": "B3/B3/SAL",
+      "parent": "aspace:business:B2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/1zepSaxSItrOhy_Op60QkvFvace-D9iQ_",
+      "runbook": "https://drive.google.com/file/d/1LZQKOAxYzTYoDz8hD7QHvd_GfyiCZbqs/view"
+    },
+    {
+      "id": "aspace:business:B3:PRD",
+      "home": "B3/B3/PRD",
+      "parent": "aspace:business:B2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1UTuw6ww2QW1WdNTSew_68MhuOf3uONc_",
+      "runbook": "https://drive.google.com/file/d/1mYKFHdlBdMEZo9j1-ExdeEb31cOD6uet/view"
+    },
+    {
+      "id": "aspace:business:B3:OPS",
+      "home": "B3/B3/OPS",
+      "parent": "aspace:business:B2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1UWK9O-AUEtpOxrKeLqpYWkfs1ByOKqhZ",
+      "runbook": "https://drive.google.com/file/d/1mTzeFhB-_7JQdMKOD-MLFWaQy1OQc7wx/view"
+    },
+    {
+      "id": "aspace:business:B3:IT",
+      "home": "B3/B3/IT",
+      "parent": "aspace:business:B2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1RF7SLwCEOaR-LSFKX5jLWdI_LlVnPJMB",
+      "runbook": "https://drive.google.com/file/d/1y_5gyZBeHtZPslwz9_FAltnb6RFzCxJa/view"
+    },
+    {
+      "id": "aspace:business:B3:FIN",
+      "home": "B3/B3/FIN",
+      "parent": "aspace:business:B2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1pqlR6-LMj4nFZzzq8-QVDwRlv27iDFMh",
+      "runbook": "https://drive.google.com/file/d/1-z6LZUNoRGHjbbdhfX-ie-lEPCXp7ICY/view"
+    },
+    {
+      "id": "aspace:business:B3:PPL",
+      "home": "B3/B3/PPL",
+      "parent": "aspace:business:B2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1HVSR1WHvOBgaAZ4-XXhkCWlAQZZylEl_",
+      "runbook": "https://drive.google.com/file/d/1pnncgIRR52x2oSahTjI7HSUF3H_xKIiw/view"
+    },
+    {
+      "id": "aspace:business:B3:LEG",
+      "home": "B3/B3/LEG",
+      "parent": "aspace:business:B2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1AiB3DBd2CpjW9IfEKAXn8YeMINYKSinx",
+      "runbook": "https://drive.google.com/file/d/1ukgCagAQJ_q8CMe6AwTEV9J_lMyX4lfp/view"
+    },
+    {
+      "id": "aspace:business:C3:GRO",
+      "home": "B3/C3/GRO",
+      "parent": "aspace:business:C2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1xFWvxZGaUrIMdbe7BIgieElNJgx3resG",
+      "runbook": "https://docs.google.com/document/d/1YbX5pmEBNFvSxYnjRh1cu2C8C-r2hdTPjxPbVYKlHlo/edit"
+    },
+    {
+      "id": "aspace:business:C3:SAL",
+      "home": "B3/C3/SAL",
+      "parent": "aspace:business:C2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/15ZmdML2tNSqk-IUI6mG46Co5pDcvymQ1",
+      "runbook": "https://docs.google.com/document/d/11gTBOMWpl_axAOxax7L5kuefx_v9nn9PczN5848KXC4/edit"
+    },
+    {
+      "id": "aspace:business:C3:PRD",
+      "home": "B3/C3/PRD",
+      "parent": "aspace:business:C2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1tY-Kgt-GUhTJuImefgRwHXvDc3RqH49_",
+      "runbook": "https://docs.google.com/document/d/10LY_wAI_EPvXEZqBD-lonjE3rOl-eV3bcuKN4a0z57Y/edit"
+    },
+    {
+      "id": "aspace:business:C3:OPS",
+      "home": "B3/C3/OPS",
+      "parent": "aspace:business:C2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/13cIIrRQfYFmAZ80r8Udf_Nz8mtYqLzsf",
+      "runbook": "https://docs.google.com/document/d/1wAZusN5vwLXl_37_Gpp_RplqmSnLxu2LNqB_GB42JYo/edit"
+    },
+    {
+      "id": "aspace:business:C3:IT",
+      "home": "B3/C3/IT",
+      "parent": "aspace:business:C2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1aFpaCJLaxl9IJBTSGJKSU6sM4qQY65mJ",
+      "runbook": "https://docs.google.com/document/d/1NEHrwo9tnOwbFnsj5HhH7duXhjY2PzXQcPmyc8aeYDc/edit"
+    },
+    {
+      "id": "aspace:business:C3:FIN",
+      "home": "B3/C3/FIN",
+      "parent": "aspace:business:C2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1cnmrKdCnNkKDeDEnhe5NrWnnno8MAyQs",
+      "runbook": "https://docs.google.com/document/d/1TDKCGZSzw0cc6ZVRh1UAporVFQkH3_edIFoNMWlubdU/edit"
+    },
+    {
+      "id": "aspace:business:C3:PPL",
+      "home": "B3/C3/PPL",
+      "parent": "aspace:business:C2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1xs2LlOeYS7xxijEwqHaVSSgGKS8SXIoQ",
+      "runbook": "https://docs.google.com/document/d/1GVpizGmZobkjgt-Ogt_YwqFy_hjy1TzeJ8b3a4x7I_Q/edit"
+    },
+    {
+      "id": "aspace:business:C3:LEG",
+      "home": "B3/C3/LEG",
+      "parent": "aspace:business:C2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/14gmxNpUUSNDjdW5xP-euzhABlsZFnJyN",
+      "runbook": "https://docs.google.com/document/d/1L_rdL61a02JcJYsdQZ793vs6F-ViHCUext9ClyViNSs/edit"
+    },
+    {
+      "id": "aspace:business:D3:GRO",
+      "home": "B3/D3/GRO",
+      "parent": "aspace:business:D2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1GZUUKY68hB-cYKbIgmZGGik9T-TcCl7J",
+      "runbook": "https://docs.google.com/document/d/1bUcpBpK7kaVKytnz4OwLeOSMcdtgiKJTC71Vz2VrY2g/edit"
+    },
+    {
+      "id": "aspace:business:D3:SAL",
+      "home": "B3/D3/SAL",
+      "parent": "aspace:business:D2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/10PyNmbkOHk11cdTho74cQSuIUM_5UeG6",
+      "runbook": "https://docs.google.com/document/d/1RACmQECSbc4Ie4keP9ve5ILTuZRxn1UrrSD_9Grvocg/edit"
+    },
+    {
+      "id": "aspace:business:D3:PRD",
+      "home": "B3/D3/PRD",
+      "parent": "aspace:business:D2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1cMhyonPpUVZJfbbDYTrENAbfPmfiCD81",
+      "runbook": "https://docs.google.com/document/d/19KApd-AuTf9LnmlsIXpTnoQaMIRadbs6CrRlN9tnxzc/edit"
+    },
+    {
+      "id": "aspace:business:D3:OPS",
+      "home": "B3/D3/OPS",
+      "parent": "aspace:business:D2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1CoV5KrAuK5SazAWD4lUC2E7kS-nr98iq",
+      "runbook": "https://docs.google.com/document/d/1MNxG9_eUYo4BScyMib6PSulodRoK9UhNbjUyQu_mITs/edit"
+    },
+    {
+      "id": "aspace:business:D3:IT",
+      "home": "B3/D3/IT",
+      "parent": "aspace:business:D2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1q6lq-_iQOjtLCy9hAi3tz_2wcJitGvms",
+      "runbook": "https://docs.google.com/document/d/166flPC5KAciT7-xgbe4_1iF0vaMIqQ3INopyqN-yZDM/edit"
+    },
+    {
+      "id": "aspace:business:D3:FIN",
+      "home": "B3/D3/FIN",
+      "parent": "aspace:business:D2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1-IBGDTFAgTh9KlEBpskfdrIeF7x2Vfmy",
+      "runbook": "https://docs.google.com/document/d/12Ehbyf1nAeIYrkjIN7k6g68J3aFBbhcm5m8kyq44NPs/edit"
+    },
+    {
+      "id": "aspace:business:D3:PPL",
+      "home": "B3/D3/PPL",
+      "parent": "aspace:business:D2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1n1_ks3CU3WX-ieajvBsIYZoCdnZ9NlF8",
+      "runbook": "https://docs.google.com/document/d/1wb3EKVYXy_sCqSuybN5Gn7YFMWN6AuAo1YlO6tnVy-o/edit"
+    },
+    {
+      "id": "aspace:business:D3:LEG",
+      "home": "B3/D3/LEG",
+      "parent": "aspace:business:D2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1-hwDU0SsnnkuMxgcbLjJEA5NM_sA5AnA",
+      "runbook": "https://docs.google.com/document/d/1-yuKAEQtXifOsE8Z_5s2NmO7fV0IGspAWQun0iVhCbU/edit"
+    },
+    {
+      "id": "aspace:business:E3:GRO",
+      "home": "B3/E3/GRO",
+      "parent": "aspace:business:E2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1FKDkSl2jCMVKJWdZXM5aEVfFYCeT7Apa",
+      "runbook": "https://docs.google.com/document/d/1GmhTAPFCT2fKqSUOSeNY4mzhtVsBi_59qe0LvkZn2BY/edit"
+    },
+    {
+      "id": "aspace:business:E3:SAL",
+      "home": "B3/E3/SAL",
+      "parent": "aspace:business:E2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/1EmM7ZJrgauEmwqo6OkDfZOPDfeE8FAWh",
+      "runbook": "https://docs.google.com/document/d/1wP6PAzW66RlPoMmHYFY8GAafRDXr8jzAE4zYv-nZCBM/edit"
+    },
+    {
+      "id": "aspace:business:E3:PRD",
+      "home": "B3/E3/PRD",
+      "parent": "aspace:business:E2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1coyHxumFXK7NqYYUNinb0QTjoXVgJPGH",
+      "runbook": "https://docs.google.com/document/d/12fWOcyrWmbbYs1HHM3HEssgcYN17MiI2yrS4eXQMhMs/edit"
+    },
+    {
+      "id": "aspace:business:E3:OPS",
+      "home": "B3/E3/OPS",
+      "parent": "aspace:business:E2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1KcfHcRTAbZiIB8zeEANzyfHAl9rHzBdz",
+      "runbook": "https://docs.google.com/document/d/1X25O2AWsUsq90bZxbGIlZbxQ66GdWbCY4Lc_tQPV3aQ/edit"
+    },
+    {
+      "id": "aspace:business:E3:IT",
+      "home": "B3/E3/IT",
+      "parent": "aspace:business:E2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1cMupWGn1YVIjPxWiQlcGSD0RiUSrorWZ",
+      "runbook": "https://docs.google.com/document/d/19guIwqX0OeibywwGF-DdV42ueOCFDrImxnw9IYsM5Rs/edit"
+    },
+    {
+      "id": "aspace:business:E3:FIN",
+      "home": "B3/E3/FIN",
+      "parent": "aspace:business:E2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1CwyMnjpJwfgYvJXpjhm7Dm8Qfi_MTcRV",
+      "runbook": "https://docs.google.com/document/d/1BlN3Ho-PCvAQDwz1n0ybks4QhfMOsp8b_wLpsPq-v-U/edit"
+    },
+    {
+      "id": "aspace:business:E3:PPL",
+      "home": "B3/E3/PPL",
+      "parent": "aspace:business:E2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1zOf0ATS1c7CliY4LwmHS_HLs9RcAMpci",
+      "runbook": "https://docs.google.com/document/d/1phn53ObZ_I7zxW7DMCZYqt6AWyELT8lMrY5rkPcZtFg/edit"
+    },
+    {
+      "id": "aspace:business:E3:LEG",
+      "home": "B3/E3/LEG",
+      "parent": "aspace:business:E2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1xLnOMuUJMIqj8hiuFSQeuGfiE3OioU9X",
+      "runbook": "https://docs.google.com/document/d/19QJxVBGWLuG_Da_th0emTJVUeqI06a0kWimBafUQEO4/edit"
+    },
+    {
+      "id": "aspace:business:F3:GRO",
+      "home": "B3/F3/GRO",
+      "parent": "aspace:business:F2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1UTGSKfKOL91G1184t_Mt8SQz9PQebath",
+      "runbook": "https://docs.google.com/document/d/1aE5dDHCbriZAxEGm8rKoZXUYlUZRQr1E5qSuuKpPQb0/edit"
+    },
+    {
+      "id": "aspace:business:F3:SAL",
+      "home": "B3/F3/SAL",
+      "parent": "aspace:business:F2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/1PUCvZDWZgrwLVYWClyG0zd9wPIkCFz8R",
+      "runbook": "https://docs.google.com/document/d/1kbLURIrgjwv-diQGHOhzD16k6ehrh0uSalAVFkJMJW4/edit"
+    },
+    {
+      "id": "aspace:business:F3:PRD",
+      "home": "B3/F3/PRD",
+      "parent": "aspace:business:F2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1uMjIVnZ-zOtZALPedVjaqCCOe3v6BpuE",
+      "runbook": "https://docs.google.com/document/d/1NmVUJRplrYQ8GDQ0D7pcfEhXoc9feAFIP5NzKBPGISk/edit"
+    },
+    {
+      "id": "aspace:business:F3:OPS",
+      "home": "B3/F3/OPS",
+      "parent": "aspace:business:F2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1Vqe4srpZtynu5UtLnXCSeB2MAbBh3ZgV",
+      "runbook": "https://docs.google.com/document/d/1HizfcbJ5Eq3FNT2ZAQth-8qgDkMNB0Ad1FJ5Gr6AEAk/edit"
+    },
+    {
+      "id": "aspace:business:F3:IT",
+      "home": "B3/F3/IT",
+      "parent": "aspace:business:F2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/16zOPTjT-PqLKIU8xtmqFkz-dV3iCgpbV",
+      "runbook": "https://docs.google.com/document/d/1QmF4oIsJgMfV7MX8Uy5c3zUmNSFdJKT1U6uU5BrEVm4/edit"
+    },
+    {
+      "id": "aspace:business:F3:FIN",
+      "home": "B3/F3/FIN",
+      "parent": "aspace:business:F2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1VYX6w9dG0qKQX5eZPxBE6r0Qg9-xwtXA",
+      "runbook": "https://docs.google.com/document/d/1wfq9iuMwfMZHD1YdaM6Dd-QiebE9GgkYq8hkljanU3Q/edit"
+    },
+    {
+      "id": "aspace:business:F3:PPL",
+      "home": "B3/F3/PPL",
+      "parent": "aspace:business:F2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1iKDOPgWz84hmK8MfIJhRwZwn_MQb6TuD",
+      "runbook": "https://docs.google.com/document/d/1ZkUzvenUNxXOZfp5K-IV2tzoDM22YcS4OYfkUQCXmRQ/edit"
+    },
+    {
+      "id": "aspace:business:F3:LEG",
+      "home": "B3/F3/LEG",
+      "parent": "aspace:business:F2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1qS6mtgGlGw0DxLH4eYJWzPMdnsuRYsLW",
+      "runbook": "https://docs.google.com/document/d/1690Vz9tMcx64Rsyn-4ZCQzzLLQ4L2s8gP-6zz8M0lJ4/edit"
+    },
+    {
+      "id": "aspace:business:G3:GRO",
+      "home": "B3/G3/GRO",
+      "parent": "aspace:business:G2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1YN1xVwCVIYY9cG1-6cAu98R0iNyM-yJB",
+      "runbook": "https://docs.google.com/document/d/1q7FDWJWeFr_76xM0dTHQKRFRhws_zSYVnu3crF9qhlw/edit"
+    },
+    {
+      "id": "aspace:business:G3:SAL",
+      "home": "B3/G3/SAL",
+      "parent": "aspace:business:G2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/1B11L9UFRm-UyiFt93qDnv0YFXg7H13IQ",
+      "runbook": "https://docs.google.com/document/d/1kZei57PweuW0T4aQchUd59AvsiMTvyQjZNf0Y8Znjx0/edit"
+    },
+    {
+      "id": "aspace:business:G3:PRD",
+      "home": "B3/G3/PRD",
+      "parent": "aspace:business:G2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1ywRt2oe_6fMrFi1PNNHA7wYOXhyTK7rA",
+      "runbook": "https://docs.google.com/document/d/1WKYzETXJNGhSVg2piReBJ5k6806HP5skvbLgLwcQcno/edit"
+    },
+    {
+      "id": "aspace:business:G3:OPS",
+      "home": "B3/G3/OPS",
+      "parent": "aspace:business:G2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1z6aNyu1637bhhan77ZevllJV4EtrVEKi",
+      "runbook": "https://docs.google.com/document/d/1RidtDuM02glwUJSIgnlCI4occetTnv7tKfF6EzafjKc/edit"
+    },
+    {
+      "id": "aspace:business:G3:IT",
+      "home": "B3/G3/IT",
+      "parent": "aspace:business:G2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1h5MImdH9MMF0Vdec8lsRoAoIYPjiccxk",
+      "runbook": "https://docs.google.com/document/d/1YuLJOEpSAIwa3yArGhXKxbh59nKfS1nliR_RC4a9Vyg/edit"
+    },
+    {
+      "id": "aspace:business:G3:FIN",
+      "home": "B3/G3/FIN",
+      "parent": "aspace:business:G2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1Bo6UDUULLrOkFyjA_37fjwy1J5jxL4RG",
+      "runbook": "https://docs.google.com/document/d/1GwkW_ou_vqI1ys9Lc_KbMhizk7GXtmmHBKPeYugvL4U/edit"
+    },
+    {
+      "id": "aspace:business:G3:PPL",
+      "home": "B3/G3/PPL",
+      "parent": "aspace:business:G2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1W5Zvkr0WiOxTrpC9-7W3jl5pnC27_l1y",
+      "runbook": "https://docs.google.com/document/d/1Rq9DIfkBIyHN0v1RZZ9GJRGPl5ZaRCXOyEAVu3HM_gI/edit"
+    },
+    {
+      "id": "aspace:business:G3:LEG",
+      "home": "B3/G3/LEG",
+      "parent": "aspace:business:G2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1QrJn4L5nPlQMzDgPkS1bPGM9k-qrXrmU",
+      "runbook": "https://docs.google.com/document/d/1Rhj8YdLPKXySzDU-7x9ooYRkNhyxYYbrms-a2iZ5AUk/edit"
+    },
+    {
+      "id": "aspace:business:H3:GRO",
+      "home": "B3/H3/GRO",
+      "parent": "aspace:business:H2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1afpO1OwYRQhbbM9ukrUJpazrgqRd3ndk",
+      "runbook": "https://docs.google.com/document/d/1O381bg43u_-lEMhFfk-5h8XfhhEGPflSiIbTpwhOgKM/edit"
+    },
+    {
+      "id": "aspace:business:H3:SAL",
+      "home": "B3/H3/SAL",
+      "parent": "aspace:business:H2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/13i6IhxdnsHrb3iGOmJmk-A61mEkOQPxD",
+      "runbook": "https://docs.google.com/document/d/1DE2KZUY12Sj4oWmCDOFOjyZZ0tHnkrAuYpK0l3ycdXw/edit"
+    },
+    {
+      "id": "aspace:business:H3:PRD",
+      "home": "B3/H3/PRD",
+      "parent": "aspace:business:H2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1C-855gTXScWMGeOjHgTKT-kerzd2-RyH",
+      "runbook": "https://docs.google.com/document/d/1yrnJhXyAf5GJTpjJHKeP_SZ7tGzDFjrOAPVmuJiRHKY/edit"
+    },
+    {
+      "id": "aspace:business:H3:OPS",
+      "home": "B3/H3/OPS",
+      "parent": "aspace:business:H2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1yjFo6l30d90gssML7ZbvVDW3qS-fBV-K",
+      "runbook": "https://docs.google.com/document/d/1Dq4MZuWmttOMoRLLB5FR5DwTi6o6X3R-IGESimsi8Oc/edit"
+    },
+    {
+      "id": "aspace:business:H3:IT",
+      "home": "B3/H3/IT",
+      "parent": "aspace:business:H2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/1aP2lwKqSCWbQxrJYUG17i6hyPb1k2UTY",
+      "runbook": "https://docs.google.com/document/d/1pmIf0sXC63n-bPs_jI6wnWlFfinjJwX0ESGWWTAYaaE/edit"
+    },
+    {
+      "id": "aspace:business:H3:FIN",
+      "home": "B3/H3/FIN",
+      "parent": "aspace:business:H2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/1_jIW3zE0TfJThEZwB5dZ5Q1Rx9V5LJQ1",
+      "runbook": "https://docs.google.com/document/d/1Ql6joJjV124_Cg3ajLv2VPjGPsVCS9S0HqumN-ifrTk/edit"
+    },
+    {
+      "id": "aspace:business:H3:PPL",
+      "home": "B3/H3/PPL",
+      "parent": "aspace:business:H2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1MaLcXYhKqg80RlLAgmvR5-chAdIKR24U",
+      "runbook": "https://docs.google.com/document/d/1C3SgKzRv_OYPbDjP--wrK_MyvgpeD9XhcWs2nFYb1pQ/edit"
+    },
+    {
+      "id": "aspace:business:H3:LEG",
+      "home": "B3/H3/LEG",
+      "parent": "aspace:business:H2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1-8sQebTgN1kfYo-Lw9byLVoB4ZxGBzKe",
+      "runbook": "https://docs.google.com/document/d/1is8sye04Tb2UgAGRSvQXb6qmRVxN68pI5RBmcGyEeEg/edit"
+    },
+    {
+      "id": "aspace:business:I3:GRO",
+      "home": "B3/I3/GRO",
+      "parent": "aspace:business:I2:GRO",
+      "name": "Guardians",
+      "physical_folder": "https://drive.google.com/drive/folders/1G7FhsOBG13WtE5J-mh6rTdS5LJxgHh_Y",
+      "runbook": "https://docs.google.com/document/d/19IRqBPuxQKrbeV5SGfQETItNZ04frJaq9hkOJRJ-1EA/edit"
+    },
+    {
+      "id": "aspace:business:I3:SAL",
+      "home": "B3/I3/SAL",
+      "parent": "aspace:business:I2:SAL",
+      "name": "Illuminati",
+      "physical_folder": "https://drive.google.com/drive/folders/1IDoccx7A3V5PkqvlGRLXHcYiyiH_JPoT",
+      "runbook": "https://docs.google.com/document/d/19q47Orq5WEfCYIrpzT0K8hR7KvuSoVNyrsXNbVQTSLA/edit"
+    },
+    {
+      "id": "aspace:business:I3:PRD",
+      "home": "B3/I3/PRD",
+      "parent": "aspace:business:I2:PRD",
+      "name": "Avengers",
+      "physical_folder": "https://drive.google.com/drive/folders/1kvz98V6ZDgG4qZ8QYu9ZzHOrzBi2aoK1",
+      "runbook": "https://docs.google.com/document/d/1n4Vvu4MmtZIahFEXGpai3O-jXu2ai3MEQErcsfSU4l0/edit"
+    },
+    {
+      "id": "aspace:business:I3:OPS",
+      "home": "B3/I3/OPS",
+      "parent": "aspace:business:I2:OPS",
+      "name": "Fantastic Four",
+      "physical_folder": "https://drive.google.com/drive/folders/1jHjUqfB_D6NQlEAv9R6gjST3gbT0YGaW",
+      "runbook": "https://docs.google.com/document/d/1XIU1GHFgb66NSNOkPHfZF_pqwAVox4nFUlxss7NaLcQ/edit"
+    },
+    {
+      "id": "aspace:business:I3:IT",
+      "home": "B3/I3/IT",
+      "parent": "aspace:business:I2:IT",
+      "name": "Kang Dynasty",
+      "physical_folder": "https://drive.google.com/drive/folders/12v-EtAKMiNSGCSZraSI80bQC2Gk5BOU8",
+      "runbook": "https://docs.google.com/document/d/16x5pAtN8_bwFDtifWyiBvretiUVJAKskflOrFQHdBNI/edit"
+    },
+    {
+      "id": "aspace:business:I3:FIN",
+      "home": "B3/I3/FIN",
+      "parent": "aspace:business:I2:FIN",
+      "name": "Thunderbolts",
+      "physical_folder": "https://drive.google.com/drive/folders/13Kbxeot4JZWvKkPQH6rdYfUAz1QFN89O",
+      "runbook": "https://docs.google.com/document/d/12F-b5mxRxPL8n0oapPOFCWk0cIvZltSBP1aw8EC4ZKI/edit"
+    },
+    {
+      "id": "aspace:business:I3:PPL",
+      "home": "B3/I3/PPL",
+      "parent": "aspace:business:I2:PPL",
+      "name": "X-Men",
+      "physical_folder": "https://drive.google.com/drive/folders/1RT6imDc1fpZ55OYLck3PyCXfc0v3Jd7O",
+      "runbook": "https://docs.google.com/document/d/1W3MSRlWE9ZbJNv2MrKhRzQBezshJpYZ67p-wWH2XnVA/edit"
+    },
+    {
+      "id": "aspace:business:I3:LEG",
+      "home": "B3/I3/LEG",
+      "parent": "aspace:business:I2:LEG",
+      "name": "Eternals",
+      "physical_folder": "https://drive.google.com/drive/folders/1xb-Rr1JTz8GS5Bwg6nEf9hmCnzXHzhTs",
+      "runbook": "https://docs.google.com/document/d/1IGmFG81wGQuHw9TMLzLbNZDgZ5QIiIjk1XwCGQ4GIn8/edit"
+    }
+  ],
+  "j1": {
+    "id": "aspace:business:J1",
+    "home": "J1",
+    "role": "aggregator_not_LD09"
+  }
+}

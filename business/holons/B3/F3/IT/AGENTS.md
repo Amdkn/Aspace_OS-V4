@@ -1,0 +1,6 @@
+# F3 IT — Kang Dynasty (IT/R&D)
+
+- holon_id `aspace:business:F3:IT` : **B3 squad institutionnelle**, parent [VP F2/IT Cyborg](../../../B2/F2/IT/README.md) et Jerry [F1 Stamets](../../../B1/F1/README.md) (Sovereign Triangle).
+- [Squad physique](https://drive.google.com/drive/folders/16zOPTjT-PqLKIU8xtmqFkz-dV3iCgpbV) · [Runbook original](https://docs.google.com/document/d/1QmF4oIsJgMfV7MX8Uy5c3zUmNSFdJKT1U6uU5BrEVm4/edit) · [Playbook du manager](https://docs.google.com/document/d/1Tm3jTuV4R-QzMKS5lRvwM_pNqrFDdkzM4rLPHySceE8/edit) · [portail source](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Lore Marvel V3 : KangPrime (Infra), IronLad (Provisioning), ScarletCenturion (Security), Immortus (Capacity), VictorTimely (CICD), RamaTut (Backup). Ces noms de compétences historiques **ne prouvent pas 6 sessions de bots** ni un casting autorisé pour F3.
+Réutiliser la procédure du Runbook https://docs.google.com/document/d/1QmF4oIsJgMfV7MX8Uy5c3zUmNSFdJKT1U6uU5BrEVm4/edit; B3 choisit les moyens compatibles, VP F2 porte la DoD et B1 F1 la North Star. Chercher une alternative entre pairs avant escalade; conserver le contexte à un autre provider sans redemander au fondateur le message source.

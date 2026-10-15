@@ -1,0 +1,5 @@
+# Contrat Business OS — frontieres
+
+Une seule identité institutionnelle par home, et un propriétaire par effet natif. B1 dirige l'Area permanente; B2 DC borne la DoD; B3 squad choisit tactiques, outils, preuves; J1 agrège les dépendances Zora × Spock sans devenir un LD09. L'instance Summers a son projet Picard/autorité et ne s'active pas par duplication de template. Les axes S/A/B, Life L0/L1/L2, échelles M/H et harness sont orthogonaux. Distinguer document, authentification, session en cours et résultat vérifié. L'objet WorkGraph/Linear porte mission_id, correlation_id, owner, source, effets, preuve et return_to. Ne jamais inventer consentement, clients, finances ou données de santé. Drive conserve les contenus métier et privés; GitHub ici ne conserve que des contrats/projections.
+
+Sources : https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit ; https://docs.google.com/document/d/13soKY4oTAWpFilHx1uYFgXYHjJtEB-eAe31eosYTalE/edit ; https://docs.google.com/spreadsheets/d/1F0osspXkG-Ugu2JcNQICBXcf6_MSq0ddiSGIkNEqv3Y/edit

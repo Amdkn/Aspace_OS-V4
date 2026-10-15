@@ -1,0 +1,6 @@
+# B3 PRD — Avengers (Product)
+
+- holon_id `aspace:business:B3:PRD`; classe **B3 squad institutionnelle**, parent [B2/PRD VP Flash](../../../B2/B2/PRD/README.md) et Jerry [B1 Book](../../../B1/B1/README.md) (Business Pulse).
+- [Dossier squad](https://github.com/Amdkn/Aspace_OS-V4/tree/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/squad) · [Runbook canonique](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/SPRINTS.md) · [Playbook DC](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/VP_AGENT.md) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : CaptainAmerica (Vision), IronMan (Architecture), Thor (PowerFeatures), Hulk (QA), BlackWidow (Specs), Hawkeye (UX), ScarletWitch (DesignSystem). Cette liste décrit des spécialités de lore historiques, **pas 7 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+L'identité stable du groupe est B3/PRD, pas le seul personnage CaptainAmerica. Même nom de squad d'un autre Jerry ≠ même mission ni même permission.

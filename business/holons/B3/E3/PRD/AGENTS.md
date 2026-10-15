@@ -1,0 +1,6 @@
+# E3 PRD — Avengers (Product)
+
+- holon_id `aspace:business:E3:PRD`; classe **B3 squad institutionnelle**, parent [E2/PRD VP Flash](../../../B2/E2/PRD/README.md) et Jerry [E1 Tilly](../../../B1/E1/README.md) (Meta Cognition Men).
+- [Dossier squad](https://drive.google.com/drive/folders/1coyHxumFXK7NqYYUNinb0QTjoXVgJPGH) · [Runbook canonique](https://docs.google.com/document/d/12fWOcyrWmbbYs1HHM3HEssgcYN17MiI2yrS4eXQMhMs/edit) · [Playbook DC](https://docs.google.com/document/d/17nYt-lApagTE7w8jU028TN-EE8ZlidSKL9rclZHH5Wk/edit) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : CaptainAmerica (Vision), IronMan (Architecture), Thor (PowerFeatures), Hulk (QA), BlackWidow (Specs), Hawkeye (UX), ScarletWitch (DesignSystem). Cette liste décrit des spécialités de lore historiques, **pas 7 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Lire mandat du VP E2/PRD, puis le Runbook physique avant toute opération. Choisir tactique, outils et ordre sous contraintes de DoD. Demander d'abord aide d'un pair B3 pour un blocage; remonter au VP si DoD ou autorité ambiguë; ne pas parler directement au Capitaine comme routeur.

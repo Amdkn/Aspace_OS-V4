@@ -1,0 +1,6 @@
+# E3 PRD — Avengers (Product)
+
+- holon_id `aspace:business:E3:PRD`; classe **B3 squad institutionnelle**, parent [E2/PRD VP Flash](../../../B2/E2/PRD/README.md) et Jerry [E1 Tilly](../../../B1/E1/README.md) (Meta Cognition Men).
+- [Dossier squad](https://drive.google.com/drive/folders/1coyHxumFXK7NqYYUNinb0QTjoXVgJPGH) · [Runbook canonique](https://docs.google.com/document/d/12fWOcyrWmbbYs1HHM3HEssgcYN17MiI2yrS4eXQMhMs/edit) · [Playbook DC](https://docs.google.com/document/d/17nYt-lApagTE7w8jU028TN-EE8ZlidSKL9rclZHH5Wk/edit) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : CaptainAmerica (Vision), IronMan (Architecture), Thor (PowerFeatures), Hulk (QA), BlackWidow (Specs), Hawkeye (UX), ScarletWitch (DesignSystem). Cette liste décrit des spécialités de lore historiques, **pas 7 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Capacités collectives patrimoniales : CaptainAmerica (Vision), IronMan (Architecture), Thor (PowerFeatures), Hulk (QA), BlackWidow (Specs), Hawkeye (UX), ScarletWitch (DesignSystem). Chaque tâche exige vérification du membre réellement disponible, de l'autorisation du provider et du produit à livrer. Le Runbook existant contient le procédé; ne pas créer des clones Marvel par simple liste.

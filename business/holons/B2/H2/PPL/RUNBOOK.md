@@ -1,0 +1,11 @@
+# H2 PPL — Green Lantern / Crew
+
+- Identifiant : `aspace:business:H2:PPL` — **manager B2 DC** attaché à [Jerry H1 Reno](../../../B1/H1/README.md), MC Sandbox, LD07.
+- Fonction contextualisée : Crew ; fonction transversale People. Squad X-Men : [H3 PPL](../../../B3/H3/PPL/README.md).
+- Source Playbook : [manager](https://docs.google.com/document/d/1i5NEEEwqiQDf3Ud1Kit-wzKuqHMWnYn76nf56R3Dkq0/edit), squad [résidence physique](https://drive.google.com/drive/folders/1MaLcXYhKqg80RlLAgmvR5-chAdIKR24U), [Runbook](https://docs.google.com/document/d/1C3SgKzRv_OYPbDjP--wrK_MyvgpeD9XhcWs2nFYb1pQ/edit) ; [portail Business](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Nom VP source historique Coach OS: Green Lantern, `b2-01-greenlantern-people`; sert de convention DC et non d'autorité qui remplace le Jerry.
+1. Charger l'OwnerBook H1, le dernier status de l'issue LD et le Playbook https://docs.google.com/document/d/1i5NEEEwqiQDf3Ud1Kit-wzKuqHMWnYn76nf56R3Dkq0/edit.
+2. Déterminer le prochain résultat réversible Crew, DoD et owner, sans inventer un besoin personnel.
+3. Consulter pairs DC H2; déléguer à X-Men dans https://drive.google.com/drive/folders/1MaLcXYhKqg80RlLAgmvR5-chAdIKR24U via contrat JTBD à clé stable.
+4. Lire le Runbook https://docs.google.com/document/d/1C3SgKzRv_OYPbDjP--wrK_MyvgpeD9XhcWs2nFYb1pQ/edit, exiger preuve/état/exception et comparer effet attendu/observé.
+5. Après readback, retourner à H1 et au WorkGraph; si UNKNOWN ne pas relancer aveuglément.

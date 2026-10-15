@@ -1,3 +1,7 @@
+## ÉTAT COURANT — mécanisme livré / mandat autorisé
+
+**Source unique des institutions Tech** : [13 holons](../tech/holons/README.md) et [bindings GitHub–Drive–harness](../tech/holons/HARNESS_BINDINGS.md). La constitution des Doctors/Compagnons ne dépend pas de l'exécution d'un workflow. Les moyens de revue, Issue Factory et les scopes d'écriture restent à valider pour l'effet concret; « le profil peut pousser/fusionner » ne signifie pas « cette boucle le fait automatiquement ». Ne pas marquer un agent `RUNNING` parce qu'un profil .agent.md existe. Aucune installation VPS/Umbrel/Muse lancée par cette PR.
+
 # Agents GitHub — incarnation et exécution
 
 Le workflow **Aspace Agent Mesh** prend une PR interne non-draft, lui affecte un

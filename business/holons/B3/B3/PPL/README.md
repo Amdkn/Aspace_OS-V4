@@ -1,0 +1,10 @@
+# B3 PPL — X-Men (People)
+
+- holon_id `aspace:business:B3:PPL`; classe **B3 squad institutionnelle**, parent [B2/PPL VP Green Lantern](../../../B2/B2/PPL/README.md) et Jerry [B1 Book](../../../B1/B1/README.md) (Business Pulse).
+- [Dossier squad](https://github.com/Amdkn/Aspace_OS-V4/tree/main/os/business/04_Business_Domains/01_RH_Meta_Gouvernance_GreenLantern_XMen/squad) · [Runbook canonique](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/01_RH_Meta_Gouvernance_GreenLantern_XMen/SPRINTS.md) · [Playbook DC](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/01_RH_Meta_Gouvernance_GreenLantern_XMen/VP_AGENT.md) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : ProfessorX (Recruiting), Cyclops (Onboarding), JeanGrey (Culture), Wolverine (PerfReviews), Storm (OpsLeadership), Beast (TechRecruiting), Nightcrawler (DistributedOnboarding), Rogue (SkillTransfer). Cette liste décrit des spécialités de lore historiques, **pas 8 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Cette squad produit une preuve concrète pour l'engagement B1 et le JTBD B2. Aucun résultat déduit de son existence; réutiliser Runbook source au lieu de publier une deuxième version.
+
+
+## SOURCE COURANTE BOOK / LD01 (PRIORITÉ)
+Squad B3 dossier physique : https://drive.google.com/drive/folders/1HVSR1WHvOBgaAZ4-XXhkCWlAQZZylEl_ ; **document Squad original** : https://drive.google.com/file/d/1pnncgIRR52x2oSahTjI7HSUF3H_xKIiw/view ; manager B2 : https://drive.google.com/file/d/19QO4L6EX23EbF5hQfOe7UJKh7CjMRlRH/view . Les noms de membres Coach OS sont un héritage et ne doivent pas faire redéployer des bots. Préférer [registre canonique](https://github.com/Amdkn/Aspace_OS-V4/blob/main/business/holons/registry.json) et le JTBD natif pour reprendre.
