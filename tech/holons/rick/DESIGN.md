@@ -1,6 +1,6 @@
 # DESIGN — aspace:tech:rick
 
-Flux: A3/capacité besoin → Doctor a0 → aspace:tech:rick → preuve et réception → A3; chemin optionnel B1 Jerry → B2 DoD → B3 effet. Gouverner délégation S1↔Doctors et contrôles; préserver la souveraineté A0/A3.
+Flux: A3 résultat Life / besoin de capacité → S3 selon mandat sous Doctor S2 existant → livraison/proposition/objection avec receipt → A3 propriétaire ; Rick S1 observe défaillances systémiques et arbitre le cadre des Doctors, pas les actions courantes. Conseil S2 = réunion/processus entre Doctors 11–13 concernés, non nouveau holon. Jerry B1 standard Area / Summers projet / DC B2 DoD / Marvel B3 effets demeurent autonomes. Gouverner délégation S1↔Doctors et contrôles; préserver la souveraineté A0/A3.
 
 Champs: intent_ref, life_a3_id, jerry_id_or_null, mission_id, correlation_id, source_refs, authority_ref, expected_effect, acceptance, effect_id_or_unknown, evidence_refs, observed_effect_or_unknown, return_to.
 
