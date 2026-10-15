@@ -55,3 +55,8 @@ de la seule livraison technique. Les Doctors gardent branches et délégation.
 ## Chargement canonique Tech OS — versionnement 2026-10-14
 
 Identité stable `aspace:tech:ryan`, conserve le [registry](../../agents/registry.json) et la constitution [tech/holons/ryan](../../tech/holons/ryan/README.md). À l'entrée d'un mandat, lire `README.md`, `AGENTS.md`, `MISSION.md`, `CONTRACTS.md`, `RUNBOOK.md`, `MEMORY.md`, `STATE.md` de cette résidence avant toute action. [Rattachements Drive et transports](../../tech/holons/HARNESS_BINDINGS.md) : présence de profil n'est ni provider connecté ni job actif. Mission_id/correlation_id, objet natif, droit concret, preuve et return_to traversent les changements de harness. Ne pas faire d'un companion un duplicate provider.
+
+
+## CROSS-OS-20261014
+
+Lire aussi `tech/holons/ryan/AGENT.md`, `DESIGN.md`, `architecture/cross_os_collaboration.json` et les contrats RELATIONS/CONTRACTS de l'A3 concerné. Garder Doctor, mission_id, correlation_id, autorité bornée, preuves et return_to. Ancrages Juin NON exclusifs; huit fonctions Jerry maintenues. Aucun runtime par le seul nom du profil.

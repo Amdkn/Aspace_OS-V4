@@ -13,3 +13,8 @@
 
 
 [Correspondance 13 GitHub ↔ Drive ↔ profiles et runtimes](HARNESS_BINDINGS.md). Charger ces sources plutôt que réinventer une session Rick/Doctor/Compagnon.
+
+
+## CROSS-OS-20261014 — 12 fichiers par résidence
+
+Ajouter `AGENT.md` et `DESIGN.md` au cold-start de chaque Tech S1/S2/S3. Charger également les relations inter-OS canoniques dans `architecture/cross_os_collaboration.json` avant une délégation à A3 ou Jerry; lire les **deux contrats réciproques**. Un ancrage est non exclusif, et le management par Doctor reste stable. Les neuf S3 fournissent une capacité sans prendre l'autorité Life. Bill↔Tilly est instruction explicite A0; les huit autres collaborations restent fonctionnelles/proposées. Aucune incarnation active certifiée par les fichiers.

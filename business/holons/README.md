@@ -12,3 +12,8 @@
 - LD08: [I1 Civilizer / ABC OS](B1/I1/README.md) (Georgiou); [huit managers](B2/I2) et [huit squads](B3/I3); [OwnerBook natif](https://docs.google.com/document/d/1ULIWd3o4IpEHjQPkoHBA4AkoD-K5qNjEjk9vTwOuGSw/edit); [issue SOH-152](https://linear.app/aspace-os/issue/SOH-152).
 
 [J1 unique, hors LD09](J1/README.md). Business LD01 ne modèle pas tous les autres LD. Les 56 Runbooks C3–I3 restent les objets Drive originaux; B3 Book a huit documents Squad déjà présents. Les 53 noms Marvel Coach OS sont des spécialités héritées, pas des agents actifs. B1 Jerry Area permanente; Summers B1 = instance Picard uniquement sur mission activée. B2 traduit en DoD, B3 choisit les moyens et démontre, A3 Discovery garde sens de vie. Curie/GTD/DEAL sont réentrants, pas des systèmes d'engagement concurrents. Runtime NOT_VERIFIED.
+
+
+## CROSS-OS-20261014 — 12 fichiers par résidence et ancrages typés
+
+Chaque home Jerry/B2/B3/J1 lit désormais `AGENT.md` et `DESIGN.md` en plus des dix fichiers initiaux. Source de vérité des identifiants : `registry.json`; relation A3/Tech : `architecture/cross_os_collaboration.json`. L'ancrage juin et les contributions Linear octobre ne sont pas des substituts. Les huit fonctions sont disponibles dans chaque Jerry, J1 hors LD09. Les objectifs de Burnham LD06 Famille/Présence priment sur la dénomination Solarpunk Habitat. Les rôles Marvel n'attestent pas de bots actifs.

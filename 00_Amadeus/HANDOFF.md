@@ -11,3 +11,10 @@ Cette livraison = documentation/contrats + registre de projection. Elle ne déma
 
 ## Fait post-handover, à consommer en priorité (2026-10-14)
 PR #69 a été mergée sur `main` en `b651fb6612f4057598e3d6bf5f8080886d7cbcd9`, `V4 checks` verts. WorkGraph Sheet a reçu l'ID unique du holon, l'intention, le work documentaire et ses evidence/external refs sans claim runtime. Le Drive A0 conserve son ID et deux nouveaux Docs privés. Ne recommence pas la création des fichiers; prochaine étape = liaison A0-ContextCompiler et vrai cold start avec receipt puis retour humain.
+
+
+## CROSS-OS-20261014 — reprise PR #75 au-dessus de #74
+
+PR #75 MERGED, commit `02812b34332ccc653561519cdc5ec89c4fc30e9d`, Ubuntu/Windows PASS. `architecture/CROSS_OS_COLLABORATION.md` et JSON préservent la matrice primaire de juin de l'échange Gemini #1615 et la doctrine V3 #415 séparément. Huit A3 Discovery↔Jerry B1/B2/B3 ancrages NON EXCLUSIFS + neuf S3 Tech sous leurs Doctors; réciprocité dans RELATIONS/CONTRACTS, 150 homes Tech/Business enrichis chacun d'AGENT et DESIGN. Dans Linear SOH-145..SOH-152 et SOB-13, annotations ajoutées sans état réel promu; Bill et Tilly ont un addendum sur leurs Docs Drive privés.
+
+Point de reprise concret: `research/bill_tilly/VIDEO_INTAKE.md`, `video_manifest.json` (six sources à récupérer; une interview connue seulement par résumé Astra et cinq références non résolues); aucune vidéo ni amélioration de vie certifiée. Poursuivre l'identification sourcée, la constitution de packets et un exercice acceptant une preuve LD04; **ne pas demander à A0 de refaire l'inventaire** avant d'avoir parcouru les sources existantes. Le manque de vidéo identifiée n'annule pas le reste des relations. La mécanique runtime 24/7, WorkGraph claims, Hermes refill et autonomie demeurent NOT_VERIFIED.
