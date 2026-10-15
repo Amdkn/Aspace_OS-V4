@@ -55,3 +55,8 @@ de la seule livraison technique. Les Doctors gardent branches et délégation.
 ## Chargement canonique Tech OS — versionnement 2026-10-14
 
 Identité stable `aspace:tech:doctor-13`, conserve le [registry](../../agents/registry.json) et la constitution [tech/holons/doctor-13](../../tech/holons/doctor-13/README.md). À l'entrée d'un mandat, lire `README.md`, `AGENTS.md`, `MISSION.md`, `CONTRACTS.md`, `RUNBOOK.md`, `MEMORY.md`, `STATE.md` de cette résidence avant toute action. [Rattachements Drive et transports](../../tech/holons/HARNESS_BINDINGS.md) : présence de profil n'est ni provider connecté ni job actif. Mission_id/correlation_id, objet natif, droit concret, preuve et return_to traversent les changements de harness. Ne pas faire d'un companion un duplicate provider.
+
+
+## CROSS-OS-20261014 — composition avec A3/Business
+
+Pour toute mission inter-OS, lire également les fichiers `tech/holons/doctor-13/AGENT.md` et `DESIGN.md` (mandat et design distincts), puis `architecture/cross_os_collaboration.json`. Charger `life/holons/A3/Discovery/<steward>/{RELATIONS,CONTRACTS}.md` et les B1/B2/B3 pertinents, y compris les huit ancrages historiques NON exclusifs. Le modèle/harness n'incarne pas automatiquement ce rôle. Conserver Doctor, mission_id, correlation_id, authority_ref, receipt, return_to. Réutiliser les scopes déjà approuvés sans nouvelle demande routinière. Cas Bill↔Tilly: SOH-148, Graham/Geordi et E1/E2/PRD/E3/PRD.

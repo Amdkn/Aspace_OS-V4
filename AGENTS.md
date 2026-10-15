@@ -107,3 +107,8 @@ Pour un mandat A0, lire `00_Amadeus/README.md` puis `00_Amadeus/IDENTITY.md`, `G
 ## Tech et Business OS — homes institutionnels V4 (2026-10-14)
 
 Chargement Tech obligatoire: [tech/holons/README.md](tech/holons/README.md), [bindings](tech/holons/bindings.json) et `agents/registry.json`. Chargement Jerry B1–I1, managers DC B2–I2, squads B3–I3 et J1 : [business/holons/README.md](business/holons/README.md), [registry sourcé](business/holons/registry.json). Ces homes ne créent aucun agent actif, mais donnent aux harness un contexte institutionnel stable. Préserver chacun des dossiers Drive d'origine et statuts Linear existants; ne pas confondre alias, projection et source native.
+
+
+## CROSS-OS-20261014 — chargement de la collaboration bilatérale
+
+Lire `architecture/CROSS_OS_COLLABORATION.md` et `architecture/cross_os_collaboration.json` AVANT tout mandat Tech↔Life↔Business. Les ancrages du 30 juin (Gemini #1615) ne remplacent ni les 8 fonctions Jerry ni les contributions Linear du 8 octobre. En Tech/Business, lire `AGENT.md` (capacité et limites décisionnelles) et `DESIGN.md` (contrats d'échange) en plus de `AGENTS.md`, `CONTRACTS.md` et `STATE.md`. Côté A3, charger `RELATIONS.md` ET `CONTRACTS.md`. Bill/Tilly et le manifest `research/bill_tilly/video_manifest.json` sont un premier intake, pas un runtime actif. Sans preuve/autorité native, conserver UNKNOWN et return_to.
