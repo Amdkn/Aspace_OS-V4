@@ -30,3 +30,12 @@ La consigne référence six vidéos déjà fournies. L'inventaire original URL/t
 **Protocole Bill :** retrouver les IDs d'origine, ajouter titre/URL/horodatage/transcript et droit de réemploi, distinguer récit/démonstration/test, produire un Discovery Packet, joindre au registre Geordi et retour à Tilly. Tilly choisit une mise en pratique concrète ou note UNKNOWN. Les objets SOH-148 et SOB-13 sont les ancrages de suivi, sans créer de mission parallèle ni déclarer de runtime actif.
 
 **Packet de retour minimal :** question, source_ref, provenance, point vérifiable, risque, alternative, learning_action, acceptance_method, observed_effect_or_unknown, evidence_refs, next_question, return_to. État actuel : DOCUMENTARY_INTAKE_ONLY.
+
+
+## Progrès sourcé sur VIDEO-01 (15 octobre 2026) — une transcription secondaire accessible
+
+Un [transcript horodaté tiers consultable de la vidéo de David Ondrej](https://moderncreator.app/2026-10-11-david-ondrej-stop-coding-build-software-factories-instead) permet maintenant une **revue ciblée de passages**, indépendamment de la liste Takeout; ne pas le présenter comme une extraction native de sous-titres YouTube ou la lecture des six vidéos. L'index du transcript et les passages autour de **11:00–16:40** (lancement d'une boucle et mesure), **17:32–18:04** (déclencheur et contexte/outils), **19:15–20:17** (dépendance au laptop), **50:35–56:30** (démonstration de boucle) distinguent argument du créateur et méthode proposée.
+
+**Hypothèse transférable pour Tilly / Bill, pas preuve A'Space :** une mission doit avoir trigger explicite, objet natif, capacité/outils, décision située, vérification indépendante et return_to. **Première expérimentation réversible proposée** : rejouer la consultation de SOH-148 dans `tools/holon_route.py --cases`, puis le reçu `tools/handoff_compiler.py` dans les outils déjà présents; comparer sur 2 reprises le nombre de relances A0, erreurs et temps de reprise. Si aucune autorité/owner fiable, état UNKNOWN plutôt que déclenchement d'une flotte. Le test du routeur est logiciel; l'essai inter-session avec bénéficiaire reste à réaliser.
+
+**Grade de preuve :** `SECONDARY_TIMECODED_SOURCE_PARTIALLY_REVIEWED` pour VIDEO-01. Le manifest conserve `transcript_ref=null` tant qu'un fichier transcript identifié et contrôlé n'est pas ingéré comme preuve native; `full_transcripts_ingested=0`, `validated_real_world_outcomes=0`. Les cinq autres vidéos restent à ce stade au grade métadonnées.
