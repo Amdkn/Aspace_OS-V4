@@ -1,0 +1,79 @@
+{
+  "schema": "aspace.bill_tilly.video_intake.v1",
+  "as_of": "2026-10-14",
+  "status": "PARTIAL_SOURCE_RECONCILIATION",
+  "mission_correlation_id": "CORR-BILL-TILLY-20261014",
+  "question_owner": "aspace:life:a3:discovery:tilly",
+  "research_owner": "aspace:tech:bill",
+  "memory_peer": "aspace:tech:graham",
+  "resource_catalog": "Geordi",
+  "business_chain": [
+    "aspace:business:E1",
+    "aspace:business:E2:PRD",
+    "aspace:business:E3:PRD"
+  ],
+  "linear_issues": [
+    "SOH-148",
+    "SOB-13"
+  ],
+  "items": [
+    {
+      "id": "VIDEO-01",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "ONE_INTERVIEW_DESCRIBED_BY_ASTRA_NO_CANONICAL_URL",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    },
+    {
+      "id": "VIDEO-02",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "UNRESOLVED",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    },
+    {
+      "id": "VIDEO-03",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "UNRESOLVED",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    },
+    {
+      "id": "VIDEO-04",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "UNRESOLVED",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    },
+    {
+      "id": "VIDEO-05",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "UNRESOLVED",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    },
+    {
+      "id": "VIDEO-06",
+      "url": null,
+      "title": null,
+      "transcript_ref": null,
+      "evidence_status": "UNRESOLVED",
+      "classification_status": "PENDING_SOURCE_VERIFICATION"
+    }
+  ],
+  "reported_first_interview_use_cases": [
+    "daily brief and central communication",
+    "exercise plan depending on available equipment",
+    "voice notes and document retrieval",
+    "bounded automatic replies",
+    "comment-driven factual document correction",
+    "transcript and YouTube comment analysis"
+  ],
+  "recovery_rule": "No reassignment of unrelated YouTube Takeout videos without original six sources",
+  "return_to": "Tilly / SOH-148; Doctor12 / SOB-13"
+}

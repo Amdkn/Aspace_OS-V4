@@ -32,7 +32,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "NONE",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:doctor-11",
@@ -49,7 +51,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "NONE",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:doctor-12",
@@ -66,7 +70,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "NONE",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:doctor-13",
@@ -83,7 +89,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "NONE",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:amy",
@@ -100,7 +108,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-amy",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:rory",
@@ -117,7 +127,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-rory",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:river",
@@ -134,7 +146,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-river",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:bill",
@@ -151,7 +165,10 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-bill",
+      "cross_os_registry": "architecture/cross_os_collaboration.json",
+      "preferred_life_a3_id": "aspace:life:a3:discovery:tilly"
     },
     {
       "id": "aspace:tech:clara",
@@ -168,7 +185,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-clara",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:nardole",
@@ -185,7 +204,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-nardole",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:ryan",
@@ -202,7 +223,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-ryan",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:yaz",
@@ -219,7 +242,9 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-yaz",
+      "cross_os_registry": "architecture/cross_os_collaboration.json"
     },
     {
       "id": "aspace:tech:graham",
@@ -236,7 +261,10 @@
       ],
       "session_active": "NOT_VERIFIED",
       "context_loaded": "NOT_VERIFIED",
-      "runtime_certified": "NO"
+      "runtime_certified": "NO",
+      "cross_os_relation_id": "COLLAB-TECH-LIFE-graham",
+      "cross_os_registry": "architecture/cross_os_collaboration.json",
+      "preferred_life_a3_id": "aspace:life:a3:discovery:tilly"
     }
   ]
 }
