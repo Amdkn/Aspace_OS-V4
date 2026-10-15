@@ -13,3 +13,8 @@ Associations déclarées dans Linear 2026-10-08 : IT + OPS. Type `ADDITIONAL_CON
 Compagnons Tech transversaux sous leurs Doctors propres : [registre de collaboration](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json). Compétence d'appui privilégiée non exclusive : bill. **Demande explicite A0: Bill ↔ Tilly** ([Bill](https://github.com/Amdkn/Aspace_OS-V4/blob/main/tech/holons/bill/CONTRACTS.md)) reçoit les questions LD04; Graham/Geordi assurent provenance et ressources; E1/E2/PRD/E3/PRD transforment une découverte choisie en pratique. Tilly vérifie acquisition de compétence, pas simple lecture.
 
 Protocole : `intent_ref, life_a3_id, jerry_id, tech_holon_id, mission_id, correlation_id, authority_ref, expected_effect, acceptance, evidence_refs, observed_effect_or_unknown, return_to`. Aucun changement de parent S3 ni claim implicite. Source primaire https://gemini.google.com/app/85cbd978eb6302c1 (Gemini Takeout archive Juin 2026); état des liens Oct 8 = issues SOH-145..152, pas décision de remplacement ratifiée.
+
+
+## VIDEO-SOURCE-RECOVERY-20261014 — première collaboration Bill ↔ Tilly
+
+[Manifest des six sources vérifiées par métadonnées](../../../../../research/bill_tilly/video_manifest.json) ; [classification documentaire](../../../../../research/bill_tilly/VIDEO_INTAKE.md). Le programme LD04 peut choisir une question d'apprentissage; Bill/Graham/Geordi fournissent comparaison et provenance, E1/E2/PRD/E3/PRD ne fabrique qu'un exercice autorisé, et Tilly accepte seulement une compétence pratiquée. Sources récupérées ≠ transcriptions lues ≠ effet humain. SOH-148 conserve le suivi.

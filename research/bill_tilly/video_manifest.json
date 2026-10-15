@@ -1,10 +1,11 @@
 {
-  "schema": "aspace.bill_tilly.video_intake.v1",
+  "schema": "aspace.bill_tilly.video_intake.v2",
   "as_of": "2026-10-14",
-  "status": "PARTIAL_SOURCE_RECONCILIATION",
+  "status": "SIX_SOURCES_IDENTIFIED_PRELIMINARY_CLASSIFICATION",
   "mission_correlation_id": "CORR-BILL-TILLY-20261014",
   "question_owner": "aspace:life:a3:discovery:tilly",
   "research_owner": "aspace:tech:bill",
+  "doctor": "doctor-12",
   "memory_peer": "aspace:tech:graham",
   "resource_catalog": "Geordi",
   "business_chain": [
@@ -16,64 +17,225 @@
     "SOH-148",
     "SOB-13"
   ],
-  "items": [
+  "origin": "Six names/IDs recovered from earlier A'Space discussion; five independently matched against owner's YouTube Takeout history; one independently matched with YouTube video page",
+  "history_sheet": "https://docs.google.com/spreadsheets/d/1AEKge1Cr3GSfF_ciakAZt6P43kuPIHmL9O3QbgTJ__w/edit",
+  "sources": [
     {
-      "id": "VIDEO-01",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-01",
+      "video_id": "ZHOmBeMNbnc",
+      "url": "https://www.youtube.com/watch?v=ZHOmBeMNbnc",
+      "title": "Stop coding, build Software Factories instead",
+      "creator": "David Ondrej",
+      "first_party_watch_history": {
+        "row": 52,
+        "watched_at": "2026-10-11 21:29:15 EDT"
+      },
+      "verification": "PRIMARY_TAKEOUT_HISTORY",
       "transcript_ref": null,
-      "evidence_status": "ONE_INTERVIEW_DESCRIBED_BY_ASTRA_NO_CANONICAL_URL",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "TECH_ARCHITECTURE_ARGUMENT",
+      "life_domains": [
+        "LD04"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:clara",
+        "aspace:tech:ryan",
+        "aspace:tech:nardole"
+      ],
+      "business_chain": [
+        "aspace:business:E1",
+        "aspace:business:E2:PRD"
+      ],
+      "ld04_question": "Comment prouver qu'une Factory reprend des missions sans que A0 relance chaque agent ?",
+      "reuse_candidate": "Comparer déclencheurs, acceptations, boucles de revue et coût d'intervention humaine aux WorkGraph/Issue Factory existants.",
+      "limits": "Argumentaire et démonstration rapportés; pas de production autonome A'Space attestée",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     },
     {
-      "id": "VIDEO-02",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-02",
+      "video_id": "mQBuZ6Dp0u0",
+      "url": "https://www.youtube.com/watch?v=mQBuZ6Dp0u0",
+      "title": "How I Build AI Teammates With Claude Code - Grok Bot Clone",
+      "creator": "Code With Antonio",
+      "first_party_watch_history": {
+        "row": 142,
+        "watched_at": "2026-10-11 08:54:46 EDT"
+      },
+      "verification": "PRIMARY_TAKEOUT_HISTORY",
       "transcript_ref": null,
-      "evidence_status": "UNRESOLVED",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "IMPLEMENTATION_TUTORIAL",
+      "life_domains": [
+        "LD04",
+        "LD01"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:clara",
+        "aspace:tech:amy",
+        "aspace:tech:ryan"
+      ],
+      "business_chain": [
+        "aspace:business:E1",
+        "aspace:business:E2:PRD",
+        "aspace:business:E3:PRD"
+      ],
+      "ld04_question": "Quelles primitives techniques rendent des coéquipiers IA persistants avec un poste et des outils réels ?",
+      "reuse_candidate": "Extraire séparation chat/worker, poste isolé, persistance, schémas et contrôles d'acceptation; ne pas reproduire le produit comme un second Agent OS.",
+      "limits": "Démonstration/tutoriel d'un produit; pas de preuve du système de permissions A'Space",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     },
     {
-      "id": "VIDEO-03",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-03",
+      "video_id": "Lt8XH8HJU_M",
+      "url": "https://www.youtube.com/watch?v=Lt8XH8HJU_M",
+      "title": "How 3D Logistics Simulations Work - React 19, Three.js, React Three Fiber, TypeScript, and Zustand",
+      "creator": "o0o0o0o",
+      "first_party_watch_history": {
+        "row": 253,
+        "watched_at": "2026-10-10 21:50:05 EDT"
+      },
+      "verification": "PRIMARY_TAKEOUT_HISTORY",
       "transcript_ref": null,
-      "evidence_status": "UNRESOLVED",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "SPATIAL_TECHNIQUE_DEMONSTRATION",
+      "life_domains": [
+        "LD07",
+        "LD06"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:amy",
+        "aspace:tech:clara"
+      ],
+      "business_chain": [
+        "aspace:business:H1",
+        "aspace:business:H2:IT",
+        "aspace:business:H3:IT"
+      ],
+      "ld04_question": "Un pattern de visualisation 3D et gestion d'état peut-il être réutilisé dans MC Sandbox ou l'interface Habitat ?",
+      "reuse_candidate": "Comparer React/Three/R3F/Zustand aux apps et graphes existants, puis définir un mini-canary réversible si besoin validé.",
+      "limits": "Les libellés d'outils proviennent du titre Takeout; fonctionnalités détaillées et code non audités",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     },
     {
-      "id": "VIDEO-04",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-04",
+      "video_id": "-dq5PkLdAZ0",
+      "url": "https://www.youtube.com/watch?v=-dq5PkLdAZ0",
+      "title": "Spynel - manage ALL of your AI work with one chat.",
+      "creator": "Agent Zero",
+      "first_party_watch_history": {
+        "row": 260,
+        "watched_at": "2026-10-10 21:37:07 EDT"
+      },
+      "verification": "PRIMARY_TAKEOUT_HISTORY",
       "transcript_ref": null,
-      "evidence_status": "UNRESOLVED",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "ORCHESTRATION_PRODUCT_AND_CODE",
+      "life_domains": [
+        "LD04",
+        "LD01"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:nardole",
+        "aspace:tech:rory",
+        "aspace:tech:rick"
+      ],
+      "business_chain": [
+        "aspace:business:E1",
+        "aspace:business:E2:PRD"
+      ],
+      "ld04_question": "Quelles propriétés du dispatch persistant réduisent effectivement la coordination humaine sans créer une nouvelle flotte ?",
+      "reuse_candidate": "Comparer canal unique, tâches Markdown durables, contrats provider et reprises Spynel aux primitives WorkGraph/Rick; adoption seulement après gap concret.",
+      "limits": "La documentation décrit des capacités du projet; aucune interopérabilité native vérifiée avec A'Space",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     },
     {
-      "id": "VIDEO-05",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-05",
+      "video_id": "7PLKOz3gHSA",
+      "url": "https://www.youtube.com/watch?v=7PLKOz3gHSA",
+      "title": "My Smart Home Digital Twin: A Real-Time 3D Model of My Home!",
+      "creator": "Tinker Tut",
+      "first_party_watch_history": "NOT_FOUND_IN_SCANNED_HISTORY",
+      "verification": "PUBLIC_YOUTUBE_PAGE",
       "transcript_ref": null,
-      "evidence_status": "UNRESOLVED",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "HOME_TWIN_DEMONSTRATION",
+      "life_domains": [
+        "LD06",
+        "LD07",
+        "LD04"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:amy",
+        "aspace:tech:river"
+      ],
+      "business_chain": [
+        "aspace:business:G1",
+        "aspace:business:G2:IT",
+        "aspace:business:G3:IT"
+      ],
+      "ld04_question": "Quelle donnée réelle faut-il pour que l'interface de Knowhere reflète état et commandes plutôt qu'une belle maquette ?",
+      "reuse_candidate": "Lister floorplan, correspondance capteurs/pièces, Home Assistant, contrôle et preuve de readback; maintenir famille/présence comme finalité LD06.",
+      "limits": "Vidéo YouTube accessible, absente de l'échantillon watch_history Takeout consulté; ne pas inférer une installation chez A0",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     },
     {
-      "id": "VIDEO-06",
-      "url": null,
-      "title": null,
+      "intake_id": "VIDEO-06",
+      "video_id": "SeQXCpZhbjc",
+      "url": "https://www.youtube.com/watch?v=SeQXCpZhbjc",
+      "title": "Il a laissé l'IA gérer sa vie pendant 6 mois",
+      "creator": "Underscore_",
+      "first_party_watch_history": {
+        "row": 1426,
+        "watched_at": "2026-10-03 09:53:05 EDT"
+      },
+      "verification": "PRIMARY_TAKEOUT_HISTORY",
       "transcript_ref": null,
-      "evidence_status": "UNRESOLVED",
-      "classification_status": "PENDING_SOURCE_VERIFICATION"
+      "transcript_status": "NOT_INSPECTED",
+      "classification_status": "PRELIMINARY_FROM_METADATA_AND_DESCRIPTIONS",
+      "category": "PERSONAL_DELEGATION_INTERVIEW",
+      "life_domains": [
+        "LD04",
+        "LD03",
+        "LD01"
+      ],
+      "tech_holons": [
+        "aspace:tech:bill",
+        "aspace:tech:graham",
+        "aspace:tech:yaz",
+        "aspace:tech:amy"
+      ],
+      "business_chain": [
+        "aspace:business:E1",
+        "aspace:business:E2:PRD"
+      ],
+      "ld04_question": "Quels six usages rapportés méritent un exercice mesurable sans généraliser un témoignage individuel ?",
+      "reuse_candidate": "Classer briefs, suivi sportif, notes vocales, recherche documentaire, réponses bornées, maintenance guidée par commentaires; exiger preuve d'attention libérée.",
+      "limits": "Témoignage sur six mois; pas de mesure quantitative de bénéfices généralisable",
+      "implementation_status": "NOT_EVALUATED",
+      "human_outcome": "NOT_VERIFIED"
     }
   ],
-  "reported_first_interview_use_cases": [
-    "daily brief and central communication",
-    "exercise plan depending on available equipment",
-    "voice notes and document retrieval",
-    "bounded automatic replies",
-    "comment-driven factual document correction",
-    "transcript and YouTube comment analysis"
-  ],
-  "recovery_rule": "No reassignment of unrelated YouTube Takeout videos without original six sources",
+  "distinctions": {
+    "catalogued_sources": 6,
+    "primary_watch_history_rows": 5,
+    "public_video_verified": 1,
+    "full_transcripts_ingested": 0,
+    "validated_real_world_outcomes": 0
+  },
   "return_to": "Tilly / SOH-148; Doctor12 / SOB-13"
 }

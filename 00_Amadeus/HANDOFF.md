@@ -1,3 +1,9 @@
+# ÉTAT COURANT — SIX SOURCES BILL–TILLY RETROUVÉES (2026-10-14)
+
+La [PR #76](https://github.com/Amdkn/Aspace_OS-V4/pull/76) a été fusionnée (cold-start, profils, tests). Pour la recherche LD04, les six identifiants YouTube sont maintenant documentés dans `research/bill_tilly/video_manifest.json` : ZHOmBeMNbnc, mQBuZ6Dp0u0, Lt8XH8HJU_M, -dq5PkLdAZ0, 7PLKOz3gHSA, SeQXCpZhbjc. Cinq sources sont corroborées par le Takeout Sheets (lignes 52,142,253,260,1426), la sixième par sa page officielle. Classification initiale réalisée par métadonnées et descriptions. **Aucun des six transcripts intégralement inspecté et aucun bénéfice de vie mesuré** : ne pas marquer la boucle comme exécutée. État actuel de suivi: SOH-148 / SOB-13. GitHub et Drive sont des sources de contexte, pas un job Hermes actif.
+
+---
+
 # HANDOFF — A0 cold start / cross-harness
 `handoff_id: A0-HANDOFF-20261014-v1` · `holon_id: aspace:a0:amadeus` · `return_to: A0` · `cutoff: 2026-10-14`
 ## READ
