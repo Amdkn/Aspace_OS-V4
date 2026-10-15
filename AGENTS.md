@@ -102,3 +102,8 @@ Lire `architecture/LIFE_L2_FRACTAL_UNIVERSES.md` : trois Cores L0 au service de 
 ## Home A0 — chargement du jumeau numérique
 
 Pour un mandat A0, lire `00_Amadeus/README.md` puis `00_Amadeus/IDENTITY.md`, `GOVERNANCE.md`, `AGENTS.md`, `IPBD.md`, `STATE.md` et `HANDOFF.md`. Respecter l'unique `holon_id=aspace:a0:amadeus` : Amadou reste la personne souveraine, Kirby un ancien alias/incarnation; aucune session/harness n'est un nouvel A0. Une décision ou une donnée personnelle privée n'est jamais promue par simple inférence ni copiée dans ce dépôt public.
+
+
+## Tech et Business OS — homes institutionnels V4 (2026-10-14)
+
+Chargement Tech obligatoire: [tech/holons/README.md](tech/holons/README.md), [bindings](tech/holons/bindings.json) et `agents/registry.json`. Chargement Jerry B1–I1, managers DC B2–I2, squads B3–I3 et J1 : [business/holons/README.md](business/holons/README.md), [registry sourcé](business/holons/registry.json). Ces homes ne créent aucun agent actif, mais donnent aux harness un contexte institutionnel stable. Préserver chacun des dossiers Drive d'origine et statuts Linear existants; ne pas confondre alias, projection et source native.

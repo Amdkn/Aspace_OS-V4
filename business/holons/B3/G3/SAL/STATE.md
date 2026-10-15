@@ -1,0 +1,6 @@
+# G3 SAL — Illuminati (Sales)
+
+- holon_id `aspace:business:G3:SAL` : **B3 squad institutionnelle**, parent [VP G2/SAL Martian Manhunter](../../../B2/G2/SAL/README.md) et Jerry [G1 Burnham](../../../B1/G1/README.md) (Solarpunk Habitat).
+- [Squad physique](https://drive.google.com/drive/folders/1B11L9UFRm-UyiFt93qDnv0YFXg7H13IQ) · [Runbook original](https://docs.google.com/document/d/1kZei57PweuW0T4aQchUd59AvsiMTvyQjZNf0Y8Znjx0/edit) · [Playbook du manager](https://docs.google.com/document/d/1nTayku6kadEmQ9Ne9kkbu1Ud9y2YgUkJfCTcxjc574w/edit) · [portail source](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Lore Marvel V3 : BlackBolt (Closer), IronMan (Demo), MrFantastic (Discovery), Namor (Negotiation), ProfessorX (BuyerRead), DoctorStrange (Forecasting). Ces noms de compétences historiques **ne prouvent pas 6 sessions de bots** ni un casting autorisé pour G3.
+État de constitution 2026-10-14: `DOCUMENTED`. Squad physique `https://drive.google.com/drive/folders/1B11L9UFRm-UyiFt93qDnv0YFXg7H13IQ`; Runbook `https://docs.google.com/document/d/1kZei57PweuW0T4aQchUd59AvsiMTvyQjZNf0Y8Znjx0/edit`; `member_sessions=NOT_VERIFIED`; `JTBD_claim=UNKNOWN`; `accepted_effect=NOT_VERIFIED`. Reprise à froid: lire VP/Runbook natives, status de l'issue, objet source et return_to; aucun marathon de prompts.

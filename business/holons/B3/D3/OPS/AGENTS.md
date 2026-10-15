@@ -1,0 +1,6 @@
+# D3 OPS — Fantastic Four (Operations)
+
+- holon_id `aspace:business:D3:OPS`; classe **B3 squad institutionnelle**, parent [D2/OPS VP Batman](../../../B2/D2/OPS/README.md) et Jerry [D1 Culber](../../../B1/D1/README.md) (Blue Life Zone).
+- [Dossier squad](https://drive.google.com/drive/folders/1CoV5KrAuK5SazAWD4lUC2E7kS-nr98iq) · [Runbook canonique](https://docs.google.com/document/d/1MNxG9_eUYo4BScyMib6PSulodRoK9UhNbjUyQu_mITs/edit) · [Playbook DC](https://docs.google.com/document/d/1FECgcmK_KXxiOthEY_pnHr0IHdhnElqfP94HbzvBk1s/edit) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : MrFantastic (ProcessDesign), InvisibleWoman (Coordination), HumanTorch (Incidents), TheThing (Execution). Cette liste décrit des spécialités de lore historiques, **pas 4 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Lire mandat du VP D2/OPS, puis le Runbook physique avant toute opération. Choisir tactique, outils et ordre sous contraintes de DoD. Demander d'abord aide d'un pair B3 pour un blocage; remonter au VP si DoD ou autorité ambiguë; ne pas parler directement au Capitaine comme routeur.

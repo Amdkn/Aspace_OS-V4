@@ -1,0 +1,6 @@
+# G3 GRO — Guardians (Growth)
+
+- holon_id `aspace:business:G3:GRO` : **B3 squad institutionnelle**, parent [VP G2/GRO Superman](../../../B2/G2/GRO/README.md) et Jerry [G1 Burnham](../../../B1/G1/README.md) (Solarpunk Habitat).
+- [Squad physique](https://drive.google.com/drive/folders/1YN1xVwCVIYY9cG1-6cAu98R0iNyM-yJB) · [Runbook original](https://docs.google.com/document/d/1q7FDWJWeFr_76xM0dTHQKRFRhws_zSYVnu3crF9qhlw/edit) · [Playbook du manager](https://docs.google.com/document/d/1TFGfO0eKPKFWJNbxvdyRgOslUk2AfxqnqWl9dpMZbeY/edit) · [portail source](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Lore Marvel V3 : StarLord (Story), Rocket (Auto), Gamora (Target), Drax (Closing), Groot (Content), Mantis (VoC). Ces noms de compétences historiques **ne prouvent pas 6 sessions de bots** ni un casting autorisé pour G3.
+Réutiliser la procédure du Runbook https://docs.google.com/document/d/1q7FDWJWeFr_76xM0dTHQKRFRhws_zSYVnu3crF9qhlw/edit; B3 choisit les moyens compatibles, VP G2 porte la DoD et B1 G1 la North Star. Chercher une alternative entre pairs avant escalade; conserver le contexte à un autre provider sans redemander au fondateur le message source.

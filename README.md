@@ -99,3 +99,8 @@ se font dans V4. Authentifications et première mission à vérifier sur la cibl
 ## Home A0 — Amadeus
 
 Le jumeau numérique personnel unique est documenté dans [00_Amadeus/README.md](00_Amadeus/README.md) avec identité, constitution de travail, IPBD, DESIGN, gouvernance et handoff. `AGENT.md` définit le holon; `AGENTS.md` contient les instructions locales. Les données personnelles restent sur un Drive privé ; V4 public ne publie que les contrats et projections non sensibles. L'existence des fichiers ne prouve ni incarnation ni synchronisation runtime.
+
+
+## Fondations Tech et Business OS
+
+[13 holons S1/S2/S3 constitués](tech/holons/README.md) et [liaison aux 13 résidences Drive et aux profils harness](tech/holons/HARNESS_BINDINGS.md). [Jerry Verse — B1–I1, 64 B2, 64 B3 et J1](business/holons/README.md) et [registre des 137 homes avec sources physiques](business/holons/registry.json). Ces répertoires décrivent institutions et délégations; les sessions, claims et effets exigent une certification séparée. Voir [Agent Mesh](agents/README.md) pour les capacités effectivement implémentées.

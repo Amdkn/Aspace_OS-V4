@@ -1,0 +1,7 @@
+# B2 PRD — Flash / Product
+
+- Identifiant : `aspace:business:B2:PRD` — **manager B2 DC** attaché à [Jerry B1 Book](../../../B1/B1/README.md), Business Pulse, LD01.
+- Fonction contextualisée : Product ; fonction transversale Product. Chef de squad Avengers : [B3 PRD](../../../B3/B3/PRD/README.md).
+- Source manager : [Playbook DC](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/VP_AGENT.md) ; squad [dossier physique](https://github.com/Amdkn/Aspace_OS-V4/tree/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/squad) ; [Runbook](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/03_Productization_des_Besoins_Flash_Avengers/SPRINTS.md) ; [portail canonique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit). Patrimoine Coach OS LD01 (source versionnée, non garantie comme projection Drive active).
+- Ancien patrimoine VP : Flash (Productization des Besoins), agent_canon `b2-03-flash-product` ; **ne transforme pas Coach OS V3 en instructions obligatoires V4**.
+Décider selon le résultat utile du LD, pas selon volume de tickets. N'opposer aucun automatisme à sécurité, consentement, dignité ou limites du domaine. toute offre dont la valeur dépend d'une personne nommée est une règle du patrimoine Coach OS à réconcilier avec B1, pas un veto global ratifié.

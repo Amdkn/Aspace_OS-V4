@@ -1,0 +1,6 @@
+# G3 IT — Kang Dynasty (IT/R&D)
+
+- holon_id `aspace:business:G3:IT` : **B3 squad institutionnelle**, parent [VP G2/IT Cyborg](../../../B2/G2/IT/README.md) et Jerry [G1 Burnham](../../../B1/G1/README.md) (Solarpunk Habitat).
+- [Squad physique](https://drive.google.com/drive/folders/1h5MImdH9MMF0Vdec8lsRoAoIYPjiccxk) · [Runbook original](https://docs.google.com/document/d/1YuLJOEpSAIwa3yArGhXKxbh59nKfS1nliR_RC4a9Vyg/edit) · [Playbook du manager](https://docs.google.com/document/d/1r9-uBcMGGTSjjcjbOkaKfNvvrDr4rkPE1lcVIuKzWSE/edit) · [portail source](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Lore Marvel V3 : KangPrime (Infra), IronLad (Provisioning), ScarletCenturion (Security), Immortus (Capacity), VictorTimely (CICD), RamaTut (Backup). Ces noms de compétences historiques **ne prouvent pas 6 sessions de bots** ni un casting autorisé pour G3.
+État de constitution 2026-10-14: `DOCUMENTED`. Squad physique `https://drive.google.com/drive/folders/1h5MImdH9MMF0Vdec8lsRoAoIYPjiccxk`; Runbook `https://docs.google.com/document/d/1YuLJOEpSAIwa3yArGhXKxbh59nKfS1nliR_RC4a9Vyg/edit`; `member_sessions=NOT_VERIFIED`; `JTBD_claim=UNKNOWN`; `accepted_effect=NOT_VERIFIED`. Reprise à froid: lire VP/Runbook natives, status de l'issue, objet source et return_to; aucun marathon de prompts.

@@ -1,0 +1,6 @@
+# E3 PPL — X-Men (People)
+
+- holon_id `aspace:business:E3:PPL`; classe **B3 squad institutionnelle**, parent [E2/PPL VP Green Lantern](../../../B2/E2/PPL/README.md) et Jerry [E1 Tilly](../../../B1/E1/README.md) (Meta Cognition Men).
+- [Dossier squad](https://drive.google.com/drive/folders/1zOf0ATS1c7CliY4LwmHS_HLs9RcAMpci) · [Runbook canonique](https://docs.google.com/document/d/1phn53ObZ_I7zxW7DMCZYqt6AWyELT8lMrY5rkPcZtFg/edit) · [Playbook DC](https://docs.google.com/document/d/1AVW_daIIZfv2AG2LHIhR1xcwYeASc0y-qB8d7vn66D0/edit) · [portail physique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit).
+- Patimoine Marvel/Coach OS : ProfessorX (Recruiting), Cyclops (Onboarding), JeanGrey (Culture), Wolverine (PerfReviews), Storm (OpsLeadership), Beast (TechRecruiting), Nightcrawler (DistributedOnboarding), Rogue (SkillTransfer). Cette liste décrit des spécialités de lore historiques, **pas 8 incarnations autonomes** ni un casting automatiquement confirmé pour ce Jerry.
+Lire mandat du VP E2/PPL, puis le Runbook physique avant toute opération. Choisir tactique, outils et ordre sous contraintes de DoD. Demander d'abord aide d'un pair B3 pour un blocage; remonter au VP si DoD ou autorité ambiguë; ne pas parler directement au Capitaine comme routeur.

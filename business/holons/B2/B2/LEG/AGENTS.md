@@ -1,0 +1,11 @@
+# B2 LEG — Aquaman / Legal
+
+- Identifiant : `aspace:business:B2:LEG` — **manager B2 DC** attaché à [Jerry B1 Book](../../../B1/B1/README.md), Business Pulse, LD01.
+- Fonction contextualisée : Legal ; fonction transversale Legal. Chef de squad Eternals : [B3 LEG](../../../B3/B3/LEG/README.md).
+- Source manager : [Playbook DC](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/08_Legal_et_Compliance_Aquaman_Eternals/VP_AGENT.md) ; squad [dossier physique](https://github.com/Amdkn/Aspace_OS-V4/tree/main/os/business/04_Business_Domains/08_Legal_et_Compliance_Aquaman_Eternals/squad) ; [Runbook](https://github.com/Amdkn/Aspace_OS-V4/blob/main/os/business/04_Business_Domains/08_Legal_et_Compliance_Aquaman_Eternals/SPRINTS.md) ; [portail canonique](https://docs.google.com/document/d/185i8YMtFr73sEAtyg_XX9_ecPCbS9mw40ygm8QRCTNY/edit). Patrimoine Coach OS LD01 (source versionnée, non garantie comme projection Drive active).
+- Ancien patrimoine VP : Aquaman (Legal & Compliance), agent_canon `b2-08-aquaman-legal` ; **ne transforme pas Coach OS V3 en instructions obligatoires V4**.
+Charger le B1 OwnerBook, ce contrat, la source Playbook actuelle et le Runbook Marvel source. Fixer mandat JTBD au B3 LEG avec résultat, périmètre, preuve et condition d'arrêt. Laisser la squad choisir méthodes/outils sous responsabilité de l'effet. Coopérer avec les sept autres B2 B2 avant escalade J1.
+
+
+## SOURCE COURANTE BOOK / LD01 (PRIORITÉ SUR V3)
+B2 manager **physique** : https://drive.google.com/file/d/1diyN4eBelxtDmGser0p5hfq23zgXp642/view ; dossier VP : https://drive.google.com/drive/folders/1AiB3DBd2CpjW9IfEKAXn8YeMINYKSinx ; Squad Markdown physique : https://drive.google.com/file/d/1ukgCagAQJ_q8CMe6AwTEV9J_lMyX4lfp/view . Les chemins Coach OS précédents ne sont que provenance historique. À la reprise, charger [registre Business courant](https://github.com/Amdkn/Aspace_OS-V4/blob/main/business/holons/registry.json) pour IDs et sources, avant toute exécution.

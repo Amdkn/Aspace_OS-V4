@@ -1,0 +1,242 @@
+{
+  "schema": "aspace.tech.holons.bindings.v1",
+  "as_of": "2026-10-14",
+  "official_registry": "agents/registry.json",
+  "contract": "agents/CONTRACT.md",
+  "runtime_deployment": "NOT_VERIFIED",
+  "providers_declared": [
+    "codex",
+    "jules",
+    "hermes"
+  ],
+  "other_harness_candidates": [
+    "Gemini",
+    "Muse",
+    "OpenClaw",
+    "Spacebot",
+    "Umbrel/Hermes"
+  ],
+  "records": [
+    {
+      "id": "aspace:tech:rick",
+      "registry_key": "rick",
+      "authority": "S1",
+      "manager": "a0",
+      "github_profile": ".github/agents/rick.agent.md",
+      "github_home": "tech/holons/rick",
+      "drive_folder": "https://drive.google.com/drive/folders/1RZGa-P10YxUhPpzTYvjKWGjt2nEIvtWm",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:doctor-11",
+      "registry_key": "doctor-11",
+      "authority": "S2",
+      "manager": "rick",
+      "github_profile": ".github/agents/doctor-11.agent.md",
+      "github_home": "tech/holons/doctor-11",
+      "drive_folder": "https://drive.google.com/drive/folders/1TTS5NWAXsE_cl5my16xVHmclJCO5XnR9",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:doctor-12",
+      "registry_key": "doctor-12",
+      "authority": "S2",
+      "manager": "rick",
+      "github_profile": ".github/agents/doctor-12.agent.md",
+      "github_home": "tech/holons/doctor-12",
+      "drive_folder": "https://drive.google.com/drive/folders/1Wff1qUx3POJNhTD03O8aA6K9mw4N4lfU",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:doctor-13",
+      "registry_key": "doctor-13",
+      "authority": "S2",
+      "manager": "rick",
+      "github_profile": ".github/agents/doctor-13.agent.md",
+      "github_home": "tech/holons/doctor-13",
+      "drive_folder": "https://drive.google.com/drive/folders/1U1OInedIQeBLLj9WUYmjUbqL9ihN1tCP",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:amy",
+      "registry_key": "amy",
+      "authority": "S3",
+      "manager": "doctor-11",
+      "github_profile": ".github/agents/amy.agent.md",
+      "github_home": "tech/holons/amy",
+      "drive_folder": "https://drive.google.com/drive/folders/14EoCkiwXWlZ5G46ozJPKu_sb9RgYFVFf",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:rory",
+      "registry_key": "rory",
+      "authority": "S3",
+      "manager": "doctor-11",
+      "github_profile": ".github/agents/rory.agent.md",
+      "github_home": "tech/holons/rory",
+      "drive_folder": "https://drive.google.com/drive/folders/16LTaFGxIOIavJtP75H-en9cVKXz1FRWu",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:river",
+      "registry_key": "river",
+      "authority": "S3",
+      "manager": "doctor-11",
+      "github_profile": ".github/agents/river.agent.md",
+      "github_home": "tech/holons/river",
+      "drive_folder": "https://drive.google.com/drive/folders/1Sg39j5HCGT2muLg8Wx_B8xuCk2_YASmw",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:bill",
+      "registry_key": "bill",
+      "authority": "S3",
+      "manager": "doctor-12",
+      "github_profile": ".github/agents/bill.agent.md",
+      "github_home": "tech/holons/bill",
+      "drive_folder": "https://drive.google.com/drive/folders/1vgi6blt9tnwJsZIYM8kob3FBpmIPoHWE",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:clara",
+      "registry_key": "clara",
+      "authority": "S3",
+      "manager": "doctor-12",
+      "github_profile": ".github/agents/clara.agent.md",
+      "github_home": "tech/holons/clara",
+      "drive_folder": "https://drive.google.com/drive/folders/1sbv0Ed2uwsuv-SwsJz1noun3yl3-_L7a",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:nardole",
+      "registry_key": "nardole",
+      "authority": "S3",
+      "manager": "doctor-12",
+      "github_profile": ".github/agents/nardole.agent.md",
+      "github_home": "tech/holons/nardole",
+      "drive_folder": "https://drive.google.com/drive/folders/1MNYGvJdbgOEVLKU8Wv_7rb-THnp8kaGC",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:ryan",
+      "registry_key": "ryan",
+      "authority": "S3",
+      "manager": "doctor-13",
+      "github_profile": ".github/agents/ryan.agent.md",
+      "github_home": "tech/holons/ryan",
+      "drive_folder": "https://drive.google.com/drive/folders/1B8uoEt3631e0VLyLcoycACtY4HJOEtyk",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:yaz",
+      "registry_key": "yaz",
+      "authority": "S3",
+      "manager": "doctor-13",
+      "github_profile": ".github/agents/yaz.agent.md",
+      "github_home": "tech/holons/yaz",
+      "drive_folder": "https://drive.google.com/drive/folders/1EHgJ7EXx3nncAb_Va3T7KqnfEmGUv1R3",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    },
+    {
+      "id": "aspace:tech:graham",
+      "registry_key": "graham",
+      "authority": "S3",
+      "manager": "doctor-13",
+      "github_profile": ".github/agents/graham.agent.md",
+      "github_home": "tech/holons/graham",
+      "drive_folder": "https://drive.google.com/drive/folders/1dmq7BHYFMGBBL4TpmTuXOgp98W8MGIHp",
+      "providers_declared": [
+        "codex",
+        "jules",
+        "hermes"
+      ],
+      "session_active": "NOT_VERIFIED",
+      "context_loaded": "NOT_VERIFIED",
+      "runtime_certified": "NO"
+    }
+  ]
+}
