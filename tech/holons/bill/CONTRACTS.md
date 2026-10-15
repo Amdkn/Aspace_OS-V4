@@ -13,3 +13,10 @@ observation read-only tant que aucune acquisition à risque n'est approuvée. Au
 
 ## Pairs
 clara, nardole ; jamais réassigner une identity pour consommer une capacité d'un pair.
+
+
+## CROSS-OS-20261014 — coopération réciproque avec Discovery
+
+Tilly explicite, LD04: reçoit question/limites et méthode d'acceptation de Tilly, recherches vidéos/transcripts/repos → Discovery Packet; Graham vérifie provenance; Geordi indexe; E1 Jerry, E2/PRD Flash, E3/PRD Avengers réalisent un exercice ou outil seulement si utile; retourne à Tilly compétence effectivement pratiquée ou UNKNOWN.
+
+Le parent Doctor reste intact. A3 juge l'utilité de vie; S3 s'occupe des actes techniques couverts par mandat. Entrée: `intent_ref, life_a3_id, mission_id, correlation_id, research_or_action_request, source_refs, acceptance_method, authority_ref, return_to`. Sortie: `packet_or_artifact_ref, provenance, observed_effect_or_unknown, evidence_refs, next_question, return_to`. Recherche, classement et actes couverts par l'autorité sont permis sans demander une nouvelle permission par action; changements d'autorité/risques/effets sensibles sont escaladés. [Matrice](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json). [Contrat de Tilly](https://github.com/Amdkn/Aspace_OS-V4/blob/main/life/holons/A3/Discovery/Tilly/CONTRACTS.md).

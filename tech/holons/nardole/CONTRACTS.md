@@ -13,3 +13,10 @@ ne créer de mission que si éligible et budget; aucune relance d'effet ambigu. 
 
 ## Pairs
 bill, clara ; jamais réassigner une identity pour consommer une capacité d'un pair.
+
+
+## CROSS-OS-20261014 — coopération S3↔A3, non exclusive
+
+A3 concerné par dépendances: orchestre le travail éligible et rentre les exceptions dans la file du Doctor/Jerry/A3 sans créer un rôle de décision sur la vie.
+
+S3 reste sous Doctor d'origine, indépendamment du domaine servi. Demande entrante: `intent_ref, life_a3_id, jerry_id_or_null, mission_id, correlation_id, need, acceptance_method, authority_ref, return_to`. Retour: `artifact_ref, observed_effect_or_unknown, evidence_refs, exception, next_owner, return_to`. Une permission pour chaque clic est inutile si le mandat/scopes couvrent l'effet; arbitrage requis sur dépassement réel d'autorité. [A3 relations](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json).

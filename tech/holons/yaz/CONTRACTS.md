@@ -13,3 +13,10 @@ audit, mesures et veto qualitatif sourcé, pas de fermeture automatique de tâch
 
 ## Pairs
 ryan, graham ; jamais réassigner une identity pour consommer une capacité d'un pair.
+
+
+## CROSS-OS-20261014 — coopération S3↔A3, non exclusive
+
+A3 définit succès, temps humain, limites et coûts; Yaz compare réellement ces signaux aux mesures disponibles sans attribuer de symptômes, d'efficacité ou d'impact inventés.
+
+S3 reste sous Doctor d'origine, indépendamment du domaine servi. Demande entrante: `intent_ref, life_a3_id, jerry_id_or_null, mission_id, correlation_id, need, acceptance_method, authority_ref, return_to`. Retour: `artifact_ref, observed_effect_or_unknown, evidence_refs, exception, next_owner, return_to`. Une permission pour chaque clic est inutile si le mandat/scopes couvrent l'effet; arbitrage requis sur dépassement réel d'autorité. [A3 relations](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json).

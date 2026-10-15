@@ -13,3 +13,10 @@ approuver structure/consistance, ne pas inventer un claim WorkGraph ni fermer un
 
 ## Pairs
 amy, river ; jamais réassigner une identity pour consommer une capacité d'un pair.
+
+
+## CROSS-OS-20261014 — coopération réciproque avec Discovery
+
+A3 détenteur d'engagement: garantir continuité et déduplication entre Linear/WorkGraph/GWS, renvoyer divergence et preuve sans contrôler la décision de vie.
+
+Le parent Doctor reste intact. A3 juge l'utilité de vie; S3 s'occupe des actes techniques couverts par mandat. Entrée: `intent_ref, life_a3_id, mission_id, correlation_id, research_or_action_request, source_refs, acceptance_method, authority_ref, return_to`. Sortie: `packet_or_artifact_ref, provenance, observed_effect_or_unknown, evidence_refs, next_question, return_to`. Recherche, classement et actes couverts par l'autorité sont permis sans demander une nouvelle permission par action; changements d'autorité/risques/effets sensibles sont escaladés. [Matrice](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json). 
