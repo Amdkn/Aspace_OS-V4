@@ -1,8 +1,12 @@
 # Life OS V4 — résidences institutionnelles, structure canonique
 
-**Structure unique:** `A1/` (Gatekeepers), `A2/` (managers), `A3/<Framework>/` (spécialistes permanents). 38 holons documentaires, aucune incarnation runtime prouvée par cette structure. [Constitution](CONSTITUTION.md), [index Ikigai/Discovery](A1_A3_INDEX.md), [preuve migration](MIGRATION_20261014.md).
+**Structure unique:** `A1/` (Gatekeepers), `A2/` (managers), `A3/<Framework>/` (spécialistes permanents). 43 holons documentaires, aucune incarnation runtime prouvée par cette structure. [Constitution](CONSTITUTION.md), [index Ikigai/Discovery](A1_A3_INDEX.md), [preuve migration](MIGRATION_20261014.md).
 
 Les A2 et A3 partagent un engagement **sans changer d'appartenance**. 12WY arbitre cycle/engagements; GTD clarifie actions et attentes; DEAL définit/élimine/automatise/délègue et mesure le temps réellement libéré. Coopération latérale et réentrante, pas un pipeline séquentiel obligatoire. Pour toute exécution: `mission_id`, `correlation_id`, owner natif, consentement, evidence, return_to; états inconnus = UNKNOWN.
+
+## PARA / Enterprise — Computer A2 et quatre A3 existants
+
+[A2 Computer](A2/Computer/README.md) · [A3 Picard](A3/Enterprise/Picard/README.md) · [A3 Spock](A3/Enterprise/Spock/README.md) · [A3 Geordi](A3/Enterprise/Geordi/README.md) · [A3 Data](A3/Enterprise/Data/README.md). Origines V3/Drive conservées; Linear [A2 Computer / Enterprise](https://linear.app/aspace-os/project/a2-computer-enterprise-para-76871e5f81e0) avec SOH-104/103/102/99 existantes. Aucune seconde hiérarchie PARA ni framework fabriqué. Le compte 43 = 21 Ikigai/Discovery + 17 Curie/GTD/DEAL + 5 PARA.
 
 ## Curie / Cerritos / Protostar — 17 homes migrés
 
