@@ -1,7 +1,7 @@
 # Constitution commune A2/A3 — Life OS V4
 
 ## Juridiction et résidence unique
-La hiérarchie des maisons constitutionnelles est `A1` (Beth/Morty), `A2` (Orville, Zora, Curie, HoloDeck, HoloJaneway, plus autres framework homes futurs explicitement approuvés), `A3/<framework>` (spécialistes). Manager et spécialiste ne résident **jamais** comme deux frères sous le même dossier de framework. Identity ID stable distinct du chemin. Les anciens chemins deviennent des aliases patrimoniaux, jamais des homes exécutables. Le framework PARA conserve ses propres sources, aucune résidence n'est inventée ici.
+La hiérarchie des maisons constitutionnelles est `A1` (Beth/Morty), `A2` (Orville, Zora, Curie, HoloDeck, HoloJaneway, Computer pour PARA/Enterprise (résidence institutionnelle existante rétablie en projection, non nouvel A2)), `A3/<framework>` (spécialistes). Manager et spécialiste ne résident **jamais** comme deux frères sous le même dossier de framework. Identity ID stable distinct du chemin. Les anciens chemins deviennent des aliases patrimoniaux, jamais des homes exécutables. Le framework PARA conserve ses propres sources, aucune résidence n'est inventée ici.
 
 ## Trois relations distinctes obligatoires par contrat
 1. **Rattachement institutionnel** — A3 dépend de son A2 pour son mandat et son arbitrage, sans devenir simple étape d'un workflow. A2 dépend du cadre A0 / Beth / Morty pour valeurs, limites et continuité.
