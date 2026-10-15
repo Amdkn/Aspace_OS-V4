@@ -39,3 +39,15 @@ Entrée: question de cognition inscrite à [Tilly](../life/holons/A3/Discovery/T
 ## Burnham et incohérences reconnues
 
 LD06 demeure Famille/Présence et conserve son ancrage People/X-Men d'origine. G1 Solarpunk Habitat est une Area de services/habitat **au profit de la famille**, pas le remplacement du domaine ni l'identité du foyer. LD03 conserve souveraineté santé même si LEG/Eternals historique est une fonction de consentement/protection. Les mentions Linear du 8 octobre ne remplacent pas l'historique. Les associations supplémentaires restent contributrices sauf décision explicite versionnée.
+
+
+## Épreuve exécutable de décision inter-holons (2026-10-15)
+
+Commande **sans effet externe** : `python tools/holon_route.py --cases`. Elle lit **ce même** `architecture/cross_os_collaboration.json` (8 ancrages LD et 9 collaborations S3), sans recopier les holons ni imposer six validations à chaque action.
+
+- **Mission normale (SOH-148 / Bill–Tilly)** : Tilly garde le résultat LD04 et l'acceptation; E1 garde son standard, E2/PRD et E3/PRD leurs responsabilités propres; Bill reste chez Doctor 12. Sortie `OWNER_REVIEW_READY_NOT_EXECUTED`, jamais `DONE` et jamais un claim runtime fabriqué.
+- **Désaccord** : valeurs/effet Life → Beth avec Tilly; standard de l'Area → Jerry E1; capacité traversant plusieurs Cores → conseil S2 des Doctors, Rick observe les défaillances communes; conflit de juridiction → Morty, A0 uniquement si constitution modifiée. La contestation n'efface pas le propriétaire du résultat.
+- **Responsable LD04 absent** : `OWNER_UNAVAILABLE`, décision de continuité à Morty; Nardole peut organiser une reprise/lease autorisée mais Bill, E1 ou E2 ne s'auto-nomment pas A3. L'effet reste `UNKNOWN` et l'exécution en pause.
+- **Autorité ou référence native absente** : `AUTHORITY_UNRESOLVED` ou `NATIVE_REF_UNRESOLVED`, sans effet. Un résultat de test CI démontre le routeur, pas la disponibilité réelle des personnes, des agents ou des outils.
+
+Les tests `tests/test_holon_route.py` vérifient ces décisions, les 8 ancrages et l'immutabilité des relations de supervision. Le routeur est un **contrôle déterministe de cohérence de mission**, pas une nouvelle résidence institutionnelle, un workflow de production, ni un substitut aux DoD, consentements ou receipts de WorkGraph.
