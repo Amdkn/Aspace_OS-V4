@@ -16,3 +16,8 @@ Discovery A3: [Book LD01](A3/Discovery/Book/README.md) · [Saru LD02](A3/Discove
 - Compilateur de reprise read-only : [tools/handoff_compiler.py](../../tools/handoff_compiler.py)
 - Drive contient les sources personnelles et Books; n'exposer aucune donnée privée en GitHub public.
 - Canaries runtime indépendants non certifiés par la constitution documentaire.
+
+
+## Projections complémentaires PARA déjà existantes (2026-10-15)
+
+La structure commune a 43 institutions Life documentées (21 Ikigai/Discovery, 17 Curie/Cerritos/Protostar, 5 Enterprise). [Computer A2](A2/Computer/README.md) ne devient ni Picard ni un nouveau manager. A3 [Picard](A3/Enterprise/Picard/README.md), [Spock](A3/Enterprise/Spock/README.md), [Geordi](A3/Enterprise/Geordi/README.md), [Data](A3/Enterprise/Data/README.md) relient les résidences Drive actives et le [projet Linear A2 existant](https://linear.app/aspace-os/project/a2-computer-enterprise-para-76871e5f81e0). V3 sources `20_Life_OS/24_PARA_Enterprise/`. Aucun runtime certifié.
