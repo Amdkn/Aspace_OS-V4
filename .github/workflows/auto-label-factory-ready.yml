@@ -9,8 +9,8 @@ permissions:
 
 jobs:
   autolabel:
-    # Opt-out : ajouter le label `no-factory` a la creation pour exclure une issue du dispatch.
-    if: ${{ !contains(join(github.event.issue.labels.*.name, ' '), 'no-factory') }}
+    # Opt-in explicite requis a la creation; les issues ordinaires ne sont PAS automatiquement soumises a Jules.\n    # Cette modification ne supprime pas les labels ni les receipts des missions deja existantes.
+    if: ${{ contains(github.event.issue.labels.*.name, 'factory:opt-in') && !contains(github.event.issue.labels.*.name, 'no-factory') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
