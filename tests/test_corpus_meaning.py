@@ -105,5 +105,58 @@ class CorpusMeaningTests(unittest.TestCase):
                               "basis_utterance_ids": []}]
         self.assertEqual(check(s)["associations"], 1)
 
+
+    def test_correction_can_address_third_party_without_relabeling_it_as_agent(self):
+        s = scenario()
+        s["utterances"].append({"id": "u5", "passage_id": "p1", "speaker": "THIRD_PARTY",
+            "status": "HISTORICAL", "sequence": 0, "text": "Fictional third-party statement",
+            "provenance_ref": "demo:third-party:1"})
+        s["relations"][0]["to_id"] = "u5"
+        s["relations"][0]["justification"] = "Human correction to third party, not Gemini"
+        self.assertEqual(check(s)["relations"], 2)
+        self.assertEqual(s["utterances"][1]["speaker"], "AGENT")
+
+    def test_correction_can_address_own_earlier_statement(self):
+        s = scenario()
+        s["relations"].append({"id": "r3", "from_id": "u4", "to_id": "u3",
+            "kind": "CORRECTS", "justification": "Human revises their own statement"})
+        self.assertEqual(check(s)["relations"], 3)
+
+    def test_distinct_third_party_and_agent_correction_targets(self):
+        s = scenario()
+        s["utterances"].append({"id": "u5", "passage_id": "p1", "speaker": "THIRD_PARTY",
+            "status": "HISTORICAL", "sequence": 0, "text": "Third-party reading",
+            "provenance_ref": "demo:third-party:2"})
+        s["relations"][0]["to_id"] = "u5"
+        s["relations"].append({"id": "r3", "from_id": "u4", "to_id": "u2",
+            "kind": "CORRECTS", "justification": "Separate correction to model"})
+        self.assertEqual(check(s)["relations"], 3)
+        self.assertNotEqual(s["relations"][0]["to_id"], s["relations"][2]["to_id"])
+
+    def test_ipbd_reference_without_index_is_unverified_not_certified(self):
+        s = scenario()
+        s["associations"] = [{"axis": "IPBD", "target": "IPBD-I-9999",
+            "status": "MODEL_PROPOSED", "justification": "Unresolved candidate",
+            "basis_utterance_ids": ["u2"]}]
+        report = check(s)
+        self.assertEqual(report["ipbd_status"], "NOT_VERIFIED")
+        self.assertEqual(report["unresolved_ipbd_count"], 1)
+        self.assertEqual(report["validation_scope"], "STRUCTURE_ONLY")
+        with self.assertRaises(ValueError):
+            check(s, known_ipbd_ids={"IPBD-I-0001"})
+
+    def test_verbatim_requires_resolved_source_to_claim_matching(self):
+        s = scenario()
+        s["utterances"][2]["text_status"] = "VERBATIM"
+        unverified = check(s)
+        self.assertEqual(unverified["unresolved_verbatim_count"], 1)
+        self.assertEqual(unverified["provenance_status"], "NOT_VERIFIED")
+        with self.assertRaises(ValueError):
+            check(s, source_text_by_ref={"demo:user:2": "Invented replacement"})
+        verified = check(s, known_ipbd_ids=set(), source_text_by_ref={
+            "demo:user:2": s["utterances"][2]["text"]})
+        self.assertEqual(verified["unresolved_verbatim_count"], 0)
+        self.assertEqual(verified["provenance_status"], "MATCHED_SUPPLIED_REFERENCES")
+
 if __name__ == "__main__":
     unittest.main()
