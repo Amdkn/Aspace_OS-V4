@@ -37,7 +37,7 @@ class TestCrossOSDecisionCanary(unittest.TestCase):
         common = sample_cases()[0]
         for axis, expected in [
             ("area_standard", "aspace:business:E1"),
-            ("tech_capacity", "aspace:tech:doctors:council"),
+            ("tech_capacity", "aspace:tech:doctor-12"),
             ("jurisdiction", "aspace:life:a1:morty"),
         ]:
             with self.subTest(axis=axis):
