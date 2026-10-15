@@ -28,7 +28,8 @@ def _nonempty(x):
     return isinstance(x, str) and bool(x.strip())
 
 
-def check(record, known_ipbd_ids=None):
+def check(record, known_ipbd_ids=None, source_text_by_ref=None):
+    """Validate structure; report unresolved provenance separately from evidence."""
     if not isinstance(record, dict) or record.get("schema") != "aspace.contextual_passage.v1":
         raise ValueError("Unsupported record schema")
     if not _nonempty(record.get("corpus_id")) or not _nonempty(record.get("source_ref")):
@@ -55,6 +56,7 @@ def check(record, known_ipbd_ids=None):
         if p.get("transcript_status") == "VERIFIED" and not _nonempty(p.get("transcript_ref")):
             raise ValueError("Verified transcript requires evidence")
     by_id = {}
+    unresolved_verbatim = 0
     for v in voices:
         vid = v.get("id")
         if not _nonempty(vid) or vid in ids:
@@ -74,8 +76,15 @@ def check(record, known_ipbd_ids=None):
             raise ValueError("Sequence must be a nonnegative integer")
         if not _nonempty(v.get("text")) and v.get("text_status") != "UNAVAILABLE":
             raise ValueError("Missing verbatim must be explicitly unavailable")
-        if v.get("text_status") == "VERBATIM" and not _nonempty(v.get("text")):
-            raise ValueError("No fabricated verbatim")
+        if v.get("text_status") == "VERBATIM":
+            if not _nonempty(v.get("text")):
+                raise ValueError("No empty verbatim")
+            # A nonempty reference alone cannot certify a verbatim quotation.
+            ref = v["provenance_ref"]
+            if source_text_by_ref is None or ref not in source_text_by_ref:
+                unresolved_verbatim += 1
+            elif source_text_by_ref[ref] != v["text"]:
+                raise ValueError("Verbatim does not match resolved source")
         by_id[vid] = v
     rel_ids = set()
     for edge in relations:
@@ -89,12 +98,16 @@ def check(record, known_ipbd_ids=None):
             raise ValueError("Relation kind and justification required")
         if edge["kind"] == "CORRECTS":
             a, b = by_id[edge["from_id"]], by_id[edge["to_id"]]
-            if a["speaker"] != "USER" or b["speaker"] != "AGENT":
-                raise ValueError("User corrections require user->agent voice attribution")
+            # The correcting human may address an agent, third party or their own
+            # earlier statement. Endpoints explicitly identify both voices;
+            # never collapse corrections addressed to different recipients.
+            if a["speaker"] != "USER" or b["speaker"] not in {"USER", "AGENT", "THIRD_PARTY", "SOURCE_AUDIO"}:
+                raise ValueError("Correction must identify a human author and a permissible target voice")
             if a["sequence"] <= b["sequence"]:
                 raise ValueError("Correction must follow the interpretation it corrects")
         if edge["kind"] == "EVOLVES_INTO" and by_id[edge["from_id"]]["sequence"] >= by_id[edge["to_id"]]["sequence"]:
             raise ValueError("A future utterance cannot evolve into the past")
+    unresolved_ipbd = 0
     for assoc in associations:
         axis = assoc.get("axis")
         if axis not in AXES:
@@ -111,8 +124,11 @@ def check(record, known_ipbd_ids=None):
             raise ValueError("Unknown framework")
         if axis == "LIFE_DOMAIN" and assoc.get("target") not in {f"LD{i:02d}" for i in range(1,9)}:
             raise ValueError("Unknown Life domain")
-        if axis == "IPBD" and known_ipbd_ids is not None and assoc.get("target") not in known_ipbd_ids:
-            raise ValueError("Never invent a new IPBD ID through corpus classification")
+        if axis == "IPBD":
+            if known_ipbd_ids is None:
+                unresolved_ipbd += 1
+            elif assoc.get("target") not in known_ipbd_ids:
+                raise ValueError("IPBD reference is absent from the resolved registry")
         if not isinstance(assoc.get("basis_utterance_ids"), list) or any(x not in ids for x in assoc["basis_utterance_ids"]):
             raise ValueError("Association requires in-record voice evidence, even if empty")
         if assoc["status"] == "USER_EXPLICIT" and not any(by_id[x]["speaker"] == "USER" and by_id[x]["status"] == "USER_EXPLICIT" for x in assoc["basis_utterance_ids"]):
@@ -128,6 +144,11 @@ def check(record, known_ipbd_ids=None):
         "agent_proposals": sum(x["status"] == "MODEL_PROPOSED" for x in voices),
         "unknown_transcripts": sum(x["transcript_status"] in ("UNKNOWN","UNAVAILABLE") for x in passages),
         "operational_assignment": False, "outcome_status": record["outcome_status"],
+        "validation_scope": "STRUCTURE_ONLY" if (source_text_by_ref is None or unresolved_verbatim or unresolved_ipbd) else "RESOLVED_REFERENCES_FOR_SUPPLIED_SOURCES",
+        "unresolved_verbatim_count": unresolved_verbatim,
+        "unresolved_ipbd_count": unresolved_ipbd,
+        "provenance_status": "NOT_VERIFIED" if (source_text_by_ref is None or unresolved_verbatim) else "MATCHED_SUPPLIED_REFERENCES",
+        "ipbd_status": "NOT_VERIFIED" if known_ipbd_ids is None else "CHECKED_AGAINST_SUPPLIED_INDEX",
     }
 
 
