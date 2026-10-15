@@ -53,7 +53,7 @@ def resolve(mission, registry):
         authorities = {
             "life_value": ("aspace:life:a1:beth", "Arbitrate values and LD acceptance with A3; tech cannot override life outcome."),
             "area_standard": (anchor["jerry_id"], "Jerry arbitrates Area standard, A3 keeps human acceptance; Morty mediates unresolved scope."),
-            "tech_capacity": ("aspace:tech:doctors:council", "Doctor council resolves cross-Core capability; Rick observes systemic failures."),
+            "tech_capacity": (tech["tech_holon_id"].replace(":bill", ":doctor-12") if tech else "aspace:tech:doctor-12", "Doctor 12 raises cross-Core conflict to existing S2 council; Rick observes systemic failures."),
             "jurisdiction": ("aspace:life:a1:morty", "Reconcile overlapping mandates without reparenting any holon; escalate constitutional change to A0."),
         }
         axis = conflict.get("axis")
