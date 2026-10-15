@@ -1,13 +1,9 @@
-# Boimler — Clarify (A3, GTD Cerritos)
+# Résidence déplacée — redirection patrimoniale
 
-Identity: gtd/boimler; parent A2 HoloDeck; status DOCUMENTED; current_time 2026-10-14.
+**Ce dossier est un alias historique NON exécutable, pas un second holon.**
 
-Pourquoi: GTD Cerritos sert la vie; Clarify a pour résultat « ClarificationDecision: class, next_action, owner, question ».
-
-Fichiers: [SOUL](SOUL.md), [AGENTS](AGENTS.md), [CONTRACTS](CONTRACTS.md), [CAPABILITIES](CAPABILITIES.md), [RUNBOOK](RUNBOOK.md), [STATE](STATE.md), [MEMORY](MEMORY.md).
-
-Résidence Drive: https://drive.google.com/drive/folders/17112nMgHHomUVmZKJycgym-FkKcmqgO_
-Contrat Workspace: https://docs.google.com/document/d/1M4aBPJ-Xs7pA5pLoYxwxVPy9r_kkrk4Ox6LLb6VgSe8/edit
-Framework: https://drive.google.com/drive/folders/1SnI4AlvOtoI46kHlhfupPDE-_oOqElTi
-
-Reprise: vérifier scope, état et IDs natifs; décider localement; produire receipt avec return_to, ou WAIT/UNKNOWN. Ce profil n'atteste pas une session active.
+- Source canonique : [A3/Cerritos/Boimler](../../A3/Cerritos/Boimler/README.md)
+- Home GitHub versionné : https://github.com/Amdkn/Aspace_OS-V4/tree/main/life/holons/A3/Cerritos/Boimler
+- Ancienne identité / chemin `life/holons/gtd/boimler` conservé pour traçabilité et compatibilité des anciens liens README.
+- Toutes les instructions `AGENTS.md`, contrats, `STATE.md`, `MEMORY.md` sont dans le nouveau home; ne pas les chercher ici. Anciens blobs accessibles dans l'historique de la PR #68.
+- Ne pas charger ce fichier comme agent.

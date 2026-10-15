@@ -1,13 +1,9 @@
-# Freeman — Engage (A3, GTD Cerritos)
+# Résidence déplacée — redirection patrimoniale
 
-Identity: gtd/freeman; parent A2 HoloDeck; status DOCUMENTED; current_time 2026-10-14.
+**Ce dossier est un alias historique NON exécutable, pas un second holon.**
 
-Pourquoi: GTD Cerritos sert la vie; Engage a pour résultat « EngagementReceipt: actor, attempt, effect, proof ».
-
-Fichiers: [SOUL](SOUL.md), [AGENTS](AGENTS.md), [CONTRACTS](CONTRACTS.md), [CAPABILITIES](CAPABILITIES.md), [RUNBOOK](RUNBOOK.md), [STATE](STATE.md), [MEMORY](MEMORY.md).
-
-Résidence Drive: https://drive.google.com/drive/folders/1yqnpPIsEymvw4Wkl-nTcmfsVUJMuFJ4G
-Contrat Workspace: https://docs.google.com/document/d/16yLvrnI43e5Wj6ilRsmMug0GXR-0EHaIJolcWeOfX_M/edit
-Framework: https://drive.google.com/drive/folders/1SnI4AlvOtoI46kHlhfupPDE-_oOqElTi
-
-Reprise: vérifier scope, état et IDs natifs; décider localement; produire receipt avec return_to, ou WAIT/UNKNOWN. Ce profil n'atteste pas une session active.
+- Source canonique : [A3/Cerritos/Freeman](../../A3/Cerritos/Freeman/README.md)
+- Home GitHub versionné : https://github.com/Amdkn/Aspace_OS-V4/tree/main/life/holons/A3/Cerritos/Freeman
+- Ancienne identité / chemin `life/holons/gtd/freeman` conservé pour traçabilité et compatibilité des anciens liens README.
+- Toutes les instructions `AGENTS.md`, contrats, `STATE.md`, `MEMORY.md` sont dans le nouveau home; ne pas les chercher ici. Anciens blobs accessibles dans l'historique de la PR #68.
+- Ne pas charger ce fichier comme agent.
