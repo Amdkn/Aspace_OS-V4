@@ -178,6 +178,18 @@ def resolve(mission, registry, business_registry=None, grant_registry=None, now=
                             "response": mission.get("objection_response"), "revision": mission.get("revision_ref"),
                             "appeal": mission.get("appeal_ref")},
     }
+    # An explicit multi-Core mission needs visible S2 coordination even when
+    # nobody has raised an objection yet. This is a proposed review, not an
+    # invocation of the Doctors or an authorization to execute.
+    declared_doctors = mission.get("additional_doctors", [])
+    if not isinstance(declared_doctors, list):
+        raise ValueError("additional_doctors must be a list")
+    if declared_doctors:
+        initial_council = _council(mission, tech, unavailable)
+        if len(initial_council["participants"]) > 1:
+            result["council"] = initial_council
+            result["coordination_status"] = "S2_REVIEW_REQUESTED_NOT_EXECUTED"
+
     owner = anchor["life_a3_id"]
     morty = "aspace:life:a1:morty"
     beth = "aspace:life:a1:beth"

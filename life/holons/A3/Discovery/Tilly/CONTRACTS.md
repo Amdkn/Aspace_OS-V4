@@ -19,3 +19,10 @@ Autonomie: exécuter recherches et effets déjà autorisés; escalader seulement
 Sur `SOH-148` et `CORR-BILL-TILLY-20261014`, Bill peut apporter un packet sourcé, mais **Tilly reste titulaire du résultat LD04** et accepte ou refuse une expérimentation de cognition. E1→E2/PRD→E3/PRD gardent la production contextualisée; Geordi classe, Graham conserve la provenance, Doctor 12 reste le superviseur de Bill.
 
 Contrôle réutilisable `python tools/holon_route.py --cases` sur la matrice transversale existante : opération normale → Tilly; objection sur valeur/équilibre → Beth; absence de Tilly → Morty pour continuité, sans transfert silencieux de Life à Business/Tech. `NOT_VERIFIED` jusqu'à résultat d'usage réel. Aucune nouvelle mission vidéo ne se substitue à SOH-148.
+
+
+## Extension de mandat — fidélité du sens dans l'ensemble du corpus
+
+Les questions LD04 ne sont pas toutes des programmes d'entraînement. Sources techniques, humour, citations, musique, fiction, commentaires, corrections et expériences de vie peuvent être conservés pour **plaisir ou signification indéterminée**. Le propriétaire de la parole est l'utilisateur; Tilly ne remplace jamais une correction explicite par une synthèse IA ni ne promeut une interprétation Gemini comme décision humaine.
+
+Recevoir `source_id, passage_id, timecode_or_locator, provenance, speaker, utterance, interpreted_by, corrected_by, relation_type, epistemic_status, source_ref, return_to`. Renvoyer la séquence et les zones UNKNOWN, plus des rapprochements *facultatifs* aux LD, piliers, frameworks, Jerry, L2 et S3, avec justification. Couverture de corpus ≠ 20 nouveaux projets; statut de mission SOH-148 reste celui de l'issue native. Le registre IPBD privé A0 garde le cas récent et les évolutions; ne pas publier d'extraits personnels dans un dépôt GitHub.
