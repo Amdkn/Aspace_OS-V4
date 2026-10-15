@@ -1,6 +1,6 @@
 {
-  "schema": "aspace.cross_os_collaboration.v1",
-  "as_of": "2026-10-14",
+  "schema": "aspace.cross_os_collaboration.v2",
+  "as_of": "2026-10-15",
   "provenance": {
     "historical_date": "2026-06-30 14:39:31 EDT",
     "historical_gemini": "https://gemini.google.com/app/85cbd978eb6302c1",
@@ -229,7 +229,13 @@
       "status": "USER_EXPLICIT",
       "purpose": "Questions LD04 → veille, transcripts/keyframes/repos → Discovery Packet; Graham provenance, Geordi ressources, E1/E2/PRD/E3/PRD contexte; Tilly décide exercice et utilité.",
       "doctor": "doctor-12",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "research",
+        "source_qualification",
+        "watch"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-graham",
@@ -240,7 +246,13 @@
       "status": "PROPOSED_FUNCTIONAL",
       "purpose": "Continuité de décisions, connaissances et provenance pour tous A3; avec Tilly relier Bill/Geordi et apprentissages sans décider du programme cognitif.",
       "doctor": "doctor-13",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "memory",
+        "provenance",
+        "continuity"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-amy",
@@ -251,7 +263,12 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 bénéficiaire définit usage et acceptation; Amy conçoit interface, teste l'accessibilité et retourne le résultat au même A3.",
       "doctor": "doctor-11",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "interfaces",
+        "experience"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-rory",
@@ -262,7 +279,12 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 responsable des engagements; Rory préserve Linear↔GWS↔WorkGraph et signale les divergences à l'owner.",
       "doctor": "doctor-11",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "persistence",
+        "linear_reconciliation"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-river",
@@ -273,7 +295,12 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 responsable du processus; River intègre API/événements selon effet autorisé et readback.",
       "doctor": "doctor-11",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "integration",
+        "events"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-clara",
@@ -284,7 +311,13 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 porteur du besoin et DC concernés; Clara spécifie options, contrats/tests, maintenabilité; renvoie au résultat humain.",
       "doctor": "doctor-12",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "architecture",
+        "design",
+        "tdd"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-ryan",
@@ -295,7 +328,13 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 bénéficiaire et DC/Marvel concernés; Ryan fabrique/répare puis remet effet vérifié à son owner.",
       "doctor": "doctor-13",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "build",
+        "repair",
+        "replay"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-yaz",
@@ -306,7 +345,12 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 définit critères d'utilité, limites de charge et de coût; Yaz mesure sans inventer de santé ou impact.",
       "doctor": "doctor-13",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "observability",
+        "cost"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     },
     {
       "id": "COLLAB-TECH-LIFE-nardole",
@@ -317,7 +361,12 @@
       "status": "PROPOSED_NON_EXCLUSIVE",
       "purpose": "A3 concernés par dépendances; Nardole coordonne claims/return_to sans A0 routeur et sans agir comme steward Life.",
       "doctor": "doctor-12",
-      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER"
+      "authority": "TECH_CAPABILITY_NOT_LIFE_OWNER",
+      "capabilities": [
+        "dispatch",
+        "governance"
+      ],
+      "collaboration_semantics": "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
     }
   ],
   "relationship_types": {
@@ -326,5 +375,133 @@
     "ADDITIONAL_CONTRIBUTION": "Linear Oct 8; not an override",
     "NON_EXCLUSIVE_TECH_COLLABORATION": "S3 cross-domain on bounded mission",
     "LIFE_DOMAIN_ACCOUNTABILITY": "A3 judges real life usefulness; no forced business semantics"
+  },
+  "frameworks": [
+    {
+      "id": "Ikigai",
+      "a2_id": "aspace:life:a2:orville",
+      "contribution": "Meaning, four pillars and fixed horizons; review trade-offs, not business metrics",
+      "a3_specialists": [
+        "Ed_Mercer",
+        "Kelly_Grayson",
+        "Claire_Finn",
+        "Gordon_Malloy",
+        "H1_Isaac",
+        "H3_Lamarr",
+        "H10_Bortus",
+        "H30_Alara",
+        "H90_Klyden"
+      ]
+    },
+    {
+      "id": "Discovery",
+      "a2_id": "aspace:life:a2:zora",
+      "contribution": "Life-domain outcome and local acceptance for each LD",
+      "a3_specialists": [
+        "Book",
+        "Saru",
+        "Culber",
+        "Tilly",
+        "Stamets",
+        "Burnham",
+        "Reno",
+        "Georgiou"
+      ]
+    },
+    {
+      "id": "PARA",
+      "a2_id": "aspace:life:a2:computer",
+      "contribution": "Classify Project, Area, Resource or Archive; Picard owns instances, Spock standards, Geordi resources, Data archives",
+      "a3_specialists": [
+        "Picard",
+        "Spock",
+        "Geordi",
+        "Data"
+      ]
+    },
+    {
+      "id": "12WY",
+      "a2_id": "aspace:life:a2:curie",
+      "contribution": "Vision, rocks, cadence and evidence for real commitments",
+      "a3_specialists": [
+        "Pike",
+        "Una",
+        "MBenga",
+        "Chapel",
+        "Ortegas"
+      ]
+    },
+    {
+      "id": "GTD",
+      "a2_id": "aspace:life:a2:holodeck",
+      "contribution": "Clarify next action, waiting-for, review and engagement in native tools",
+      "a3_specialists": [
+        "Mariner",
+        "Boimler",
+        "Rutherford",
+        "Tendi",
+        "Freeman"
+      ]
+    },
+    {
+      "id": "DEAL",
+      "a2_id": "aspace:life:a2:holojaneway",
+      "contribution": "Define/Eliminate/Automate/Liberate; net time liberated after maintenance",
+      "a3_specialists": [
+        "Dal",
+        "RokTahk",
+        "Zero",
+        "Gwyn"
+      ]
+    }
+  ],
+  "para_existing_residences": {
+    "computer": {
+      "id": "aspace:life:a2:computer",
+      "legacy": "A2_COMPUTER_ENTERPRISE_PARA",
+      "drive": "https://drive.google.com/drive/folders/1Ie2Qo205NLE2DWvua8ieLbGuBUKYKQHp",
+      "v3": "20_Life_OS/24_PARA_Enterprise/A2_Computer_Enterprise_Spec.md"
+    },
+    "picard": {
+      "id": "aspace:life:a3:enterprise:picard",
+      "drive": "https://drive.google.com/drive/folders/17SuVx4Ld0tpYsgL-7l1EWu_O7H81W2ce",
+      "doc": "https://docs.google.com/document/d/1EkhCIu-Z1qXWY300lLg-5lTibFmlGIXCbxNhclL6ExU/edit"
+    },
+    "spock": {
+      "id": "aspace:life:a3:enterprise:spock",
+      "drive": "https://drive.google.com/drive/folders/1KAJ1XJ5nNpkeohmz-g9Z4_wpEMlbY7tP",
+      "doc": "https://docs.google.com/document/d/1aji65u21z-pnW0ATEwwHeiSpmGCS2AmNtIjkASIryDk/edit"
+    },
+    "geordi": {
+      "id": "aspace:life:a3:enterprise:geordi",
+      "drive": "https://drive.google.com/drive/folders/1xjvsr-NMvCyLnQq9DjbEyKkK6XiICZIz",
+      "doc": "https://docs.google.com/document/d/10HOs7IRShL8ijOXS2OMpiaqDywg1TqU9tXJayC6mb5g/edit"
+    },
+    "data": {
+      "id": "aspace:life:a3:enterprise:data",
+      "drive": "https://drive.google.com/drive/folders/1hwj0LviT3JOwrp5fHvvKItGn9LW_oUtM",
+      "doc": "https://docs.google.com/document/d/1_WuSsW1CZzVZddAOtaUMvN6MHnPRKVNMYfsTwbG76QM/edit"
+    }
+  },
+  "institutional_relations": {
+    "S3_to_A1": "Companions design and maintain A1 means under their Doctor; do not usurp Beth values or Morty operational commitments",
+    "A2_to_A3": "Framework A2 stewards method; A3 disciplines autonomous and able to object",
+    "A3_framework_to_B": "Specialists advise/critique Jerry, project Summers and DC/Marvel only when requested by bounded mission; not six mandatory approvals",
+    "Discovery_to_B": "A3 Discovery owns life acceptance; Jerry owns permanent Area; Picard/Summers own time-bounded project instance; B2 defines DoD and B3 executes with evidence",
+    "Doctors_to_S3": "Doctor accountable for subordinate capacity and review/repair, peers can work in parallel",
+    "Rick_to_Doctors": "Rick observes systemic failures and enforces corrective handoff; S2 council is a decision process, not a new A2/S2 identity"
+  },
+  "governance_procedure": {
+    "steps": [
+      "proposal",
+      "local_objection",
+      "motivated_response",
+      "revision",
+      "appeal"
+    ],
+    "rights": "all holons may propose or contest; only scope owner ratifies change",
+    "conflicts": "Life value Beth; Area standards Jerry; Tech Doctor(s) S2 council; jurisdiction Morty; constitutional A0 only for nondelegable changes",
+    "succession": "never self-promote; cumulative unavailability -> WAIT and explicit authority",
+    "authorization": "verified external grant snapshot required before any runtime effect; no such connection from this registry"
   }
 }
