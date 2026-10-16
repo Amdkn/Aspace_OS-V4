@@ -157,6 +157,7 @@ def build_matrix(cross, business, life, agents):
             "a2_id": framework["a2_id"],
             "contribution": framework["contribution"],
             "a3_specialist": direction["owner"] in framework["a3_specialists"],
+            "a3_specialists": framework["a3_specialists"],
             "dispatch_status": "NOT_SELECTED",
         } for framework in frameworks]
 
@@ -210,6 +211,8 @@ def build_matrix(cross, business, life, agents):
             "execution": "This resolver is read-only and never dispatches agents or claims completion.",
         },
         "doctors": doctors,
+        "institutional_relations": cross["institutional_relations"],
+        "governance_procedure": cross["governance_procedure"],
         "s3_capability_catalog": s3_catalog,
         "domains": result_domains,
     }
