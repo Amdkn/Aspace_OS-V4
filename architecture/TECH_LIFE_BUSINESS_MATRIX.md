@@ -85,3 +85,15 @@ La matrice est un index de coopération et de routage. Une permission doit être
 - Les neuf collaborations S3–A3 proviennent du registre Tech × Life × Business : Bill↔Tilly est explicite; les autres liens sont proposés ou non exclusifs.
 - Les résidences individuelles des A3, B2 et B3 et leurs mandats propres restent les sources de détail. Cette page ne duplique pas leurs contrats ni des données IPBD privées.
 - Vérification de la source GitHub à la création de cette vue : `main` commit `c2d10fd9eda1aeb05ddeb4f21294a6f9cb9036bb`. À reconfirmer au moment de toute intégration ultérieure.
+
+
+## Executable projection
+
+The matrix is composed at runtime from the four source registries rather than copied into a second hand-maintained table:
+
+- `tools/s3_a3_b2_b3_matrix.py` builds the eight LD rows, all 64 contextual B2/B3 function pairs, nine S3 capability entries with Doctor supervision, and six composable A2 framework contributions.
+- Run `python tools/s3_a3_b2_b3_matrix.py --json` to emit the machine-readable matrix.
+- Run `python tools/s3_a3_b2_b3_matrix.py --domain LD04 --business-function PRD --tech-holon-id aspace:tech:bill --capability research --framework Discovery --framework GTD` to resolve a mission-scoped Bill–Tilly–PRD projection. Output remains `NOT_DISPATCHED`.
+- `python -m unittest discover -s tests -v` validates source consistency, matrix completeness and fail-closed selections.
+
+No candidate status is promoted. The A3 remains the life-outcome owner; framework contributions can be combined without a prescribed sequence; historical anchors remain distinct from the mission-specific B2/B3 selection.
