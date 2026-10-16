@@ -105,6 +105,27 @@ class TestS3A3B2B3Matrix(unittest.TestCase):
         self.assertEqual(selected["runtime_status"], "NOT_DISPATCHED")
         self.assertEqual(ld04["owner_decision"], "A3_STEWARD")
 
+    def test_governance_and_a3_specialists_are_exposed_without_reinterpretation(self):
+        expected_relations = {
+            "S3_to_A1", "A2_to_A3", "A3_framework_to_B", "Discovery_to_B",
+            "Doctors_to_S3", "Rick_to_Doctors",
+        }
+        self.assertEqual(set(MATRIX["institutional_relations"]), expected_relations)
+        self.assertEqual(
+            MATRIX["governance_procedure"]["steps"],
+            ["proposal", "local_objection", "motivated_response", "revision", "appeal"],
+        )
+        self.assertIn("only scope owner ratifies", MATRIX["governance_procedure"]["rights"])
+        discovery = next(x for x in MATRIX["domains"][0]["a2_frameworks"]
+                         if x["id"] == "Discovery")
+        self.assertEqual(
+            discovery["a3_specialists"],
+            ["Book", "Saru", "Culber", "Tilly", "Stamets", "Burnham", "Reno", "Georgiou"],
+        )
+        self.assertIn("Tilly", discovery["a3_specialists"])
+        selected = resolve_cooperation(MATRIX, "LD04", framework_ids=["Discovery"])
+        self.assertEqual(selected["frameworks"][0]["a3_specialists"], discovery["a3_specialists"])
+
     def test_invalid_domain_function_or_capability_fails_closed(self):
         with self.assertRaises(ValueError):
             resolve_cooperation(MATRIX, "LD09")
