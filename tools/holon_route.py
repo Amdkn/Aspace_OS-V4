@@ -9,9 +9,16 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+if __package__:
+    from .s3_a3_b2_b3_matrix import build_matrix, resolve_cooperation
+else:  # Direct invocation: python tools/holon_route.py
+    from s3_a3_b2_b3_matrix import build_matrix, resolve_cooperation
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "architecture" / "cross_os_collaboration.json"
 BUSINESS = ROOT / "business" / "holons" / "registry.json"
+LIFE_REGISTRY = ROOT / "life" / "registry.json"
+AGENTS_REGISTRY = ROOT / "agents" / "registry.json"
 
 
 def _present(x):
@@ -154,6 +161,23 @@ def resolve(mission, registry, business_registry=None, grant_registry=None, now=
     tech = _capability(mission, registry, anchor)
     assign = _assignment(mission, registry, business_registry, anchor)
     fw = _frameworks(mission, registry)
+    matrix = build_matrix(
+        registry,
+        business_registry,
+        json.loads(LIFE_REGISTRY.read_text(encoding="utf-8")),
+        json.loads(AGENTS_REGISTRY.read_text(encoding="utf-8")),
+    )
+    matrix_domain = next(
+        row for row in matrix["domains"] if row["life_domain"] == anchor["life_domain"]
+    )
+    mission_selection = resolve_cooperation(
+        matrix,
+        anchor["life_domain"],
+        business_function=mission.get("business_function"),
+        tech_holon_id=mission.get("requested_tech_holon_id"),
+        required_capability=mission.get("requested_capability"),
+        framework_ids=mission.get("framework_contributions", []),
+    )
     unavailable = mission.get("unavailable_ids", [])
     if not isinstance(unavailable, list) or any(not _present(x) for x in unavailable):
         raise ValueError("unavailable_ids must contain valid IDs")
@@ -165,6 +189,13 @@ def resolve(mission, registry, business_registry=None, grant_registry=None, now=
         "historical_anchor_manager_id": assign["historical_manager"],
         "historical_anchor_squad_id": assign["historical_squad"],
         "business": assign, "framework_contributions": fw, "tech_contribution": tech,
+        "cooperation": {
+            "matrix_schema": matrix["schema"],
+            "available_business_functions": matrix_domain["functions_b2_b3"],
+            "available_s3_candidates": matrix_domain["s3_candidates"],
+            "a2_framework_contributions": matrix_domain["a2_frameworks"],
+            "mission_selection": mission_selection,
+        },
         "tech_advisor": tech["id"] if tech else None,
         "tech_supervisor": tech["doctor"] if tech else None,
         "manager_delivery_owner": assign["selected_manager"],
