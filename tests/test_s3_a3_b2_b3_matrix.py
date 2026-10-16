@@ -66,9 +66,18 @@ class TestS3A3B2B3Matrix(unittest.TestCase):
         ids = {x["holon_id"]: x for x in ld04["s3_candidates"]}
         self.assertEqual(ids["aspace:tech:bill"]["relationship_status"], "USER_EXPLICIT")
         self.assertEqual(ids["aspace:tech:graham"]["relationship_status"], "PROPOSED_FUNCTIONAL")
-        self.assertNotIn("aspace:tech:bill", {
-            x["holon_id"] for x in MATRIX["domains"][0]["s3_candidates"]
-        })
+        ld01_candidates = {
+            x["holon_id"]: x
+            for x in MATRIX["domains"][0]["s3_candidates"]
+        }
+        self.assertIn("aspace:tech:bill", ld01_candidates)
+        self.assertEqual(
+            ld01_candidates["aspace:tech:bill"]["association"],
+            "CROSS_DOMAIN_NON_EXCLUSIVE",
+        )
+        self.assertFalse(
+            ld01_candidates["aspace:tech:bill"]["preferred_a3_match"]
+        )
 
     def test_a2_frameworks_are_composable_across_domains(self):
         self.assertEqual(len(MATRIX["domains"][0]["a2_frameworks"]), 6)
