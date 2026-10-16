@@ -33,6 +33,26 @@ class TestCrossOSDecisionCanary(unittest.TestCase):
         self.assertFalse(r["delegated_execution"])
         self.assertEqual(r["business"]["assignment_status"], "PROPOSED_NOT_DISPATCHED")
 
+    def test_core_router_emits_composed_cross_holon_matrix(self):
+        r = resolve(self.mission(
+            business_function="PRD",
+            requested_tech_holon_id="aspace:tech:bill",
+            requested_capability="research",
+            framework_contributions=["Discovery", "GTD"],
+        ), REG, BIZ)
+        cooperation = r["cooperation"]
+        self.assertEqual(cooperation["matrix_schema"], "aspace.s3_a3_b2_b3_matrix.v1")
+        self.assertEqual(len(cooperation["available_business_functions"]), 8)
+        self.assertEqual(len(cooperation["available_s3_candidates"]), 9)
+        self.assertEqual(len(cooperation["a2_framework_contributions"]), 6)
+        selection = cooperation["mission_selection"]
+        self.assertEqual(selection["a3_owner"]["steward"], "Tilly")
+        self.assertEqual(selection["business_assignment"]["b2_id"], "aspace:business:E2:PRD")
+        self.assertEqual(selection["business_assignment"]["b3_id"], "aspace:business:E3:PRD")
+        self.assertEqual(selection["s3_assignment"]["holon_id"], "aspace:tech:bill")
+        self.assertEqual([x["id"] for x in selection["frameworks"]], ["Discovery", "GTD"])
+        self.assertEqual(selection["runtime_status"], "NOT_DISPATCHED")
+
     def test_all_eight_domains_historical_anchors_preserved(self):
         for h in REG["historic"]:
             with self.subTest(h["life_domain"]):
@@ -52,6 +72,13 @@ class TestCrossOSDecisionCanary(unittest.TestCase):
             self.assertFalse(r["tech_contribution"]["preferred_relation"])
             self.assertTrue(r["tech_contribution"]["nonexclusive"])
             self.assertEqual(r["tech_contribution"]["doctor"], "doctor-13" if tech == "graham" else "doctor-12")
+            self.assertEqual(
+                r["cooperation"]["mission_selection"]["s3_assignment"]["association"],
+                "CROSS_DOMAIN_NON_EXCLUSIVE",
+            )
+            self.assertFalse(
+                r["cooperation"]["mission_selection"]["s3_assignment"]["preferred_a3_match"]
+            )
 
     def test_only_requested_frameworks_contribute(self):
         r = resolve(self.mission(framework_contributions=["PARA", "DEAL", "12WY"]), REG, BIZ)
