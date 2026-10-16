@@ -191,6 +191,8 @@ def resolve(mission, registry, business_registry=None, grant_registry=None, now=
         "business": assign, "framework_contributions": fw, "tech_contribution": tech,
         "cooperation": {
             "matrix_schema": matrix["schema"],
+            "institutional_relations": matrix["institutional_relations"],
+            "governance_procedure": matrix["governance_procedure"],
             "available_business_functions": matrix_domain["functions_b2_b3"],
             "available_s3_candidates": matrix_domain["s3_candidates"],
             "a2_framework_contributions": matrix_domain["a2_frameworks"],
