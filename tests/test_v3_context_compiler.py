@@ -27,7 +27,7 @@ class TestDeterministicBoundedContextCompiler(unittest.TestCase):
                 "scope": "mission-496",
                 "source_authority": "canon",
                 "observed_at": "2026-10-03T19:00:00+00:00",
-                "assertion": {"value": "builder"},
+                "assertion": "builder",
                 "evidence_refs": ["evidence:role"],
             }
         )
