@@ -89,11 +89,12 @@ La matrice est un index de coopération et de routage. Une permission doit être
 
 ## Executable projection
 
-The matrix is composed at runtime from the four source registries rather than copied into a second hand-maintained table:
+The matrix is composed at runtime from the four source registries rather than copied into a second hand-maintained table, and the main mission router consumes it:
 
 - `tools/s3_a3_b2_b3_matrix.py` builds the eight LD rows, all 64 contextual B2/B3 function pairs, nine S3 capability entries with Doctor supervision, and six composable A2 framework contributions.
-- Run `python tools/s3_a3_b2_b3_matrix.py --json` to emit the machine-readable matrix.
-- Run `python tools/s3_a3_b2_b3_matrix.py --domain LD04 --business-function PRD --tech-holon-id aspace:tech:bill --capability research --framework Discovery --framework GTD` to resolve a mission-scoped Bill–Tilly–PRD projection. Output remains `NOT_DISPATCHED`.
-- `python -m unittest discover -s tests -v` validates source consistency, matrix completeness and fail-closed selections.
+- Run `python tools/s3_a3_b2_b3_matrix.py --json` to emit the complete matrix.
+- Run `python tools/holon_route.py --cases` to see the routeer's Bill–Tilly canaries with the composed matrix embedded in each result.
+- Run `python tools/holon_route.py --mission-json <mission.json>` for a specific mission. Its result includes the A3 owner, all eight B2/B3 options, domain-compatible non-exclusive S3 candidates, all six A2 contributions and the explicit mission selection.
+- `python -m unittest discover -s tests -v` validates source consistency, matrix completeness, router integration and fail-closed selections.
 
-No candidate status is promoted. The A3 remains the life-outcome owner; framework contributions can be combined without a prescribed sequence; historical anchors remain distinct from the mission-specific B2/B3 selection.
+No candidate status is promoted. The A3 remains the life-outcome owner; framework contributions can be combined without a prescribed sequence; historical anchors remain distinct from the mission-specific B2/B3 selection. The route remains a proposal and does not dispatch agents.
