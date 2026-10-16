@@ -93,7 +93,7 @@ The matrix is composed at runtime from the four source registries rather than co
 
 - `tools/s3_a3_b2_b3_matrix.py` builds the eight LD rows, all 64 contextual B2/B3 function pairs, nine S3 capability entries with Doctor supervision, and six composable A2 framework contributions.
 - Run `python tools/s3_a3_b2_b3_matrix.py --json` to emit the complete matrix.
-- Run `python tools/holon_route.py --cases` to see the routeer's Bill–Tilly canaries with the composed matrix embedded in each result.
+- Run `python tools/holon_route.py --cases` to see the router's Bill–Tilly canaries with the composed matrix embedded in each result.
 - Run `python tools/holon_route.py --mission-json <mission.json>` for a specific mission. Its result includes the A3 owner, all eight B2/B3 options, domain-compatible non-exclusive S3 candidates, all six A2 contributions and the explicit mission selection.
 - `python -m unittest discover -s tests -v` validates source consistency, matrix completeness, router integration and fail-closed selections.
 
