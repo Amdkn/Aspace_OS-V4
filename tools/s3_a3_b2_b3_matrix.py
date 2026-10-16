@@ -131,16 +131,19 @@ def build_matrix(cross, business, life, agents):
         a3_id = direction["life_a3_id"]
         domain_tech_relations = []
         for relation in tech_relations:
-            if relation["life_a3_id"] == a3_id:
-                association = "PREFERRED_A3"
-            elif relation["life_a3_id"] == "ANY_A3_AS_NEEDED":
-                association = "CROSS_DOMAIN_CANDIDATE"
-            else:
+            preferred = relation["life_a3_id"] == a3_id
+            nonexclusive = (
+                relation.get("collaboration_semantics")
+                == "CAPABILITY_AND_MANDATE_MATCH_NONEXCLUSIVE"
+            )
+            if not preferred and not nonexclusive:
                 continue
+            association = "PREFERRED_A3" if preferred else "CROSS_DOMAIN_NON_EXCLUSIVE"
             domain_tech_relations.append({
                 "holon_id": relation["tech_holon_id"],
                 "relation_id": relation["id"],
                 "association": association,
+                "preferred_a3_match": preferred,
                 "relationship_status": relation["status"],
                 "capabilities": relation["capabilities"],
                 "supervising_doctor": relation["doctor"],
