@@ -1,0 +1,17 @@
+--- a/.devcontainer/devcontainer.json
++++ b/.devcontainer/devcontainer.json
+@@ -12,8 +12,11 @@
+     "ASPACE_INSTANCE_ROOT": "/workspaces/aspace",
+     "SWARM_HOME": "/workspaces/aspace/state/cubefarm",
+     "SWARM_PORT": "4417"
+   },
+-  "forwardPorts": [4417],
+-  "portsAttributes": {"4417": {"label": "CubeFarm · A'space V4", "onAutoForward": "openBrowser"}},
++  "forwardPorts": [3001, 4417],
++  "portsAttributes": {
++    "3001": {"label": "FreeLLMAPI · Router", "onAutoForward": "openBrowser"},
++    "4417": {"label": "CubeFarm · A'space V4", "onAutoForward": "openBrowser"}
++  },
+   "postCreateCommand": "bash control-plane/setup.sh",
+   "postStartCommand": "bash control-plane/ensure-claude.sh && bash control-plane/office.sh start",
+   "waitFor": "postCreateCommand",

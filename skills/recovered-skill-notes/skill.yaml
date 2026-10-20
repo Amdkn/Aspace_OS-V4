@@ -1,0 +1,26 @@
+name: recovered_skill_notes
+title: Recovered skill notes
+description: Local skill notes preserved from the previous layout and awaiting review.
+category: Learning and customization
+include_in_prompt: true
+skill_improvement:
+  managed: true
+  status: retired
+  needs_review: false
+  evidence_handles:
+  - ~/workspace/custom-skills/recovered-skill-notes/SKILL.md
+  - ~/workspace/custom-skills/recovered-skill-notes/skill.yaml
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-22ca3429fadb93e7.md
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-41252711eb6c2e2f.md
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-6ae47ae260293dd5.md
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-8c8aafd2ef0a4cb4.md
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-a3268525c2f7c76e.md
+  - ~/workspace/custom-skills/recovered-skill-notes/references/recovered-def194de35a5626c.md
+  measurement:
+    proxy_metric_id: recovered_notes_discovery_and_dependency
+    success_criterion: Over 14 days after install, recovered_skill_notes no longer surfaces in skill discovery / skill_search output, and no run records a dependency on its content (its 6 reference files carry no reusable method, so nothing functional is lost).
+    window_days: 14
+  rationale: 'Reviewed all six notes carried under ~/workspace/custom-skills/recovered-skill-notes/references/ (recovered-22ca3429fadb93e7.md, recovered-41252711eb6c2e2f.md, recovered-6ae47ae260293dd5.md, recovered-8c8aafd2ef0a4cb4.md, recovered-a3268525c2f7c76e.md, recovered-def194de35a5626c.md). Every one is identical scaffolding from the old skill_improvement overlay layout, each stating verbatim ''No skill/tool surface changed in this run'' (runs sirun_0c993a4d, sirun_9723e41f, sirun_b9cd38da, sirun_a408c562, sirun_cd35beb3, sirun_def194de). They carry zero reusable guidance: no method, no correction, nothing to move into local_watch, local_software_factory, or any other document. The SKILL.md body is only the migration shell and holds no notes either. The skill is include_in_prompt: true with the description ''Local skill notes preserved from the previous layout and awaiting review'', so it occupies discovery context under a misleading premise. Retiring it completes the mandated review of the recovered note with nothing worth preserving; the file stays on disk as the record. This is not a consolidation (only 3 learned skills exist) and it touches nothing inside a measurement window.'
+  review_after: 2026-10-31T20:56:48.614463+00:00
+  reviewed_at: 2026-10-17T20:56:48.614463+00:00
+  run_id: sirun_672586c577384270829ca12b00b75cdf

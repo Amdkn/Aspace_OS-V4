@@ -1,0 +1,77 @@
+# Watch — analyse vidéo YouTube (spec V4 : frames + transcripts horodatés)
+#
+# Installation (repo Aspace_OS-V4) :
+#   1. Copier ce fichier vers .github/workflows/watch-video.yml
+#   2. Copier skills/watch/bin/watch.py vers .github/scripts/watch.py
+#      (ou adapter la ligne « Script » ci-dessous vers le chemin réel)
+#   3. Ajouter le secret repo GEMINI_API_KEY (clé Google AI Studio)
+#      Settings → Secrets and variables → Actions → New repository secret
+#   4. Déclenchement : onglet Actions → « Watch video analysis » → Run workflow
+#
+# Note : les runners GitHub (Azure) passent souvent mieux les défenses
+# anti-bot de YouTube que les IPs de serveurs personnels. Si YouTube bloque
+# quand même, le rapport dégrade gracieusement (métadonnées + chapitres).
+
+name: Watch video analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_url:
+        description: "URL YouTube à analyser"
+        required: true
+        type: string
+      frames:
+        description: "Nombre de frames (0 = auto : frames seulement si pas de transcription)"
+        required: false
+        default: "0"
+        type: string
+      model:
+        description: "Modèle Gemini"
+        required: false
+        default: "gemini-3.6-flash"
+        type: string
+
+permissions:
+  contents: write  # pour commiter le rapport dans watch-reports/
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install yt-dlp
+
+      - name: Run Watch
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          VIDEO_ID=$(python -c "import re,sys;print(re.search(r'([A-Za-z0-9_-]{11})',sys.argv[1]).group(1))" "${{ inputs.video_url }}")
+          python .github/scripts/watch.py \
+            --url "${{ inputs.video_url }}" \
+            --frames "${{ inputs.frames }}" \
+            --model "${{ inputs.model }}" \
+            --out "watch-reports/${VIDEO_ID}-$(date +%F).md"
+
+      - name: Commit report
+        run: |
+          git config user.name "watch-bot"
+          git config user.email "watch-bot@users.noreply.github.com"
+          git add watch-reports/
+          git diff --cached --quiet || git commit -m "watch: analyse ${{ inputs.video_url }}"
+          git push
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: watch-report
+          path: watch-reports/

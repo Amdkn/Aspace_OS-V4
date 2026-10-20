@@ -1,0 +1,7 @@
+id: custom.legacy-gemini
+title: custom.legacy-gemini
+description: Appels API Google Gemini (clé via Secure Vault)
+include_in_prompt: true
+require_auth: false
+availability:
+  confidential_vm: false

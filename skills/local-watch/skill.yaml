@@ -1,0 +1,10 @@
+name: local_watch
+title: Local watch
+description: 'Analyse une vidéo YouTube (métadonnées, transcription horodatée, frames) avec Gemini et produit un rapport structuré. Spec V4 : WATCH donne à Bill les frames vidéo + les transcripts horodatés.'
+include_in_prompt: true
+availability:
+  confidential_vm: true
+  needs_speech: false
+skill_improvement:
+  managed: true
+  needs_review: true
