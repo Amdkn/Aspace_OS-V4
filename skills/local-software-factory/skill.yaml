@@ -1,0 +1,24 @@
+name: local_software_factory
+title: Local software factory
+description: Install the V4 Software Factory loop in a repo and run it with design authority gates, receipts, a breaker, and a journaled pause for blocked work.
+category: Work and knowledge
+include_in_prompt: true
+availability:
+  confidential_vm: true
+  needs_speech: false
+skill_improvement:
+  managed: true
+  status: active
+  needs_review: false
+  evidence_handles:
+  - message:assistant-msg-59c960e2-3632-af34-c7ba-beea6411ad8d
+  - heartbeat-bedrock-v4 run 5bb7ab19-352c-41de-8a16-3cb82d82131d
+  - goal:goal_dfdb35622c4c
+  measurement:
+    proxy_metric_id: factory_blocked_redispatch_count
+    success_criterion: In 14 days, no blocked factory issue is redispatched without a journaled reversible pause, and no single blocked issue accumulates more than 2 consecutive failed runs.
+    window_days: 14
+  rationale: 'The current skill teaches mandatory human gates and a worker that never merges, which contradicts the standing no-human-gate doctrine where authority replaces the gate and work never executes without design sign-off. The evidence window shows the failure mode the old text leaves unhandled: the BedRock pulse of 2026-10-13 reported 43 additional Issue Factory failures across runs 283 to 325, a blocked issue open since 9 October, and a prepared pause D-N027 that was neither applied nor journaled. The update replaces the human gate with a design-authority gate and adds the missing blocked-loop rule: stop, apply a reversible journaled pause, and route to design authority instead of redispatching. The deterministic handoff-suppression candidates were rejected because they concern scheduler policy, not a skill, and the bare tool-failure list carries no error detail that would ground a skill change.'
+  review_after: 2026-10-27T20:17:26.428317+00:00
+  reviewed_at: 2026-10-13T20:17:26.428317+00:00
+  run_id: sirun_61d9b3fdef214a18abf654fc5ee4a0ea

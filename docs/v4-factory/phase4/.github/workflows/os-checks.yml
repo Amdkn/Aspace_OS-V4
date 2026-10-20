@@ -1,0 +1,29 @@
+name: OS checks
+# CI scopée par sous-arbre (Phase 4) : ne se déclenche que sur os/**.
+# La gate V4 (v4-checks.yml) reste inchangée et informationnelle.
+on:
+  pull_request:
+    paths: ['os/**', '.github/workflows/os-checks.yml']
+  push:
+    branches: [main, 'mission/a0/mono-3os']
+    paths: ['os/**', '.github/workflows/os-checks.yml']
+permissions:
+  contents: read
+jobs:
+  build-os:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [life, agent, business]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: os/${{ matrix.os }}/package-lock.json
+      - run: npm ci
+        working-directory: os/${{ matrix.os }}
+      - run: npm run build --if-present
+        working-directory: os/${{ matrix.os }}

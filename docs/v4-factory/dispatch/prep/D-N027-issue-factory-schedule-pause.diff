@@ -1,0 +1,24 @@
+# D-N027 (préparé par A0, 2026-10-11 ~17:35 EDT) — pause temporaire du schedule issue-factory.yml
+# Contexte : boucle reconcile en échec continu sur main @ 3f8ed7c
+#   - 9 échecs vérifiés le 2026-10-11 (13:21 → 17:22 EDT), ~2x/heure, 11-12 s, 3 annotations
+#   - Cause racine sur issue #61, recovery explicite au 12e Doctor (toujours en cours)
+#   - Périmètre : commenter UNIQUEMENT le bloc schedule. Triggers `issues: labeled`
+#     et `workflow_dispatch` intacts (le dispatch par label reste vivant).
+# Réversible : décommenter après 1 run scheduled vert post-fix du 12e.
+# Fichier source : .github/workflows/issue-factory.yml (branche main, repo Amdkn/Aspace_OS-V4)
+
+--- a/.github/workflows/issue-factory.yml
++++ b/.github/workflows/issue-factory.yml
+@@ -2,8 +2,10 @@ name: Aspace Issue Factory
+ on:
+   issues:
+     types: [labeled]
+-  schedule:
+-    - cron: '11,41 * * * *'
++  # PAUSE 2026-10-11 (D-N027) — reconcile loop failing on main @ 3f8ed7c
++  # (root cause: #61, recovery: 12e Doctor). Re-enable after one green scheduled run.
++  # schedule:
++  #   - cron: '11,41 * * * *'
+   workflow_dispatch:
+     inputs:
+       issue:
