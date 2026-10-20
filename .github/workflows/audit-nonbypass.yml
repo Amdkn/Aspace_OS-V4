@@ -1,0 +1,39 @@
+name: Non-bypass audit
+# L04 (F-02 BedRock) — transparence du trail, pas verrouillage.
+# Pour chaque merge récent sur main, vérifie que les checks requis étaient
+# verts AVANT le merge (timestamps). Bypass détecté → run rouge, visible.
+# Tier D : pur code (tools/audit_merges.py), zéro modèle.
+on:
+  schedule:
+    - cron: '23 4 * * *'  # quotidien
+  workflow_dispatch:
+    inputs:
+      window:
+        description: 'Nombre de merges récents à auditer'
+        default: '20'
+permissions:
+  checks: read
+  pull-requests: read
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run non-bypass audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python tools/audit_merges.py \
+            --window "${{ inputs.window || '20' }}" \
+            --report audit-report.json
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonbypass-audit-report
+          path: audit-report.json
+          retention-days: 90
