@@ -1,0 +1,31 @@
+name: policy-checks
+# L05 (F-02 BedRock) — enforcement des politiques du store policy/.
+# P-003 (aucun secret en repo) -> job secret-scan (Tier D, grep).
+# P-004 (un service = un port, documenté avant d'écouter) -> job ports-check.
+# P-001 (r10-receipt) et P-002 (gate dispatch Nardole) ont leurs propres
+# mécanismes : ce workflow ne les double pas.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 5 * * 2'  # hebdomadaire (mardi)
+
+jobs:
+  secret-scan:
+    name: secret-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan des secrets (P-003)
+        run: python3 tools/secret_scan.py --root .
+
+  ports-check:
+    name: ports-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ports bindés vs os/PORTS.md (P-004)
+        run: python3 tools/check_ports.py --root .
