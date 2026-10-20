@@ -4,7 +4,7 @@
   "capabilities": [
     {
       "name": "Agent OS",
-      "status": "abandonment_proposed",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -12,7 +12,11 @@
         "decision_council": "S2 Council",
         "validation": "S1 Validation Required",
         "motivation": "Proposed for abandonment by S2. Agent OS is not aligned with V4 minimal viable architecture."
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "decision_ref": "Discussion #46 (décisions S2 du 2026-10-09) + validation S1 (Rick) reçue le 2026-10-19",
+      "reserve_s2": "Portée de l'abandon : la revendication au registre V4. La migration d'Agent-OS-Desktop dans le mono-repo continue (décision mono-repo du 2026-10-09, inchangée)."
     },
     {
       "name": "Life OS",
@@ -37,7 +41,7 @@
     },
     {
       "name": "Mobile OS",
-      "status": "abandonment_proposed",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -45,11 +49,14 @@
         "decision_council": "S2 Council",
         "validation": "S1 Validation Required",
         "motivation": "Proposed for abandonment by S2. Mobile OS is not aligned with V4 minimal viable architecture."
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "decision_ref": "Discussion #46 (décisions S2 du 2026-10-09) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "The OMK Office JaaS — 75 services déclarés",
-      "status": "abandonment_proposed",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -57,7 +64,11 @@
         "decision_council": "S2 Council",
         "validation": "S1 Validation Required",
         "motivation": "Proposed for abandonment by S2. The OMK Office JaaS — 75 services déclarés is not aligned with V4 minimal viable architecture."
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "decision_ref": "Discussion #46 (décisions S2 du 2026-10-09) + validation S1 (Rick) reçue le 2026-10-19",
+      "reserve_s2": "Portée de l'abandon : la revendication au registre. L'activité OMK Office est inchangée (objectif 1 M$ inchangé) ; les 75 services vivent dans le site OMK Office / Master Profile."
     },
     {
       "name": "Cube Farm",
@@ -80,7 +91,7 @@
     },
     {
       "name": "Starnet",
-      "status": "qualification_planned",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -95,11 +106,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/starnet._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "abandon_motif": "ambition documentée sans aucun runtime identifiable ; la trace du périmètre de composition reste dans PRD-Fork-CubeFarm.",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "WorkAdventure",
-      "status": "qualification_planned",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -114,13 +129,17 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/workadventure._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "abandon_motif": "aucune instance identifiable, zéro intégration ; même logique que Starnet.",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
-      "name": "Gateway OpenClaw",
-      "status": "qualification_planned",
+      "name": "OpenClaw harness",
+      "status": "qualified",
       "source_revision": null,
-      "runtime_evidence": null,
+      "runtime_evidence": "evidence/gateway_openclaw._qualification.json (harnais mesuré le 2026-08-24 : sonde joignable, OpenClaw 2026.5.18 ; audit indépendant « Honnête » ; aucun service gateway V4 — re-typage S2)",
       "destination_contract": null,
       "qualification_plan": {
         "runtime_evidence_target": "evidence/gateway_openclaw._qualification.json",
@@ -133,11 +152,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/gateway_openclaw._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "qualified_date": "2026-10-19",
+      "qualified_by": "Ryan / Doctor 13 (D-N029)",
+      "retyped_from": "Gateway OpenClaw",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "Hermes surfaces et harness",
-      "status": "qualification_planned",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -152,7 +175,11 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/hermes_surfaces_et_harness._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "abandon_motif": "slot doctrinal sans implémentation, sans endpoint, sans exécution ; 15 occurrences nominatives. Re-proposable avec preuve de connexion si un runner se matérialise (URL + credential).",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "Prime Agent",
@@ -194,7 +221,7 @@
     },
     {
       "name": "Automaton M0/M1/M2",
-      "status": "qualification_planned",
+      "status": "référence de recherche",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -209,11 +236,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/automaton_m0_m1_m2._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "retyped_date": "2026-10-19",
+      "retyped_by": "Ryan / Doctor 13 (D-N029)",
+      "retype_motif": "hors registre runtime : proposition d'architecture V3 jamais implémentée, rien à sonder ; valeur du triptyque (Leon van Zyl, Conway-Research/automaton) préservée sans sur-vendre",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "Constructeur Universel",
-      "status": "qualification_planned",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -228,7 +259,11 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/constructeur_universel._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "abandon_motif": "aucune définition fonctionnelle, aucune substance exécutable ; nom sans objet (le PRD-Fork-CubeFarm interdit d'assimiler le nom à une capacité prouvée). Re-proposable avec spec + plan.",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "BMAD",
@@ -246,7 +281,7 @@
     },
     {
       "name": "gstack",
-      "status": "qualification_planned",
+      "status": "référence méthodologique",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -261,11 +296,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/gstack._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "retyped_date": "2026-10-19",
+      "retyped_by": "Ryan / Doctor 13 (D-N029)",
+      "retype_motif": "méthodologie documentée (docs Life OS), pas une stack technique installée",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "CEO Bench",
-      "status": "qualification_planned",
+      "status": "doctrinal_reference",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -280,11 +319,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/ceo_bench._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "retyped_date": "2026-10-19",
+      "retyped_by": "Ryan / Doctor 13 (D-N029)",
+      "retype_motif": "benchmark externe réel (arXiv 2606.18543), usage doctrinal réel dans les gates ; pas un runtime V4",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "OpenShell",
-      "status": "qualification_planned",
+      "status": "abandonné",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -299,7 +342,11 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/openshell._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "abandoned_date": "2026-10-19",
+      "abandoned_by": "Ryan / Doctor 13 (D-N029)",
+      "abandon_motif": "0 hit code, 3 mentions docs, aucune spec, rien d'exécutable. Re-proposable avec spec + plan.",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19) + validation S1 (Rick) reçue le 2026-10-19"
     },
     {
       "name": "Octop",
