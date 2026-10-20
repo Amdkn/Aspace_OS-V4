@@ -1,0 +1,20 @@
+name: r10-receipt
+
+# « Sans reçu, pas de merge » (L01, D-N027) — check requis sur les PR vers main.
+# Pur code (tools/check_r10_receipt.py), zéro modèle : toujours vivant (L00).
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  r10-receipt:
+    name: r10-receipt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vérifier le reçu R10 de cette PR
+        run: >-
+          python3 tools/check_r10_receipt.py --root .
+          --head-sha "${{ github.event.pull_request.head.sha }}"
+          --pr-number "${{ github.event.pull_request.number }}"
