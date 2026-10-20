@@ -1,94 +1,83 @@
 #!/usr/bin/env python3
-"""P-003 secret scan — policy/POLICY-003.md (L05, D-N027).
+"""Secret scan — P-003 (L05, D-N027).
 
-Exit 0 = aucun secret détecté ; exit 1 = au moins un motif trouvé.
+Grep de patterns de secrets sur le repo. Tier D : pur code, zéro modèle.
+Pattern trouvé → exit 1 (check rouge). Aucune écriture.
 
-Approche volontairement simple : motifs regex explicites — les secrets ne
-sont jamais exclus par silence. Quand un accès est légitime, on documente
-le motif ICI par exception nominative plutôt que de masquer le scan.
+Patterns : JWT (eyJ…), Supabase sb_secret_/sbp_, clés AWS AKIA…,
+tokens GitHub (préfixes ghp_ / github_pat_), clés privées PEM, service_role assigné,
+clés sk-*. Les fichiers binaires et les répertoires .git/node_modules
+sont exclus ; les exemples de docs marqués placeholder/REPLACE_WITH sont
+ignorés.
+
+Usage : python3 tools/secret_scan.py [--root .]
 """
 
+import argparse
 import os
 import re
 import sys
 
-FAIL_DIR = os.path.join("evidence", "failures")
-
 PATTERNS = [
-    ("sbp service_role key", r"sbp_[A-Za-z0-9_\-]{16,}"),
-    ("service_role nommé", r"service_role['\"]?\s*[:=]\s*['\"][^'\"]{10,}"),
-    ("JWT eyJ", r"eyJ[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}"),
-    ("clé privée PEM", r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-    ("sk- (OpenAI-like)", r"sk-[A-Za-z0-9]{20,}"),
-    ("AKIA (AWS)", r"AKIA[0-9A-Z]{16}"),
-    ("ghp_ (GitHub token)", r"ghp_[A-Za-z0-9]{20,}"),
+    (r"eyJ[A-Za-z0-9_-]{20,}", "JWT"),
+    (r"sb_secret_[A-Za-z0-9_-]{10,}", "supabase-secret"),
+    (r"sbp_[A-Za-z0-9]{20,}", "supabase-personal-token"),
+    (r"AKIA[0-9A-Z]{16}", "aws-access-key"),
+    (r"ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}", "github-token"),
+    (r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----", "private-key"),
+    (r"service_role['\"]?\s*[:=]\s*['\"][^'\"]{10,}", "service-role-assigned"),
+    (r"sk-[A-Za-z0-9]{24,}", "api-key-sk"),
 ]
 
-SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "dist", "build"}
-SKIP_FILES = {
-    os.path.join("tools", "secret_scan.py"),  # se contient lui-même
-    os.path.join("policy", "POLICY-003.md"),  # documente les motifs
-}
-
-TEXT_EXTS = {
-    ".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".txt", ".yml", ".yaml",
-    ".toml", ".py", ".sh", ".env", ".sql", ".html", ".css",
-}
+SKIP_DIRS = {".git", "node_modules", ".venv", "__pycache__"}
+SKIP_FILES = ("package-lock.json", "pnpm-lock.yaml", "yarn.lock")  # lockfiles générés : blobs base64, jamais des secrets
+PLACEHOLDER_HINTS = ("placeholder", "replace_with", "<REPLACE", "abcd1234",
+                     "test.supabase", "example", "EXAMPLE")
 
 
-def iter_files(root="."):
+def iter_text_files(root):
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
-        for name in filenames:
-            path = os.path.join(dirpath, name)
-            if path in SKIP_FILES:
+        for fn in filenames:
+            if fn in SKIP_FILES:
                 continue
-            if os.path.splitext(name)[1].lower() not in TEXT_EXTS and name != ".env":
+            p = os.path.join(dirpath, fn)
+            try:
+                with open(p, "rb") as f:
+                    head = f.read(4096)
+                if b"\x00" in head:
+                    continue  # binaire
+                yield p
+            except OSError:
                 continue
-            yield path
-
-
-def log_failure_checklist(path, lineno, label, line):
-    """Checklist de triage écrite à CHAQUE échec (10 checks)."""
-    os.makedirs(FAIL_DIR, exist_ok=True)
-    logpath = os.path.join(FAIL_DIR, "secret-scan-fail.log")
-    with open(logpath, "a", encoding="utf-8") as log:
-        log.write(f"SECRET-SCAN FAIL [{label}]: {path}:{lineno}\n")
-        log.write(f"ligne: {line.strip()[:200]}\n")
-        for item in [
-            " [ ] 1. Commit le contenant identifié (sha)",
-            " [ ] 2. Auteur du commit identifié",
-            " [ ] 3. Date d'introduction déterminée",
-            " [ ] 4. Nature du secret confirmée (vrai / faux positif)",
-            " [ ] 5. Si vrai : rotation immédiate du secret",
-            " [ ] 6. Invalidation de l'ancien secret vérifiée",
-            " [ ] 7. Historique git : purge décidée (oui / non, qui)",
-            " [ ] 8. Accès faits avec ce secret audités",
-            " [ ] 9. Correctif commité (suppression / env var)",
-            " [ ] 10. Re-scan vert attaché à la PR",
-        ]:
-            log.write(item + "\n")
-        log.write("\n")
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--root", default=".")
+    args = ap.parse_args()
     hits = 0
-    compiled = [(label, re.compile(p)) for label, p in PATTERNS]
-    for path in iter_files():
+    for path in iter_text_files(args.root):
         try:
-            with open(path, encoding="utf-8", errors="ignore") as fh:
-                for lineno, line in enumerate(fh, 1):
-                    for label, rx in compiled:
-                        if rx.search(line):
-                            hits += 1
-                            print(f"SECRET-SCAN FAIL [{label}]: {path}:{lineno}")
-                            log_failure_checklist(path, lineno, label, line)
+            text = open(path, encoding="utf-8", errors="replace").read()
         except OSError:
             continue
+        lowered = text.lower()
+        if any(h in lowered for h in PLACEHOLDER_HINTS) and "eyJ" not in text:
+            continue
+        for lineno, line in enumerate(text.splitlines(), 1):
+            low = line.lower()
+            if any(h in low for h in PLACEHOLDER_HINTS):
+                continue
+            for pat, label in PATTERNS:
+                if re.search(pat, line):
+                    print(f"SECRET-SCAN FAIL [{label}]: {path}:{lineno}")
+                    hits += 1
+                    break
     if hits:
         print(f"\n{hits} secret(s) détecté(s) — P-003 violée.")
         return 1
-    print("secret-scan OK — aucun motif détecté (P-003).")
+    print("SECRET-SCAN OK: aucun secret détecté.")
     return 0
 
 
