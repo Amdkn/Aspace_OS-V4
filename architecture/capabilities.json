@@ -202,9 +202,9 @@
     },
     {
       "name": "DeepSeek Harness",
-      "status": "qualification_planned",
+      "status": "qualified",
       "source_revision": null,
-      "runtime_evidence": null,
+      "runtime_evidence": "evidence/deepseek_harness._qualification.json (install @deepseek-ai/dsh@0.2.1-rc.2 depuis source officielle github.com/deepseek-ai/deepseek-harness ; dsh web --port 3080 → HTTP 200 ; dsh web --dump-config → exit 0, arbre Cordis 1229 lignes ; limite honnête : aucun appel modèle, clé API absente)",
       "destination_contract": null,
       "qualification_plan": {
         "runtime_evidence_target": "evidence/deepseek_harness._qualification.json",
@@ -212,12 +212,15 @@
         "deadline": "2026-11-01"
       },
       "investigation": {
-        "verdict": "NOT_PROVEN",
-        "proof_level": "installed",
-        "date": "2026-10-09",
+        "verdict": "PROVEN",
+        "proof_level": "executed",
+        "date": "2026-10-19",
         "evidence_file": "evidence/deepseek_harness._qualification.json",
-        "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+        "investigator": "Ryan / Doctor 13 (D-N029(b))"
+      },
+      "qualified_date": "2026-10-19",
+      "qualified_by": "Conseil S2 (13e Doctor, D-N029(b))",
+      "decision_ref": "Discussion #46, commentaire 19056181 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "Automaton M0/M1/M2",
