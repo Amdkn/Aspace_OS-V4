@@ -117,10 +117,10 @@
       }
     },
     {
-      "name": "Gateway OpenClaw",
-      "status": "qualification_planned",
+      "name": "OpenClaw harness",
+      "status": "qualified",
       "source_revision": null,
-      "runtime_evidence": null,
+      "runtime_evidence": "evidence/gateway_openclaw._qualification.json (harnais mesuré le 2026-08-24 : sonde joignable, OpenClaw 2026.5.18 ; audit indépendant « Honnête » ; aucun service gateway V4 — re-typage S2)",
       "destination_contract": null,
       "qualification_plan": {
         "runtime_evidence_target": "evidence/gateway_openclaw._qualification.json",
@@ -133,7 +133,11 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/gateway_openclaw._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "qualified_date": "2026-10-19",
+      "qualified_by": "Ryan / Doctor 13 (D-N029)",
+      "retyped_from": "Gateway OpenClaw",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "Hermes surfaces et harness",
@@ -246,7 +250,7 @@
     },
     {
       "name": "gstack",
-      "status": "qualification_planned",
+      "status": "référence méthodologique",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -261,11 +265,15 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/gstack._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "retyped_date": "2026-10-19",
+      "retyped_by": "Ryan / Doctor 13 (D-N029)",
+      "retype_motif": "méthodologie documentée (docs Life OS), pas une stack technique installée",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "CEO Bench",
-      "status": "qualification_planned",
+      "status": "doctrinal_reference",
       "source_revision": null,
       "runtime_evidence": null,
       "destination_contract": null,
@@ -280,7 +288,11 @@
         "date": "2026-10-09",
         "evidence_file": "evidence/ceo_bench._qualification.json",
         "investigator": "Ryan / Doctor 13 (D-N019)"
-      }
+      },
+      "retyped_date": "2026-10-19",
+      "retyped_by": "Ryan / Doctor 13 (D-N029)",
+      "retype_motif": "benchmark externe réel (arXiv 2606.18543), usage doctrinal réel dans les gates ; pas un runtime V4",
+      "decision_ref": "Discussion #46, commentaire 19056049 (décisions écrites S2, 2026-10-19)"
     },
     {
       "name": "OpenShell",
