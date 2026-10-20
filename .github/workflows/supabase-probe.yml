@@ -1,0 +1,59 @@
+name: Supabase probe
+# L02 (F-02 BedRock) — prouver la connexion live, read-only, zéro écriture.
+# Deux jobs :
+#   liveness — l'instance documentée répond-elle ? (aucun secret requis,
+#              URL via la variable de repo SUPABASE_URL)
+#   probe    — check authentifié read-only (clé anon via secret
+#              SUPABASE_ANON_KEY). Clé absente → échec EXPLICITE (exit 2) :
+#              l'état dégradé est tracé, jamais vert en silence.
+on:
+  schedule:
+    - cron: '41 5 * * 1'  # hebdomadaire (lundi)
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  liveness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Liveness probe (no key needed)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+        run: |
+          if [ -z "$SUPABASE_URL" ]; then
+            echo "::error::SUPABASE_URL repo variable not set — see docs/SUPABASE-PROBE.md (A4 inventory, escalation A0)."
+            exit 2
+          fi
+          python tools/supabase_probe.py --mode liveness --report supabase-probe-report.json
+      - name: Upload probe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supabase-liveness-report
+          path: supabase-probe-report.json
+          retention-days: 90
+
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Full probe (anon key, read-only)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          python tools/supabase_probe.py --mode full --report supabase-probe-report.json
+      - name: Upload probe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supabase-probe-report
+          path: supabase-probe-report.json
+          retention-days: 90
