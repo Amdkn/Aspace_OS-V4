@@ -4,7 +4,10 @@
 **Émetteur :** Graham — Mémoire du Kernel (13e Doctor).
 **Doctrine :** sans reçu, pas de merge. Un reçu incomplet est refusé et renvoyé.
 
-## Les 5 champs obligatoires
+## Les 6 champs obligatoires
+
+(Le design §L01 dit « les cinq » en comptant la paire observed_at/recorded_at comme une
+seule vérité temporelle ; le check vérifie six valeurs.)
 
 | Champ | Type | Règle |
 |---|---|---|
@@ -29,8 +32,10 @@ jamais rejeté : le schéma est extensible, pas cassant.
 
 ## Règles de vérité temporelle
 
-1. `observed_at` ≠ `recorded_at` par construction : l'un dit quand c'est arrivé,
-   l'autre quand c'est consigné. Les confondre, c'est corrompre le ledger.
+1. `observed_at` et `recorded_at` sont deux actes distincts : l'un dit quand c'est
+   arrivé, l'autre quand c'est consigné. Les confondre, c'est corrompre le ledger.
+   L'égalité est admise quand l'émission coïncide avec l'acte (reçu porte, émission
+   temps réel) — l'invariant dur est `recorded_at >= observed_at`.
 2. Un reçu antidaté (`recorded_at` < `observed_at`) est refusé.
 3. Le bloc genesis (`ledger/genesis/`) est **hors schéma** : c'est l'historique pré-L01,
    importé verbatim, vérifié par hash (H-L01-4), jamais réécrit. Le schéma v1 s'applique
