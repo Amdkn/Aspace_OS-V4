@@ -24,11 +24,11 @@ class TemporalCanonGraph:
     def validate_schema(self, instance: Dict[str, Any], def_name: str) -> None:
         # Create a validator focusing on the specific definition
         schema_def = {
-            "$schema": "http://json-schema.org/draft-07/schema#",
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$defs": _schema.get("$defs", {}),
             **_schema["$defs"][def_name]
         }
-        jsonschema.validate(instance=instance, schema=schema_def)
+        jsonschema.Draft202012Validator(schema_def, format_checker=jsonschema.FormatChecker()).validate(instance)
 
     def ingest_claim(self, claim: Dict[str, Any]) -> None:
         # Auto-fill some fields to make it easier for callers if they are missing
@@ -55,12 +55,12 @@ class TemporalCanonGraph:
         superseded = set()
         # Explicit supersedes from claims up to time t
         for claim in self.claims.values():
-            if claim["observed_at"] <= t:
+            if datetime.fromisoformat((claim["observed_at"] or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((t or "1970-01-01T00:00:00Z").replace("Z", "+00:00")):
                 if "supersedes" in claim and claim["supersedes"]:
                     superseded.update(claim["supersedes"])
         # From transitions up to time t
         for transition in self.transitions.values():
-            if transition.get("effective_at", transition.get("recorded_at")) <= t:
+            if datetime.fromisoformat((transition.get("effective_at") or transition.get("recorded_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((t or "1970-01-01T00:00:00Z").replace("Z", "+00:00")):
                 superseded.update(transition.get("from_claims", []))
         return superseded
 
@@ -68,12 +68,12 @@ class TemporalCanonGraph:
         contradicted = set()
         # Explicit contradicts up to time t
         for claim in self.claims.values():
-            if claim["observed_at"] <= t:
+            if datetime.fromisoformat((claim["observed_at"] or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((t or "1970-01-01T00:00:00Z").replace("Z", "+00:00")):
                 if "contradicts" in claim and claim["contradicts"]:
                     contradicted.update(claim["contradicts"])
         # Transition contradictions up to time t
         for transition in self.transitions.values():
-            if transition.get("effective_at", transition.get("recorded_at")) <= t:
+            if datetime.fromisoformat((transition.get("effective_at") or transition.get("recorded_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((t or "1970-01-01T00:00:00Z").replace("Z", "+00:00")):
                 contradicted.update(transition.get("contradiction_refs", []))
         return contradicted
 
@@ -84,7 +84,7 @@ class TemporalCanonGraph:
             if c["subject"] == subject
             and c["predicate"] == predicate
             and c["scope"] == scope
-            and c["observed_at"] <= t
+            and datetime.fromisoformat((c["observed_at"] or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((t or "1970-01-01T00:00:00Z").replace("Z", "+00:00"))
         ]
 
         # Group by source_authority
@@ -100,23 +100,27 @@ class TemporalCanonGraph:
         results = []
         for auth, group_claims in grouped.items():
             # Sort by observed_at to find the head
-            sorted_claims = sorted(group_claims, key=lambda x: x["observed_at"], reverse=True)
+            sorted_claims = sorted(group_claims, key=lambda x: (datetime.fromisoformat((x["observed_at"] or "1970-01-01T00:00:00Z").replace("Z", "+00:00")), datetime.fromisoformat((x.get("recorded_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")), x.get("claim_id", "")), reverse=True)
 
-            # The most recent one is CURRENT unless it's superseded explicitly or globally
+            contradicted = self._get_contradicted_claim_ids(t)
+
+            # The most recent one is CURRENT unless it's superseded explicitly or globally or contradicted
             head_claim = None
             for claim in sorted_claims:
-                if claim["claim_id"] not in superseded:
+                if claim["claim_id"] not in superseded and claim["claim_id"] not in contradicted:
                     head_claim = claim
                     break
 
             if not head_claim and sorted_claims:
-                # All are superseded
-                head_claim = sorted_claims[0] # we still return the most recent, but its temporal state is SUPERSEDED
+                # All are superseded or contradicted
+                head_claim = sorted_claims[0] # we still return the most recent, but its temporal state is SUPERSEDED or CONTRADICTED
 
             if head_claim:
                 res_claim = head_claim.copy()
                 if head_claim["claim_id"] in superseded:
                     res_claim["temporal_state"] = "SUPERSEDED"
+                elif head_claim["claim_id"] in contradicted:
+                    res_claim["temporal_state"] = "CONTRADICTED"
                 else:
                     res_claim["temporal_state"] = "CURRENT"
                 results.append(res_claim)
@@ -143,14 +147,14 @@ class TemporalCanonGraph:
         claims = [
             c.copy()
             for c in self.claims.values()
-            if c.get("observed_at", "") <= cutoff
+            if datetime.fromisoformat((c.get("observed_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) <= datetime.fromisoformat((cutoff or "1970-01-01T00:00:00Z").replace("Z", "+00:00"))
             and (subject is None or c.get("subject") == subject)
             and (scope is None or c.get("scope") == scope)
         ]
         claims.sort(
             key=lambda item: (
-                str(item.get("observed_at") or ""),
-                str(item.get("recorded_at") or ""),
+                datetime.fromisoformat((item.get("observed_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")),
+                datetime.fromisoformat((item.get("recorded_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")),
                 str(item.get("claim_id") or ""),
             )
         )
@@ -161,7 +165,7 @@ class TemporalCanonGraph:
         transitions = []
         for transition in self.transitions.values():
             effective = transition.get("effective_at") or transition.get("recorded_at") or ""
-            if effective > cutoff:
+            if datetime.fromisoformat((effective or "1970-01-01T00:00:00Z").replace("Z", "+00:00")) > datetime.fromisoformat((cutoff or "1970-01-01T00:00:00Z").replace("Z", "+00:00")):
                 continue
             linked = set(transition.get("from_claims", [])) | set(
                 transition.get("to_claims", [])
@@ -171,10 +175,11 @@ class TemporalCanonGraph:
             transitions.append(transition.copy())
         transitions.sort(
             key=lambda item: (
-                str(item.get("effective_at") or item.get("recorded_at") or ""),
+                datetime.fromisoformat((item.get("effective_at") or item.get("recorded_at") or "1970-01-01T00:00:00Z").replace("Z", "+00:00")),
                 str(item.get("transition_id") or ""),
             )
         )
+        total_transitions = len(transitions)
         transitions = transitions[-limit:]
 
         return {
@@ -184,6 +189,6 @@ class TemporalCanonGraph:
             "scope": scope,
             "claims": bounded_claims,
             "transitions": transitions,
-            "truncated": total_claims > len(bounded_claims),
+            "truncated": (total_claims > len(bounded_claims)) or (total_transitions > len(transitions)),
             "limit": limit,
         }

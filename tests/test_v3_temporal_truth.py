@@ -246,5 +246,73 @@ class TestTemporalTruthG4G5(unittest.TestCase):
         self.assertIn("c_ctx", capsule["canon_slice"])
         self.assertNotIn("giant_role_prompt", str(capsule))
 
+
+class TestTemporalTruthTimezone(unittest.TestCase):
+    def setUp(self):
+        self.graph = TemporalCanonGraph()
+
+    def test_timezone_equality(self):
+        # Test fuseaux : 2026-10-05T19:00:00+02:00 et 2026-10-05T17:00:00+00:00 reconnus comme le meme instant.
+        claim1 = {
+            "schema": "aspace.temporal-claim.v1",
+            "claim_id": "tz1",
+            "subject": "jules",
+            "predicate": "active_slots",
+            "scope": "runtime",
+            "source_authority": "yaz",
+            "observed_at": "2026-10-05T19:00:00+02:00",
+            "assertion": "1",
+            "evidence_refs": ["ev_1"]
+        }
+        claim2 = {
+            "schema": "aspace.temporal-claim.v1",
+            "claim_id": "tz2",
+            "subject": "jules",
+            "predicate": "active_slots",
+            "scope": "runtime",
+            "source_authority": "yaz",
+            "observed_at": "2026-10-05T17:00:00+00:00",
+            "assertion": "2",
+            "evidence_refs": ["ev_2"]
+        }
+        self.graph.ingest_claim(claim1)
+        self.graph.ingest_claim(claim2)
+
+        states = self.graph.state_at("jules", "active_slots", "2026-10-05T18:00:00+00:00", "runtime")
+        self.assertEqual(len(states), 1)
+
+    def test_schema_rejects_invalid(self):
+        # observed_at: "NOT-A-DATE" rejete
+        claim = {
+            "schema": "aspace.temporal-claim.v1",
+            "claim_id": "tz1",
+            "subject": "jules",
+            "predicate": "active_slots",
+            "scope": "runtime",
+            "source_authority": "yaz",
+            "observed_at": "NOT-A-DATE",
+            "assertion": "1",
+            "evidence_refs": ["ev_1"]
+        }
+        with self.assertRaises(Exception):
+            self.graph.ingest_claim(claim)
+
+        claim["observed_at"] = "2026-10-05T19:00:00+02:00"
+        claim["recorded_at"] = "also not"
+        with self.assertRaises(Exception):
+            self.graph.ingest_claim(claim)
+
+        del claim["recorded_at"]
+        # Contrat D5 (schéma de main : "assertion": {}) — les assertions dict écrites par
+        # aspace/memory.py via journal.append() restent LÉGALES. Le durcissement oneOf de la
+        # branche source n'est PAS porté : il cassait le roundtrip D5
+        # (tests/test_aspace_memory_roundtrip.py, vert). Écart assumé de la réémission.
+        claim["assertion"] = {"nested": "dict"}
+        self.graph.ingest_claim(claim)
+
+        claim["assertion"] = "string-val"
+        self.graph.ingest_claim(claim)
+
+
 if __name__ == '__main__':
     unittest.main()
