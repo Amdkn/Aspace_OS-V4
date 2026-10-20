@@ -4,6 +4,7 @@
 |---|---|---|
 | os/life web (vite dev) | 4444 | `os/life/package.json` (`vite --port=4444`) |
 | os/life blackboard server | 4445 | `os/life/server/blackboard/index.ts` (défaut, `PORT` overridable) |
+| gateway V4 (frontal d'auth, proxy blackboard) | 4440 (127.0.0.1) | `gateway/server.ts` (défaut, `GATEWAY_PORT` overridable ; auth bearer `GATEWAY_TOKEN`) |
 | Life→Business bridge | 3001 (127.0.0.1) | `os/life/src/lib/api/client.ts` |
 | os/agent web (vite dev) | 5555 | `os/agent/vite.config.ts` (strictPort) |
 | os/business visualizer (server) | 4600 | `os/business/.claude/skills/sssf/apps/visualizer/server/index.ts` (défaut, `PORT` overridable) |

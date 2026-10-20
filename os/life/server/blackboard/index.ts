@@ -122,7 +122,7 @@ let serverInstance: any = null;
 
 export function startServer(port: number = 4445) {
   if (serverInstance) return serverInstance;
-  serverInstance = app.listen(port, () => {
+  serverInstance = app.listen(port, '127.0.0.1', () => {
     console.log(`Blackboard server listening on port ${port}`);
   });
   return serverInstance;

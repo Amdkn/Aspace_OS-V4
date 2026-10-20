@@ -1,0 +1,1 @@
+{"description":"Gateway V4 — frontal d'authentification (D-N015, extraction-composition H-04). Zero dependance : Node >= 22, TypeScript natif.","engines":{"node":">=22"},"name":"aspace-gateway","private":true,"scripts":{"start":"node server.ts"},"type":"module","version":"1.0.0"}
