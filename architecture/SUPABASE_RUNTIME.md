@@ -5,6 +5,13 @@ Life OS (hjweyhpmrxqsxfbibsnc) : ACTIVE_HEALTHY. Agent OS Backend (biyecksylqonu
 
 Tables Life OS : fw_12wy, fw_deal, fw_gtd, fw_ikigai, fw_life_wheel, fw_para, ikigai_visions, life_wheel_ambitions, ld01_business, ld02_finance, ld03_health, ld04_cognition, ld05_relations, ld06_habitat, ld07_creativity, ld08_impact, symphony_state, sys_agent_veto, sys_shell_routing, user_profiles, wrappers_fdw_stats.
 
+## Observation du 21 octobre 2026 — Agent OS Backend reconnecte (acte D-N036, decision #33)
+Etat actuel : Agent OS Backend (biyecksylqonuovqmbtz) : RECONNECTE. L'etat ABANDON_PROPOSE consigne dans l'observation du 6 octobre 2026 est supplee par le present acte : les actes materiels du Capitaine du 21 octobre 2026 (restauration du projet + depot de la cle au Vault) repondent « reconnecter » a la decision #33 — decision vision du Capitaine ; le Conseil S2 n'avait pas avalise l'abandon. Preuve du jour : sonde authentifiee d'A0 — reponse 200 sur Agent OS Backend.
+
+Cadrage du Capitaine, verse tel quel au dossier : « le projet Supabase OMK n'est qu'un Business en L2 » ; un nouveau Business client sera cree plus tard ; sequence : Setup du BedRock d'abord.
+
+Garde-fou : cette reconnexion ne fait pas de Supabase une dependance operationnelle du substrat. Le BedRock n'en depend pas pour operer ; la qualification du stockage du substrat (Phase 0 du Noyau A1 : voie locale embarquee qualifiee en premiere, Supabase tenue comme dependance nommee) reste inchangee. Le projet reconnecte vit au niveau L2 (un Business), pas au L0.
+
 ## Repartition pour les brainstormings
 - Bedrock L0 : constitution versionnee dans Git ; les tables ne definissent pas seules la constitution V4.
 - Life Core L1 / Doctor 11 : huit domaines en equilibre. Life OS est un patrimoine vivant ; LD01 Business ne remplace pas les sept autres domaines.
@@ -14,7 +21,7 @@ Tables Life OS : fw_12wy, fw_deal, fw_gtd, fw_ikigai, fw_life_wheel, fw_para, ik
 - CubeFarm : surface et execution dans le Codespace V4. Etat actuellement sur disque cloud ; aucune synchronisation Supabase implementee.
 
 ## Decisions ouvertes
-LD05 Social et ld05_relations demandent une correspondance explicite. LD06 Famille et ld06_habitat ne sont pas synonymes : conserver les deux intentions. Inspecter colonnes, dependances et RLS avant toute migration. Agent OS inactif ne doit pas etre presente comme operationnel.
+LD05 Social et ld05_relations demandent une correspondance explicite. LD06 Famille et ld06_habitat ne sont pas synonymes : conserver les deux intentions. Inspecter colonnes, dependances et RLS avant toute migration. Agent OS Backend reconnecte (2026-10-21) ne doit pas etre presente comme dependance operationnelle du substrat (cf. observation du 21 octobre 2026).
 
 Avant un brainstorming : lire REFONDATION.md, le Directory, ce document et les contrats de memoire. Comparer reutilisation avec adaptateurs et schema V4 distinct avec migration reversible. Montrer les consequences sur les huit LD, les six frameworks et les surfaces. Distinguer observation, proposition et preuve.
 
