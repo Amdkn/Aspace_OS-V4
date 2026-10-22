@@ -176,5 +176,24 @@ class TestCrossOSDecisionCanary(unittest.TestCase):
             self.assertEqual(r["runtime_status"], "NOT_VERIFIED")
 
 
+
+    def test_multi_core_council_exists_without_objection_but_does_not_execute(self):
+        r = resolve(self.mission(disagreement=None,
+                                 additional_doctors=["doctor-11", "doctor-13"]), REG, BIZ)
+        self.assertEqual(r["council"]["status"], "S2_COUNCIL_REVIEW")
+        self.assertEqual(r["coordination_status"], "S2_REVIEW_REQUESTED_NOT_EXECUTED")
+        self.assertEqual(r["council"]["participants"], ["doctor-11", "doctor-12", "doctor-13"])
+        self.assertFalse(r["delegated_execution"])
+        self.assertEqual(r["runtime_status"], "NOT_VERIFIED")
+
+    def test_single_core_routing_has_no_unnecessary_council(self):
+        r = resolve(self.mission(disagreement=None, additional_doctors=[]), REG, BIZ)
+        self.assertNotIn("council", r)
+        self.assertNotIn("coordination_status", r)
+
+    def test_malformed_additional_doctors_rejected(self):
+        with self.assertRaises(ValueError):
+            resolve(self.mission(additional_doctors="doctor-11"), REG, BIZ)
+
 if __name__ == "__main__":
     unittest.main()

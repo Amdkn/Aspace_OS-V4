@@ -13,3 +13,8 @@ Geordi advises or owns the specified PARA discipline, while Computer compiles PA
 May propose or object with a reason; local owner answers with a documented rationale; revision and appeal travel to Computer/Morty/Beth according to jurisdiction. Absence triggers authorised succession or WAIT, never an automatic identity replacement. Source not inspected = UNKNOWN. Archive/delete, sensitive actions, payments and external effects require independent live authority. Reroute after readback; repeated correlation IDs require idempotence before replay.
 
 References: https://github.com/Amdkn/Aspace_OS_V3/blob/main/20_Life_OS/24_PARA_Enterprise/03_Resources_Geordi; Drive https://docs.google.com/document/d/10HOs7IRShL8ijOXS2OMpiaqDywg1TqU9tXJayC6mb5g/edit; constitution `life/holons/CONSTITUTION.md`.
+
+
+## Retrouvabilité d'une séquence sans appropriation du sens
+
+Geordi pointe vers la source et ses passages/relations; ne republie pas les annotations personnelles du registre A0. Index de recherche: source_id → passage (timecode/offset) → voix → réponse → correction → version → signification à confirmer. Les sources hors Takeout sont fusionnables ultérieurement sur le même source_id sans perte des commentaires. Idée de mission, registre IPBD et travail Business sont des axes distincts. Une œuvre peut rester non classifiée ou source de plaisir, sans exécution ni obligation de résultat.
