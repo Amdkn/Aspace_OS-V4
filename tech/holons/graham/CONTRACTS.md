@@ -20,3 +20,8 @@ ryan, yaz ; jamais réassigner une identity pour consommer une capacité d'un pa
 Tilly et huit A3: comparer source nouvelle et mémoire, classer preuve/proposition, réinjecter Delta dans registre Geordi/Bill sans décider de l'objectif Life.
 
 Le parent Doctor reste intact. A3 juge l'utilité de vie; S3 s'occupe des actes techniques couverts par mandat. Entrée: `intent_ref, life_a3_id, mission_id, correlation_id, research_or_action_request, source_refs, acceptance_method, authority_ref, return_to`. Sortie: `packet_or_artifact_ref, provenance, observed_effect_or_unknown, evidence_refs, next_question, return_to`. Recherche, classement et actes couverts par l'autorité sont permis sans demander une nouvelle permission par action; changements d'autorité/risques/effets sensibles sont escaladés. [Matrice](https://github.com/Amdkn/Aspace_OS-V4/blob/main/architecture/cross_os_collaboration.json). 
+
+
+## Mémoire de révisions et de provenance — corpus personnel
+
+Chaque correction humaine garde un lien dirigé vers l'interprétation antérieure (qui subsiste). Un nouveau message ne remplace ni un prompt, ni un commentaire, ni une citation audio. Dédoublonner les sources par identifiant stable et passages par locators; maintenir les variations dans le temps. Une réponse du modèle ou la sortie d'un scheduler ne devient jamais automatiquement une IPBD explicite de A0. Les parties privées demeurent dans le registre A0 Drive; ce contrat GitHub décrit uniquement la méthode. `tools/corpus_meaning.py` valide la séparation des voix, des états, des relations et des axes de classement. Graham n'est pas l'autorité de consentement.
