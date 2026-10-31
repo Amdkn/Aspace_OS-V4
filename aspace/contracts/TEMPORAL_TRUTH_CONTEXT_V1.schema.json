@@ -623,6 +623,145 @@
         }
       },
       "additionalProperties": false
+    },
+    "FencingToken": {
+      "type": "object",
+      "required": ["token", "issuedAt"],
+      "properties": {
+        "token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Lease": {
+      "type": "object",
+      "required": ["leaseId", "fencingToken", "issuedAt"],
+      "properties": {
+        "leaseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fencingToken": {
+          "$ref": "#/$defs/FencingToken"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deadline": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "promotionId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Budget": {
+      "type": "object",
+      "required": ["limit"],
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "spent": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 1,
+          "default": "token"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EvidenceRecord": {
+      "type": "object",
+      "required": ["operationId", "evidenceRefs", "recordedAt", "authority", "checksum"],
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checksum": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuthorityEnvelope": {
+      "type": "object",
+      "required": ["workId", "missionId", "operationId", "correlationId", "lease", "budget"],
+      "properties": {
+        "workId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "missionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "correlationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lease": {
+          "$ref": "#/$defs/Lease"
+        },
+        "budget": {
+          "$ref": "#/$defs/Budget"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRecord"
+          },
+          "default": []
+        },
+        "returnTo": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
     }
   },
   "oneOf": [
@@ -646,6 +785,9 @@
     },
     {
       "$ref": "#/$defs/CapabilityNeed"
+    },
+    {
+      "$ref": "#/$defs/AuthorityEnvelope"
     }
   ]
 }
